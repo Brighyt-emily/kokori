@@ -68,9 +68,27 @@ public class ProfesorDaoImp implements ProfesorDao {
         try {
             cx = Conexion.getConexion();
             cst = cx.prepareCall("{call listarProfesor()}");
-        } catch (Exception e) {
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Profesor p = new Profesor();
+                p.setIdTrabajador(rs.getInt("idprofesor"));
+                p.setEstado(rs.getInt("estado"));
+                p.setGrado(rs.getString("grado"));
+                p.setCodProfesor(rs.getString("grado"));
+                p.setIdEscuela(rs.getInt("idescuela"));
+                p.setIdTrabajador(rs.getInt("idtrabajador"));
+                p.setNomTrabajador(rs.getString("nombres"));
+                p.setApelTrabajador(rs.getString("apellidos"));
+                p.setDireccion(rs.getString("direccion"));
+                p.setNumCelular(rs.getString("num_celular"));
+                p.setNumDni(rs.getString("dni"));
+                p.setEmail(rs.getString("email"));
+                listProfesor.add(p);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
         }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return listProfesor;
     }
 
 }

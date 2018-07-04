@@ -56,6 +56,11 @@ public class ProfesorController extends HttpServlet {
                 Profesor p = new Profesor(estado, grado, codigo, idEscuela, nombres,apellidos, direccion,numCelular, numDni, email);
                 out.println(g.toJson(pc.create(p)));
                 break;
+                
+            case 2:
+                //caso para listar 
+                out.println(g.toJson(pc.readAll()));
+                break;
         }
     }
 
