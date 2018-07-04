@@ -8,6 +8,7 @@ package pe.edu.upeu.presup.daoimp;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.presup.dao.ProfesorDao;
 import pe.edu.upeu.presup.entity.Profesor;
@@ -63,6 +64,12 @@ public class ProfesorDaoImp implements ProfesorDao {
 
     @Override
     public List<Profesor> readAll() {
+        List<Profesor> listProfesor = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarProfesor()}");
+        } catch (Exception e) {
+        }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

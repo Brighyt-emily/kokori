@@ -29,13 +29,14 @@ public class Profesor extends Trabajador{
         this.idEscuela = idEscuela;
     }
 
-    public Profesor(int estado, String grado, String codProfesor, int idEscuela, int idTrabajador, String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email) {
-        super(idTrabajador, nomTrabajador, apelTrabajador, direccion, numCelular, numDni, email);
+    public Profesor(int estado, String grado, String codProfesor, int idEscuela, String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email) {
+        super(nomTrabajador, apelTrabajador, direccion, numCelular, numDni, email);
         this.estado = estado;
         this.grado = grado;
         this.codProfesor = codProfesor;
         this.idEscuela = idEscuela;
     }
+    
 
     public int getIdProfesor() {
         return idProfesor;
