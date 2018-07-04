@@ -4,9 +4,17 @@
         <servlet-name>pc</servlet-name>
         <servlet-class>pe.edu.upeu.presup.controller.ProfesorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PrestamoController</servlet-name>
+        <servlet-class>pe.edu.upeu.presup.controller.PrestamoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>pc</servlet-name>
         <url-pattern>/pc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrestamoController</servlet-name>
+        <url-pattern>/Pc</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
