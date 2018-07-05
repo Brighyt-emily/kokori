@@ -70,6 +70,7 @@
                             <input type="text" name="nombre" required>
                         </div>
                     </div>
+                    
                     <div class="col s4">
                         <div class="input-field">
                             <i class="material-icons prefix">select_all</i>
@@ -78,25 +79,19 @@
                         </div>
                     </div>
                 </div>                
+                
                 <div class="row">
-                    <div class="col s6">
-                        <!-- diego no aparece los select's -->
+                    <div class="input-field col s12">
                         <select>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">eres</option>
+                            <option value="2">un</option>
+                            <option value="3">noobsito</option>
                         </select>
+                        <label>Carreras</label>
                     </div>
-                    <div class="col s6">
-                        <select>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                    </div>
-                </div>
+                   </div>
+                
                 <div class="row">
                     <div class="col s12 right-align">
                         <a class="waves-effect waves-light btn-large red"><i class="material-icons right">remove_circle</i>Cancelar Registro</a>
@@ -107,5 +102,7 @@
         </div>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/profesor.js" type="text/javascript"></script>
+       
+        
     </body>
 </html>
