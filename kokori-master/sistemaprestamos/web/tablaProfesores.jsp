@@ -21,12 +21,12 @@
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title">Titulo de Caso</div>
+                        <div class="page-title"> <i class="material-icons" >assignment_ind</i>Registro de Profesores</div>
                     </div>
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
-                                <h3 class="center-align">Profesores Registrados</h3><br>
+                                
             <table class="highlight" id="tblProfesores">
                 <thead>
                     <tr>
