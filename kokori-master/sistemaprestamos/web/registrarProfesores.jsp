@@ -16,18 +16,6 @@
         <div class="container">
             <div class="row">
                 <h3 class="center-align">Registrar Nuevo Profesor</h3><br>
-                <div class="row center">
-                    <div class="col s10">
-                        <div class="input-field">
-                            <i class="material-icons prefix">assignment</i>
-                            <label for="nombre">Ingrese Dni</label>
-                            <input type="text" name="nombre" required>
-                        </div>
-                    </div>
-                    <div class="col s2">
-                        <a class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="material-icons">search</i></a>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col s4">
                         <div class="input-field">
@@ -77,28 +65,47 @@
                     </div>
                     <div class="col s4">
                         <div class="input-field">
-                            <i class="material-icons prefix">next_week</i>
-                            <label for="escuela">Escuela Profesional</label>
-                            <input type="text" name="escuela" required>
+                            <i class="material-icons prefix">assignment</i>
+                            <label for="nombre">Ingrese Dni</label>
+                            <input type="text" name="nombre" required>
                         </div>
                     </div>
                     <div class="col s4">
                         <div class="input-field">
                             <i class="material-icons prefix">select_all</i>
                             <label for="codigo">Codigo Asignado</label>
-                            <input type="text" name="codigo" disabled="">
+                            <input type="text" name="codigo" disabled="">                            
                         </div>
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="col s6">
+                        <!-- diego no aparece los select's -->
+                        <select>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <div class="col s6">
+                        <select>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s12 right-align">
                         <a class="waves-effect waves-light btn-large red"><i class="material-icons right">remove_circle</i>Cancelar Registro</a>
                         <a class="waves-effect waves-light btn-large blue" onclick="M.toast({html: 'Se le asigno un codigo', classes: 'rounded'})"><i class="material-icons right">near_me</i>Registrar</a>
-
                     </div>
                 </div>
             </div>
         </div>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
+        <script src="js/profesor.js" type="text/javascript"></script>
     </body>
 </html>
