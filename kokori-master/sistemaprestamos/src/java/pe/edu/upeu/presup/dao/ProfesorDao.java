@@ -26,4 +26,6 @@ public interface ProfesorDao {
     List<Profesor> readAll();
     
     List<Map<String, Object>> listarRegisProfesores();
+    
+    List<Map<String, Object>> listarDescProfById(int key);
 }

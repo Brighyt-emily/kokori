@@ -99,8 +99,8 @@ public class ProfesorDaoImp implements ProfesorDao {
         try {
             cx = Conexion.getConexion();
             cst = cx.prepareCall("{call listarRegisProfesores()}");
-            rs  = cst.executeQuery();
-            while(rs.next()){
+            rs = cst.executeQuery();
+            while (rs.next()) {
                 Map<String, Object> map = new HashMap<>();
                 map.put("idProfesor", rs.getInt("idprofesor"));
                 map.put("idTrabajador", rs.getInt("idtrabajador"));
@@ -111,6 +111,38 @@ public class ProfesorDaoImp implements ProfesorDao {
                 map.put("codigo", rs.getString("codigo"));
                 map.put("escuela", rs.getString("nombre"));
                 map.put("email", rs.getString("email"));
+                lista.add(map);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return lista;
+    }
+
+    @Override
+    public List<Map<String, Object>> listarDescProfById(int key) {
+        List<Map<String, Object>> lista = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarDescProfById(?)}");
+            cst.setInt(1, key);
+            rs = cst.executeQuery();
+            while (rs.next()) {
+                Map<String, Object> map = new HashMap<>();
+                map.put("nombres", rs.getString("nombres"));
+                map.put("apellidos", rs.getString("apellidos"));
+                map.put("direccion", rs.getString("direccion"));
+                map.put("numCelular", rs.getString("num_celular"));
+                map.put("numDni", rs.getString("dni"));
+                map.put("email", rs.getString("email"));
+                map.put("estado", rs.getString("estado"));
+                map.put("grado", rs.getString("grado"));
+                map.put("nomEscuela",rs.getString("nombre"));
+                map.put("nomFacultad", rs.getString("nombre"));
+                map.put("idTrabajador", rs.getInt("idtrabajador"));
+                map.put("idProfesor", rs.getInt("idprofesor"));
+                map.put("idEscuela", rs.getInt("idescuela"));
+                map.put("idFacultad", rs.getInt("idfacultad"));
                 lista.add(map);
             }
         } catch (SQLException e) {

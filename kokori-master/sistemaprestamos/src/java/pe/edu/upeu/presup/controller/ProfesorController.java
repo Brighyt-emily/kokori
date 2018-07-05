@@ -42,6 +42,10 @@ public class ProfesorController extends HttpServlet {
             case 1:
                 out.println(g.toJson(myProf.listarRegisProfesores()));
                 break;
+            case 2:
+                int idProfesor = Integer.parseInt(request.getParameter("idp"));
+                out.println(g.toJson(myProf.listarDescProfById(idProfesor)));
+                break;
         }
     }
 

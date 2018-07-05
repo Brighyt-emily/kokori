@@ -260,7 +260,7 @@
                     <div class="sidebar-account-settings">
                         <ul>
                             <li class="no-padding">
-                                <a class="waves-effect waves-grey"><i class="material-icons">mail_outline</i>Perfil</a>
+                                <a class="waves-effect waves-grey" href="../../registrarProfesores.jsp"><i class="material-icons">mail_outline</i>Perfil</a>
                             </li>
                             <li class="no-padding">
                                 <a class="waves-effect waves-grey"><i class="material-icons">star_border</i>Opciones</a>

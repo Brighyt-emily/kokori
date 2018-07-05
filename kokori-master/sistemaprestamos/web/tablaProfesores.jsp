@@ -18,6 +18,7 @@
             <table class="highlight" id="tblProfesores">
                 <thead>
                     <tr>
+                        <th>#Num</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>#Dni</th>
@@ -31,7 +32,28 @@
                 <tbody>
                 </tbody>
             </table>
+            <!--Modal para ver detalladamente el resgitro de los profesores-->
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Titulo del modal</h4>
+                    <p>Cuerpo del modal</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+            <!-- fin del modal -->
         </div>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
+        <script src="js/profesor.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function (){
+                $('.modal-trigger').leanModal();
+            });
+        </script>
     </body>
 </html>
