@@ -5,6 +5,7 @@
  */
 package pe.edu.upeu.presup.test;
 
+import com.google.gson.Gson;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
 import pe.edu.upeu.presup.entity.Producto;
@@ -17,13 +18,15 @@ import pe.edu.upeu.presup.util.Conexion;
  */
 public class Test {
     static ProductoDao ko=new ProductoDaoImp();
+    static Gson g=new Gson();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         //conexion();
-        create();
+        //create();
+        listar();
     }
 
     static void conexion() {
@@ -43,6 +46,11 @@ public class Test {
         {
             System.out.println(":c");
         }
+    }
+    static void listar()
+    {
+        System.out.println(g.toJson(ko.readAll()));
+
     }
     
 

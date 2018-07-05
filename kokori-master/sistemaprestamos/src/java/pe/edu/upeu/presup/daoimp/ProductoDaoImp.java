@@ -8,6 +8,7 @@ package pe.edu.upeu.presup.daoimp;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.entity.Producto;
@@ -60,7 +61,27 @@ public class ProductoDaoImp implements ProductoDao {
 
     @Override
     public List<Producto> readAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Producto> datos=new ArrayList<>();
+        try
+        {
+            cx=Conexion.getConexion();
+            cst=cx.prepareCall("{call listarProducto()}");
+            rs=cst.executeQuery();
+            while(rs.next())
+            {
+                Producto p=new Producto();
+                p.setIdP(rs.getInt("idproducto"));
+                p.setNom(rs.getString("nombre"));
+                p.setCod(rs.getString("codigo"));
+                p.setEst(rs.getInt("estado"));
+                p.setiTip(rs.getInt("idtipo"));
+                datos.add(p);
+            }
+        }catch(SQLException e)
+        {
+            System.out.println("ERROR: "+e);
+        }
+        return datos;
     }
     
 }
