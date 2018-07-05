@@ -16,27 +16,38 @@ public class Prestamo {
     String nom_alumno;
     String fe_devolucion;
     String aula;
+    int id_profe;
+    int id_documento;
+    int id_user;
 
     public Prestamo() {
     }
-
-    public Prestamo(int idprestamo, int estado, String fe_prestamo, String nom_alumno, String fe_devolucion, String aula) {
-        this.idprestamo = idprestamo;
-        this.estado = estado;
-        this.fe_prestamo = fe_prestamo;
-        this.nom_alumno = nom_alumno;
-        this.fe_devolucion = fe_devolucion;
-        this.aula = aula;
-    }
     
-    public Prestamo(int estado, String fe_prestamo, String nom_alumno, String fe_devolucion, String aula) {
-        this.estado = estado;
-        this.fe_prestamo = fe_prestamo;
-        this.nom_alumno = nom_alumno;
-        this.fe_devolucion = fe_devolucion;
-        this.aula = aula;
+    
+    
+    public int getId_profe() {
+        return id_profe;
     }
 
+    public void setId_profe(int id_profe) {
+        this.id_profe = id_profe;
+    }
+
+    public int getId_documento() {
+        return id_documento;
+    }
+
+    public void setId_documento(int id_documento) {
+        this.id_documento = id_documento;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
     public int getIdprestamo() {
         return idprestamo;
     }
