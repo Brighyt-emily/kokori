@@ -5,25 +5,20 @@
  */
 package pe.edu.upeu.presup.controller;
 
-import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import pe.edu.upeu.presup.dao.ProfesorDao;
-import pe.edu.upeu.presup.daoimp.ProfesorDaoImp;
-import pe.edu.upeu.presup.entity.Profesor;
 
 /**
  *
  * @author Kevin Peinado
  */
+@WebServlet(name = "ProfesorController", urlPatterns = {"/pc"})
 public class ProfesorController extends HttpServlet {
-
-    private ProfesorDao pc = new ProfesorDaoImp();
-    private Gson g = new Gson();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,30 +32,17 @@ public class ProfesorController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        int op = Integer.parseInt(request.getParameter("op"));
-        switch (op) {
-            case 1:
-                //declaramos varibales
-                String nombres = request.getParameter("nombres");
-                String apellidos = request.getParameter("apellidos");
-                String direccion = request.getParameter("direccion");
-                String numCelular = request.getParameter("celular");
-                String numDni = request.getParameter("dni");
-                String email = request.getParameter("email");
-                int estado = Integer.parseInt(request.getParameter("estado"));
-                String grado = request.getParameter("grado");
-                String codigo = request.getParameter("codigo");
-                int idEscuela = Integer.parseInt(request.getParameter("escuela"));
-                //Creacion de objetos
-                Profesor p = new Profesor(estado, grado, codigo, idEscuela, nombres,apellidos, direccion,numCelular, numDni, email);
-                out.println(g.toJson(pc.create(p)));
-                break;
-                
-            case 2:
-                //caso para listar 
-                out.println(g.toJson(pc.readAll()));
-                break;
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ProfesorController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ProfesorController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

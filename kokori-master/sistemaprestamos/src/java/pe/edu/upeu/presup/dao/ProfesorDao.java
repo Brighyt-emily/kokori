@@ -6,6 +6,7 @@
 package pe.edu.upeu.presup.dao;
 
 import java.util.List;
+import java.util.Map;
 import pe.edu.upeu.presup.entity.Profesor;
 
 /**
@@ -23,4 +24,6 @@ public interface ProfesorDao {
     Profesor read(int key);
 
     List<Profesor> readAll();
+    
+    List<Map<String, Object>> listarRegisProfesores();
 }

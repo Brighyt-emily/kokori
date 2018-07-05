@@ -9,7 +9,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import pe.edu.upeu.presup.dao.ProfesorDao;
 import pe.edu.upeu.presup.entity.Profesor;
 import pe.edu.upeu.presup.util.Conexion;
@@ -69,7 +71,7 @@ public class ProfesorDaoImp implements ProfesorDao {
             cx = Conexion.getConexion();
             cst = cx.prepareCall("{call listarProfesor()}");
             rs = cst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Profesor p = new Profesor();
                 p.setIdTrabajador(rs.getInt("idprofesor"));
                 p.setEstado(rs.getInt("estado"));
@@ -89,6 +91,32 @@ public class ProfesorDaoImp implements ProfesorDao {
             System.out.println("Error: " + e);
         }
         return listProfesor;
+    }
+
+    @Override
+    public List<Map<String, Object>> listarRegisProfesores() {
+        List<Map<String, Object>> lista = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarRegisProfesores()}");
+            rs  = cst.executeQuery();
+            while(rs.next()){
+                Map<String, Object> map = new HashMap<>();
+                map.put("idProfesor", rs.getInt("idprofesor"));
+                map.put("idTrabajador", rs.getInt("idtrabajador"));
+                map.put("idescuela", rs.getInt("idescuela"));
+                map.put("nombres", rs.getString("nombres"));
+                map.put("apellidos", rs.getString("apellidos"));
+                map.put("dni", rs.getString("dni"));
+                map.put("codigo", rs.getString("codigo"));
+                map.put("escuela", rs.getString("nombre"));
+                map.put("email", rs.getString("email"));
+                lista.add(map);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return lista;
     }
 
 }

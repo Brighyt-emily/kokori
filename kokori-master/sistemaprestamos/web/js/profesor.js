@@ -1,15 +1,17 @@
 $(document).ready(function () {
-    //$('.collapsible').collapsible();
+    
 });
-
+/**
+ * funciones para abrir otros .jsp's
+ */
 $("#btnRegistrar").click(function () {
-    $(location).attr('href', 'http://localhost:8080/sistemaprestamos/registrarProfesores.jsp');
+    $(location).attr('href', 'registrarProfesores.jsp');
 });
 $("#btnRegistro").click(function () {
-    $(location).attr('href', 'http://localhost:8080/sistemaprestamos/tablaProfesores.jsp');
+    $(location).attr('href', 'tablaProfesores.jsp');
 });
-
-/**
- * diseño del formulario
- */
         
+/**
+ * 
+ */
+

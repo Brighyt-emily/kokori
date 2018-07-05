@@ -18,9 +18,13 @@
             <table class="highlight" id="tblProfesores">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Item Name</th>
-                        <th>Item Price</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>#Dni</th>
+                        <th>Codigo</th>
+                        <th>Escuela</th>
+                        <th>Email</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
 
