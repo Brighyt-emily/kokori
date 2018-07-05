@@ -1,5 +1,10 @@
 $(document).ready(function () {
     //$('.collapsible').collapsible();
+    
+              console.log("funciona: JQUERY");
+          $('select').formSelect();
+    
+    
 });
 
 $("#btnRegistrar").click(function () {
