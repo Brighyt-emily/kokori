@@ -1,13 +1,8 @@
 $(document).ready(function () {
-
-    //$('.collapsible').collapsible();
-
     console.log("funciona: JQUERY");
     $('select').formSelect();
-
-    
-              console.log("funciona: JQUERY");
-          $('select').formSelect();
+    console.log("funciona: JQUERY");
+    $('select').formSelect();
 });
 /**
  * funciones para abrir otros .jsp's
