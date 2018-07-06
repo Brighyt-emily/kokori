@@ -12,10 +12,7 @@
         <title>JSP Page</title>
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
-    <body>
-        
-         <div class="mn-content fixed-sidebar">
-            
+    <body>                          
             <%@include file="WEB-INF/template/Principal.jspf" %>
             <!--INICIO Contenido -->
             <main class="mn-inner">
