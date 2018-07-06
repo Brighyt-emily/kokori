@@ -18,64 +18,7 @@
             <!--INICIO Contenido -->
             <main class="mn-inner">
                 <div class="row">
-                    <div class="col s12">
-                        <div class="page-title">
-                            <i class="material-icons">add</i>
-                         Registrar Profesor   
-                        </div>
-                    </div>
-                    <div class="col s4">
-                        <div class="input-field">
-                            <i class="material-icons prefix">person_pin</i>
-                            <label for="apellidos">Apellidos</label>
-                            <input type="text" name="apellidos" required id="txtApellidos">
-                        </div>
-                    </div>
-                    <div class="col s4">
-                        <div class="input-field">
-                            <i class="material-icons prefix">dialer_sip</i>
-                            <label for="celular">Numero de Celular</label>
-                            <input type="text" name="celular" required maxlength="9" id="txtNumCelular">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6">
-                        <div class="input-field">
-                            <i class="material-icons prefix">mail</i>
-                            <label for="email">Email</label>
-                            <input type="text" name="email" required id="txtEmail">
-                        </div>
-                    </div>
-                    <div class="col s6">
-                        <div class="input-field">
-                            <i class="material-icons prefix">location_city</i>
-                            <label for="direccion">Dirección</label>
-                            <input type="text" name="direccion" required id="txtDireccion">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s4">
-                        <div class="input-field">
-                            <i class="material-icons prefix">school</i>
-                            <label for="grado">Grado Profesional</label>
-                            <input type="text" name="grado" required id="grado">
-                        </div>
-                    </div>
-                    <div class="col s4">
-                        <div class="input-field">
-                            <i class="material-icons prefix">assignment</i>
-                            <label for="nombre">Ingrese Dni</label>
-                            <input type="text" name="nombre" required maxlength="8" id="txtDni">
-                        </div>
-                    </div>
-                    
-                    <div class="col s4">
-                        <div class="input-field">
-                            <i class="material-icons prefix">select_all</i>
-                            <label for="codigo">Codigo Asignado</label>
-                            <input type="text" name="codigo" disabled="" id="txtCodigo">                            
+                                              
                     <div class="col s12 m12 l12">
                         <div class="card">
                             
