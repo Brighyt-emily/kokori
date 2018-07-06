@@ -60,7 +60,7 @@
                         <div class="input-field">
                             <i class="material-icons prefix">school</i>
                             <label for="grado">Grado Profesional</label>
-                            <input type="text" name="grado" required id="txtGrado">
+                            <input type="text" name="grado" required id="grado">
                         </div>
                     </div>
                     <div class="col s4">
