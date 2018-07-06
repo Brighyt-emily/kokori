@@ -13,7 +13,7 @@ $("#btnMostrar").click(function () {
             alert(data);
             $("#secEscuela option").remove();
             for (var i = 0; i < w.length; i++) {
-                $("#secEscuela").append("<option id='" + w[i].idEscuela+ "'>" + w[i].nomEscuela + "</option>"); 
+                $("#secEscuela").append('<option value='+i+'>'+w[i].nomEscuela+'</option>'); 
             }
         });
     } else {

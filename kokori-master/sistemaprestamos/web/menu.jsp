@@ -97,33 +97,7 @@
                                 
                                 <span class="menu-title">Iconos mi hermano</span>
                                 
-                                <div class="row">
-                                    <div class="col s2">
-                                        
-                                    asas    
-                                    </div>
-                                    <div class="col s2">
-                                        asasas
-                                        
-                                    </div>
-                                    <div class="col s2">
-                                        
-                                        assa
-                                    </div>
-                                    <div class="col s2">
-                                        
-                                        assa
-                                    </div>
-                                    <div class="col s2">
-                                        
-                                        assa
-                                    </div>
-                                    <div class="col s2">
-                                        
-                                        assa
-                                    </div>
-                                    
-                                </div>
+                                
                                 
                                 
                                 
