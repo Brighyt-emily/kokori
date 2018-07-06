@@ -29,8 +29,8 @@ public class Test {
         // TODO code application logic here
         //conexion();
         //create();
-        //listar();
-        delete();
+        listar();
+        //delete();
     }
 
     static void conexion() {
