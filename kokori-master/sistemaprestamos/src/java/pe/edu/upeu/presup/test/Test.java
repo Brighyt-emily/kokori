@@ -8,9 +8,12 @@ package pe.edu.upeu.presup.test;
 import com.google.gson.Gson;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
+import pe.edu.upeu.presup.dao.TipoDao;
 import pe.edu.upeu.presup.daoimp.DevolucionDaoImp;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
+import pe.edu.upeu.presup.daoimp.TipoDaoImp;
 import pe.edu.upeu.presup.entity.Producto;
+import pe.edu.upeu.presup.entity.Tipo;
 import static pe.edu.upeu.presup.test.Test.conexion;
 import pe.edu.upeu.presup.util.Conexion;
 
@@ -22,15 +25,16 @@ public class Test {
     static ProductoDao ko=new ProductoDaoImp();
     static Gson g=new Gson();
     static DevolucionDao kop=new DevolucionDaoImp();
+    static TipoDao i=new TipoDaoImp();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         //conexion();
-        //create();
+        create();
         //listar();
-        delete();
+        //delete();
     }
 
     static void conexion() {
@@ -42,8 +46,8 @@ public class Test {
     }
     static void create()
     {
-        Producto p= new Producto("fdfd","565656",1,1);
-        if(ko.create(p)>0)
+        Tipo p= new Tipo("LOCURA");
+        if(i.create(p)>0)
         {
             System.out.println("c:");
         }else
