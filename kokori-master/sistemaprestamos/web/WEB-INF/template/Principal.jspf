@@ -302,8 +302,8 @@
                             <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Aplicaciones<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="">Reservar</a></li>
-                                    <li><a href="">Prestamos</a></li>
+                                    <li><a href="./registrarProfesores.jsp">Reservar</a></li>                                  
+                                    <li><a href="./Prestamo.jsp">Prestamos</a></li>
                                     <li><a href="">Yano se que poner :) </a></li>
                                 </ul>
                             </div>
