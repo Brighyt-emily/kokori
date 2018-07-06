@@ -56,10 +56,6 @@
                                     </div>
                                 </div>
                                 <!-- fin del modal -->
-
-                                    
-                                    
-                                
                             </div>
                         </div>
                     </div>
