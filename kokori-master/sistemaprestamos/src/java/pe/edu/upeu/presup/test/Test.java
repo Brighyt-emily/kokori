@@ -29,7 +29,8 @@ public class Test {
         // TODO code application logic here
         //conexion();
         //create();
-        listar();
+        //listar();
+        delete();
     }
 
     static void conexion() {
@@ -55,6 +56,11 @@ public class Test {
         System.out.println(g.toJson(kop.readAll()));
 
     }
-    
+    static void delete()
+    {
+        g.toJson(ko.deleate(10));
+        
+    }
+
 
 }
