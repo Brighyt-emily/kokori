@@ -6,12 +6,15 @@
 package pe.edu.upeu.presup.test;
 
 import com.google.gson.Gson;
+import pe.edu.upeu.presup.dao.DevoDao;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.dao.TipoDao;
+import pe.edu.upeu.presup.daoimp.DevoDaoImp;
 import pe.edu.upeu.presup.daoimp.DevolucionDaoImp;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
 import pe.edu.upeu.presup.daoimp.TipoDaoImp;
+import pe.edu.upeu.presup.entity.Devo;
 import pe.edu.upeu.presup.entity.Producto;
 import pe.edu.upeu.presup.entity.Tipo;
 import static pe.edu.upeu.presup.test.Test.conexion;
@@ -26,6 +29,7 @@ public class Test {
     static Gson g=new Gson();
     static DevolucionDao kop=new DevolucionDaoImp();
     static TipoDao i=new TipoDaoImp();
+    static DevoDao po=new DevoDaoImp();
     /**
      * @param args the command line arguments
      */
@@ -46,8 +50,8 @@ public class Test {
     }
     static void create()
     {
-        Tipo p= new Tipo("LOCURA");
-        if(i.create(p)>0)
+        Devo p= new Devo("LOCURA",2);
+        if(po.create(p)>0)
         {
             System.out.println("c:");
         }else
