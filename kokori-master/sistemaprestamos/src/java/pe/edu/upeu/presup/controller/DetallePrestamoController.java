@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package pe.edu.upeu.presup.controller;
 
 import com.google.gson.Gson;
@@ -8,13 +12,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import pe.edu.upeu.presup.dao.PrestamoDao;
-import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
-import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.dao.PrestamoDetalleDao;
+import pe.edu.upeu.presup.daoimp.DetallePrestamoDaoImp;
+import pe.edu.upeu.presup.entity.DetallePrestamo;
 
-public class PrestamoController extends HttpServlet {
-    
-    private PrestamoDao pr = new PrestamoDaoImp();
+/**
+ *
+ * @author CRIRI
+ */
+public class DetallePrestamoController extends HttpServlet {
+
+     private PrestamoDetalleDao dp = new DetallePrestamoDaoImp();
     private Gson g = new Gson();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -23,19 +31,10 @@ public class PrestamoController extends HttpServlet {
             int op = Integer.parseInt(request.getParameter("opc"));
              switch(op){
                  case 1:
-                        Prestamo p =new Prestamo(request.getParameter("fec_pre"),
-                                                 request.getParameter("alu"),
-                                                 request.getParameter("fe_devo"),
-                                                 request.getParameter("aula"),
-                                                 Integer.parseInt(request.getParameter("prof")),
-                                                 Integer.parseInt(request.getParameter("docu")),
-                                                 Integer.parseInt(request.getParameter("user")));
-                                     pr.create(p);
+                        DetallePrestamo d =new DetallePrestamo(Integer.parseInt(request.getParameter("prod")));
+                                     dp.create(d);
                  break;
-                 case 2:
-                     out.println(g.toJson(pr.readAll()));
-                 break;
-             }
+            }
         }
     }
 

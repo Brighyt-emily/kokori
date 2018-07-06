@@ -26,6 +26,17 @@ public class Prestamo {
 
     public Prestamo() {
     }
+
+    public Prestamo(String fe_prestamo, String nom_alumno, String fe_devolucion, String aula, int id_profe, int id_documento, int id_user) {
+        this.fe_prestamo = fe_prestamo;
+        this.nom_alumno = nom_alumno;
+        this.fe_devolucion = fe_devolucion;
+        this.aula = aula;
+        this.id_profe = id_profe;
+        this.id_documento = id_documento;
+        this.id_user = id_user;
+    }
+    
     
     
     

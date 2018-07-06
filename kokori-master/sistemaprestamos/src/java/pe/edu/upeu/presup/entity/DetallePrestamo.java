@@ -14,13 +14,22 @@ public class DetallePrestamo {
     int id_prestamo;
     int id_prod;
     int cantidad;
-    
 
-    public DetallePrestamo() {
+    public DetallePrestamo(int id_prod) {
+        this.id_prod = id_prod;
     }
     
     
     
+    
+    public int getId_detpres() {
+        return id_detpres;
+    }
+
+    public void setId_detpres(int id_detpres) {
+        this.id_detpres = id_detpres;
+    }
+
     public int getId_prestamo() {
         return id_prestamo;
     }
@@ -36,22 +45,6 @@ public class DetallePrestamo {
     public void setId_prod(int id_prod) {
         this.id_prod = id_prod;
     }
-    public DetallePrestamo(int id_detpres) {
-        this.id_detpres = id_detpres;
-    }
-
-    public DetallePrestamo(int id_detpres, int cantidad) {
-        this.id_detpres = id_detpres;
-        this.cantidad = cantidad;
-    }
-
-    public int getId_detpres() {
-        return id_detpres;
-    }
-
-    public void setId_detpres(int id_detpres) {
-        this.id_detpres = id_detpres;
-    }
 
     public int getCantidad() {
         return cantidad;
@@ -60,7 +53,6 @@ public class DetallePrestamo {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
     
     
 }

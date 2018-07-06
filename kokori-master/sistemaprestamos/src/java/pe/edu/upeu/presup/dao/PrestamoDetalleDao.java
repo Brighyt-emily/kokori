@@ -7,7 +7,7 @@ package pe.edu.upeu.presup.dao;
 
 import java.util.List;
 import pe.edu.upeu.presup.entity.DetallePrestamo;
-import pe.edu.upeu.presup.entity.Prestamo;
+
 
 
 /**
@@ -16,7 +16,7 @@ import pe.edu.upeu.presup.entity.Prestamo;
  */
 public interface PrestamoDetalleDao {
     List<DetallePrestamo> readAll();
+    int create(DetallePrestamo p);
     boolean search(String dp);
-    Prestamo read(int key);
     
   }
