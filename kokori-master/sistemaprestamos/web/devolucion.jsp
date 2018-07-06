@@ -1,7 +1,7 @@
 <%-- 
     Document   : devolucion
     Created on : 05/07/2018, 04:08:05 PM
-    Author     : ASUS
+    Author     : Emanuel Pinaud
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +14,7 @@
     </head>
     <body>
         <div class="row">
-                <nav class="nav-title s12 m12 l12 blue-grey">    </nav>
+                <nav class="nav-title s12 m12 l12 blue-grey"></nav>
         </div>
         <div class="container">
             
