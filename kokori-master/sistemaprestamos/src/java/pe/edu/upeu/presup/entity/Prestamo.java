@@ -20,6 +20,10 @@ public class Prestamo {
     int id_documento;
     int id_user;
 
+    public Prestamo(int idprestamo) {
+        this.idprestamo = idprestamo;
+    }
+
     public Prestamo() {
     }
     
