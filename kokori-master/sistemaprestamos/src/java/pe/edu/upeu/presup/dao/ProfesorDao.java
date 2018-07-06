@@ -29,5 +29,5 @@ public interface ProfesorDao {
     
     List<Facultad> listFacultad();
     
-    List<Escuela> listEscuela();
+    List<Escuela> listEscuelaByIdFacultad(int key);
 }

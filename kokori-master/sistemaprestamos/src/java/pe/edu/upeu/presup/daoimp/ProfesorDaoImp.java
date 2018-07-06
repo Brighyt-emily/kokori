@@ -139,15 +139,17 @@ public class ProfesorDaoImp implements ProfesorDao {
     }
 
     @Override
-    public List<Escuela> listEscuela() {
+    public List<Escuela> listEscuelaByIdFacultad(int key) {
         List<Escuela> list = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call }");
+            cst = cx.prepareCall("{call listEscuelaByIdFacultad(?)}");
+            cst.setInt(1, key);
             rs = cst.executeQuery();
             while (rs.next()) {
                 Escuela e = new Escuela();
                 e.setIdEscuela(rs.getInt("idescuela"));
+                e.setIdFacultad(rs.getInt("idfacultad"));
                 e.setNomEscuela(rs.getString("nombre"));
                 list.add(e);
             }

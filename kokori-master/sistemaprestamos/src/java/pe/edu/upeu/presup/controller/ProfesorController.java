@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.ProfesorDao;
 import pe.edu.upeu.presup.daoimp.ProfesorDaoImp;
+import pe.edu.upeu.presup.entity.Profesor;
 
 /**
  *
@@ -47,7 +48,24 @@ public class ProfesorController extends HttpServlet {
                 out.println(g.toJson(myProf.listarDescProfById(idProfesor)));
                 break;
             case 3:
-                out.println(g.toJson(myProf.listFacultad()));
+                int idFacultad = Integer.parseInt(request.getParameter("idf"));
+                out.println(g.toJson(myProf.listEscuelaByIdFacultad(idFacultad)));
+                break;
+            case 4:
+                //declaramos varibales
+                String nombres = request.getParameter("nombres");
+                String apellidos = request.getParameter("apellidos");
+                String direccion = request.getParameter("direccion");
+                String numCelular = request.getParameter("celular");
+                String numDni = request.getParameter("dni");
+                String email = request.getParameter("email");
+                int estado = Integer.parseInt(request.getParameter("estado"));
+                String grado = request.getParameter("grado");
+                String codigo = request.getParameter("codigo");
+                int idEscuela = Integer.parseInt(request.getParameter("escuela"));
+                //creamos el objeto p
+                Profesor p = new Profesor(estado, grado, codigo, idEscuela, nombres,apellidos, direccion,numCelular, numDni, email);
+                out.println(g.toJson(myProf.create(p)));
                 break;
         }
     }
