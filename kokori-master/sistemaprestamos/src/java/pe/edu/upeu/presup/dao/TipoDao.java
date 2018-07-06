@@ -5,16 +5,12 @@
  */
 package pe.edu.upeu.presup.dao;
 
-import java.util.List;
-import pe.edu.upeu.presup.entity.Devolucion;
-import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.entity.Tipo;
 
 /**
  *
  * @author EMILY
  */
-public interface DevolucionDao {
-    int delete (int key);
-    List<Devolucion> readAll();
-    int update(Prestamo p);
+public interface TipoDao {
+    int create(Tipo t);
 }

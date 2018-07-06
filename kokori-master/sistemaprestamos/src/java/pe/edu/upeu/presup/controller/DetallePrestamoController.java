@@ -3,46 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package pe.edu.upeu.presup.controller;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.edu.upeu.presup.dao.PrestamoDetalleDao;
+import pe.edu.upeu.presup.daoimp.DetallePrestamoDaoImp;
+import pe.edu.upeu.presup.entity.DetallePrestamo;
 
 /**
  *
- * @author HP
+ * @author CRIRI
  */
-@WebServlet(name = "login", urlPatterns = {"/login"})
-public class login extends HttpServlet {
+public class DetallePrestamoController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+     private PrestamoDetalleDao dp = new DetallePrestamoDaoImp();
+    private Gson g = new Gson();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet login</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet login at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            int op = Integer.parseInt(request.getParameter("opc"));
+             switch(op){
+                 case 1:
+                        DetallePrestamo d =new DetallePrestamo(Integer.parseInt(request.getParameter("prod")));
+                        dp.create(d);
+                 break;
+            }
         }
     }
 

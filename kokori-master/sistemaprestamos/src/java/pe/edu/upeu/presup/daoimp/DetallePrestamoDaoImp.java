@@ -7,10 +7,12 @@ package pe.edu.upeu.presup.daoimp;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import pe.edu.upeu.presup.dao.PrestamoDetalleDao;
 import pe.edu.upeu.presup.entity.DetallePrestamo;
 import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.util.Conexion;
 
 /**
  *
@@ -18,7 +20,7 @@ import pe.edu.upeu.presup.entity.Prestamo;
  */
 
 public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
-    private java.sql.CallableStatement cst;
+    private java.sql.CallableStatement cs;
     private ResultSet rs;
     private Connection cx;
 
@@ -30,13 +32,20 @@ public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
     @Override
     public boolean search(String dp) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    } 
 
     @Override
-    public Prestamo read(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int create(DetallePrestamo p) {
+        int x=0;
+        try{
+            cx= Conexion.getConexion();
+            cs=cx.prepareCall("{call createDetallePrestamo(?)}");
+            cs.setInt(1,p.getId_prod());
+            x= cs.executeUpdate();
+        }
+        catch(SQLException e){
+            System.out.println("Error"+e);
+        }
+        return x;
     }
-
-    
-    
 }
