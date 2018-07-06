@@ -12,10 +12,7 @@
         <title>JSP Page</title>
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
-    <body>
-        
-         <div class="mn-content fixed-sidebar">
-            
+    <body>                          
             <%@include file="WEB-INF/template/Principal.jspf" %>
             <!--INICIO Contenido -->
             <main class="mn-inner">
@@ -43,27 +40,23 @@
 
                 <tbody>
                 </tbody>
-            </table>
-                                
-                                
-                                
+            </table>                                                                                               
+                                <!--Modal para ver detalladamente el resgitro de los profesores-->
+                                <!-- Modal Trigger -->
+                                <a class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</a>
 
-                                    <!--Modal para ver detalladamente el resgitro de los profesores-->
-                                    <!-- Modal Trigger -->
-                                    <a class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</a>
-
-                                    <!-- Modal Structure -->
-                                    <div id="modal1" class="modal">
-                                        <div class="modal-content">
-                                            <h4>Titulo del modal</h4>
-                                            <p>Cuerpo del modal</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                                        </div>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Titulo del modal</h4>
+                                        <p>Cuerpo del modal</p>
                                     </div>
-                                    <!-- fin del modal -->
-                               
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                    </div>
+                                </div>
+                                <!-- fin del modal -->
+
                                     
                                     
                                 
