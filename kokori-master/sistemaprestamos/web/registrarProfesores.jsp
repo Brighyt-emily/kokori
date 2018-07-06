@@ -105,11 +105,7 @@
                                             <div class="input-field col s5 m5 l5">
                                                 <i class="material-icons prefix">collections_bookmark</i>  
                                                 <select id="secEscuela">
-                                                    <option value="0" disabled selected>Escuelas</option>
-                                                    <option value="1">FIA</option>
-                                                    <option value="2">FACTEO</option>
-                                                    <option value="3">FCE</option>
-                                                    <option value="4">FACIHED</option>
+                                                    <option value="0" disabled selected>Facultades de la UPeU</option>
                                                 </select>
                                                 <label>Carreras</label>
                                             </div>
