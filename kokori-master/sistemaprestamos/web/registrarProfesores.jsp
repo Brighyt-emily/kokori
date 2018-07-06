@@ -266,6 +266,36 @@
                                                         </div>
                                                     </div>
                                                 </div>
+<<<<<<< HEAD
+=======
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s5 m5 l5">
+                                                <i class="material-icons prefix">class</i>
+                                                <select id="secFacultad">
+                                                    <option value="0" disabled selected>Facultades de la UPeU</option>
+                                                    <option value="1">FIA</option>
+                                                    <option value="2">FACTEO</option>
+                                                    <option value="3">FCE</option>
+                                                    <option value="4">FACIHED</option>
+                                                </select>
+                                                <label>Facultades</label>
+                                            </div>
+                                            <div class="col s2 center-align">
+                                                <a class="btn-floating btn-large waves-effect waves-light blue-grey" id="btnMostrar"><i class="material-icons">keyboard_arrow_right</i></a>
+                                            </div>
+                                            <div class="input-field col s5 m5 l5">
+                                                <i class="material-icons prefix">collections_bookmark</i>  
+                                                <select id="secEscuela">
+                                                    <option value="0" disabled selected>Facultades de la UPeU</option>
+                                                </select>
+                                                <label>Carreras</label>
+                                            </div>
+>>>>>>> 5cd2d395185736c2ec51945e75b10260e11a2286
+                                        </div>
+                                    </div>
+>>>>>>> 21568a7e38981306c81dab3ee76f58f423f22ff6
 
                                             </div>
                                         </div>

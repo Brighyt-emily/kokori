@@ -9,7 +9,7 @@ package pe.edu.upeu.presup.entity;
  *
  * @author EMILY
  */
-public class Devolucion {
+public class Devolucion extends Tipo{
     private String nom;
     private String  ape;
     private String codi;
@@ -19,10 +19,26 @@ public class Devolucion {
     private String no;
     private String nom_tip;
 
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idTipo, String noTipo) {
+        super(idTipo, noTipo);
+        this.nom = nom;
+        this.ape = ape;
+        this.codi = codi;
+        this.fep = fep;
+        this.fed = fed;
+        this.est = est;
+        this.no = no;
+    }
+
     public Devolucion() {
     }
 
+<<<<<<< HEAD
     public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String nom_tip) {
+=======
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String noTipo) {
+        super(noTipo);
+>>>>>>> 21568a7e38981306c81dab3ee76f58f423f22ff6
         this.nom = nom;
         this.ape = ape;
         this.codi = codi;
@@ -100,5 +116,5 @@ public class Devolucion {
     }
     
     
-    
+
 }

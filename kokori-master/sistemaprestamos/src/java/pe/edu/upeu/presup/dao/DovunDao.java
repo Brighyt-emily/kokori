@@ -12,6 +12,10 @@ import pe.edu.upeu.presup.entity.Prestamo;
  * @author EMILY
  */
 public interface DovunDao {
+<<<<<<< HEAD
     int updatet(Prestamo p);
+=======
+   
+>>>>>>> 21568a7e38981306c81dab3ee76f58f423f22ff6
 
 }
