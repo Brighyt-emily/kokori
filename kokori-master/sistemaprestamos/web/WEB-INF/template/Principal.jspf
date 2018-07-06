@@ -1,5 +1,16 @@
+        
 
 
+        <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        </div>
+
+
+
+
+ <div class="mn-content fixed-sidebar">
 <header class="mn-header navbar-fixed">
                 <nav class="blue-grey darken-4">
                     <div class="nav-wrapper row">
@@ -13,9 +24,17 @@
                         </div>
                         
                         <ul class="right col s9 m3 nav-right-menu">
+                           
                             <li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>
                             <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
                             <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
+                            <li class="hide-on-med-and-up"><div class="chip">
+                                    <img src="assets/images/profile-image-1.png" alt="Contact Person">
+                                    Jane Doe
+                                </div></li>
+                           
+                            
+                          
                         </ul>
                         
                         
@@ -297,8 +316,8 @@
                         
                     </ul>
                     <div class="footer">
-                        <p class="copyright">ALPHALPHA TEAM ©</p>
-                        <a href="#!">Privacy</a> &amp; <a href="#!">Terms</a>
+                        <p class="copyright">ALPHALPHA TEAM © :,V</p>
+                        <a href="#!">PrivacyTI</a> &amp; <a href="#!">Terms</a>
                     </div>
                 </div>
             </aside>

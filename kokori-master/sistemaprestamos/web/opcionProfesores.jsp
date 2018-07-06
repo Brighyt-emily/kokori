@@ -13,6 +13,7 @@
         <%@include file="WEB-INF/template/headerMain.jspf" %>
     </head>
     <body>
+        
         <div class="container">
             <h1 class="center-align">
                 Opciones
