@@ -68,16 +68,20 @@
                             </div>
                             <div class="col s4">
                                 <div class="input-field">
+                                    <form name="fechas" id="fechas">
                                     <i class="material-icons prefix">insert_invitation</i>
-                                    <label for="fecha">Fecha</label>
-                                    <input type="text" name="fecha" required>
+                                    <label for="fechawe">Fecha</label>
+                                      <input type="text" id="fecha" name="fecha" id="fecha" required>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col s4">
                                 <div class="input-field">
+                                    <form name="horas" id="horas">
                                     <i class="material-icons prefix">access_time</i>
-                                    <label for="hora">Hora</label>
-                                    <input type="text" name="hora" required>
+                                    <label for="hor">Hora</label>
+                                    <input type="text" name="hora" id="hora" required>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -90,9 +94,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
+            <script src="js/prestamo.js" type="text/javascript"></script>
+
         </main>
         <%@include file="WEB-INF/template/footer.jspf" %>
-        <script src="js/prestamo.js" type="text/javascript"></script>
+
+
     </body>
 </html>

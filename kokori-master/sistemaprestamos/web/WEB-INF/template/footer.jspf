@@ -1,20 +1,46 @@
-        <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
-        <script src="assets/plugins/materialize/js/materialize.min.js"></script>
-        <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
-        <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-        <script src="assets/plugins/fullcalendar/moment.min.js"></script>
-        <script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
-        <script src="assets/js/alpha.min.js"></script>
-        <script src="assets/js/pages/calendar.js"></script>
-        <script>
-        $(function() {
-            /*Preloader*/
-            $(window).load(function() {
-                setTimeout(function() {
-                    $('body').addClass('loaded');
-                }, 400);
+<script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="assets/plugins/materialize/js/materialize.min.js"></script>
+<script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+<script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="assets/plugins/fullcalendar/moment.min.js"></script>
+<script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="assets/js/alpha.min.js"></script>
+<script src="assets/js/pages/calendar.js"></script>
+<script>
+    $(function () {
+        /*Preloader*/
+        $(window).load(function () {
+            setTimeout(function () {
+                $('body').addClass('loaded');
+            }, 400);
 
-            });
         });
+    });
 
-    </script>
+</script>
+<script>
+
+    var mydate = new Date();
+    var year = mydate.getYear();
+    if (year < 1000)
+        year += 1900;
+    var day = mydate.getDay();
+    var month = mydate.getMonth() + 1;
+    if (month < 10)
+        month = "0" + month;
+    var daym = mydate.getDate();
+    if (daym < 10)
+        daym = "0" + daym;
+
+    document.fechas.fecha.value = daym + "/" + month + "/" + year
+
+    //////////////////////////
+
+    var fecha = new Date()
+    var horas = fecha.getHours()
+    var minutos = fecha.getMinutes()
+    var segundos = fecha.getSeconds()
+    
+    document.horas.hora.value =  horas+":"+minutos+":"+segundos
+
+</script>

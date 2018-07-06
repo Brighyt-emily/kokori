@@ -17,11 +17,12 @@ public class Devolucion {
     private String fed;
     private int est;
     private String no;
+    private String nom_tip;
 
     public Devolucion() {
     }
 
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no) {
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String nom_tip) {
         this.nom = nom;
         this.ape = ape;
         this.codi = codi;
@@ -29,7 +30,18 @@ public class Devolucion {
         this.fed = fed;
         this.est = est;
         this.no = no;
+        this.nom_tip = nom_tip;
     }
+
+    public String getNom_tip() {
+        return nom_tip;
+    }
+
+    public void setNom_tip(String nom_tip) {
+        this.nom_tip = nom_tip;
+    }
+
+    
 
     public String getNom() {
         return nom;

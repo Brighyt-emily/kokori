@@ -45,6 +45,8 @@ public class DevolucionDaoImp implements DevolucionDao{
                 p.setFed(rs.getString("fe_devolucion"));
                 p.setFep(rs.getString("fe_prestamo"));
                 p.setNo(rs.getString("nombre"));
+                p.setNom_tip(rs.getString("nom_tipo"));
+                
 
                 datos.add(p);
             }

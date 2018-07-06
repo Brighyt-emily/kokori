@@ -1,3 +1,7 @@
+$(document).ready(function () {
+   
+});
+// Autocompletado de DNI 
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.autocomplete');
     var instances = M.Autocomplete.init(elems, options);
@@ -12,4 +16,3 @@ $(document).ready(function () {
         },
     });
 });
-///////////////

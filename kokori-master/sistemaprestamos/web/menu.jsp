@@ -88,10 +88,7 @@
             </header>
         
         
-        <div class="container">
-                <div class="row">
-                    
-                    <div class="col s12 m12 l12">
+      
                         <div class="card">
                             <div class="card-content m3 center ">
                                 
@@ -103,9 +100,7 @@
                                 
                             </div>
                         </div>
-                    </div>
-                </div>
-        </div>
+        
         
          <%@include file="WEB-INF/template/footer.jspf" %>
          <script src="js/menu.js" type="text/javascript"></script>
