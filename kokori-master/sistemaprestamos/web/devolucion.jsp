@@ -38,7 +38,7 @@
                  <td>23/05/2018</td>
                  <td>25/05/2018</td>
                  <td>DNI</td>
-                 <td><button class="btn btn-primary green lighten-1 col s10 m10 l10">Devolver</button><td>
+                 <td><button class="btn btn-primary teal lighten-1 col s10 m10 l10">Devolver</button><td>
                </tr>
                <tr>
                  <td>002</td>
@@ -47,7 +47,7 @@
                  <td>23/05/2018</td>
                  <td>25/05/2018</td>
                  <td>Carnet</td>
-                 <td><button class="btn btn-primary green lighten-1 col s10 m10 l10">Devolver</button><td>
+                 <td><button class="btn btn-primary teal lighten-1 col s10 m10 l10">Devolver</button><td>
                </tr>
                <tr>
                  <td>002</td>
@@ -56,7 +56,7 @@
                  <td>23/05/2018</td>
                  <td>25/05/2018</td>
                  <td>DNI</td>
-                 <td><button class="btn btn-primary green lighten-1  col s10 m10 l10">Devolver</button><td>
+                 <td><button class="btn btn-primary teal lighten-1  col s10 m10 l10">Devolver</button><td>
                </tr>
              </tbody>
             </table> 
