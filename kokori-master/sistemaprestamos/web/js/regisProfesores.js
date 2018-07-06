@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('select').formSelect();
+    $("#secEscuela").formSelect();
 });
 
 $("#btnMostrar").click(function () {

@@ -46,13 +46,31 @@ public class ProductoDaoImp implements ProductoDao {
 
     @Override
     public int deleate(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        boolean p = false;
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call deleteProducto(?)}");
+            cst.setInt(1, key);
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("ERROR: "+e);
+        }
+        return x;         }
 
     @Override
     public int update(Producto p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call updateProducto(?,?)}");
+            cst.setInt(1, p.getIdP());
+            cst.setInt(2, p.getEst());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("ERROR: "+e);
+        }
+        return x;    }
 
     @Override
     public Producto read(Producto key) {
