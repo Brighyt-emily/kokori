@@ -33,16 +33,11 @@ public class Devo extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Devo</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Devo at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            int op = Integer.parseInt(request.getParameter("opc"));
+           switch(op){
+               case 1:
+                   break;
+           }
         }
     }
 

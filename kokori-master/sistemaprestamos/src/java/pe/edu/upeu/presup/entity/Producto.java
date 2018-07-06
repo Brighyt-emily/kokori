@@ -8,7 +8,7 @@ package pe.edu.upeu.presup.entity;
 
 /**
  *
- * @author HP
+ * @author  EMILY
  */
 public class Producto {
     private int idP;
