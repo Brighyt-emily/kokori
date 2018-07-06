@@ -21,11 +21,9 @@
                     <div class="col s12">
                         <div class="page-title">
                             <i class="material-icons">add</i>
-                            
                          Registrar Profesor   
                         </div>
                     </div>
-<<<<<<< HEAD
                     <div class="col s4">
                         <div class="input-field">
                             <i class="material-icons prefix">person_pin</i>
@@ -78,7 +76,6 @@
                             <i class="material-icons prefix">select_all</i>
                             <label for="codigo">Codigo Asignado</label>
                             <input type="text" name="codigo" disabled="" id="txtCodigo">                            
-=======
                     <div class="col s12 m12 l12">
                         <div class="card">
                             
@@ -181,7 +178,6 @@
                                     </div>
                                 
                             </div>
->>>>>>> d15160398d282f3ea5dd3d8ee37eef7281b6f3f0
                         </div>
                     </div>
                 </div>
@@ -189,8 +185,6 @@
            <!--FIN Contenido-->
         </div>
         <div class="left-sidebar-hover"></div>
-        
-        
         <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/regisProfesores.js" type="text/javascript"></script>
     </body>
