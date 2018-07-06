@@ -64,7 +64,7 @@ public class ProfesorController extends HttpServlet {
                 String codigo = request.getParameter("codigo");
                 int idEscuela = Integer.parseInt(request.getParameter("escuela"));
                 //creamos el objeto p
-                Profesor p = new Profesor(estado, grado, codigo, idEscuela, nombres,apellidos, direccion,numCelular, numDni, email);
+                Profesor p = new Profesor(estado, grado, codigo, idEscuela, nombres, apellidos, direccion, numCelular, numDni, email);
                 out.println(g.toJson(myProf.create(p)));
                 break;
         }

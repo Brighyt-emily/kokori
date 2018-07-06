@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $('select').formSelect();
-    $("#secEscuela").formSelect();
+    //$('select').formSelect();
+    //$("#secEscuela").formSelect();
 });
 
 $("#btnMostrar").click(function () {
@@ -17,19 +17,20 @@ $("#btnMostrar").click(function () {
             }
         });
     } else {
-        console.log("seleccione un valor para la caja de texto");
+        alert("seleccione un valor para la caja de texto");
     }
 });
 $("#btnRegistrar").click(function () {
-    var nombres = $("#txtNombres").val();
-    var apellidos = $("#txtApellidos").val();
-    var celular = $("#txtNumCelular").val();
-    var email = $("#txtEmail").val();
-    var direccion = $("#txtDireccion").val();
-    var grado = $("#txtGrado").val();
-    var dni = $("#txtDni").val();
-    var codigo = $("#txtCodigo").val();
-    $.post("pc", {"nombres": nombres, "apellidos":apellidos, "celular": celular, "email":email, "direccion":direccion,"grado": grado, "dni": dni, "codigo": codigo});
-    M.toast({html: 'Se le asigno un codigo', classes: 'rounded'});
-    
+    var nombres = $("#nombres").val();
+    var apellidos = $("#apellidos").val();
+    var celular = $("#celular").val();
+    var email = $("#email").val();
+    var direccion = $("#direccion").val();
+    var grado = $("#grado").val();
+    var dni = $("#dni").val();
+    var codigo = $("#codigo").val();
+    var x = $("#secEscuela").val();
+    var ide = parseInt(x);
+    $.post("pc", {"nombres": nombres, "apellidos":apellidos, "celular": celular, "email":email, "direccion":direccion,"grado": grado, "dni": dni, "codigo": codigo, "escuela":ide});
+        
 });
