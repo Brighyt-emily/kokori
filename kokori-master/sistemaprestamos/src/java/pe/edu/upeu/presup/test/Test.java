@@ -41,9 +41,9 @@ public class Test {
         // TODO code application logic here
         //conexion();
         //create();
-        //listar();
+        listar();
         //delete();
-        update();
+        //update();
     }
 
     static void conexion() {
