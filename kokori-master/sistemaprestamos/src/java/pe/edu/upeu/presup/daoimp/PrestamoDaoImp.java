@@ -84,7 +84,28 @@ public class PrestamoDaoImp implements PrestamoDao {
 
     @Override
     public Prestamo read(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Prestamo p = new Prestamo();
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call SearchPrestamo(?)}");
+            cs.setInt(1, key); 
+            rs = cs.executeQuery();
+            while(rs.next()){
+               p.setIdprestamo(rs.getInt(1));
+                p.setEstado(rs.getInt(2));
+                p.setFe_prestamo(rs.getString(3));
+                p.setNom_alumno(rs.getString(4));
+                p.setFe_devolucion(rs.getString(5));
+                p.setAula(rs.getString(6));
+                p.setId_profe(rs.getInt(7));
+                p.setId_documento(rs.getInt(8));
+                p.setId_user(rs.getInt(9));
+               
+            }
+        } catch (SQLException e) {
+            System.out.println("Error:"+ e);
+        }
+        return p;
     }
     
     

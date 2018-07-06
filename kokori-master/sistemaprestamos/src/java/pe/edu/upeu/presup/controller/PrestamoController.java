@@ -30,10 +30,13 @@ public class PrestamoController extends HttpServlet {
                                                  Integer.parseInt(request.getParameter("prof")),
                                                  Integer.parseInt(request.getParameter("docu")),
                                                  Integer.parseInt(request.getParameter("user")));
-                                     pr.create(p);
+                                                 pr.create(p);
                  break;
                  case 2:
                      out.println(g.toJson(pr.readAll()));
+                 break;
+                 case 3:
+                     out.println(g.toJson(pr.read(Integer.parseInt(request.getParameter("id")))));
                  break;
              }
         }
