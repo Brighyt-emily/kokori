@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.entity.Devolucion;
+import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -45,7 +46,7 @@ public class DevolucionDaoImp implements DevolucionDao{
                 p.setFed(rs.getString("fe_devolucion"));
                 p.setFep(rs.getString("fe_prestamo"));
                 p.setNo(rs.getString("nombre"));
-
+                p.setNoTipo(rs.getString("nom_tipo"));
                 datos.add(p);
             }
         }catch(SQLException e)
@@ -53,6 +54,20 @@ public class DevolucionDaoImp implements DevolucionDao{
             System.out.println("ERROR: "+e);
         }
         return datos;
+    }
+
+    @Override
+    public int update(Prestamo p) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call updateDevoun(?)}");
+            cst.setInt(1, p.getIdprestamo());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("ERROR: "+e);
+        }
+        return x;      
     }
     }
     

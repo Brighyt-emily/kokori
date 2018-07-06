@@ -12,6 +12,10 @@
         <servlet-name>ProfesorController</servlet-name>
         <servlet-class>pe.edu.upeu.presup.controller.ProfesorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetallePrestamoController</servlet-name>
+        <servlet-class>pe.edu.upeu.presup.controller.DetallePrestamoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrestamoController</servlet-name>
         <url-pattern>/Pc</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ProfesorController</servlet-name>
         <url-pattern>/pc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetallePrestamoController</servlet-name>
+        <url-pattern>/DPC</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -11,9 +11,14 @@ $("#btnMostrar").click(function () {
         $.get("pc", {"op": 3, "idf": idf}, function (data) {
             var w = JSON.parse(data);
             alert(data);
-            $("#secEscuela option").remove();
+           
             for (var i = 0; i < w.length; i++) {
-                $("#secEscuela").append('<option value='+i+'>'+w[i].nomEscuela+'</option>'); 
+                alert(w[i].nomEscuela);
+                
+                
+                
+                $("#secEscuela").append('<option value='+( i) +'>'+(w[i].nomEscuela)+'</option>');
+                
             }
         });
     } else {
