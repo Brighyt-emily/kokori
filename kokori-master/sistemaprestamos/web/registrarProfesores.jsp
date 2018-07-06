@@ -78,17 +78,21 @@
                             <input type="text" name="codigo" disabled="">                            
                         </div>
                     </div>
-                </div>                
-                
+                </div>
                 <div class="row">
-                    <div class="input-field col s12">
-                        <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">eres</option>
-                            <option value="2">un</option>
-                            <option value="3">noobsito</option>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">class</i>
+                        <select id="secFacultad">
+                            
                         </select>
-                        <label>Carreras</label>
+                        <label>Facultades</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">collections_bookmark</i>  
+                        <select id="secEscuela">
+                            
+                        </select>
+                        <label>Escuela</label>
                     </div>
                    </div>
                 
@@ -101,8 +105,6 @@
             </div>
         </div>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
-        <script src="js/profesor.js" type="text/javascript"></script>
-       
-        
+        <script src="js/regisProfesores.js" type="text/javascript"></script>
     </body>
 </html>

@@ -7,6 +7,8 @@ package pe.edu.upeu.presup.dao;
 
 import java.util.List;
 import java.util.Map;
+import pe.edu.upeu.presup.entity.Escuela;
+import pe.edu.upeu.presup.entity.Facultad;
 import pe.edu.upeu.presup.entity.Profesor;
 
 /**
@@ -20,12 +22,12 @@ public interface ProfesorDao {
     int update(Profesor p);
 
     int delete(int key);
-
-    Profesor read(int key);
-
-    List<Profesor> readAll();
     
     List<Map<String, Object>> listarRegisProfesores();
     
     List<Map<String, Object>> listarDescProfById(int key);
+    
+    List<Facultad> listFacultad();
+    
+    List<Escuela> listEscuela();
 }
