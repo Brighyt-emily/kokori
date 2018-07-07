@@ -27,7 +27,11 @@ private java.sql.CallableStatement cst;
         {
             cx= Conexion.getConexion();
             cst = cx.prepareCall("{call createTipo(?)}");
+<<<<<<< HEAD
+            cst.setString(1, t.getNom());
+=======
             cst.setString(1, t.getNoTipo());
+>>>>>>> 21568a7e38981306c81dab3ee76f58f423f22ff6
             x = cst.executeUpdate();
             
         }catch(SQLException e)
