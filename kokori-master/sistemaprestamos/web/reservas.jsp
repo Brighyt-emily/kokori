@@ -13,9 +13,12 @@
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
-        <%@include file="WEB-INF/template/Principal.jspf" %>
-        <main class="mn-inner">
-            <h1>Reservas..!</h1>
+        <main class="mn-inner"> 
+            <div class="card">
+                <div class="card-content">
+                    <p>Reservar</p>
+                </div>
+            </div>
         </main>
         <%@include file="WEB-INF/template/footer.jspf" %>
     </body>
