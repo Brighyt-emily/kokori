@@ -14,7 +14,7 @@ import pe.edu.upeu.presup.entity.Prestamo;
  * @author HP
  */
 public interface PrestamoDao {
-   int create(Prestamo p);
+    int create(Prestamo p);
     int update(Prestamo p);
     List<Prestamo> readAll();
     boolean search(String p);

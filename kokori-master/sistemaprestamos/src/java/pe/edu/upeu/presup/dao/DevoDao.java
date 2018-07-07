@@ -5,18 +5,13 @@
  */
 package pe.edu.upeu.presup.dao;
 
-import java.util.List;
-import pe.edu.upeu.presup.entity.DetallePrestamo;
-
-
+import pe.edu.upeu.presup.entity.Devo;
 
 /**
  *
- * @author HP
+ * @author EMILY
  */
-public interface PrestamoDetalleDao {
-    List<DetallePrestamo> readAll();
-    int create(DetallePrestamo p);
-    boolean search(String dp);
+public interface DevoDao {
+    int create(Devo d);
     
-  }
+}

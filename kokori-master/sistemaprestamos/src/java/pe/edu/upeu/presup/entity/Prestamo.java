@@ -20,8 +20,28 @@ public class Prestamo {
     int id_documento;
     int id_user;
 
+    public Prestamo(int idprestamo) {
+        this.idprestamo = idprestamo;
+    }
+
     public Prestamo() {
     }
+
+    public Prestamo(String fe_prestamo, String nom_alumno, String fe_devolucion, String aula, int id_profe, int id_documento, int id_user) {
+        this.fe_prestamo = fe_prestamo;
+        this.nom_alumno = nom_alumno;
+        this.fe_devolucion = fe_devolucion;
+        this.aula = aula;
+        this.id_profe = id_profe;
+        this.id_documento = id_documento;
+        this.id_user = id_user;
+    }
+
+    public Prestamo(int idprestamo, int estado) {
+        this.idprestamo = idprestamo;
+        this.estado = estado;
+    }
+
     
     
     
@@ -94,6 +114,10 @@ public class Prestamo {
 
     public void setAula(String aula) {
         this.aula = aula;
+    }
+
+    public void update(Prestamo p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

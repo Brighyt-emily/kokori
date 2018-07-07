@@ -9,7 +9,7 @@ package pe.edu.upeu.presup.entity;
  *
  * @author EMILY
  */
-public class Devolucion {
+public class Devolucion extends Tipo{
     private String nom;
     private String  ape;
     private String codi;
@@ -17,11 +17,11 @@ public class Devolucion {
     private String fed;
     private int est;
     private String no;
+    private int idprestamo;
+    private String nom_tip;
 
-    public Devolucion() {
-    }
-
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no) {
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, String nom_tip, int idTipo, String noTipo) {
+        super(idTipo, noTipo);
         this.nom = nom;
         this.ape = ape;
         this.codi = codi;
@@ -29,6 +29,23 @@ public class Devolucion {
         this.fed = fed;
         this.est = est;
         this.no = no;
+        this.idprestamo = idprestamo;
+        this.nom_tip = nom_tip;
+    }
+
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, String nom_tip) {
+        this.nom = nom;
+        this.ape = ape;
+        this.codi = codi;
+        this.fep = fep;
+        this.fed = fed;
+        this.est = est;
+        this.no = no;
+        this.idprestamo = idprestamo;
+        this.nom_tip = nom_tip;
+    }
+
+    public Devolucion() {
     }
 
     public String getNom() {
@@ -86,7 +103,23 @@ public class Devolucion {
     public void setNo(String no) {
         this.no = no;
     }
+
+    public int getIdprestamo() {
+        return idprestamo;
+    }
+
+    public void setIdprestamo(int idprestamo) {
+        this.idprestamo = idprestamo;
+    }
+
+    public String getNom_tip() {
+        return nom_tip;
+    }
+
+    public void setNom_tip(String nom_tip) {
+        this.nom_tip = nom_tip;
+    }
+
     
-    
-    
+
 }

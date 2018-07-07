@@ -5,6 +5,7 @@
  */
 package pe.edu.upeu.presup.controller;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +13,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.edu.upeu.presup.dao.DevolucionDao;
+import pe.edu.upeu.presup.dao.PrestamoDao;
+import pe.edu.upeu.presup.daoimp.DevolucionDaoImp;
+import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
+import pe.edu.upeu.presup.entity.Prestamo;
 
 /**
  *
@@ -19,7 +25,9 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "de", urlPatterns = {"/de"})
 public class Devo extends HttpServlet {
-
+    private DevolucionDao d = new DevolucionDaoImp();
+    private Gson g = new Gson();
+    private DevolucionDao pres=new DevolucionDaoImp();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,7 +44,12 @@ public class Devo extends HttpServlet {
             int op = Integer.parseInt(request.getParameter("opc"));
            switch(op){
                case 1:
-                   break;
+                   out.println(g.toJson(d.readAll()));
+               break;
+               case 2:
+                    Prestamo pre = new Prestamo(Integer.parseInt(request.getParameter("idprestamo")), Integer.parseInt(request.getParameter("estado")));
+                    pres.update(pre);
+                    break;
            }
         }
     }
@@ -80,4 +93,5 @@ public class Devo extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
 }
