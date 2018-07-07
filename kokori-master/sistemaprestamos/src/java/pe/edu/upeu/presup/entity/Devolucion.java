@@ -17,8 +17,9 @@ public class Devolucion extends Tipo{
     private String fed;
     private int est;
     private String no;
+    private int idprestamo;
 
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idTipo, String noTipo) {
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, int idTipo, String noTipo) {
         super(idTipo, noTipo);
         this.nom = nom;
         this.ape = ape;
@@ -27,12 +28,10 @@ public class Devolucion extends Tipo{
         this.fed = fed;
         this.est = est;
         this.no = no;
+        this.idprestamo = idprestamo;
     }
 
-    public Devolucion() {
-    }
-
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String noTipo) {
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, String noTipo) {
         super(noTipo);
         this.nom = nom;
         this.ape = ape;
@@ -41,6 +40,10 @@ public class Devolucion extends Tipo{
         this.fed = fed;
         this.est = est;
         this.no = no;
+        this.idprestamo = idprestamo;
+    }
+
+    public Devolucion() {
     }
 
     public String getNom() {
@@ -98,7 +101,15 @@ public class Devolucion extends Tipo{
     public void setNo(String no) {
         this.no = no;
     }
-    
+
+    public int getIdprestamo() {
+        return idprestamo;
+    }
+
+    public void setIdprestamo(int idprestamo) {
+        this.idprestamo = idprestamo;
+    }
+
     
 
 }

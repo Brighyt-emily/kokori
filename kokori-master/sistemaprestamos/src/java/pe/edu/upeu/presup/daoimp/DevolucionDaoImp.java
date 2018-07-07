@@ -39,6 +39,7 @@ public class DevolucionDaoImp implements DevolucionDao{
             while(rs.next())
             {
                 Devolucion p=new Devolucion();
+                Prestamo pres=new Prestamo();
                 p.setNom(rs.getString("nombres"));
                 p.setApe(rs.getString("apellidos"));
                 p.setCodi(rs.getString("codigo"));
@@ -47,7 +48,9 @@ public class DevolucionDaoImp implements DevolucionDao{
                 p.setFep(rs.getString("fe_prestamo"));
                 p.setNo(rs.getString("nombre"));
                 p.setNoTipo(rs.getString("nom_tipo"));
+                p.setIdprestamo(rs.getInt("idprestamo"));
                 datos.add(p);
+                
             }
         }catch(SQLException e)
         {
@@ -61,8 +64,9 @@ public class DevolucionDaoImp implements DevolucionDao{
         int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call updateDevoun(?)}");
+            cst = cx.prepareCall("{call updatePrestamo(?,?)}");
             cst.setInt(1, p.getIdprestamo());
+            cst.setInt(2, p.getEstado());
             x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERROR: "+e);

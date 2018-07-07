@@ -2,12 +2,12 @@ package pe.edu.upeu.presup.test;
 import com.google.gson.Gson;
 import pe.edu.upeu.presup.dao.DevoDao;
 import pe.edu.upeu.presup.dao.DevolucionDao;
-import pe.edu.upeu.presup.dao.DovunDao;
+import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.dao.TipoDao;
 import pe.edu.upeu.presup.daoimp.DevoDaoImp;
 import pe.edu.upeu.presup.daoimp.DevolucionDaoImp;
-import pe.edu.upeu.presup.daoimp.DovunDaoImp;
+import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
 import pe.edu.upeu.presup.daoimp.TipoDaoImp;
 import pe.edu.upeu.presup.entity.Devo;
@@ -27,7 +27,7 @@ public class Test {
     static DevolucionDao kop=new DevolucionDaoImp();
     static TipoDao i=new TipoDaoImp();
     static DevoDao po=new DevoDaoImp();
-    static DovunDao fo=new DovunDaoImp();
+ 
     /**
      * @param args the command line arguments
      */
@@ -35,9 +35,9 @@ public class Test {
         // TODO code application logic here
         //conexion();
         //create();
-        listar();
+        //listar();
         //delete();
-        //update();
+        update();
 
     }
 
@@ -71,8 +71,8 @@ public class Test {
     }
     static void update()
     {
-        Prestamo p= new Prestamo(2);
-        if(fo.updatet(p)>0)
+        Prestamo p= new Prestamo(1,0);
+        if(kop.update(p)>0)
         {
             System.out.println("c:");
         }else

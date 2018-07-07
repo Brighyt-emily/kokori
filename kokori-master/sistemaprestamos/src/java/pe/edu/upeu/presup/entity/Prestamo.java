@@ -36,7 +36,12 @@ public class Prestamo {
         this.id_documento = id_documento;
         this.id_user = id_user;
     }
-    
+
+    public Prestamo(int idprestamo, int estado) {
+        this.idprestamo = idprestamo;
+        this.estado = estado;
+    }
+
     
     
     
@@ -109,6 +114,10 @@ public class Prestamo {
 
     public void setAula(String aula) {
         this.aula = aula;
+    }
+
+    public void update(Prestamo p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
