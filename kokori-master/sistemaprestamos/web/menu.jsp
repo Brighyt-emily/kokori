@@ -16,7 +16,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-            
+    <link href="css/diego.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
     </head>
     <body>
@@ -88,19 +88,128 @@
             </header>
         
         
-      
-                        <div class="card">
-                            <div class="card-content m3 center ">
-                                
-                                <span class="menu-title">Iconos mi hermano</span>
-                                
-                                
-                                
-                                
-                                
-                            </div>
-                        </div>
+                       <div class="container">
+                            <div class="card center">
+                                <div class="card-content">
+                                    <div class="row">
+                                        <div class="col l12 m12 s12">
+                                            <div class="menu-title">
+                                                <i class="material-icons tiny">computer</i>General <br/>
+                                                <div class="grey-text">
+                                                 Accesos y funciones generales del sistema
+                                                </div>
+                                            </div>
+                                                <br/>
+                                                <div class="container">
+                                                        <div class="row center">
+                                                            <div class="col s3">
+                                                                <a class="btn-floating btn-large waves-effect waves-light red">
+                                                                <i class="material-icons">nature_people</i></a>
+                                                                <p class="title bold">Mi Perfil</p>
+                                                            </div>
+                                                            <div class="col s3">
+                                                                <a class="btn-floating btn-large waves-effect waves-light red">
+                                                                <i class="material-icons">event_available</i></a>
+                                                                <p class="title bold">Reservas</p>
+                                                            </div>    
+                                                            <div class="col s3">
+                                                                <a class="btn-floating btn-large waves-effect waves-light red">
+                                                                <i class="material-icons">dvr</i></a>
+                                                                <p class="title bold">Prestamos</p>
+                                                            </div> 
+                                                            <div class="col s3">
+                                                                <a class="btn-floating btn-large waves-effect waves-light red">
+                                                                <i class="material-icons">event_note</i></a>
+                                                                <p class="title bold">Reportes</p>
+                                                            </div> 
+                                        
+                                                        </div>
+                                                </div>
+                                                
+                                        </div>
+                            
+                        
+                            
+                                        <div class="col l12 m12 s12">
+                                            <div class="menu-title">
+                                                <i class="material-icons tiny">work</i>Profesor<br/>
+                                                <div class="grey-text">
+                                                    Gestion Profesores
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            <div class="container">
+                                                <div class="row center">
+                                                    <div class="col s4">
+                                                        <a class="btn-floating btn-large waves-effect waves-light red">
+                                                            <i class="material-icons">nature_people</i></a>
+                                                        <p class="title bold">Mi Perfil</p>
+                                                    </div>
+                                                    <div class="col s4">
+                                                        <a class="btn-floating btn-large waves-effect waves-light red">
+                                                            <i class="material-icons">event_available</i></a>
+                                                        <p class="title bold">Reservas</p>
+                                                    </div>    
+                                                    <div class="col s4">
+                                                        <a class="btn-floating btn-large waves-effect waves-light red">
+                                                            <i class="material-icons">dvr</i></a>
+                                                        <p class="title bold">Prestamos</p>
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                        </div>
+                            
+                        
+                            
+                                <div class="col l12 m12 s12">
+                                    <div class="crm-menu-title">
+                                        <i class="mdi-social-school amber-text"></i> Escuela Sabática <br />
+                                        <div class="crm-menu-subtitle grey-text">
+                                            Funciones relacionadas a la escuela sabática
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="crm-menu-circle">
+                                        
+                                            <a class="crm-menu-item tooltipped" href="/escuela/profile/" data-position="bottom" data-delay="50" data-tooltip="Información de mi Escuela Sabática">
+                                                <i class="mdi-social-school md amber white-text"></i>
+                                                <br />
+                                                <p class="title bold">Mi Escuela Sabática</p>
+                                            </a>
+                                        
+                                    </div>
+                                    <hr />
+                                </div>
+                            
+                        
+                            
+                                <div class="col l12 m12 s12">
+                                    <div class="crm-menu-title">
+                                        <i class="mdi-action-event blue-grey-text"></i> Eventos <br />
+                                        <div class="crm-menu-subtitle grey-text">
+                                            Listado y Reporte de eventos
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="crm-menu-circle">
+                                        
+                                            <a class="crm-menu-item tooltipped" href="/evento/listEvento" data-position="bottom" data-delay="50" data-tooltip="Información sobre los eventos">
+                                                <i class="mdi-action-event md blue-grey white-text"></i>
+                                                <br />
+                                                <p class="title bold">Eventos</p>
+                                            </a>
+                                        
+                                    </div>
+                                    <hr />
+                                </div>
+                            
+                        
+                    </div>
+                </div>
+            </div>
         
+        </div>
         
          <%@include file="WEB-INF/template/footer.jspf" %>
          <script src="js/menu.js" type="text/javascript"></script>
