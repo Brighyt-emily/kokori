@@ -17,13 +17,10 @@ public class Devolucion extends Tipo{
     private String fed;
     private int est;
     private String no;
-<<<<<<< HEAD
     private int idprestamo;
-=======
     private String nom_tip;
->>>>>>> 6df3122703164ec15b992424a2e7f6359d2f5a1d
 
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, int idTipo, String noTipo) {
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, String nom_tip, int idTipo, String noTipo) {
         super(idTipo, noTipo);
         this.nom = nom;
         this.ape = ape;
@@ -33,21 +30,10 @@ public class Devolucion extends Tipo{
         this.est = est;
         this.no = no;
         this.idprestamo = idprestamo;
+        this.nom_tip = nom_tip;
     }
 
-<<<<<<< HEAD
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, String noTipo) {
-=======
-    public Devolucion() {
-    }
-
-<<<<<<< HEAD
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String nom_tip) {
-=======
-    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String noTipo) {
->>>>>>> 6df3122703164ec15b992424a2e7f6359d2f5a1d
-        super(noTipo);
->>>>>>> 21568a7e38981306c81dab3ee76f58f423f22ff6
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, String nom_tip) {
         this.nom = nom;
         this.ape = ape;
         this.codi = codi;
@@ -55,25 +41,12 @@ public class Devolucion extends Tipo{
         this.fed = fed;
         this.est = est;
         this.no = no;
-<<<<<<< HEAD
         this.idprestamo = idprestamo;
+        this.nom_tip = nom_tip;
     }
 
     public Devolucion() {
-=======
-        this.nom_tip = nom_tip;
->>>>>>> 6df3122703164ec15b992424a2e7f6359d2f5a1d
     }
-
-    public String getNom_tip() {
-        return nom_tip;
-    }
-
-    public void setNom_tip(String nom_tip) {
-        this.nom_tip = nom_tip;
-    }
-
-    
 
     public String getNom() {
         return nom;
@@ -137,6 +110,14 @@ public class Devolucion extends Tipo{
 
     public void setIdprestamo(int idprestamo) {
         this.idprestamo = idprestamo;
+    }
+
+    public String getNom_tip() {
+        return nom_tip;
+    }
+
+    public void setNom_tip(String nom_tip) {
+        this.nom_tip = nom_tip;
     }
 
     
