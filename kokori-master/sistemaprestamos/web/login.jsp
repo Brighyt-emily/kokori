@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Bienvenido al sistema Alphalpha</title>
         
         <%@include file="WEB-INF/template/header.jspf" %>
          <!-- Compiled and minified CSS -->
@@ -34,9 +34,10 @@
                 <div class="valign">
                       <div class="row">
                           <div class="col s12 m6 l4 offset-l4 offset-m3">
-                              <div class="card white darken-1">
+                              <div class="card white darken-1" >
                                   <div class="card-content ">
-                                      <span class="card-title">Sign In</span>
+                                      <img class="responsive-img" src="images/logo.png">
+                                      
                                        <div class="row">
                                            <form class="col s12">
                                                <div class="input-field col s12">                                                   

@@ -9,6 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+         <link rel="icon" href="images/logo.png" sizes="40x40">
         <%@include file="WEB-INF/template/header.jspf" %>
         
     <!-- Compiled and minified CSS -->
@@ -17,7 +19,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <link href="css/diego.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
+        <title>Menu Principal</title>
         <style>
             a{
           
@@ -49,9 +51,10 @@
                     <div class="nav-wrapper row">
                         
                         <div class="header-title col s3">      
-                            <span class="chapter-title">Alphalpha</span>
+                          
+                            <a class="brand-logo"><img class="responsive-img" src="images/logo.png" width="80" heigth="80"></a>
                         </div>
-                        
+                          
                         
                         
                         

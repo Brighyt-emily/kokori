@@ -59,7 +59,7 @@
                                         <div class="input-field">
                                             <i class="material-icons prefix">mail</i>
                                             <label for="email">Email</label>
-                                            <input type="text" name="email" required id="email">
+                                            <input type="email" name="email"  id="email">
                                         </div>
                                     </div>
                                     <div class="col s6">
@@ -81,8 +81,8 @@
                                     <div class="col s4">
                                         <div class="input-field">
                                             <i class="material-icons prefix">assignment</i>
-                                            <label for="nombre">Ingrese Dni</label>
-                                            <input type="text" name="nombre" required maxlength="8" id="dni">
+                                            <label for="dni">Ingrese Dni</label>
+                                            <input type="text" name="dni" required maxlength="8" id="dni">
 
                                         </div>
                                     </div>
