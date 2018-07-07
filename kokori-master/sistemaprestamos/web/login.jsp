@@ -39,9 +39,10 @@
                                       <span class="card-title">Sign In</span>
                                        <div class="row">
                                            <form class="col s12">
-                                               <div class="input-field col s12">
+                                               <div class="input-field col s12">                                                   
                                                    <input id="username" type="text" class="validate">
-                                                   <label for="username">Usuario</label>
+                                                   <label for="username">                                                                                                                 
+                                                    Usuario</label>
                                                </div>
                                                <div class="input-field col s12">
                                                    <input id="password" type="password" class="validate">
@@ -60,9 +61,7 @@
                     </div>
                 </div>
             </main>
-        </div>
-        
-        
+        </div>                
         <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/login.js" type="text/javascript"></script>
     </body>

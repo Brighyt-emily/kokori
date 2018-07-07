@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-     var toastHTML = '<i class="material-icons smoll  green-text ">check_box</i><span class="green-text">Inicio de Sesion exitosa</span>';
+     var toastHTML = '<i class="material-icons medium  green-text ">beenhere</i><h8 class="green-text" style="font-family:Arial;">Bienvenido a ALPHALPHA</h8>';
        M.toast({
        html: toastHTML
       });
