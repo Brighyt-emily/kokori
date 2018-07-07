@@ -17,7 +17,11 @@ public class Devolucion extends Tipo{
     private String fed;
     private int est;
     private String no;
+<<<<<<< HEAD
     private int idprestamo;
+=======
+    private String nom_tip;
+>>>>>>> 6df3122703164ec15b992424a2e7f6359d2f5a1d
 
     public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, int idTipo, String noTipo) {
         super(idTipo, noTipo);
@@ -31,8 +35,19 @@ public class Devolucion extends Tipo{
         this.idprestamo = idprestamo;
     }
 
+<<<<<<< HEAD
     public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, int idprestamo, String noTipo) {
+=======
+    public Devolucion() {
+    }
+
+<<<<<<< HEAD
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String nom_tip) {
+=======
+    public Devolucion(String nom, String ape, String codi, String fep, String fed, int est, String no, String noTipo) {
+>>>>>>> 6df3122703164ec15b992424a2e7f6359d2f5a1d
         super(noTipo);
+>>>>>>> 21568a7e38981306c81dab3ee76f58f423f22ff6
         this.nom = nom;
         this.ape = ape;
         this.codi = codi;
@@ -40,11 +55,25 @@ public class Devolucion extends Tipo{
         this.fed = fed;
         this.est = est;
         this.no = no;
+<<<<<<< HEAD
         this.idprestamo = idprestamo;
     }
 
     public Devolucion() {
+=======
+        this.nom_tip = nom_tip;
+>>>>>>> 6df3122703164ec15b992424a2e7f6359d2f5a1d
     }
+
+    public String getNom_tip() {
+        return nom_tip;
+    }
+
+    public void setNom_tip(String nom_tip) {
+        this.nom_tip = nom_tip;
+    }
+
+    
 
     public String getNom() {
         return nom;

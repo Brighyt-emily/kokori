@@ -37,8 +37,15 @@ public class Test {
         //create();
         //listar();
         //delete();
+<<<<<<< HEAD
         update();
+=======
+        //update();
+<<<<<<< HEAD
+=======
+>>>>>>> 6df3122703164ec15b992424a2e7f6359d2f5a1d
 
+>>>>>>> 21568a7e38981306c81dab3ee76f58f423f22ff6
     }
 
     static void conexion() {
