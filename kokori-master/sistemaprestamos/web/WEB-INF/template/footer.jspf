@@ -32,7 +32,7 @@
     if (daym < 10)
         daym = "0" + daym;
 
-    document.fechas.fecha.value = daym + "/" + month + "/" + year;
+    document.fechas.fecha.value = (daym + "/" + month + "/" + year);
 
    
 

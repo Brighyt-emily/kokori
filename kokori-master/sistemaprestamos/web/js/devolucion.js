@@ -11,7 +11,7 @@ function ltProductosForDev(){
         }
     });       
 }
-
+  
 function editarEstado(idp){
     var estado =0;
     $.post("de",{"idprestamo":idp,"estado":estado,"opc":2}, function () {

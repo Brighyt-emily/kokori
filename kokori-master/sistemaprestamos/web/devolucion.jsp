@@ -25,6 +25,9 @@
                             <option disabled="disabled">Buscar por Tipo</option>
                         </select>
                     </div> 
+                    
+                    
+                    
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
