@@ -26,8 +26,9 @@
                         <div class="col s2">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                             <div class="input-field">
                                 <i class="material-icons prefix">perm_contact_calendar</i>
+                                
+                                <input type="text" name="codigo" required id="codigo" placeholder="">
                                 <label for="codigo">Codigo</label>
-                                <input type="text" name="codigo" required id="codigo">
                             </div>
                         </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
                         <div class="col s2 center-align">
