@@ -15,9 +15,8 @@ function ltProductosForDev(){
 
 function editarEstado(idp){
     var estado =0;
-    alert(idp);
     $.post("de",{"idprestamo":idp,"estado":estado,"opc":2}, function () {
-      ("#tb_prestamos tbody tr").remove();
+      $("#tb_prestamos tbody tr").remove();
       ltProductosForDev();
     });
    
