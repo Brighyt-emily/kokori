@@ -52,7 +52,13 @@ public class ProductoController extends HttpServlet {
             case 3:
                 pro.deleate(Integer.parseInt(request.getParameter("idpro")));
                 break;
-          }
+            case 4:
+                Producto lo=new Producto(Integer.parseInt(request.getParameter("est")),request.getParameter("nom"), request.getParameter("codi"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("itip")));
+                pro.update(lo);
+                break;
+
+        
+        }
         }
     }
 

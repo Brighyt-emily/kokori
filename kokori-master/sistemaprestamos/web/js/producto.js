@@ -17,8 +17,16 @@ function listar()
 }
 function eliminar(x)
 {
-    $.get("pro",{"idpro":x,"opc":3},function () {
-        listarCatalogo();
+    $.get("pro",{"idpro":x,"op":3},function () {
+        listar();
+    });
+}
+
+function editar()
+{
+    $.get("pro",{"op":4},function()
+    {
+        
     });
 }
         
