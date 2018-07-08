@@ -47,6 +47,9 @@ public class ReservasController extends HttpServlet {
                     out.println(0);
                 }
                 break;
+            case 2:
+                out.println(g.toJson(rd.listarProductosReserva()));
+                break;
         }
     }
 

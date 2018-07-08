@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reservas</title>
         <%@include file="WEB-INF/template/header.jspf" %>
+        <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <%@include file="WEB-INF/template/Principal.jspf" %>
@@ -19,7 +20,7 @@
                 <div class="card-content">
                     <!-- nuevo diseño-->
                     <div class="row">
-                        <div class="col s5 m5 l5">
+                        <div class="col s5">
                             <div class="row">
                                 <div class="col s12">
                                     <h4 class="center-align">Reservas</h4>
@@ -114,10 +115,78 @@
                             </div>
                             <!-- fin de nuevo diseño -->
                         </div>
+                        <div class="col s7"style="padding-left: 40px;">
+                            <div class="row">
+                                <div class="col s1"></div>
+                                <div class="col s10">
+                                    <div class="input-field">
+                                        <i class="material-icons prefix" style="color: green">shopping_cart</i>
+                                        <label for="nomProducto">Nombre del Producto</label>
+                                        <input type="text" name="nomProducto" required id="nomProducto">
+                                    </div>
+                                </div>
+                                <div class="col s1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <table class="highlight responsive-table" id="tblProductos">
+                                        <thead id="tblCa">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombres</th>
+                                                <th>Codigo</th>
+                                                <th>Tipo</th>
+                                                <th>Stock</th>
+                                                <th>Accion</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <!-- data de los productos -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- contenido datos de la tabla con los productos a pedir-->
+                                <div class="col s12">
+                                    <table class="highlight responsive-table">
+                                        <thead id="tblCom">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nombre</th>
+                                                <th>Stock</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>Alvin</td>
+                                                <td>Eclair</td>
+                                                <td>$0.87</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alan</td>
+                                                <td>Jellybean</td>
+                                                <td>$3.76</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jonathan</td>
+                                                <td>Lollipop</td>
+                                                <td>$7.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="left-sidebar-hover"></div>
-                    </main>
-                    <%@include file="WEB-INF/template/footer.jspf"%>
-                    <script src="js/reservas.js" type="text/javascript"></script>
-                    </body>
-                    </html>
+                </div>
+            </div>
+            <div class="left-sidebar-hover"></div>
+        </main>
+        <%@include file="WEB-INF/template/footer.jspf"%>
+        <script src="js/reservas.js" type="text/javascript"></script>
+    </body>
+</html>

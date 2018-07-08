@@ -50,4 +50,27 @@ public class ReservaDaoImp implements ReservaDao {
         return lista;
     }
 
+    @Override
+    public List<Map<String, Object>> listarProductosReserva() {
+        List<Map<String, Object>> datos = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarProductosReserva()}");
+            rs = cst.executeQuery();
+            while (rs.next()) {
+                Map<String, Object> map = new HashMap<>();
+                map.put("idProducto", rs.getInt("idproducto"));
+                map.put("idTipo", rs.getInt("idtipo"));
+                map.put("nomProd", rs.getString("nombre"));
+                map.put("codigo", rs.getString("codigo"));
+                map.put("nomTipo", rs.getString("nom_tipo"));
+                map.put("stock", rs.getInt("stock"));
+                datos.add(map);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return datos;
+    }
+
 }
