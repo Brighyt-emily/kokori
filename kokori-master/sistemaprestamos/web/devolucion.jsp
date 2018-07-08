@@ -23,10 +23,6 @@
                     <div class=" col s12 m12 l12">
                         <select class="browser-default col s3 m3 l3" id="tipo">
                             <option disabled="disabled">Buscar por Tipo</option>
-                            <option>LAPTOP</option>
-                            <option>PROYECTOR</option>
-                            <option>ACCESORIOS</option>
-                            <option>TODOS</option>
                         </select>
                     </div> 
                     <div class="col s12 m12 l12">

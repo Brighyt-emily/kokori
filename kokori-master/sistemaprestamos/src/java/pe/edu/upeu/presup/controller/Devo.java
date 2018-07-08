@@ -15,9 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.dao.PrestamoDao;
+import pe.edu.upeu.presup.dao.TipoDao;
 import pe.edu.upeu.presup.daoimp.DevolucionDaoImp;
 import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
+import pe.edu.upeu.presup.daoimp.TipoDaoImp;
 import pe.edu.upeu.presup.entity.Prestamo;
+
 
 /**
  *
@@ -28,6 +31,7 @@ public class Devo extends HttpServlet {
     private DevolucionDao d = new DevolucionDaoImp();
     private Gson g = new Gson();
     private DevolucionDao pres=new DevolucionDaoImp();
+    private TipoDao t=new TipoDaoImp();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -53,6 +57,9 @@ public class Devo extends HttpServlet {
                case 3:
                     out.println(g.toJson(d.ListarByTipo(request.getParameter("nom_tipo"))));
                     break;
+               case 4:
+                   out.println(g.toJson(d.listarTipo()));
+                   break;
            }
         }
     }

@@ -13,6 +13,7 @@ import java.util.List;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.entity.Devolucion;
 import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.entity.Tipo;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -39,7 +40,6 @@ public class DevolucionDaoImp implements DevolucionDao{
             while(rs.next())
             {
                 Devolucion p=new Devolucion();
-                Prestamo pres=new Prestamo();
                 p.setNom(rs.getString("nombres"));
                 p.setApe(rs.getString("apellidos"));
                 p.setCodi(rs.getString("codigo"));
@@ -100,6 +100,26 @@ public class DevolucionDaoImp implements DevolucionDao{
             System.out.println("Error: "+e);
         }
         return d;
+    }
+
+    @Override
+    public List<Tipo> listarTipo() {
+        List<Tipo> tip=new ArrayList<>();
+        try{
+            cx= Conexion.getConexion();
+            cst=cx.prepareCall("{call listarTipo()}");
+            rs=cst.executeQuery();
+            while(rs.next()){
+                Tipo ti=new Tipo();
+                ti.setIdTipo(rs.getInt("idtipo"));
+                ti.setNoTipo(rs.getString("nom_tipo")); 
+                tip.add(ti);
+            }
+        }catch(SQLException e){
+            System.out.println("Error: "+e);
+        }
+        
+        return tip;
     }
     }
     
