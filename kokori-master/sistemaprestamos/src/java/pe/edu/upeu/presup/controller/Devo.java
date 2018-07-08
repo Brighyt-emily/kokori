@@ -50,6 +50,9 @@ public class Devo extends HttpServlet {
                     Prestamo pre = new Prestamo(Integer.parseInt(request.getParameter("idprestamo")), Integer.parseInt(request.getParameter("estado")));
                     pres.update(pre);
                     break;
+               case 3:
+                    out.println(g.toJson(d.ListarByTipo(request.getParameter("nom_tipo"))));
+                    break;
            }
         }
     }

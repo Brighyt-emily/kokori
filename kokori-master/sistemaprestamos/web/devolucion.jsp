@@ -21,13 +21,12 @@
                         <div class="page-title">Devolucion</div>
                     </div>
                     <div class="col s12 m12 l12">
-                        <select class="select-dropdown col s3 m3 l3">
+                        <select id="tipo" class="select-dropdown col s3 m3 l3">
                             <option disabled="disabled">Buscar por Tipo</option>
+                            <option>LAPTOP</option>
+                            <option>CAÑON</option>
                         </select>
                     </div> 
-                    
-                    
-                    
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">

@@ -47,7 +47,6 @@ public class DevolucionDaoImp implements DevolucionDao{
                 p.setFed(rs.getString("fe_devolucion"));
                 p.setFep(rs.getString("fe_prestamo"));
                 p.setNo(rs.getString("nombre"));
-                p.setNom_tip(rs.getString("nom_tipo"));
                 p.setNoTipo(rs.getString("nom_tipo"));
                 p.setIdprestamo(rs.getInt("idprestamo"));
                 datos.add(p);
@@ -73,6 +72,34 @@ public class DevolucionDaoImp implements DevolucionDao{
             System.out.println("ERROR: "+e);
         }
         return x;      
+    }
+
+    @Override
+    public List<Devolucion> ListarByTipo(String tipo) {
+        List<Devolucion> d=new ArrayList<>();
+       
+        try {
+            Devolucion dev = new Devolucion();
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call ListarPorTipo(?)}");
+            cst.setString(1, tipo);
+            rs = cst.executeQuery();
+            while(rs.next()){
+                dev.setNom(rs.getString("nombres"));
+                dev.setApe(rs.getString("apellidos"));
+                dev.setCodi(rs.getString("codigo"));
+                dev.setEst(rs.getInt("estado"));
+                dev.setFed(rs.getString("fe_devolucion"));
+                dev.setFep(rs.getString("fe_prestamo"));
+                dev.setNo(rs.getString("nombre"));
+                dev.setNoTipo(rs.getString("nom_tipo"));
+                dev.setIdprestamo(rs.getInt("idprestamo"));
+                d.add(dev);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return d;
     }
     }
     
