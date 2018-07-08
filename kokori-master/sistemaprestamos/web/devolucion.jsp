@@ -58,5 +58,6 @@
 
     <%@include file="WEB-INF/template/footer.jspf" %>
     <script src="js/devolucion.js" type="text/javascript"></script>
+    
     </body>
 </html>
