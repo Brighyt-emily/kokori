@@ -28,7 +28,35 @@ function listarProducto() {
     $.get("rc", {"op": 2}, function (data) {
         var w = JSON.parse(data);
         for (var i = 0; i < w.length; i++) {
-            $("#tblProductos").append("<tr><td>" + w[i].idProducto + "</td><td>" + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>" + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td><a><i>vertical_align_bottom</i></a></td</tr>");
+            $("#tblProductos").append("<tr><td>" + w[i].idProducto + "</td><td>"
+                    + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>"
+                    + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td>"
+                    + "<a class= 'waves-effect waves-light btn grey' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
+                    + "<i class = 'material-icons prefix'>vertical_align_bottom</i></a></td</tr>");
         }
     });
 }
+
+function productoSeleccionado(x) {
+    alert(x);
+}
+
+$("#nomProducto").keyup(function () {
+    var tableReg = document.getElementById('tblProductos');
+    var searchText = document.getElementById('nomProducto').value.toLowerCase();
+    for (var i = 1; i < tableReg.rows.length; i++) {
+        var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+        var encontrado = false;
+        for (var j = 0; j < cellsOfRow.length && !encontrado; j++) {
+            var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+            if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                encontrado = true;
+            }
+        }
+        if (encontrado) {
+            tableReg.rows[i].style.display = '';
+        } else {
+            tableReg.rows[i].style.display = 'none';
+        }
+    }
+});

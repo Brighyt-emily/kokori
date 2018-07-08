@@ -121,7 +121,7 @@
                                 <div class="col s10">
                                     <div class="input-field">
                                         <i class="material-icons prefix" style="color: green">shopping_cart</i>
-                                        <label for="nomProducto">Nombre del Producto</label>
+                                        <label for="nomProducto">Nombre o Codigo</label>
                                         <input type="text" name="nomProducto" required id="nomProducto">
                                     </div>
                                 </div>
