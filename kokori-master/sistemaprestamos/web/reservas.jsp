@@ -37,7 +37,6 @@
                                 
                                 <input type="text" name="codigo" required id="codigo" placeholder="">
                                 <label for="codigo">Codigo</label>
->>>>>>> f29f5af94943ce72dd0fb613c4df7c8763e23054
                             </div>
                             <div class="row">
                                 <div class="col s6">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
