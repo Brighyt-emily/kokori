@@ -13,12 +13,7 @@
          <link rel="icon" href="images/logo.png" sizes="40x40">
         <%@include file="WEB-INF/template/header.jspf" %>
         
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <link href="css/diego.css" rel="stylesheet" type="text/css"/>
+    
         <title>Menu Principal</title>
         <style>
             a{

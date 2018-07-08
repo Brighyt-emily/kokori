@@ -24,8 +24,8 @@
             <div class="row">
             <div class="input-field col s12">
              <i class="material-icons prefix">search</i>
-             <input type="text" id="autocomplete-input" class="autocomplete" style="width: 220px">
              <label for="autocomplete-input">Buscar por codigo</label>
+             <input type="text" id="autocomplete-input" class="autocomplete" style="width: 220px" placeholder="Ingrese Codigo de Producto">             
                  </div>
              </div>
                  </div>
