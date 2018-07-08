@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Reservas</title>
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
@@ -49,18 +49,47 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s3">
+                        <div class="col s2">
+                            <label for="aula">Aula</label>
                             <div class="input-field">
                                 <i class="material-icons prefix">account_balance</i>
-                                <label for="aula">Aula</label>
                                 <input type="text" name="aula" required id="aula">
+                            </div>
+                        </div>
+                        <div class="col s3">
+                            <label>Fecha de Prestamo</label>
+                            <div class="input-field">
+                                <i class="material-icons prefix">event</i>
+                                <input type="date" id="fe_prestamo">
+                            </div>
+                        </div>
+                        <div class="col s2">
+                            <label>Hora de Prestamo</label>
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_balance</i>
+                                <input type="text" required id="h_prestamo">
+                            </div>
+                        </div>
+                        <div class="col s3">
+                            <label>Fecha de Devolución</label>
+                            <div class="input-field">
+                                <i class="material-icons prefix">event</i>
+                                <input type="date" id="fe_devolucion">
+                            </div>
+                        </div>
+                        <div class="col s2">
+                            <label>Hora de Devolucion</label>
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_balance</i>
+                                <input type="text" required id="h_devoluvion">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="left-sidebar-hover"></div>
         </main>
-        <%@include file="WEB-INF/template/footer.jspf" %>
+        <%@include file="WEB-INF/template/footer.jspf"%>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>
 </html>
