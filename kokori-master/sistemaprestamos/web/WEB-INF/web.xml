@@ -13,6 +13,10 @@
         <servlet-class>pe.edu.upeu.presup.controller.ProfesorController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>pro</servlet-name>
+        <servlet-class>pe.edu.upeu.presup.controller.ProductoController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DetallePrestamoController</servlet-name>
         <servlet-class>pe.edu.upeu.presup.controller.DetallePrestamoController</servlet-class>
     </servlet>
