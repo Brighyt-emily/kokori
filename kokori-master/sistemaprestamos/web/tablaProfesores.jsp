@@ -11,6 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%@include file="WEB-INF/template/header.jspf" %>
+         <!-- Compiled and minified CSS -->
+  
+            
     </head>
     <body>                          
         <%@include file="WEB-INF/template/Principal.jspf" %>
@@ -72,7 +75,7 @@
     <script src="js/profesor.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
-            alert("maincra");
+            console.log("funciona");
         });
     </script>
 </body>
