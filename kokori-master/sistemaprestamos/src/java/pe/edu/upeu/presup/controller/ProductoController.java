@@ -43,7 +43,7 @@ public class ProductoController extends HttpServlet {
         switch(op)
           {
             case 1:
-                    out.println(g.toJson(pro.readAll()));
+                 out.println(g.toJson(pro.readAll()));
                   break;
             case 2:
                 Producto p=new Producto(request.getParameter("nom"), request.getParameter("codi"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("itip")));

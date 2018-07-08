@@ -33,9 +33,9 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        conexion();
+        //conexion();
         //create();
-        //listar();
+        listar();
         //delete();
         //update();
         //update();
