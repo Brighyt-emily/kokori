@@ -29,6 +29,13 @@ function editar()
         
     });
 }
+function crear()
+{
+    $.get("pro",{"op":2},function()
+    {
+        
+    });
+}
         
         
    
