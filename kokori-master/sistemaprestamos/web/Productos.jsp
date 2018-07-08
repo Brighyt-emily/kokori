@@ -55,5 +55,6 @@
    
     
     <%@include file="WEB-INF/template/footer.jspf" %>
+    <script src="js/producto.js" type="text/javascript"></script> 
     </body>
 </html>

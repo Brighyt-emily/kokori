@@ -54,6 +54,7 @@
         <div class="left-sidebar-hover"></div>
 
     <%@include file="WEB-INF/template/footer.jspf" %>
-    <script src="js/producto.js" type="text/javascript"></script> 
+    <script src="js/devolucion.js" type="text/javascript"></script>
+    
     </body>
 </html>
