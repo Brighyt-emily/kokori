@@ -6,6 +6,7 @@
 package pe.edu.upeu.presup.dao;
 
 import pe.edu.upeu.presup.entity.Devo;
+import pe.edu.upeu.presup.entity.Prestamo;
 
 /**
  *
@@ -13,5 +14,4 @@ import pe.edu.upeu.presup.entity.Devo;
  */
 public interface DevoDao {
     int create(Devo d);
-    
 }
