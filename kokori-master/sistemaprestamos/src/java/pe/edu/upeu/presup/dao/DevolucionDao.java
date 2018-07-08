@@ -17,4 +17,5 @@ public interface DevolucionDao {
     int delete (int key);
     List<Devolucion> readAll();
     int update(Prestamo p);
+    
 }
