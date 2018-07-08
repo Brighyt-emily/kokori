@@ -17,7 +17,7 @@
 
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <!--INICIO Contenido -->
-        <main class="mn-inner">
+        <main class="mn-inner" >
             <div class="row">
                 <div class="col s12">
                     <div class="page-title">
@@ -27,30 +27,33 @@
                     </div>
                 </div>
                 <div class="col s12 m12 l12">
-                    <div class="card">
+                    <div class="card" style="padding:20px;">
                         <div class="card-content">
                             Ingrese los datos de profesor:
                             <div class="row">
                                 <div class="row">
                                     <div class="col s4">
                                         <div class="input-field">
-                                            <i class="material-icons prefix">perm_identity</i>
-                                            <label for="nombre">Nombres</label>
-                                            <input type="text" name="nombre" required id="nombre">
+                                            <i class="material-icons prefix">person_pin</i>
+                                            <input id="first_name" placeholder="Nombre Completos" type="text" class="validate">
+                                            <label for="first_name">Nombres:</label>
                                         </div>
                                     </div>
                                     <div class="col s4">
                                         <div class="input-field">
                                             <i class="material-icons prefix">person_pin</i>
-                                            <label for="apellidos">Apellidos</label>
-                                            <input type="text" name="apellidos" required id="apellidos">
+                                            <input type="text" name="apellidos" placeholder="Apellidos Completos" required id="apellidos">
+                                            <label for="apellidos">Apellidos:</label>
+                                            
                                         </div>
                                     </div>
                                     <div class="col s4">
                                         <div class="input-field">
                                             <i class="material-icons prefix">dialer_sip</i>
                                             <label for="celular">Numero de Celular</label>
-                                            <input type="text" name="celular" required maxlength="9" id="celular">
+                                            <input type="text" name="celular" placeholder="#"  required maxlength="9" id="celular">
+                                            <label for="celular">Numero de Celular</label>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -58,15 +61,16 @@
                                     <div class="col s6">
                                         <div class="input-field">
                                             <i class="material-icons prefix">mail</i>
+                                            <input type="email" name="email"  id="email" placeholder="@alphalpha.pe">
                                             <label for="email">Email</label>
-                                            <input type="email" name="email"  id="email">
+                                           
                                         </div>
                                     </div>
                                     <div class="col s6">
                                         <div class="input-field">
-                                            <i class="material-icons prefix">location_city</i>
+                                            <i class="material-icons prefix">location_city</i>                                           
+                                            <input type="text" name="direccion" required id="direccion" placeholder="">
                                             <label for="direccion">Dirección</label>
-                                            <input type="text" name="direccion" required id="direccion">
                                         </div>
                                     </div>
                                 </div>
@@ -74,15 +78,17 @@
                                     <div class="col s4">
                                         <div class="input-field">
                                             <i class="material-icons prefix">school</i>
+                                            
+                                            <input type="text" name="grado" required id="grado" placeholder="">
                                             <label for="grado">Grado Profesional</label>
-                                            <input type="text" name="grado" required id="grado">
                                         </div>
                                     </div>
                                     <div class="col s4">
                                         <div class="input-field">
                                             <i class="material-icons prefix">assignment</i>
+                                            
+                                            <input type="text" name="dni" required maxlength="8" id="dni" placeholder="#">
                                             <label for="dni">Ingrese Dni</label>
-                                            <input type="text" name="dni" required maxlength="8" id="dni">
 
                                         </div>
                                     </div>
@@ -112,10 +118,14 @@
                                                                 <option value="option4"> option4 </option>
                                                             </select>
                                                         </div>
-                                    
-                                    
-                                    
+                            
+                                                        </div>
+                                                        </div>
                                                     </div>
+                        </div>
+                        </div>
+                        </div>
+        </main>
                                 
                                 <div class="left-sidebar-hover"></div>
                                 <%@include file="WEB-INF/template/footer.jspf" %>

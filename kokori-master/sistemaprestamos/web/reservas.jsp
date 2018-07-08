@@ -19,11 +19,25 @@
                 <div class="card-content">
                     <!-- nuevo diseño-->
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col s5 m5 l5">
                             <div class="row">
                                 <div class="col s12">
                                     <h4 class="center-align">Reservas</h4>
                                 </div>
+=======
+                        <div class="col s12">
+                            <h4 class="center-align">Reservas</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                            <div class="input-field">
+                                <i class="material-icons prefix">perm_contact_calendar</i>
+                                
+                                <input type="text" name="codigo" required id="codigo" placeholder="">
+                                <label for="codigo">Codigo</label>
+>>>>>>> f29f5af94943ce72dd0fb613c4df7c8763e23054
                             </div>
                             <div class="row">
                                 <div class="col s6">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
