@@ -35,5 +35,6 @@ public class Main extends HttpServlet{
         ServletContext context= getServletContext();
         HashMap<String, Object> datos = new HashMap<>();
         datos = ud.validar(request.getParameter("user"), request.getParameter("pass"));
+        
     }
 }
