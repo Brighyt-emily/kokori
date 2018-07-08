@@ -17,9 +17,14 @@
             <!--INICIO Contenido -->
             <main class="mn-inner">
                 <div class="row">
-                    <div class="col s12">
+                    <div class="col s12 m12 l12">
                         <div class="page-title">Devolucion</div>
                     </div>
+                    <div class="col s12 m12 l12">
+                        <select class="select-dropdown col s3 m3 l3">
+                            <option disabled="disabled">Buscar por Tipo</option>
+                        </select>
+                    </div> 
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
