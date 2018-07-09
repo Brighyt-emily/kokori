@@ -6,3 +6,21 @@
     background: #333333;
     color: white;
 }
+
+.tabla-contenedor{
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 300px;
+}
+
+#tblProductos{
+    th:first-child{
+        position: absolute;
+    }
+}
+
+.tabla-contenedor2{
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 200px;
+}
