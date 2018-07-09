@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Prestamo </title>
+        <script src="js/material/jquery.js" type="text/javascript"></script>
         <%@include file="WEB-INF/template/header.jspf" %>
         <link href="css/diego.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -64,10 +65,11 @@
 
                             </div>
                             <div class="container input-field col s7" >
-                                <div id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px;display: none;">
+                                <div id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px;">
                                     <table class="table" id="tablaPrestamo">
                                         <thead>
                                             <tr>
+                                                <th scope="col">#</th>
                                                 <th scope="col">NOMBRE</th>
                                                 <th scope="col">CODIGO</th>
                                                 <th scope="col">ESTADO</th>
@@ -79,7 +81,7 @@
                                     </table>
                                 </div>
 
-                                <table class="table" id="tablaDetalle">
+                                <table class="table" id="tablaDetalle" style="display: none">
                                     <thead>
                                         <tr>
                                             <th>Producto</th>
@@ -89,21 +91,7 @@
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td>Cañon</td>
-                                            <td>1</td>
-                                            <td>Optimo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>HDMI</td>
-                                            <td>1</td>
-                                            <td>Optimo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cable de poder</td>
-                                            <td>1</td>
-                                            <td>Medio Optimo</td>
-                                        </tr>
+                                       
                                     </tbody>
                                 </table>
                             </div>

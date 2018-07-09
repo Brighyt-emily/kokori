@@ -9,12 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.PrestamoDao;
+import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
+import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
 import pe.edu.upeu.presup.entity.Prestamo;
 
 public class PrestamoController extends HttpServlet {
     
     private PrestamoDao pr = new PrestamoDaoImp();
+    private ProductoDao pro = new ProductoDaoImp();
     private Gson g = new Gson();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,6 +40,9 @@ public class PrestamoController extends HttpServlet {
                  break;
                  case 3:
                      out.println(g.toJson(pr.read(Integer.parseInt(request.getParameter("id")))));
+                 break;
+                 case 4:
+                     out.println(g.toJson(pro.readAll()));
                  break;
              }
         }

@@ -16,6 +16,8 @@ public class Producto {
     private String cod;
     private int est;
     private int iTip;
+    private String nomTip;
+    private int stock;
 
     public Producto() {
     }
@@ -35,6 +37,24 @@ public class Producto {
         this.iTip = iTip;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+    
+    
+    public String getNomTip() {
+        return nomTip;
+    }
+
+    public void setNomTip(String nomTip) {
+        this.nomTip = nomTip;
+    }
+    
+    
     public int getIdP() {
         return idP;
     }
