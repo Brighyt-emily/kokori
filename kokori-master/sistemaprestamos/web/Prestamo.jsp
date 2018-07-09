@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Prestamo </title>
         <%@include file="WEB-INF/template/header.jspf" %>
+        <link href="css/materialize-stepper.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/diego.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -64,7 +65,7 @@
 
                             </div>
                             <div class="container input-field col s7" >
-                                <div id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px;display: none;">
+                                <div id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px;">
                                     <table class="table" id="tablaPrestamo">
                                         <thead>
                                             <tr>
@@ -156,6 +157,7 @@
                     </div>
                 </div>
             </div>  
+            <script src="js/material/materialize-stepper.min.js" type="text/javascript"></script>
             <script src="js/prestamo.js" type="text/javascript"></script>
         </main>
         <%@include file="WEB-INF/template/footer.jspf" %>
