@@ -17,18 +17,18 @@ public class Reserva {
     
     private int idReserva;
     private int estado;
-    private Date fe_reserva;
-    private Date fe_devolucion;
+    private String fe_reserva;
+    private String fe_devolucion;
     private String aula;
     private int idProfesor;
-    private Date fe_prestamo;
+    private String fe_prestamo;
     private String h_devolucion;
     private String h_prestamo;
 
     public Reserva() {
     }
 
-    public Reserva(int estado, Date fe_reserva, Date fe_devolucion, String aula, int idProfesor, Date fe_prestamo, String h_devolucion, String h_prestamo) {
+    public Reserva(int estado, String fe_reserva, String fe_devolucion, String aula, int idProfesor, String fe_prestamo, String h_devolucion, String h_prestamo) {
         this.estado = estado;
         this.fe_reserva = fe_reserva;
         this.fe_devolucion = fe_devolucion;
@@ -39,7 +39,7 @@ public class Reserva {
         this.h_prestamo = h_prestamo;
     }
 
-    public Reserva(int idReserva, int estado, Date fe_reserva, Date fe_devolucion, String aula, int idProfesor, Date fe_prestamo, String h_devolucion, String h_prestamo) {
+    public Reserva(int idReserva, int estado, String fe_reserva, String fe_devolucion, String aula, int idProfesor, String fe_prestamo, String h_devolucion, String h_prestamo) {
         this.idReserva = idReserva;
         this.estado = estado;
         this.fe_reserva = fe_reserva;
@@ -67,19 +67,19 @@ public class Reserva {
         this.estado = estado;
     }
 
-    public Date getFe_reserva() {
+    public String getFe_reserva() {
         return fe_reserva;
     }
 
-    public void setFe_reserva(Date fe_reserva) {
+    public void setFe_reserva(String fe_reserva) {
         this.fe_reserva = fe_reserva;
     }
 
-    public Date getFe_devolucion() {
+    public String getFe_devolucion() {
         return fe_devolucion;
     }
 
-    public void setFe_devolucion(Date fe_devolucion) {
+    public void setFe_devolucion(String fe_devolucion) {
         this.fe_devolucion = fe_devolucion;
     }
 
@@ -99,11 +99,11 @@ public class Reserva {
         this.idProfesor = idProfesor;
     }
 
-    public Date getFe_prestamo() {
+    public String getFe_prestamo() {
         return fe_prestamo;
     }
 
-    public void setFe_prestamo(Date fe_prestamo) {
+    public void setFe_prestamo(String fe_prestamo) {
         this.fe_prestamo = fe_prestamo;
     }
 
@@ -125,7 +125,7 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "reserva{" + "idReserva=" + idReserva + ", estado=" + estado + ", fe_reserva=" + fe_reserva + ", fe_devolucion=" + fe_devolucion + ", aula=" + aula + ", idProfesor=" + idProfesor + ", fe_prestamo=" + fe_prestamo + ", h_devolucion=" + h_devolucion + ", h_prestamo=" + h_prestamo + '}';
-    }  
-            
+        return "Reserva{" + "idReserva=" + idReserva + ", estado=" + estado + ", fe_reserva=" + fe_reserva + ", fe_devolucion=" + fe_devolucion + ", aula=" + aula + ", idProfesor=" + idProfesor + ", fe_prestamo=" + fe_prestamo + ", h_devolucion=" + h_devolucion + ", h_prestamo=" + h_prestamo + '}';
+    }
+    
 }

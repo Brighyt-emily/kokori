@@ -102,13 +102,13 @@ public class ReservaDaoImp implements ReservaDao {
         int id = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call }");
+            cst = cx.prepareCall("{call registrarReserva(?,?,?,?,?,?,?,?,?)}");
             cst.setInt(1, r.getEstado());
-            cst.setDate(2, r.getFe_reserva());
-            cst.setDate(3, r.getFe_devolucion());
+            cst.setString(2, r.getFe_reserva());
+            cst.setString(3, r.getFe_devolucion());
             cst.setString(4, r.getAula());
             cst.setInt(5, r.getIdProfesor());
-            cst.setDate(6, r.getFe_prestamo());
+            cst.setString(6, r.getFe_prestamo());
             cst.setString(7, r.getH_devolucion());
             cst.setString(8, r.getH_prestamo());
             cst.registerOutParameter(9, java.sql.Types.INTEGER);
@@ -125,7 +125,7 @@ public class ReservaDaoImp implements ReservaDao {
         int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call }");
+            cst = cx.prepareCall("{call registrarDetalleReserva(?,?)}");
             cst.setInt(1, dr.getIdReserva());
             cst.setInt(2, dr.getIdProducto());
             x = cst.executeUpdate();
