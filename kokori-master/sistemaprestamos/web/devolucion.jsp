@@ -31,11 +31,11 @@
                     <div class="col s12">
             <div class="col s10">
                 <div class="input-field">
-                <i class="material-icons prefix">search</i>
-                <label for="nomProducto">Busca..</label>
-                <input type="text" name="nomProducto" required id="nomProducto">
-                 </div>
-                 </div>
+                <i class="material-icons prefix" style="color: black">search</i>
+                <label for="nomp">buscar..</label>
+                <input type="text" name="nomp" required id="nomp" style="width: 320px">
+              </div>
+           </div>
                  </div>
                     <div class="col s12 m12 l12">
                         <div class="card">

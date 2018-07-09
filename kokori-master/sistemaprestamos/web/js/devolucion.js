@@ -68,3 +68,24 @@ function listarTipo(){
 $(document).ready( function () {
     $('#tb_prestamos').DataTable();
 } );
+
+
+$("#nomp").keyup(function () {
+    var tableReg = document.getElementById('tb_prestamos');
+    var searchText = document.getElementById('nomp').value.toLowerCase();
+    for (var i = 1; i < tableReg.rows.length; i++) {
+        var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+        var encontrado = false;
+        for (var j = 0; j < cellsOfRow.length && !encontrado; j++) {
+            var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+            if (searchText.length === 0 || (compareWith.indexOf(searchText) > -1)) {
+                encontrado = true;
+            }
+        }
+        if (encontrado) {
+            tableReg.rows[i].style.display = '';
+        } else {
+            tableReg.rows[i].style.display = 'none';
+        }
+    }
+});

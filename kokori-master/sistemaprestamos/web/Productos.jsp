@@ -11,6 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
          <%@include file="WEB-INF/template/header.jspf" %>
+                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
     </head>
     <body>
         <%@include file="WEB-INF/template/Principal.jspf" %>
