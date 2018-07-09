@@ -25,31 +25,9 @@
             <div class="col s12 m12 l12">
                     <div class="page-title">Devolucion</div>
             </div>
-            <div class=" col s12 m12 l12">
-                <select class="browser-default col s3 m3 l3" id="tipo">
-                    <option disabled="disabled">Buscar por Tipo</option>
-                </select>
-            </div> 
+            
             <div class="col s12 m12 l12">
                 <div class="card">
-                    <div class="card-content">
-                    <table class="table highlight centered" id="tb_prestamos">
-                        <thead>
-                        <tr>
-                            <th>Código</th>
-                            <th>Profesor</th>
-                            <th>Fecha de Préstamo</th>
-                            <th>Devolución Programada</th>
-                            <th>Productos</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
-                    </table> 
-                    </div>
-
-                    
                     <div class="col s12">
             <div class="row">
             <div class="input-field col s12">
@@ -144,10 +122,7 @@
     <div class="left-sidebar-hover"></div>
 
     <%@include file="WEB-INF/template/footer.jspf" %>
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
-            
-        </script>
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
     <script src="js/devolucion.js" type="text/javascript"></script>
+
     </body>
 </html>
