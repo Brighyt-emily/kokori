@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $("#tblRervado").css("display", "none");
     listarProducto();
     var f = new Date();
     $("#fecha").val(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
@@ -51,7 +50,6 @@ function productoSeleccionado(w) {
         obj.nombre = x[0].nomProducto;
         obj.codigo = x[0].codigo;
         añadirCarrito(obj);
-        $("#tblRervado").css("display", "block");
         listarProdReservados();
     });
 }
@@ -111,7 +109,20 @@ $("#nomProducto").keyup(function () {
 });
 
 $("#btnRervar").click(function () {
-    alert("boton guardar");
+    //obtenemos los valores de las variables requeridas
+    var estado = 1;
+    var fe_reserva = $("#fecha").val();
+    var fe_devolucion = $("#fe_devolucion").val();
+    var h_devolucion = $("#h_devolucion").val();
+    var aula = $("#aula").val();
+    var idProfe = parseInt($("#idprofesor").val());
+    var fe_prestamo = $("#fe_prestamo").val();
+    var h_prestamo = $("#h_prestamo").val();
+    if (idProfe > 0) {
+       alert("ok");
+    } else {
+        alert("Porfavor complete los campos");
+    }
 });
 
 $("#btnCancelar").click(function () {

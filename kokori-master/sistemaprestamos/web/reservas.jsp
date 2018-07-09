@@ -10,11 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reservas</title>
-        <%@include file="WEB-INF/template/header.jspf" %>
+        <%@include file="WEB-INF/template/headerMain.jspf" %>
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <%@include file="WEB-INF/template/Principal.jspf" %>
+        <%@include file="WEB-INF/template/min.jspf" %>
         <main class="mn-inner"> 
             <div class="card">
                 <div class="card-content">
@@ -25,12 +25,12 @@
                                 <h4>Reservas</h4>
                             </div>
                             <div class="col s2">
-                                <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action" id="btnRervar">Reservar
+                                <button class="btn light-blue darken-4" type="submit" name="action" id="btnRervar">Reservar
                                     <i class="material-icons right">save</i>
                                 </button>
                             </div>
                             <div class="col s2">
-                                <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
+                                <button class="btn grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
                                     <i class="material-icons right ">delete_forever</i>
                                 </button>
                             </div>
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
                                 <div class="col s1 center-align">
-                                    <a class="btn-floating btn-large waves-effect waves-light blue-grey" id="btnBuscar"><i class="material-icons">search</i></a>
+                                    <a class="btn-floating btn-large blue-grey" id="btnBuscar"><i class="material-icons">search</i></a>
                                 </div>
                                 <div class="col s4">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                                     <div class="input-field">
@@ -119,40 +119,44 @@
                                 <div class="row">
                                     <div class="col s12">
                                         <p><strong>Producto para llevar</strong></p>
-                                        <table class="highlight responsive-table" id="tblRervado">
-                                            <thead id="tblCom">
-                                                <tr>
-                                                    <th>Id</th>
-                                                    <th>Nombre</th>
-                                                    <th>Codigo</th>
-                                                    <th>Remover</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
+                                        <div class="tabla-contenedor2">
+                                            <table class="highlight responsive-table" id="tblRervado">
+                                                <thead id="tblCom">
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Nombre</th>
+                                                        <th>Codigo</th>
+                                                        <th>Remover</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col s6">
                                     <p><strong>Productos Almacenados</strong></p><br>
-                                    <table class="highlight responsive-table" id="tblProductos">
-                                        <thead id="tblCa">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Nombres</th>
-                                                <th>Codigo</th>
-                                                <th>Tipo</th>
-                                                <th>Stock</th>
-                                                <th>Añadir</th>
-                                            </tr>
-                                        </thead>
+                                    <div class="tabla-contenedor">
+                                        <table class="highlight responsive-table" id="tblProductos">
+                                            <thead id="tblCa">
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nombres</th>
+                                                    <th>Codigo</th>
+                                                    <th>Tipo</th>
+                                                    <th>Stock</th>
+                                                    <th>Añadir</th>
+                                                </tr>
+                                            </thead>
 
-                                        <tbody>
-                                            <!-- data de los productos -->
-                                        </tbody>
-                                    </table>
+                                            <tbody>
+                                                <!-- data de los productos -->
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -161,7 +165,8 @@
             </div>
             <div class="left-sidebar-hover"></div>
         </main>
-        <%@include file="WEB-INF/template/footer.jspf" %>
+        <!--<include file="WEB-INF/template/footer.jspf" %>-->
+        <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>
 </html>

@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import pe.edu.upeu.presup.dao.ReservaDao;
+import pe.edu.upeu.presup.entity.DetalleReserva;
+import pe.edu.upeu.presup.entity.Reserva;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -90,9 +92,47 @@ public class ReservaDaoImp implements ReservaDao {
                 data.add(map);
             }
         } catch (SQLException e) {
-            System.out.println("Error : " +e);
+            System.out.println("Error: " +e);
         }
         return data;
+    }
+
+    @Override
+    public int guardarReserva(Reserva r) {
+        int id = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call registrarReserva(?,?,?,?,?,?,?,?,?)}");
+            cst.setInt(1, r.getEstado());
+            cst.setString(2, r.getFe_reserva());
+            cst.setString(3, r.getFe_devolucion());
+            cst.setString(4, r.getAula());
+            cst.setInt(5, r.getIdProfesor());
+            cst.setString(6, r.getFe_prestamo());
+            cst.setString(7, r.getH_devolucion());
+            cst.setString(8, r.getH_prestamo());
+            cst.registerOutParameter(9, java.sql.Types.INTEGER);
+            cst.executeUpdate();
+            id = cst.getInt(9);
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return id;
+    }
+
+    @Override
+    public int guardarDetalleReserva(DetalleReserva dr) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call registrarDetalleReserva(?,?)}");
+            cst.setInt(1, dr.getIdReserva());
+            cst.setInt(2, dr.getIdProducto());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return x;
     }
 
 }

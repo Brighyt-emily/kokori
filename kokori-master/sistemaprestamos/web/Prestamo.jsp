@@ -3,13 +3,15 @@
     Created on : 05/07/2018, 02:17:04 PM
     Author     : nicob
 --%>
-
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Prestamo </title>
+        <script src="js/material/jquery.js" type="text/javascript"></script>
         <%@include file="WEB-INF/template/header.jspf" %>
         <link href="css/diego.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -26,7 +28,7 @@
                                 <div class="row ">
                                     <div class="input-field col s24">
                                         <i class="material-icons prefix">person_pin</i>
-                                        <input disabled value="No editable" id="disabled" type="text" class="validate">
+                                        <input disabled value="Emily Ccana" id="disabled" type="text" class="validate">
                                         <label for="disabled">Usuario </label>
                                     </div>
                                 </div>
@@ -62,32 +64,34 @@
                                 </div>
 
                             </div>
-                            <div class="container input-field col s7" id="visualizarProducto">
-                                <table class="table" id="tablaPrestamo">
+                            <div class="container input-field col s7" >
+                                <div id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px;">
+                                    <table class="table" id="tablaPrestamo">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">NOMBRE</th>
+                                                <th scope="col">CODIGO</th>
+                                                <th scope="col">ESTADO</th>
+                                                <th scope="col">TIPO</th>
+                                                <th scope="col">DISPONIBLE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+
+                                <table class="table" id="tablaDetalle" style="display: none">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Item Name</th>
-                                            <th>Item Price</th>
+                                            <th>Producto</th>
+                                            <th>N° Prestados</th>
+                                            <th>Estado</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td>Alvin</td>
-                                            <td>Eclair</td>
-                                            <td>$0.87</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alan</td>
-                                            <td>Jellybean</td>
-                                            <td>$3.76</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jonathan</td>
-                                            <td>Lollipop</td>
-                                            <td>$7.00</td>
-                                        </tr>
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -106,7 +110,7 @@
                                     <form name="fechas" id="fechas">
                                         <i class="material-icons prefix">insert_invitation</i>
                                         <label for="fechawe">Fecha</label>
-                                        <input type="text" id="fecha" name="fecha" id="fecha" required>
+                                        <input disabled id="fecha" name="fecha" type="text" class="validate">
                                     </form>
                                 </div>
                             </div>
@@ -114,10 +118,9 @@
                             <div class="col s4">
                                 <div class="input-field">
                                     <form name="fechasdev" id="fechasdev">
-                                        <i class="material-icons prefix">insert_invitation</i>
-                                        <label for="fechadev">Fecha Devolucion</label>
-                                        <input type="text" id="fechadev" name="fechadev" id="fecha" required>
-                                        <input type="text" class="datepicker">
+                                       <i class="material-icons prefix active">insert_invitation</i>
+                                        <label for="fechadev" class="active">Fecha Devolucion</label>
+                                        <input id="fechadev" name="fechadev" type="date">
                                     </form>
                                 </div>
                             </div>
@@ -126,7 +129,7 @@
                                     <form name="horas" id="horas">
                                         <i class="material-icons prefix">access_time</i>
                                         <label for="hor">Hora</label>
-                                        <input type="text" name="hora" id="hora" required>
+                                        <input disabled value="No editable" name="hora" id="hora" type="text" class="validate">
                                     </form>
                                 </div>
                             </div>
@@ -134,7 +137,7 @@
                         <div class="row">
                             <div class="col s12 right-align">
                                 <a class="waves-effect waves-light btn-large red"><i class="material-icons right">block</i>Cancelar Prestamo</a>
-                                <a class="waves-effect waves-light btn-large blue" onclick="M.toast({html: 'Se registro exitosamente <br>', classes: 'rounded'})"><i class="material-icons right">add_circle</i>Registrar</a>
+                                <a class="waves-effect waves-light btn-large blue" id="registrarPrestamo" onclick="M.toast({html: 'Se registro exitosamente <br>', classes: 'rounded'})"><i class="material-icons right">add_circle</i>Registrar</a>
 
                             </div>
                         </div>

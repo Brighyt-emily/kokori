@@ -18,17 +18,17 @@ import pe.edu.upeu.presup.util.Conexion;
  *
  * @author HP
  */
-
 public class ProductoDaoImp implements ProductoDao {
+
     private java.sql.CallableStatement cst;
     private ResultSet rs;
     private Connection cx;
+
     @Override
     public int create(Producto p) {
-        int x=0;
-        try
-        {
-            cx= Conexion.getConexion();
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
             cst = cx.prepareCall("{call createProducto(?,?,?,?)}");
             cst.setString(1, p.getNom());
             cst.setString(2, p.getCod());
@@ -36,17 +36,14 @@ public class ProductoDaoImp implements ProductoDao {
             cst.setInt(4, p.getiTip());
             x = cst.executeUpdate();
 
-            
-        }catch(SQLException e)
-        {
-            System.out.println("ERROR"+e);
+        } catch (SQLException e) {
+            System.out.println("ERROR" + e);
         }
         return x;
     }
 
     @Override
     public int deleate(int key) {
-        boolean p = false;
         int x = 0;
         try {
             cx = Conexion.getConexion();
@@ -54,9 +51,10 @@ public class ProductoDaoImp implements ProductoDao {
             cst.setInt(1, key);
             x = cst.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("ERROR: "+e);
+            System.out.println("ERROR: " + e);
         }
-        return x;         }
+        return x;
+    }
 
     @Override
     public int update(Producto p) {
@@ -68,9 +66,10 @@ public class ProductoDaoImp implements ProductoDao {
             cst.setInt(2, p.getEst());
             x = cst.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("ERROR: "+e);
+            System.out.println("ERROR: " + e);
         }
-        return x;    }
+        return x;
+    }
 
     @Override
     public Producto read(Producto key) {
@@ -79,27 +78,26 @@ public class ProductoDaoImp implements ProductoDao {
 
     @Override
     public List<Producto> readAll() {
-        List<Producto> datos=new ArrayList<>();
-        try
-        {
-            cx=Conexion.getConexion();
-            cst=cx.prepareCall("{call listarProducto()}");
-            rs=cst.executeQuery();
-            while(rs.next())
-            {
-                Producto p=new Producto();
+        List<Producto> datos = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarProducto()}");
+            rs = cst.executeQuery();
+            while (rs.next()) {
+                Producto p = new Producto();
                 p.setIdP(rs.getInt("idproducto"));
                 p.setNom(rs.getString("nombre"));
                 p.setCod(rs.getString("codigo"));
                 p.setEst(rs.getInt("estado"));
                 p.setiTip(rs.getInt("idtipo"));
+                p.setNomTip(rs.getString("nom_tipo"));
+                p.setStock(rs.getInt("stock"));
                 datos.add(p);
             }
-        }catch(SQLException e)
-        {
-            System.out.println("ERROR: "+e);
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e);
         }
         return datos;
     }
-    
+
 }

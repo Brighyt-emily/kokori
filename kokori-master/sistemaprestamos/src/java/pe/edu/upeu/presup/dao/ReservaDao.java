@@ -7,12 +7,18 @@ package pe.edu.upeu.presup.dao;
 
 import java.util.List;
 import java.util.Map;
+import pe.edu.upeu.presup.entity.DetalleReserva;
+import pe.edu.upeu.presup.entity.Reserva;
 
 /**
  *
  * @author Kevin Peinado
  */
 public interface ReservaDao {
+    
+    int guardarReserva(Reserva r);
+    
+    int guardarDetalleReserva(DetalleReserva dr);
 
     List<Map<String, Object>> validarProfesorByCodigo(String codigo);
 
