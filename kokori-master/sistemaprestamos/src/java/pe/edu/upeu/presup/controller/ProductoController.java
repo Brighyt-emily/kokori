@@ -46,14 +46,14 @@ public class ProductoController extends HttpServlet {
                  out.println(g.toJson(pro.readAll()));
                   break;
             case 2:
-                Producto p=new Producto(request.getParameter("nom"), request.getParameter("codi"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("itip")));
+                Producto p=new Producto(request.getParameter("nom"), request.getParameter("cod"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("iTip")));
                 pro.create(p);
                 break;
             case 3:
-                pro.deleate(Integer.parseInt(request.getParameter("idpro")));
+                pro.deleate(Integer.parseInt(request.getParameter("id")));
                 break;
             case 4:
-                Producto lo=new Producto(Integer.parseInt(request.getParameter("est")),request.getParameter("nom"), request.getParameter("codi"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("itip")));
+                Producto lo=new Producto(Integer.parseInt(request.getParameter("idP")),request.getParameter("nom"), request.getParameter("cod"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("iTip")));
                 pro.update(lo);
                 break;
 

@@ -25,12 +25,12 @@
                                 <h4>Reservas</h4>
                             </div>
                             <div class="col s2">
-                                <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Reservar
+                                <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action" id="btnRervar">Reservar
                                     <i class="material-icons right">save</i>
                                 </button>
                             </div>
                             <div class="col s2">
-                                <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Cancelar
+                                <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
                                     <i class="material-icons right ">delete_forever</i>
                                 </button>
                             </div>
@@ -41,7 +41,7 @@
                                     <div class="input-field">
                                         <i class="material-icons prefix">perm_contact_calendar</i>
                                         <label for="codigo">Codigo</label>
-                                        <input type="text" name="codigo" required id="codigo">
+                                        <input type="text" name="codigo" required id="codigo" maxlength="20">
                                     </div>
                                 </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
                                 <div class="col s1 center-align">
@@ -58,7 +58,7 @@
                                     <div class="input-field">
                                         <i class="material-icons prefix">account_balance</i>
                                         <label for="aula">Aula</label>
-                                        <input type="text" name="aula" required id="aula">
+                                        <input type="text" name="aula" required id="aula" maxlength="6">
                                     </div>
                                 </div>
                                 <div class="col s2">
@@ -118,13 +118,14 @@
                                 </div>
                                 <div class="row">
                                     <div class="col s12">
+                                        <p><strong>Producto para llevar</strong></p>
                                         <table class="highlight responsive-table" id="tblRervado">
                                             <thead id="tblCom">
                                                 <tr>
                                                     <th>Id</th>
                                                     <th>Nombre</th>
                                                     <th>Codigo</th>
-                                                    <th>Acciones</th>
+                                                    <th>Remover</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -144,7 +145,7 @@
                                                 <th>Codigo</th>
                                                 <th>Tipo</th>
                                                 <th>Stock</th>
-                                                <th>Accion</th>
+                                                <th>Añadir</th>
                                             </tr>
                                         </thead>
 
@@ -160,7 +161,7 @@
             </div>
             <div class="left-sidebar-hover"></div>
         </main>
-        <%@include file="WEB-INF/template/footer.jspf"%>
+        <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>
 </html>
