@@ -12,9 +12,7 @@ function ltProductosForDev(){
         }
     });       
 }
-///////////////////////////////////
 
-///////////////////////////////////
 $("#tipo").click(function(){
     var tipo =  $("#tipo").val();
     if(tipo=="TODOS"){
@@ -25,7 +23,7 @@ $("#tipo").click(function(){
             $("#tb_prestamos tbody tr").remove();
             var x = JSON.parse(data);
             for (var j = 0; j < x.length; j++) {
-                 $('.modal-trigger').leanModal();
+                $('.modal-trigger').leanModal();
                 $("#tb_prestamos tbody").append("<tr><td>"+x[j].codi+"</td><td>"+ x[j].nom+" "+x[j].ape+"</td><td>"+ x[j].fep+"</td><td>"+ x[j].fed+"</td><td>"+ x[j].no+"</td><td>"+ x[j].noTipo+"</td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[j].idprestamo+")'>Devuelto</button></td></tr>");
             }
         });
@@ -33,19 +31,15 @@ $("#tipo").click(function(){
 });
 
 function editarEstado(idp){
-   
     var toastHTML = '<span>Seguro que desea eliminar?</span><button class="btn-flat toast-action" onclick="holi('+idp+')">Aceptar</button>';
      M.toast({html: toastHTML});
 }
 
-
-   function holi(idp)
-  {
-    console.log(idp);
-       var estado =0;
-      $.post("de",{"idprestamo":idp,"estado":0,"opc":2}, function () {
-      $("#tb_prestamos tbody tr").remove();
-      ltProductosForDev();
+function holi(idp){
+    console.log(idp);  
+    $.post("de",{"idprestamo":idp,"estado":0,"opc":2}, function () {
+    $("#tb_prestamos tbody tr").remove();
+       ltProductosForDev();
     });
 }
 
@@ -60,7 +54,6 @@ function listarTipo(){
     });
 }
 
-
-   function modal(){
+function modal(){
    $('.modal-trigger').leanModal();
 }
