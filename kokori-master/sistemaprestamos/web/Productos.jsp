@@ -13,7 +13,7 @@
          <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
-         <%@include file="WEB-INF/template/Principal.jspf" %>
+        <%@include file="WEB-INF/template/Principal.jspf" %>
          <main class="mn-inner">
                 <div class="row">
                   <div class="col s12 m12 l12">
@@ -22,14 +22,16 @@
                     <div class="row">
             <div class="col s12">
             <div class="row">
-            <div class="input-field col s12">
-             <i class="material-icons prefix">search</i>
-             <label for="autocomplete-input">Buscar por codigo</label>
-             <input type="text" id="autocomplete-input" class="autocomplete" style="width: 220px" placeholder="Ingrese Codigo de Producto">             
-    
-            </div>
+            <div class="col s10">
+                <div class="input-field">
+                <i class="material-icons prefix" style="color: black">search</i>
+                <label for="nomp">buscar..</label>
+                <input type="text" name="nomp" required id="nomp" style="width: 320px">
+              </div>
+           </div>
              </div>
                  </div>
+                        
                  </div>
                     <div class="col s12 m12 l12">
                         <div class="card">
@@ -75,25 +77,24 @@
                         <form id="contact" method="post" class="form" role="form">
                             <div class="row">
                                 <div class="row">
-                                    
-                                    <div class="col s4">
+                                    <div class="col s6">
                                         <div class="input-field">
                                             <i class="material-icons prefix">local_mall</i>
-                                            <input type="text" placeholder="Productos" required id="nom">
-                                            <label for="producto">Producto:</label>
-                                            
+                                            <input type="text" name="producto"  id="pro" placeholder="producto">
+                                            <label for="producto">Producto</label>
+                                           
                                         </div>
                                     </div>
-                                    <div class="col s5">
+                                    <div class="col s6">
                                         <div class="input-field">
                                             <i class="material-icons prefix">looks_5</i>
+                                            <input type="text" name="codigo"  id="codi" placeholder="codigo">
                                             <label for="codigo">Codigo</label>
-                                            <input type="text" name="codigo" placeholder="codigo"  id="cod">
-                                            <label for="codigo">Codigo</label>
-                                            
+                                           
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="row">
                                     <div class="col s6">
                                         <div class="input-field">
@@ -120,11 +121,11 @@
                   <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
 
                 </div>
- </div>
+            </div>
          </main>
    
     
-    <%@include file="WEB-INF/template/footer.jspf" %>
-    <script src="js/producto.js" type="text/javascript"></script> 
+        <%@include file="WEB-INF/template/footer.jspf" %>
+        <script src="js/producto.js" type="text/javascript"></script> 
     </body>
 </html>
