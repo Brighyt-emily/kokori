@@ -55,7 +55,7 @@ public class PrestamoDaoImp implements PrestamoDao {
         List<Prestamo> pre = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cs = cx.prepareCall("{call ListarProductos}");
+            cs = cx.prepareCall("{call ListPrestamos}");
             
             rs = cs.executeQuery();
             while(rs.next()){
