@@ -39,8 +39,6 @@ public class Main extends HttpServlet {
         switch (op) {
             case 1:
                 if (datos.size() > 0) {
-                    System.out.println(datos);
-                    out.println(datos);
                     sesion.setAttribute("iduser", datos.get("idu"));
                     sesion.setAttribute("user", datos.get("user"));
                     String nombres = datos.get("nom") + " " + datos.get("apell");

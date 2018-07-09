@@ -37,20 +37,19 @@
                                     <div class="row">
                                         <form class="col s12" method="post" action="Main.java">
                                             <div class="input-field col s12">                                                   
-                                                <input id="userx" type="text" class="validate" name="user">
+                                                <input id="username" type="text" class="validate" name="user">
                                                 <label for="username">                                                                                                                 
                                                     Usuario</label>
                                             </div>
                                             <div class="input-field col s12">
-                                                <input id="passx" type="password" class="validate" name="pass">
+                                                <input id="password" type="password" class="validate" name="pass">
                                                 <label for="password">Contraseña</label>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <a class="btn  waves-light col s12 " id="btnIngresar" type="submit">Ingresar</a>
+                                                    <a class="btn  waves-light col s12 " id="btnIngresar" value="Enviar" type="submit">Ingresar</a>
                                                 </div>
                                             </div>
-                                                <input type="submit" class="btn btn-primary" value="Enviar">
                                         </form>
                                     </div>
                                 </div>
@@ -61,5 +60,6 @@
             </main>
         </div>                
         <%@include file="WEB-INF/template/footer.jspf" %>
+        <script src="js/login.js" type="text/javascript"></script>
     </body>
 </html>
