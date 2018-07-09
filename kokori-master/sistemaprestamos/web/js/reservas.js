@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //$("#tblRervado").css("display", "none");
+    $("#tblRervado").css("display", "none");
     listarProducto();
     var f = new Date();
     $("#fecha").val(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
@@ -18,14 +18,14 @@ $("#btnBuscar").click(function () {
             if (x.length > 0) {
                 $("#nombres").val(x[0].nombres + " " + x[0].apellidos);
                 $("#idprofesor").val(x[0].idProfesor);
+                var toastHTML = '<span>Profesor encontrado</span><button class="btn-flat toast-action">Ok..!</button>';
+                M.toast({html: toastHTML});
             } else {
-                alert("ingreso mal su codigo");
-                //toast
+                M.toast({html: 'Codigo mal ingresado'});
             }
         });
     } else {
-        alert("Ingrese un codigo para las reservas");
-        //toast
+        M.toast({html: 'Ingrese un codigo para las reservas', classes: 'rounded'});
     }
 });
 
@@ -37,7 +37,7 @@ function listarProducto() {
             $("#tblProductos").append("<tr><td>" + w[i].idProducto + "</td><td>"
                     + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>"
                     + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td>"
-                    + "<a class= 'waves-effect waves-light btn grey' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
+                    + "<a href='#' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
                     + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
         }
     });
@@ -51,6 +51,7 @@ function productoSeleccionado(w) {
         obj.nombre = x[0].nomProducto;
         obj.codigo = x[0].codigo;
         añadirCarrito(obj);
+        $("#tblRervado").css("display", "block");
         listarProdReservados();
     });
 }
@@ -60,8 +61,7 @@ function añadirCarrito(objeto) {
         var j = 0;
         while (j < listaReservados.length) {
             if (listaReservados[j].codigo === objeto.codigo) {
-                //toast
-                alert("Producto ya enlistado");
+                M.toast({html: 'Este producto ya esta seleccionado'});
                 j = listaReservados.length;
                 objeto = null;
             }
@@ -78,14 +78,14 @@ function añadirCarrito(objeto) {
 function listarProdReservados() {
     $("#tblRervado tbody tr").remove();
     for (var i = 0; i < listaReservados.length; i++) {
-        $("#tblRervado").append("<tr><td>" + listaReservados[i].idp 
-                + "</td><td>" + listaReservados[i].nombre +"</td><td>" 
-                + listaReservados[i].codigo 
-                + "</td><td><a href ='#' onclick='eliminar("+ i +");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
+        $("#tblRervado").append("<tr><td>" + listaReservados[i].idp
+                + "</td><td>" + listaReservados[i].nombre + "</td><td>"
+                + listaReservados[i].codigo
+                + "</td><td><a href ='#' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
     }
 }
 
-function eliminar(q){
+function eliminar(q) {
     listaReservados.splice(q, 1);
     listarProdReservados();
 }
@@ -108,4 +108,12 @@ $("#nomProducto").keyup(function () {
             tableReg.rows[i].style.display = 'none';
         }
     }
+});
+
+$("#btnRervar").click(function () {
+    alert("boton guardar");
+});
+
+$("#btnCancelar").click(function () {
+    M.toast({html: 'Canelara la reserva'});
 });
