@@ -25,15 +25,9 @@ $(document).ready(function () {
 
 var mydate = new Date();
 var year = mydate.getYear();
-if (year < 1000)
-    year += 1900;
 var day = mydate.getDay();
 var month = mydate.getMonth() + 1;
-if (month < 10)
-    month = "0" + month;
 var daym = mydate.getDate();
-if (daym < 10)
-    daym = "0" + daym;
 
 document.fechas.fecha.value = daym + "/" + month + "/" + year
 
@@ -87,49 +81,49 @@ function imprimir() {
     window.print();
 }
 
-var carrito = new Array();
+var presequi = new Array();
 function prodDatos() {
     $("#prod").val("");
     $("#prod").val("").focus();
     var obj = new Object();
-    $('#tablaVentas tr').each(function () {
-        obj.cant = $("#cant").val();
-        obj.idp = $(this).find("td").eq(1).html();
-        obj.cod = $(this).find("td").eq(2).html();
-        obj.prod = $(this).find("td").eq(3).html();
-        obj.pre = $(this).find("td").eq(4).html();
+    $('#tablaPrestamo tr').each(function () {
+        obj.nomb = $("#nombre").val();
+        obj.cod = $(this).find("td").eq(1).html();
+        obj.estad = $(this).find("td").eq(2).html();
+        obj.tipo = $(this).find("td").eq(3).html();
+        obj.stock = $(this).find("td").eq(4).html();
     });
-    $('#tablaVentas tbody tr').remove();
+    $('#tablaPrestamo tbody tr').remove();
     addObject(obj);
     listarObject();
 }
 function addObject(cad) {
-    if (carrito.length > 0) {
+    if (presequi.length > 0) {
         var j = 0;
-        while (j < carrito.length) {
-            if (carrito[j].cod === cad.cod) {
-                carrito[j].cant = parseInt(carrito[j].cant) + parseInt(cad.cant);
-                j = carrito.length;
+        while (j < presequi.length) {
+            if (presequi[j].cod === cad.cod) {
+                presequi[j].cant = parseInt(presequi[j].cant) + parseInt(cad.cant);
+                j = presequi.length;
                 cad = null;
             }
             j++;
         }
         if (cad !== null) {
-            carrito.push(cad);
+            presequi.push(cad);
         }
     } else {
-        carrito.push(cad);
+        presequi.push(cad);
     }
 }
 function listarObject() {
     var item = 1, st = 0, igv = 0, total = 0;
 
     $("#visualizarProducto").css("display", "none");//0cultar la tabla de busqueda  
-    $('#tablitaDetalle tbody tr').remove();
-    for (var j = 0; j < carrito.length; j++) {
-        $("#tablitaDetalle").append("<tr><td>" + item + "</td><td>" + carrito[j].cod + "</td><td>" + carrito[j].prod + "</td><td>" + carrito[j].pre + "</td><td>" + carrito[j].cant + "</td><td>" +
+    $('#tablaDetalle tbody tr').remove();
+    for (var j = 0; j < presequi.length; j++) {
+        $("#tablaDetalle").append("<tr><td>" + item + "</td><td>" + presequi[j].cod + "</td><td>" + carrito[j].prod + "</td><td>" + carrito[j].pre + "</td><td>" + carrito[j].cant + "</td><td>" +
                 "<a href='#' onclick='eliminarDetalle(" + j + ")'><i class='fas fa-trash-alt fa-2x' style='color: black;'></i></a></td></tr>");
-        total = total + parseFloat(carrito[j].cant) * parseFloat(carrito[j].pre);
+        total = total + parseFloat(presequi[j].cant) * parseFloat(presequi[j].pre);
         item++;
     }
 
@@ -142,19 +136,17 @@ function listarObject() {
 
 }
 function eliminarDetalle(j) {
-    carrito.splice(j, 1);
+    presequi.splice(j, 1);
     listarObject();
 
 }
-$('#prod').numeric({});
-$('#cliente').numeric({});
 //buscar cliente
-$("#cliente").keyup(function () {
-    var d = $("#cliente").val();
+$("#dnipro").keyup(function () {
+    var d = $("#dnipro").val();
     if (d.length === 8) {
         $.post("vc", {"dni": d, "opc": 2}, function (data) {
             if (data == 0) {
-                $("#cliente").val("Cliente no existe...!");
+                $("#dnipro").val("Profesor no existe...!");
             } else {
                 var x = JSON.parse(data);
                 var nombre = x[0].nombres + " " + x[0].apellidos;
@@ -166,9 +158,9 @@ $("#cliente").keyup(function () {
         });
     }
 });
-$("#registrarVenta").click(function () {
-    var idc = parseInt($("#idcliente").val());
-    var det = JSON.stringify(carrito);
+$("#registrarPrestamo").click(function () {
+    var idc = parseInt($("#dnipro").val());
+    var det = JSON.stringify(presequi);
     alert();
     if (idc > 0) {
         $.post("vc", {"opc": 3, "idc": idc}, function (w) {
@@ -176,34 +168,29 @@ $("#registrarVenta").click(function () {
             if (idv > 0) {
                 $.post("vc", {"carrito": det, "opc": 4, "id": idv}, function (data) {
                     if (data > 0) {
-                        alert("Venta realizada satisfactoriamente...!");
                         limpiar();
                     } else {
-                        alert("No se pudo realizar la venta...!");
+                        M.toast({html: 'No se pudo registrar el Prestamo...! <br>', classes: 'rounded'})
+
                         limpiar();
                     }
                 });
             } else {
-                alert("No se pudo registrar la venta...!");
+                M.toast({html: 'No se pudo registrar el Prestamo...! <br>', classes: 'rounded'})
                 limpiar();
             }
         });
     } else {
-        alert("Insertar Cliente...!");
+        M.toast({html: 'Insertar DNI del profesor <br>', classes: 'rounded'})
     }
 });
 function limpiar() {
-    $("#prod").val("");
-    $('#tablitaDetalle tbody tr').remove();
-    $("#cliente").val("");
-    $("#idcliente").val("");
-    $("#prod").val("").focus();
-    $("#total").html("");
-    $("#st").html("");
-    $("#igv").html("");
-    $("#totalcito").html("S/.0.0");
-    $("#registrarVenta").attr('disabled', 'true');
-    $("#cliente").prop('disabled', false);
-    $('#tablaVentas tbody tr').remove();
-    carrito.length = 0;
+    $("#dnipro").val("");
+    $('#tablaDetalle tbody tr').remove();
+    $("#responsable").val("");
+    $("#aula").val("");
+    $("#fechadev").val("");
+    $("#hora").val("");
+    $('#tablaPrestamo tbody tr').remove();
+    presequi.length = 0;
 }
