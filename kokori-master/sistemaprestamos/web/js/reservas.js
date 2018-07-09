@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#tblRervado").css("display", "none");
+    //$("#tblRervado").css("display", "none");
     listarProducto();
     var f = new Date();
     $("#fecha").val(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
@@ -36,7 +36,7 @@ function listarProducto() {
                     + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>"
                     + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td>"
                     + "<a class= 'waves-effect waves-light btn grey' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
-                    + "<i class = 'material-icons prefix'>vertical_align_bottom</i></a></td</tr>");
+                    + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
         }
     });
 }

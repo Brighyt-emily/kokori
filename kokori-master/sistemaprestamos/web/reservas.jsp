@@ -25,15 +25,15 @@
                                 <h4>Reservas</h4>
                             </div>
                             <div class="col s2">
-                                    <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Reservar
-                                        <i class="material-icons right">save</i>
-                                    </button>
-                                </div>
-                                <div class="col s2">
-                                    <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Cancelar
-                                        <i class="material-icons right ">delete_forever</i>
-                                    </button>
-                                </div>
+                                <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Reservar
+                                    <i class="material-icons right">save</i>
+                                </button>
+                            </div>
+                            <div class="col s2">
+                                <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Cancelar
+                                    <i class="material-icons right ">delete_forever</i>
+                                </button>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="row">
@@ -101,15 +101,60 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                
-                            </div>
-
-                            <!-- busqueda de productos -->
-
-                            <!-- fin de la busqueda de productos -->
                         </div>
-                        <!-- fin de nuevo diseño -->
+                        <div class="row">
+                            <div class="col s6">
+                                <div class="row">
+                                    <div class="col s1"></div>
+                                    <div class="col s10">
+                                        <p>Busqueda de Productos</p>
+                                        <div class="input-field">
+                                            <i class="material-icons prefix" style="color: green">shopping_cart</i>
+                                            <label for="nomProducto">Nombre o Codigo</label>
+                                            <input type="text" name="nomProducto" required id="nomProducto">
+                                        </div>
+                                    </div>
+                                    <div class="col s1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <table class="highlight responsive-table" id="tblRervado">
+                                            <thead id="tblCom">
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Nombre</th>
+                                                    <th>Codigo</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    <p><strong>Productos Almacenados</strong></p><br>
+                                    <table class="highlight responsive-table" id="tblProductos">
+                                        <thead id="tblCa">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombres</th>
+                                                <th>Codigo</th>
+                                                <th>Tipo</th>
+                                                <th>Stock</th>
+                                                <th>Accion</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <!-- data de los productos -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
