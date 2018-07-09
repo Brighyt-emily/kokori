@@ -75,7 +75,6 @@ function salva()
 }
    
 function eco(x){
-   
     var toastHTML = '<span>Seguro que desea eliminar?</span><button class="btn-flat toast-action" onclick="eliminar('+x+')">Aceptar</button>';
      M.toast({html: toastHTML});
 }
