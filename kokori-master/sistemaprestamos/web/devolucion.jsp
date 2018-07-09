@@ -25,11 +25,18 @@
                     <div class="col s12 m12 l12">
                         <div class="page-title">Devolucion</div>
                     </div>
-                    <div class=" col s12 m12 l12">
-                        <select class="browser-default col s3 m3 l3" id="tipo">
-                            <option disabled="disabled">Buscar por Tipo</option>
-                        </select>
-                    </div> 
+                    
+                    <div class="col s12">
+            <div class="row">
+            <div class="input-field col s12">
+             <i class="material-icons prefix">search</i>
+             <input type="text" id="autocomplete-input" class="autocomplete" style="width: 220px" placeholder="Buscar...">             
+                 </div>
+             </div>
+                 </div>
+                    
+                    
+                    
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -83,7 +90,10 @@
         <div class="left-sidebar-hover"></div>
 
     <%@include file="WEB-INF/template/footer.jspf" %>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
+            
+        </script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
     <script src="js/devolucion.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
     </body>
 </html>

@@ -64,3 +64,7 @@ function listarTipo(){
    function modal(){
    $('.modal-trigger').leanModal();
 }
+
+$(document).ready( function () {
+    $('#tb_prestamos').DataTable();
+} );
