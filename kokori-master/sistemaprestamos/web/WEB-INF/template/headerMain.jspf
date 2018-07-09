@@ -1,2 +1,18 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="css/materialize.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CORE CSS-->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>        
+    <style>
+        body{
+            font-family: 'Titillium Web', sans-serif;
+        }                  
+        .picker__weekday-display{
+        }
+        .picker__date-display, .picker__weekday-display{
+        background-color: #1ABC9C;
+        }
+    </style>

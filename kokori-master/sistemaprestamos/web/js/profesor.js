@@ -2,6 +2,7 @@ $(document).ready(function () {
     listarRegisProfesores();
     /**console.log("funciona: JQUERY");
     $('select').formSelect();*/
+     $('.modal').modal();
     
 });
 
