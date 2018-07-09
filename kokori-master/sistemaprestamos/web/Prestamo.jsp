@@ -132,7 +132,7 @@
                                     <form name="fechasdev" id="fechasdev">
                                        <i class="material-icons prefix active">insert_invitation</i>
                                         <label for="fechadev" class="active">Fecha Devolucion</label>
-                                        <input id="fechadev" name="fechadev" type="text">
+                                        <input id="fechadev" name="fechadev" type="date">
                                     </form>
                                 </div>
                             </div>
