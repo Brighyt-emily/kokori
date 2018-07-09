@@ -35,8 +35,8 @@ public class Test {
         // TODO code application logic here
         //conexion();
         //create();
-        listar();
-        //delete();
+        //listar();
+        delete();
         //update();
         //update();
     }
@@ -66,7 +66,7 @@ public class Test {
     }
     static void delete()
     {
-        g.toJson(ko.deleate(10));
+        g.toJson(ko.deleate(7));
         
     }
     static void update()

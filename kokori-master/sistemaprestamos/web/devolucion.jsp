@@ -29,16 +29,14 @@
             <div class="col s12 m12 l12">
                 <div class="card">
                     <div class="col s12">
-            <div class="row">
-            <div class="input-field col s12">
-             <i class="material-icons prefix">search</i>
-             <input type="text" id="autocomplete-input" class="autocomplete" style="width: 220px" placeholder="Buscar...">             
+            <div class="col s10">
+                <div class="input-field">
+                <i class="material-icons prefix">search</i>
+                <label for="nomProducto">Busca..</label>
+                <input type="text" name="nomProducto" required id="nomProducto">
                  </div>
-             </div>
                  </div>
-                    
-                    
-                    
+                 </div>
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -120,6 +118,7 @@
         </div>
     </div> 
     <div class="left-sidebar-hover"></div>
+    
 
     <%@include file="WEB-INF/template/footer.jspf" %>
     <script src="js/devolucion.js" type="text/javascript"></script>
