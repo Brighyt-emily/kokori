@@ -8,11 +8,13 @@ function ltProductosForDev(){
         $("#tipo option").remove();
         listarTipo();
         for (var i = 0; i < x.length; i++) {
-            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+" "+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td>"+ x[i].no+"</td><td>"+ x[i].noTipo+"</td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[i].idprestamo+")'>Devuelto</button></td></tr>"); 
+            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+" "+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td><button class='waves-effect waves-light btn modal-trigger' href='#modal1' onclick='modal()'><i class='material-icons'>visibility</i></button></td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[i].idprestamo+")'>Devuelto</button></td></tr>"); 
         }
     });       
 }
-  
+///////////////////////////////////
+
+///////////////////////////////////
 $("#tipo").click(function(){
     var tipo =  $("#tipo").val();
     if(tipo=="TODOS"){
@@ -23,6 +25,7 @@ $("#tipo").click(function(){
             $("#tb_prestamos tbody tr").remove();
             var x = JSON.parse(data);
             for (var j = 0; j < x.length; j++) {
+                 $('.modal-trigger').leanModal();
                 $("#tb_prestamos tbody").append("<tr><td>"+x[j].codi+"</td><td>"+ x[j].nom+" "+x[j].ape+"</td><td>"+ x[j].fep+"</td><td>"+ x[j].fed+"</td><td>"+ x[j].no+"</td><td>"+ x[j].noTipo+"</td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[j].idprestamo+")'>Devuelto</button></td></tr>");
             }
         });
@@ -30,12 +33,20 @@ $("#tipo").click(function(){
 });
 
 function editarEstado(idp){
-    var estado =0;
-    $.post("de",{"idprestamo":idp,"estado":estado,"opc":2}, function () {
+   
+    var toastHTML = '<span>Seguro que desea eliminar?</span><button class="btn-flat toast-action" onclick="holi('+idp+')">Aceptar</button>';
+     M.toast({html: toastHTML});
+}
+
+
+   function holi(idp)
+  {
+    console.log(idp);
+       var estado =0;
+      $.post("de",{"idprestamo":idp,"estado":0,"opc":2}, function () {
       $("#tb_prestamos tbody tr").remove();
       ltProductosForDev();
     });
-   
 }
 
 function listarTipo(){
@@ -47,4 +58,9 @@ function listarTipo(){
         }
         $("#tipo").append("<option>TODOS</option>");
     });
+}
+
+
+   function modal(){
+   $('.modal-trigger').leanModal();
 }

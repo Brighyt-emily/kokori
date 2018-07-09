@@ -11,9 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%@include file="WEB-INF/template/header.jspf"%>
+        <link href="cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+
     </head>
     <body>
-      
+               <%@include file="WEB-INF/template/Principal.jspf" %>
+
             <!--INICIO Contenido -->
             <main class="mn-inner">
                 <div class="row">
@@ -35,9 +40,7 @@
                                                 <th>Profesor</th>
                                                 <th>Fecha de Préstamo</th>
                                                 <th>Devolución Programada</th>
-                                                <th>Producto</th>
-                                                <th>Tipo</th>
-                                                <th>Estado</th>
+                                                <th>Productos</th>
                                             </tr>
                                         </thead>
                                         <tbody> 
@@ -50,11 +53,37 @@
                 </div>
             </main>
            <!--FIN Contenido-->
-        </div>
+  <!-- Modal Structure -->
+ <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
+                <div class="modal-content">
+                    <h5>Productos</h5>
+                  <form action="#">
+    <p>
+      <label>
+        <input type="checkbox" />
+        <span>Red</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" checked="checked" />
+        <span>Yellow</span>
+      </label>
+    </p>
+   
+
+  </form>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+ </div>
+
+              
         <div class="left-sidebar-hover"></div>
 
     <%@include file="WEB-INF/template/footer.jspf" %>
     <script src="js/devolucion.js" type="text/javascript"></script>
-    
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
     </body>
 </html>
