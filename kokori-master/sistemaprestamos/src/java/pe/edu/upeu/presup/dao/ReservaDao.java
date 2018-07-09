@@ -13,7 +13,8 @@ import java.util.Map;
  * @author Kevin Peinado
  */
 public interface ReservaDao {
-    
+
     List<Map<String, Object>> validarProfesorByCodigo(String codigo);
+
     List<Map<String, Object>> listarProductosReserva();
 }

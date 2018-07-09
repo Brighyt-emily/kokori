@@ -1,8 +1,12 @@
 $(document).ready(function () {
+    $("#tblRervado").css("display", "none");
     listarProducto();
     var f = new Date();
     $("#fecha").val(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
 });
+
+//declaracion de variables
+var listadoReserva = new Array(); //arreglo para escogidos
 
 $("#btnBuscar").click(function () {
     var codigo = $("#codigo").val();
@@ -38,7 +42,40 @@ function listarProducto() {
 }
 
 function productoSeleccionado(x) {
-    alert(x);
+    
+    var obj = new Object();//instanciamos obj
+    
+    $("#tblProductos tr").each(function (){
+        obj.idProducto = $(this).find("td").eq(0).html();
+        obj.nomProducto = $(this).find("td").eq(1).html();
+        obj.codigo = $(this).find("td").eq(2).html();
+        obj.tipo = $(this).find("td").eq(3).html();
+    });
+    $("#nomProducto").val("");
+    $("#nomProducto").val("").focus();
+    añadirObjetos(obj);
+    $("#tblRervado").css("display", "block");
+}
+
+function añadirObjetos(obj){
+    if (listadoReserva.length>0) {
+        var j = 0;
+        while(j<listadoReserva.length){
+            if (listadoReserva[j].codigo === obj.codigo) {
+                alert("Producto en la lista");
+            }
+            j++;
+        }
+        if (obj !== null) {
+            listadoReserva.push(obj);
+        }
+    }else{
+        listadoReserva.push(obj);
+    }
+}
+
+function listarObjectos(){
+    
 }
 
 $("#nomProducto").keyup(function () {
@@ -49,7 +86,7 @@ $("#nomProducto").keyup(function () {
         var encontrado = false;
         for (var j = 0; j < cellsOfRow.length && !encontrado; j++) {
             var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
-            if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+            if (searchText.length === 0 || (compareWith.indexOf(searchText) > -1)) {
                 encontrado = true;
             }
         }
