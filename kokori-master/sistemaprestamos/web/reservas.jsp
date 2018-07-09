@@ -160,7 +160,7 @@
             </div>
             <div class="left-sidebar-hover"></div>
         </main>
-        <%@include file="WEB-INF/template/footer.jspf"%>
+        <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>
 </html>

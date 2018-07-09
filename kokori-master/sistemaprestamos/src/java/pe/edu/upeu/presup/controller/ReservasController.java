@@ -50,6 +50,10 @@ public class ReservasController extends HttpServlet {
             case 2:
                 out.println(g.toJson(rd.listarProductosReserva()));
                 break;
+            case 3:
+                int idp = Integer.parseInt(request.getParameter("idProducto"));
+                out.print(g.toJson(rd.selecionarProdById(idp)));
+                break;
         }
     }
 

@@ -6,7 +6,7 @@ $(document).ready(function () {
 });
 
 //declaracion de variables
-var listadoReserva = new Array(); //arreglo para escogidos
+var listaReservados = new Array(); //arreglo para guardar los productos a emprestar por parte del profesor
 
 $("#btnBuscar").click(function () {
     var codigo = $("#codigo").val();
@@ -20,10 +20,12 @@ $("#btnBuscar").click(function () {
                 $("#idprofesor").val(x[0].idProfesor);
             } else {
                 alert("ingreso mal su codigo");
+                //toast
             }
         });
     } else {
         alert("Ingrese un codigo para las reservas");
+        //toast
     }
 });
 
@@ -41,41 +43,51 @@ function listarProducto() {
     });
 }
 
-function productoSeleccionado(x) {
-    
-    var obj = new Object();//instanciamos obj
-    
-    $("#tblProductos tr").each(function (){
-        obj.idProducto = $(this).find("td").eq(0).html();
-        obj.nomProducto = $(this).find("td").eq(1).html();
-        obj.codigo = $(this).find("td").eq(2).html();
-        obj.tipo = $(this).find("td").eq(3).html();
+function productoSeleccionado(w) {
+    $.get("rc", {"op": 3, "idProducto": w}, function (data) {
+        var x = JSON.parse(data);
+        var obj = new Object();
+        obj.idp = x[0].idproducto;
+        obj.nombre = x[0].nomProducto;
+        obj.codigo = x[0].codigo;
+        añadirCarrito(obj);
+        listarProdReservados();
     });
-    $("#nomProducto").val("");
-    $("#nomProducto").val("").focus();
-    añadirObjetos(obj);
-    $("#tblRervado").css("display", "block");
 }
 
-function añadirObjetos(obj){
-    if (listadoReserva.length>0) {
+function añadirCarrito(objeto) {
+    if (listaReservados.length > 0) {
         var j = 0;
-        while(j<listadoReserva.length){
-            if (listadoReserva[j].codigo === obj.codigo) {
-                alert("Producto en la lista");
+        while (j < listaReservados.length) {
+            if (listaReservados[j].codigo === objeto.codigo) {
+                //toast
+                alert("Producto ya enlistado");
+                j = listaReservados.length;
+                objeto = null;
             }
             j++;
         }
-        if (obj !== null) {
-            listadoReserva.push(obj);
+        if (objeto !== null) {
+            listaReservados.push(objeto);
         }
-    }else{
-        listadoReserva.push(obj);
+    } else {
+        listaReservados.push(objeto);
     }
 }
 
-function listarObjectos(){
-    
+function listarProdReservados() {
+    $("#tblRervado tbody tr").remove();
+    for (var i = 0; i < listaReservados.length; i++) {
+        $("#tblRervado").append("<tr><td>" + listaReservados[i].idp 
+                + "</td><td>" + listaReservados[i].nombre +"</td><td>" 
+                + listaReservados[i].codigo 
+                + "</td><td><a href ='#' onclick='eliminar("+ i +");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
+    }
+}
+
+function eliminar(q){
+    listaReservados.splice(q, 1);
+    listarProdReservados();
 }
 
 $("#nomProducto").keyup(function () {
