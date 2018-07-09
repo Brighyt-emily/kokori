@@ -27,7 +27,7 @@
                                 <div class="row ">
                                     <div class="input-field col s24">
                                         <i class="material-icons prefix">person_pin</i>
-                                        <input disabled value="No editable" id="disabled" type="text" class="validate">
+                                        <input disabled value="Emily Ccana" id="disabled" type="text" class="validate">
                                         <label for="disabled">Usuario </label>
                                     </div>
                                 </div>
