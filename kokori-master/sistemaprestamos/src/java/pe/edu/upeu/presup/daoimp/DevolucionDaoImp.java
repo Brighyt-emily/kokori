@@ -79,12 +79,13 @@ public class DevolucionDaoImp implements DevolucionDao{
         List<Devolucion> d=new ArrayList<>();
        
         try {
-            Devolucion dev = new Devolucion();
+            
             cx = Conexion.getConexion();
             cst = cx.prepareCall("{call ListarPorTipo(?)}");
             cst.setString(1, tipo);
             rs = cst.executeQuery();
             while(rs.next()){
+                Devolucion dev = new Devolucion();
                 dev.setNom(rs.getString("nombres"));
                 dev.setApe(rs.getString("apellidos"));
                 dev.setCodi(rs.getString("codigo"));

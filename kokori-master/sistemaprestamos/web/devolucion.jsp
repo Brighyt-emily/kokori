@@ -54,7 +54,7 @@
             </main>
            <!--FIN Contenido-->
   <!-- Modal Structure -->
- <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
+    <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
                 <div class="modal-content">
                     <h5>Productos</h5>
                   <form action="#">
@@ -70,17 +70,13 @@
         <span>Yellow</span>
       </label>
     </p>
-   
-
-  </form>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                </div>
- </div>
-
-              
-        <div class="left-sidebar-hover"></div>
+    </form>
+    </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+    </div> 
+    <div class="left-sidebar-hover"></div>
 
     <%@include file="WEB-INF/template/footer.jspf" %>
     <script src="js/devolucion.js" type="text/javascript"></script>
