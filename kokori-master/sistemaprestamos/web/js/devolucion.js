@@ -8,7 +8,7 @@ function ltProductosForDev(){
         $("#tipo option").remove();
         listarTipo();
         for (var i = 0; i < x.length; i++) {
-            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+" "+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td><button class='waves-effect waves-light btn modal-trigger' href='#modal1' onclick='modal()'><i class='material-icons'>visibility</i></button></td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[i].idprestamo+")'>Devuelto</button></td></tr>"); 
+            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+" "+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td><button class='btn modal-trigger' href='#modal1' onclick='modal()'><i class='material-icons'>visibility</i></button></td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[i].idprestamo+")'>Devuelto</button></td></tr>"); 
         }
     });       
 }
