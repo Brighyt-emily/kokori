@@ -17,14 +17,14 @@ $("#btnBuscar").click(function () {
             if (x.length > 0) {
                 $("#nombres").val(x[0].nombres + " " + x[0].apellidos);
                 $("#idprofesor").val(x[0].idProfesor);
-                var toastHTML = '<span>Profesor encontrado</span><button class="btn-flat toast-action">Ok..!</button>';
-                M.toast({html: toastHTML});
+                /*var toastHTML = '<span>Profesor encontrado</span><button class="btn-flat toast-action">Ok..!</button>';
+                M.toast({html: toastHTML});*/
             } else {
-                M.toast({html: 'Codigo mal ingresado'});
+                //M.toast({html: 'Codigo mal ingresado'});
             }
         });
     } else {
-        M.toast({html: 'Ingrese un codigo para las reservas', classes: 'rounded'});
+        //M.toast({html: 'Ingrese un codigo para las reservas', classes: 'rounded'});
     }
 });
 
@@ -59,7 +59,7 @@ function añadirCarrito(objeto) {
         var j = 0;
         while (j < listaReservados.length) {
             if (listaReservados[j].codigo === objeto.codigo) {
-                M.toast({html: 'Este producto ya esta seleccionado'});
+                //M.toast({html: 'Este producto ya esta seleccionado'});
                 j = listaReservados.length;
                 objeto = null;
             }
@@ -119,12 +119,19 @@ $("#btnRervar").click(function () {
     var fe_prestamo = $("#fe_prestamo").val();
     var h_prestamo = $("#h_prestamo").val();
     if (idProfe > 0) {
-       alert("ok");
+       $.post("rc",{"estado": estado, "fe_reserva": fe_reserva, "fe_devolucion": fe_devolucion, "aula": aula, "idp":idProfe, "fe_prestamo": fe_prestamo, "h_devolucion":h_devolucion, "h_prestamo": h_prestamo},function (xy) {
+            var idreserva = parseInt(xy);
+            if (idreserva > 0) {
+                //entra al flujo de detalle reserva
+            }else{
+                //M.toast({html: 'Upss!!, Fallo al realizar la reserva'});
+            }
+        });
     } else {
         alert("Porfavor complete los campos");
     }
 });
 
 $("#btnCancelar").click(function () {
-    M.toast({html: 'Canelara la reserva'});
+    //M.toast({html: 'Canelara la reserva'});
 });

@@ -10,11 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reservas</title>
-        <%@include file="WEB-INF/template/headerMain.jspf" %>
+        <%@include file="WEB-INF/template/header.jspf" %>
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <%@include file="WEB-INF/template/min.jspf" %>
+        <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner"> 
             <div class="card">
                 <div class="card-content">
@@ -166,7 +166,7 @@
             <div class="left-sidebar-hover"></div>
         </main>
         <!--<include file="WEB-INF/template/footer.jspf" %>-->
-        <%@include file="WEB-INF/template/footerMain.jspf" %>
+        <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>
 </html>
