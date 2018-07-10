@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.presup.dao.PrestamoDao;
+import pe.edu.upeu.presup.entity.Documento;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.util.Conexion;
 
@@ -106,6 +107,26 @@ public class PrestamoDaoImp implements PrestamoDao {
             System.out.println("Error:"+ e);
         }
         return p;
+    }
+
+    @Override
+    public List<Documento> readDocument() {
+        List<Documento> doc = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call ListDocumento}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Documento d = new Documento();
+                d.setId(rs.getInt(1));
+                d.setNombre(rs.getString(2));
+                doc.add(d);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return doc; 
     }
     
     
