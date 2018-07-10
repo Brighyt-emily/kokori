@@ -52,20 +52,14 @@ public class ProfesorController extends HttpServlet {
                 out.println(g.toJson(myProf.listEscuelaByIdFacultad(idFacultad)));
                 break;
             case 4:
-                //declaramos varibales
-                String nombres = request.getParameter("nombres");
-                String apellidos = request.getParameter("apellidos");
-                String direccion = request.getParameter("direccion");
-                String numCelular = request.getParameter("celular");
-                String numDni = request.getParameter("dni");
-                String email = request.getParameter("email");
-                int estado = Integer.parseInt(request.getParameter("estado"));
-                String grado = request.getParameter("grado");
-                String codigo = request.getParameter("codigo");
-                int idEscuela = Integer.parseInt(request.getParameter("escuela"));
-                //creamos el objeto p
-                Profesor p = new Profesor(estado, grado, codigo, idEscuela, nombres, apellidos, direccion, numCelular, numDni, email);
-                out.println(g.toJson(myProf.create(p)));
+             
+                Profesor profe = new Profesor(Integer.parseInt(request.getParameter("estado"))
+                        ,request.getParameter("grado"),request.getParameter("codigo"),
+                        Integer.parseInt(request.getParameter("escuela")),
+                        request.getParameter("nombres"),request.getParameter("apellidos"),
+                        request.getParameter("direccion"), request.getParameter("celular"),
+                        request.getParameter("dni"), request.getParameter("email"));
+                out.println(g.toJson(myProf.create(profe)));
                 break;
         }
     }

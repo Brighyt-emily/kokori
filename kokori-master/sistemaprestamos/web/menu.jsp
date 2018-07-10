@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        
          <link rel="icon" href="images/logo.png" sizes="40x40">
-        <%@include file="WEB-INF/template/header.jspf" %>
+        <%@include file="WEB-INF/template/headerMain.jspf" %>
         
     
         <title>Menu Principal</title>
@@ -139,7 +139,7 @@
         
         </div>
         
-         <%@include file="WEB-INF/template/footer.jspf" %>
+         <%@include file="WEB-INF/template/footerMain.jspf" %>
          <script src="js/menu.js" type="text/javascript"></script>
     </body>
 </html>

@@ -72,9 +72,26 @@ public class ProductoDaoImp implements ProductoDao {
     }
 
     @Override
-    public Producto read(Producto key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public Producto read(int key) {
+        Producto p = new Producto();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call searchId(?)}");
+            cst.setInt(1, key);
+            rs = cst.executeQuery();
+            while(rs.next()){
+                
+               p.setIdP(rs.getInt("idproducto"));                
+               p.setNom(rs.getString("nombre"));                
+               p.setCod(rs.getString("codigo"));
+               p.setEst(rs.getInt("estado"));
+               p.setiTip(rs.getInt("idtipo"));
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR:"+ e);
+        }
+        //call searchId(4);
+        return p;           }
 
     @Override
     public List<Producto> readAll() {
@@ -99,5 +116,19 @@ public class ProductoDaoImp implements ProductoDao {
         }
         return datos;
     }
+
+    @Override
+    public int crea(Producto p) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call createTipo(?)}");
+            cst.setString(1, p.getNomTip());
+            x = cst.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("ERROR" + e);
+        }
+        return x; }
 
 }

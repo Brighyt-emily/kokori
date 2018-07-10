@@ -2,7 +2,7 @@ $(document).ready(function () {
     listarRegisProfesores();
     /**console.log("funciona: JQUERY");
     $('select').formSelect();*/
-     $('.modal').modal();
+  
     
 });
 
@@ -27,12 +27,12 @@ function listarRegisProfesores(){
         for (var i = 0; i < data.length; i++) {
             $("#tblProfesores").append("<tr><td>"+(i+1)+"</td><td>" + data[i].nombres + "</td><td>" + data[i].apellidos + "</td><td>" 
                     + data[i].dni + "</td><td>" + data[i].codigo + "</td><td>" + data[i].escuela + "</td><td>" 
-                    + data[i].email + "</td><td><a class='waves-effect waves-light btn modal-trigger' data-target='modal1' onclick= 'verProfesor("+data[i].idProfesor+");'><i class='material-icons'>visibility</i></a></td></tr>");
+                    + data[i].email + "</td><td><a data-target='modal1' class='waves-effect waves-light btn modal-trigger' onclick='verProfesor();'>Modal</a></td></tr>");
         }
     });
 }
 
-function verProfesor(x){
-    
-    //alert("si funciona" + x );
+function verProfesor(){
+     
+    alert("si funciona");
 }

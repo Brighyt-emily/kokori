@@ -45,6 +45,7 @@
                                 </tbody>
                             </table>                                                                                               
                             <!--Modal para ver detalladamente el resgitro de los profesores-->
+                            
                             <a class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</a>
                             <!-- Modal Structure -->
                             <div id="modal1" class="modal">

@@ -6,6 +6,10 @@
 package pe.edu.upeu.presup.controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.ReservaDao;
 import pe.edu.upeu.presup.daoimp.ReservaDaoImp;
+import pe.edu.upeu.presup.entity.DetalleReserva;
+import pe.edu.upeu.presup.entity.Reserva;
 
 /**
  *
@@ -53,6 +59,37 @@ public class ReservasController extends HttpServlet {
             case 3:
                 int idp = Integer.parseInt(request.getParameter("idProducto"));
                 out.print(g.toJson(rd.selecionarProdById(idp)));
+                break;
+            case 4:
+                int estado = Integer.parseInt(request.getParameter("estado"));
+                String fe_reserva = request.getParameter("fe_reserva");
+                String fe_devolucion = request.getParameter("fe_devolucion");
+                String aula = request.getParameter("aula");
+                int idProfesor = Integer.parseInt(request.getParameter("idp"));
+                String fe_prestamo = request.getParameter("fe_prestamo");
+                String h_devolucion = request.getParameter("h_devolucion");
+                String h_prestamo = request.getParameter("h_prestamo");
+                int idReserva = 0;
+                idReserva = rd.guardarReserva(new Reserva(estado, fe_reserva, fe_devolucion, aula, idProfesor, fe_prestamo, h_devolucion, h_prestamo));
+                if (idReserva > 0) {
+                    out.println(idReserva);
+                }else{
+                    out.println(0);
+                }
+                break;
+            case 5:
+                String data = request.getParameter("listProductos");
+                int  r = 0;
+                int iddr = Integer.parseInt(request.getParameter("iddr"));
+                JsonParser parser = new JsonParser();
+                JsonArray gsonArr = parser.parse(data).getAsJsonArray();
+                for(JsonElement obj: gsonArr){
+                    JsonObject gsonObj = obj.getAsJsonObject();
+                    
+                    DetalleReserva dr = new DetalleReserva(iddr, Integer.parseInt(gsonObj.get("idp").getAsString()));
+                    r = rd.guardarDetalleReserva(dr);
+                }
+                out.println(r);
                 break;
         }
     }

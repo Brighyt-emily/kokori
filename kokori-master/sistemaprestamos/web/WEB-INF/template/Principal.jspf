@@ -20,18 +20,14 @@
                             </a>
                         </section>
                         <div class="header-title col s3">      
-                            <span class="chapter-title">Alphalpha</span>
+                            <span class="chapter-title" ><a href="menu.jsp"> Alphalpha</a></span>
                         </div>
                         
                         <ul class="right col s9 m3 nav-right-menu">
                            
                             <li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>
                             <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
-                            <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
-                            <li class="hide-on-med-and-up"><div class="chip">
-                                    <img src="assets/images/profile-image-1.png" alt="Contact Person">
-                                    Jane Doe
-                                </div></li>
+                            
                            
                             
                           
@@ -230,7 +226,7 @@
            
             <aside id="slide-out" class="side-nav white fixed">
                 <div class="side-nav-wrapper">
-                    <div class="sidebar-profile">
+                    <div class="sidebar-profile ">
                         <div class="sidebar-profile-image">
                             <img src="assets/images/profile-image.png" class="circle" alt="">
                         </div>
@@ -245,22 +241,8 @@
                     
                     <div class="sidebar-account-settings">
                         <ul>
-                            <li class="no-padding">
-                                <a class="waves-effect waves-grey" href=""><i class="material-icons">mail_outline</i>Perfil</a>
-                            </li>
-                            <li class="no-padding">
-                                <a class="waves-effect waves-grey"><i class="material-icons">star_border</i>Datos de Usuario</a>
-                            </li>
-                            <li class="no-padding">
-                                <a class="waves-effect waves-grey"><i class="material-icons">done</i>Detalles</a>
-                            </li>
-                            <li class="no-padding">
-                                <a class="waves-effect waves-grey"><i class="material-icons">history</i>Historial</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="no-padding">
-                                <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
-                            </li>
+                            <li><a class="waves-effect" href="#" > <i class="material-icons" style="height:10px;">account_box</i>Mi Perfil</a></li>
+                            
                         </ul>
                     </div>
                     
@@ -268,14 +250,20 @@
                     
                     
                     <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="registrarProfesores.jsp">
-                        <i class="material-icons ">add_circle</i>Añadir Profesor</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="Prestamo.jsp">
+                        <i class="material-icons green-text" style="height:10px;">assignment_ind</i>Prestamos</a></li>
+                         <li class="no-padding"><a class="waves-effect waves-grey" href="reservas.jsp">
+                        <i class="material-icons blue-text" style="height:10px;">assignment</i>Reservas</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
+                        <i class="material-icons red-text" style="height:10px;">business_center</i>Reportes</a></li>
+                        
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="registrarProfesores.jsp" >
+                        <i class="material-icons" style="height:10px;">add_circle</i>Añadir Profesor</a></li>
                         
                         <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp">
-                        <i class="material-icons ">search</i>Buscar Profesor</a></li>
-                        
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="Prestamo.jsp">
-                        <i class="material-icons green-text">assignment_ind</i>Prestamos</a></li>
+                        <i class="material-icons" style="height:10px;">folder_shared</i>Gestion Profesor</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
+                        <i class="material-icons" style="height:10px;">laptop_windows</i>Gestion Productos</a></li>
                         
                         <!--colapso :,v
                         <li class="no-padding">
@@ -293,11 +281,9 @@
                         </li>
                         -->
                         
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="reservas.jsp">
-                        <i class="material-icons blue-text">assignment</i>Reservas</a></li>
+                       
                                 
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
-                        <i class="material-icons red-text">business_center</i>Reportes</a></li>
+                     
                        
                         
                         

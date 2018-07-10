@@ -1,7 +1,10 @@
 package pe.edu.upeu.presup.test;
 
 import com.google.gson.Gson;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import pe.edu.upeu.presup.dao.DevoDao;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.dao.PrestamoDao;
@@ -40,13 +43,15 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        conexion();
+        //conexion();
         //create();
         //listar();
         //delete();
         //update();
         //update();
-        validar();
+        //validar();
+        //read();
+        nop();
     }
 
     static void conexion() {
@@ -58,26 +63,22 @@ public class Test {
     }
 
     static void create() {
-        Devo p = new Devo("LOCURA", 2);
-        if (po.create(p) > 0) {
+        Producto p = new Producto("LOCURA");
+        if (ko.crea(p) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");
         }
     }
 
-    static void listar() {
-        System.out.println(g.toJson(kop.readAll()));
-
-    }
-
+   
     static void delete() {
         g.toJson(ko.deleate(7));
 
     }
 
     static void update() {
-        Prestamo p = new Prestamo(1, 0);
+        Prestamo p = new Prestamo(1,0);
         if (kop.update(p) > 0) {
             System.out.println("c:");
         } else {
@@ -91,6 +92,17 @@ public class Test {
         System.out.println(data);
         System.out.println(data.size());
 
+    }
+    static void read()
+    {
+        System.out.println(g.toJson(ko.read(1)));
+    }
+    static void nop()
+    {
+List<Map<String, Object>> lista = new ArrayList<>();
+lista = kop.listarDevolucion();
+        System.out.println(lista);
+        System.out.println(lista.size());
     }
 
 }
