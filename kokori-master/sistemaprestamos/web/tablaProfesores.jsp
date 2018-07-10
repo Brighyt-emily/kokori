@@ -12,6 +12,11 @@
         <title>JSP Page</title>
         <%@include file="WEB-INF/template/header.jspf" %>
          <!-- Compiled and minified CSS -->
+          <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    
+            
   
             
     </head>
@@ -46,17 +51,26 @@
                             </table>                                                                                               
                             <!--Modal para ver detalladamente el resgitro de los profesores-->
                             
-                            <a class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</a>
+                            
                             <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h4>Titulo del modal</h4>
-                                    <p>Cuerpo del modal</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                                </div>
+                            <div id="modal1" class="modal s12 m12 l12" style="max-width: 480px;">
+                <div class="modal-content">
+                  
+                     <div class="col-sm-8 contact-form" > <!-- div da direita -->
+                         <form id="contact" method="post" class="form" role="form">
+                            <div class="row">
+                               
+                              
+                                
+                    
                             </div>
+                     </div>
+                <div class="modal-footer">
+                    <a  class="modal-action modal-close btn-flat" onclick='editar()'>Registrar</a>
+                    <a  class="modal-action modal-close btn-flat">Cerrar</a>
+
+                </div>
+                     </div>
                             <!-- fin del modal -->
                         </div>
                     </div>
@@ -72,11 +86,13 @@
 
 
 
+
     <%@include file="WEB-INF/template/footer.jspf" %>
     <script src="js/profesor.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
             console.log("funciona");
+             
         });
     </script>
 </body>

@@ -159,4 +159,23 @@ public class ProfesorDaoImp implements ProfesorDao {
         return list;
     }
 
+    @Override
+    public Profesor SearchDniprof(String x) {
+        Profesor p = new Profesor();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call SearchDniProf(?)}");
+            cst.setString(1, x);
+            rs = cst.executeQuery();
+            while(rs.next()){
+                p.setIdProfesor(rs.getInt(1));
+                p.setNomApe(rs.getString(2));
+                
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return p;
+    }
+
 }

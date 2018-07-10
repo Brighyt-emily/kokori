@@ -30,4 +30,6 @@ public interface ProfesorDao {
     List<Facultad> listFacultad();
     
     List<Escuela> listEscuelaByIdFacultad(int key);
+    
+    Profesor SearchDniprof(String x);
 }

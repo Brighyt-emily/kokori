@@ -58,7 +58,6 @@
         </div>
         <div class="left-sidebar-hover"></div>
   
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
         <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/pruebas.js" type="text/javascript"></script>

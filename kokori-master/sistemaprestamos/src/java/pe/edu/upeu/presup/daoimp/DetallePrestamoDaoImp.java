@@ -40,7 +40,7 @@ public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
         try{
             cx= Conexion.getConexion();
             cs=cx.prepareCall("{call createDetallePrestamo(?)}");
-            cs.setInt(1,p.getId_prod());
+            cs.setString(1,p.getNom_prod());
             x= cs.executeUpdate();
         }
         catch(SQLException e){
