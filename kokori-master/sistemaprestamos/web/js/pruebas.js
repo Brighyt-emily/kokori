@@ -20,12 +20,12 @@ $(document).ready(function () {
   function toast(){
       Materialize.toast('toas jquery', 4000);
       var toastContent = $('<span>I am toast content<a class="btn blue" onclick="funciona();">maincra</a></span>');
-  Materialize.toast(toastContent, 100000);
+  Materialize.toast(toastContent, 10000);
   
   var toastContent = $('<span>I am toast content<a class="btn-flat toast-action red-text" onclick="funciona();">maincra</a></span>');
-  Materialize.toast(toastContent, 100000);
+  Materialize.toast(toastContent, 10000);
    var toastContent = $('<h1>Ella no te ama</h1>');
-  Materialize.toast(toastContent, 100000);
+  Materialize.toast(toastContent, 10000);
   }
   
   function funciona(){

@@ -43,6 +43,6 @@ $("#btnRegistrar").click(function () {
     
 alert(ide);
 $.get("pc", {"op":4, "nombres": nombres,"apellidos":apellidos,"celular":celular,"email":email,"direccion":direccion,"grado":grado,"dni":dni,"codigo":codigo,"escuela":ide,"estado":0}, function (data) {
-alert("funciona");
+alert("Registro exitoso");
 });     
 });
