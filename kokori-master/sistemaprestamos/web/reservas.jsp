@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reservas</title>
         <%@include file="WEB-INF/template/header.jspf" %>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -127,7 +128,18 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="col s3"></div>
+                            <div class="col s3">
+                                    <div class="action-btn-wrapper">
+                                        <div class="fixed-action-btn my-custom-btn vertical">
+                                            <a class="btn-floating btn-large blue-grey">
+                                                <i class="large material-icons">build</i>
+                                            </a>
+                                            <ul>
+                                                <li><a class="btn-floating black lighten-1" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a></li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                         <!--Modal-->
                         <div id="modal1" class="modal modal-fixed-footer">
@@ -177,6 +189,7 @@
             </div>
             <div class="left-sidebar-hover"></div>
         </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>
