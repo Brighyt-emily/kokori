@@ -33,9 +33,8 @@
                             <div class="card white darken-1" >
                                 <div class="card-content ">
                                     <img class="responsive-img" src="images/logo.png">
-
                                     <div class="row">
-                                        <form class="col s12" method="post" action="Main.java">
+                                        <form method="post" action="menu.jsp">
                                             <div class="input-field col s12">                                                   
                                                 <input id="username" type="text" class="validate" name="user">
                                                 <label for="username">                                                                                                                 
@@ -47,7 +46,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <a class="btn  waves-light col s12 " id="btnIngresar" value="Enviar" type="submit">Ingresar</a>
+                                                    <input class="btn  waves-light col s12 " id="btnIngresar" value="Enviar" type="submit">
                                                 </div>
                                             </div>
                                         </form>
@@ -60,6 +59,5 @@
             </main>
         </div>                
         <%@include file="WEB-INF/template/footer.jspf" %>
-        <script src="js/login.js" type="text/javascript"></script>
     </body>
 </html>
