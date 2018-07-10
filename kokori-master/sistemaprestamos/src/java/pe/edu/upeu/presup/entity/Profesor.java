@@ -16,6 +16,7 @@ public class Profesor extends Trabajador{
     private String grado;
     private String codProfesor;
     private int idEscuela;
+    private String nomApe;
 
     public Profesor() {
     }
@@ -36,8 +37,15 @@ public class Profesor extends Trabajador{
         this.codProfesor = codProfesor;
         this.idEscuela = idEscuela;
     }
-    
 
+    public String getNomApe() {
+        return nomApe;
+    }
+
+    public void setNomApe(String nomApe) {
+        this.nomApe = nomApe;
+    }
+   
     public int getIdProfesor() {
         return idProfesor;
     }

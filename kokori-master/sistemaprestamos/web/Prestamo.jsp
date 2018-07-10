@@ -28,7 +28,7 @@
                                 <div class="row ">
                                     <div class="input-field col s24">
                                         <i class="material-icons prefix">person_pin</i>
-                                        <input disabled value="Emily Ccana" id="disabled" type="text" class="validate">
+                                        <input disabled value="Emily Ccana" id="user" type="text" class="validate">
                                         <label for="disabled">Usuario </label>
                                     </div>
                                 </div>
@@ -38,6 +38,7 @@
                                             <i class="material-icons prefix">assignment</i>
                                             <label for="dnipro">Ingrese DNI profesor</label>
                                             <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
+                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +48,7 @@
                                             <i class="material-icons prefix active">face</i>
                                             <label for="dnipro" class="active">Documento responsable</label>
                                             <select id="docu" class="input-field">
-       
+                                                    
                                             </select>
                                         </div>
                                     </div>
@@ -56,7 +57,7 @@
                                     <div class="col s24">
                                         <div class="input-field">
                                             <i class="material-icons prefix">chrome_reader_mode</i>
-                                            <label for="responsable">Responsable</label>
+                                            <label for="responsable">Alumno</label>
                                             <input type="text" name="responsable" id="responsable" required>
                                         </div>
                                     </div>
@@ -102,9 +103,9 @@
                             <div class="col s4">
                                 <div class="input-field">
                                     <form name="fechas" id="fechas">
-                                        <i class="material-icons prefix">insert_invitation</i>
-                                        <label for="fechawe">Fecha prestamo</label>
-                                        <input disabled id="fecha_pre" name="fecha" type="text" class="validate">
+                                        <i class="material-icons prefix active">insert_invitation</i>
+                                        <label for="fechawe" class="active">Fecha prestamo</label>
+                                        <input id="fecha_pre" name="fecha" type="date" class="validate">
                                     </form>
                                 </div>
                             </div>
@@ -137,23 +138,23 @@
                                 </div>
                             </div>
                             <table class="table" id="tablaDetalle" >
-                                    <thead>
-                                        <tr>
-                                            <th>Producto</th>
-                                            <th>N° Prestados</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                    </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>N° Prestados</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
 
-                                    <tbody>
-                                       
-                                    </tbody>
-                                </table>
+                                <tbody>
+
+                                </tbody>
+                            </table>
                         </div>
                         <div class="row">
                             <div class="col s12 right-align">
                                 <a class="waves-effect waves-light btn-large red"><i class="material-icons right">block</i>Cancelar Prestamo</a>
-                                <a class="waves-effect waves-light btn-large blue" id="registrarPrestamo" onclick="M.toast({html: 'Se registro exitosamente <br>', classes: 'rounded'})"><i class="material-icons right">add_circle</i>Registrar</a>
+                                <a class="waves-effect waves-light btn-large blue" id="registrarPrestamo"><i class="material-icons right">add_circle</i>Registrar</a>
 
                             </div>
                         </div>
@@ -162,6 +163,6 @@
             </div>  
             <script src="js/prestamo.js" type="text/javascript"></script>
         </main>
-        <%@include file="WEB-INF/template/footerMain.jspf" %>
+        <%@include file="WEB-INF/template/footer.jspf" %>
     </body>
 </html>

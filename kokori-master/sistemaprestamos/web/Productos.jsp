@@ -99,7 +99,7 @@
                                 
                                 <div class="row">
                                        <div class="input-field col s6">
-    <select>
+    <select id="loco">
       <option value="" disabled selected>Selecciona un estado</option>
       <option value="1">BUEN ESTADO</option>
       <option value="0">MAL ESTADO</option>
@@ -140,7 +140,7 @@
                                 
                                 
                                <div class="input-field col s5">
-                                                <select id="comboEscuela" name="selectBox">
+                                                <select id="combin" name="selectBox">
                                                  <option value="0" disabled selected>Escuelas de la UPeU</option>             
                                                 </select>
                                                 <label>Escuelas</label>

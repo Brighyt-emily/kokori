@@ -14,13 +14,25 @@ public class DetallePrestamo {
     int id_prestamo;
     int id_prod;
     int cantidad;
+    String nom_prod;
 
     public DetallePrestamo(int id_prod) {
         this.id_prod = id_prod;
     }
+
+    public DetallePrestamo(String nom_prod) {
+        this.nom_prod = nom_prod;
+    }
     
     
     
+    public String getNom_prod() {
+        return nom_prod;
+    }
+
+    public void setNom_prod(String nom_prod) {
+        this.nom_prod = nom_prod;
+    }
     
     public int getId_detpres() {
         return id_detpres;

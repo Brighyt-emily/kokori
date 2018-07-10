@@ -15,6 +15,8 @@ public class Prestamo {
     String fe_prestamo;
     String nom_alumno;
     String fe_devolucion;
+    String hora_pre;
+    String hora_devo;
     String aula;
     int id_profe;
     int id_documento;
@@ -27,24 +29,41 @@ public class Prestamo {
     public Prestamo() {
     }
 
-    public Prestamo(String fe_prestamo, String nom_alumno, String fe_devolucion, String aula, int id_profe, int id_documento, int id_user) {
+    public Prestamo(String fe_prestamo, String nom_alumno, String fe_devolucion, String hora_pre, String hora_devo, String aula, int id_profe, int id_documento, int id_user) {
         this.fe_prestamo = fe_prestamo;
         this.nom_alumno = nom_alumno;
         this.fe_devolucion = fe_devolucion;
+        this.hora_pre = hora_pre;
+        this.hora_devo = hora_devo;
         this.aula = aula;
         this.id_profe = id_profe;
         this.id_documento = id_documento;
         this.id_user = id_user;
     }
 
+    
+
     public Prestamo(int idprestamo, int estado) {
         this.idprestamo = idprestamo;
         this.estado = estado;
     }
 
-    
-    
-    
+    public String getHora_pre() {
+        return hora_pre;
+    }
+
+    public void setHora_pre(String hora_pre) {
+        this.hora_pre = hora_pre;
+    }
+
+    public String getHora_devo() {
+        return hora_devo;
+    }
+
+    public void setHora_devo(String hora_devo) {
+        this.hora_devo = hora_devo;
+    }
+
     public int getId_profe() {
         return id_profe;
     }

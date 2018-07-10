@@ -36,17 +36,17 @@
                                     <div class="row">
                                         <form method="post" action="main">
                                             <div class="input-field col s12">                                                   
-                                                <input id="username" type="text" class="validate" name="user">
+                                                <input id="user" type="text" name="user">
                                                 <label for="username">                                                                                                                 
                                                     Usuario</label>
                                             </div>
                                             <div class="input-field col s12">
-                                                <input id="password" type="password" class="validate" name="pass">
+                                                <input id="pass" type="password" name="pass">
                                                 <label for="password">Contraseña</label>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input class="btn  waves-light col s12 " id="btnIngresar" value="Enviar" type="submit">
+                                                    <input class="btn  waves-light col s12 " id="btnIngresar" type="submit">
                                                 </div>
                                             </div>
                                         </form>

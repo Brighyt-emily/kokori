@@ -60,7 +60,7 @@ public class Main extends HttpServlet {
                         rd= request.getRequestDispatcher("/menu");
                         rd.forward(request, response);
                     }else{
-                        rd= request.getRequestDispatcher("/login");
+                        rd= request.getRequestDispatcher("/main");
                         rd.forward(request, response);
                     }
                     break;

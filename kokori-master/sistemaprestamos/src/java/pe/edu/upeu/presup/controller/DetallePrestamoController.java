@@ -31,7 +31,7 @@ public class DetallePrestamoController extends HttpServlet {
             int op = Integer.parseInt(request.getParameter("opc"));
              switch(op){
                  case 1:
-                        DetallePrestamo d =new DetallePrestamo(Integer.parseInt(request.getParameter("prod")));
+                        DetallePrestamo d =new DetallePrestamo(request.getParameter("prod"));
                         dp.create(d);
                  break;
             }
