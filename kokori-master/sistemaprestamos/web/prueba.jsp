@@ -46,9 +46,9 @@
                                 
                                 <input type="date" id="fecha" class="datepicker">
 	          		<label for="fecha">Elige la fecha</label>
-                                
-                                
-                                
+                                   <!--toas botom-->
+                                 <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a>
+                                 <a class="btn" onclick="toast();" id="">Toast k¿jquery</a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,8 @@
         </div>
         <div class="left-sidebar-hover"></div>
   
-        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
         <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/pruebas.js" type="text/javascript"></script>
  <script>alert("sdfdsf");</script>

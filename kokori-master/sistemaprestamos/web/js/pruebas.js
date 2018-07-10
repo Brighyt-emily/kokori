@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  alert("locoo");
+  Materialize.toast('Toast al inicio', 4000);
 });
   $('.datepicker').pickadate({
  monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -16,3 +16,17 @@ $(document).ready(function () {
 		labelMonthSelect: 'Selecciona un mes',
 		labelYearSelect: 'Selecciona un año',
   });
+  
+  function toast(){
+      Materialize.toast('toas jquery', 4000);
+      var toastContent = $('<span>I am toast content<a class="btn blue" onclick="funciona();">maincra</a></span>');
+  Materialize.toast(toastContent, 100000);
+  
+  var toastContent = $('<span>I am toast content<a class="btn-flat toast-action red-text" onclick="funciona();">maincra</a></span>');
+  Materialize.toast(toastContent, 100000);
+   var toastContent = $('<h1>Ella no te ama</h1>');
+  Materialize.toast(toastContent, 100000);
+  }
+  function funciona(){
+      alert("funciona");
+  }

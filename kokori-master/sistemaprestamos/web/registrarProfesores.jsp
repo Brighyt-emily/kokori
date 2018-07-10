@@ -35,7 +35,7 @@
                                 <div class="row">
                                     <div class="col s4">
                                         <div class="input-field">
-                                        <i class="material-icons prefix">person_pin</i>
+                                        <i class="material-icons prefix">face</i>
                                         <label for="nombres">Nombres</label>
                                         <input id="nombres" type="text" class="validate">
                                         </div>
@@ -108,22 +108,35 @@
                                                  </select>
                                                  <label>Facultades</label>
                                            </div>
-                                                        <div class="col s2 center-align">
-                                                            <a class="btn-floating btn-large waves-effect waves-light blue-grey" id="btnMostrar"><i class="material-icons">keyboard_arrow_right</i></a>
-                                                        </div>
+                                           <div class="col s2 center-align">
+                                                <a class="btn-floating btn-large waves-effect waves-light blue-grey" id="btnMostrar"><i class="material-icons">keyboard_arrow_right</i></a>
+                                           </div>
                                     
-                                                        <div class="input-field col s5">
-                                                            <select id="selectBox" name="selectBox">
-                                                                <option value="option1"> option1 </option>
-                                                                <option value="option2"> option2 </option>
-                                                                <option value="option3"> option3 </option>
-                                                                <option value="option4"> option4 </option>
-                                                            </select>
-                                                        </div>
+                                            <div class="input-field col s5">
+                                                <select id="comboEscuela" name="selectBox">
+                                                 <option value="0" disabled selected>Escuelas de la UPeU</option>             
+                                                </select>
+                                                <label>Escuelas</label>
+                                                </div>
                             
-                                                        </div>
-                                                        </div>
-                                                    </div>
+                                            </div>
+                                            </div>
+                             <div class="row">
+                            <div class="col s8">
+                                
+                            </div>
+                            <div class="col s2">
+                                <button class="btn-large light-blue darken-4" type="submit" name="action" id="btnRegistrar">Reservar
+                                    <i class="material-icons right">save</i>
+                                </button>
+                            </div>
+                            <div class="col s2">
+                                <button class="btn-large grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
+                                    <i class="material-icons right ">delete_forever</i>
+                                </button>
+                            </div>
+                        </div>
+                                    </div>
                         </div>
                         </div>
                         </div>
