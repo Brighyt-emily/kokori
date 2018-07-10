@@ -53,13 +53,16 @@ public class ReservasController extends HttpServlet {
                     out.println(0);
                 }
                 break;
+                
             case 2:
                 out.println(g.toJson(rd.listarProductosReserva()));
                 break;
+                
             case 3:
                 int idp = Integer.parseInt(request.getParameter("idProducto"));
                 out.print(g.toJson(rd.selecionarProdById(idp)));
                 break;
+                
             case 4:
                 int estado = Integer.parseInt(request.getParameter("estado"));
                 String fe_reserva = request.getParameter("fe_reserva");
@@ -77,6 +80,7 @@ public class ReservasController extends HttpServlet {
                     out.println(0);
                 }
                 break;
+                
             case 5:
                 String data = request.getParameter("listProductos");
                 int  r = 0;
@@ -90,6 +94,10 @@ public class ReservasController extends HttpServlet {
                     r = rd.guardarDetalleReserva(dr);
                 }
                 out.println(r);
+                break;
+                
+            case 6:
+                out.println(g.toJson(rd.listarInfromeRegistro()));
                 break;
         }
     }
