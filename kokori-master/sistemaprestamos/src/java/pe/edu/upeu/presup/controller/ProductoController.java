@@ -57,7 +57,11 @@ public class ProductoController extends HttpServlet {
                 pro.update(lo);
                 break;
             case 5:
-                out.println(g.toJson(pro.read(Integer.parseInt(request.getParameter("idcat")))));
+                out.println(g.toJson(pro.read(Integer.parseInt(request.getParameter("idP")))));
+                break;
+            case 6:
+                Producto o=new Producto(request.getParameter("nomTip"));
+                pro.crea(o);
                 break;
         }
         }

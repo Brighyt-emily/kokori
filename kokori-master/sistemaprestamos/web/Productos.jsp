@@ -144,7 +144,8 @@
                                             <i class="material-icons prefix">local_mall</i>
                                             <input type="text" name="producto"  id="pro" placeholder="producto">
                                             <label for="producto">Producto</label>
-                                           
+                                            <input type="hidden" id="edit_idc" class="form-control">
+
                                         </div>
                                     </div>
                                     <div class="col s6">

@@ -80,13 +80,15 @@ public class ProductoDaoImp implements ProductoDao {
             cst.setInt(1, key);
             rs = cst.executeQuery();
             while(rs.next()){
-               p.setNom(rs.getString("modelo"));                
-               p.setCod(rs.getString("idcatalogo"));
-               p.setEst(rs.getInt("tipo"));
-               p.setIdP(rs.getInt(""));
+                
+               p.setIdP(rs.getInt("idproducto"));                
+               p.setNom(rs.getString("nombre"));                
+               p.setCod(rs.getString("codigo"));
+               p.setEst(rs.getInt("estado"));
+               p.setiTip(rs.getInt("idtipo"));
             }
         } catch (SQLException e) {
-            System.out.println("Error:"+ e);
+            System.out.println("ERROR:"+ e);
         }
         //call searchId(4);
         return p;           }
@@ -114,5 +116,19 @@ public class ProductoDaoImp implements ProductoDao {
         }
         return datos;
     }
+
+    @Override
+    public int crea(Producto p) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call createTipo(?)}");
+            cst.setString(1, p.getNomTip());
+            x = cst.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("ERROR" + e);
+        }
+        return x; }
 
 }

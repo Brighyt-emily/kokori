@@ -40,13 +40,14 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        conexion();
-        //create();
+        //conexion();
+        create();
         //listar();
         //delete();
         //update();
         //update();
-        validar();
+        //validar();
+        //read();
     }
 
     static void conexion() {
@@ -58,8 +59,8 @@ public class Test {
     }
 
     static void create() {
-        Devo p = new Devo("LOCURA", 2);
-        if (po.create(p) > 0) {
+        Producto p = new Producto("LOCURA");
+        if (ko.crea(p) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");
@@ -91,6 +92,10 @@ public class Test {
         System.out.println(data);
         System.out.println(data.size());
 
+    }
+    static void read()
+    {
+        System.out.println(g.toJson(ko.read(1)));
     }
 
 }

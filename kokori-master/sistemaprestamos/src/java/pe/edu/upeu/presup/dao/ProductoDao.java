@@ -18,5 +18,6 @@ public interface ProductoDao {
     int update (Producto p);
     Producto read(int key);
     List <Producto> readAll();
+    int crea (Producto p);
     
   }
