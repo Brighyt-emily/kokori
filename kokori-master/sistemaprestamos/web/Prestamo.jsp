@@ -162,6 +162,6 @@
             </div>  
             <script src="js/prestamo.js" type="text/javascript"></script>
         </main>
-        <%@include file="WEB-INF/template/footer.jspf" %>
+        <%@include file="WEB-INF/template/footerMain.jspf" %>
     </body>
 </html>

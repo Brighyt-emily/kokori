@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Reservas</title>
+        <title>Reservasaaaa</title>
         <%@include file="WEB-INF/template/header.jspf" %>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="row">
                             <div class="col s8">
-                                <h4>Reservas</h4>
+                                <h4>Reservasss</h4>
                             </div>
                             <div class="col s2">
                                 <button class="btn light-blue darken-4" type="submit" name="action" id="btnRervar">Reservar

@@ -152,7 +152,7 @@
                         </main>
                                 
                                 <div class="left-sidebar-hover"></div>
-                                <%@include file="WEB-INF/template/footer.jspf" %>
+                                <%@include file="WEB-INF/template/footerMain.jspf" %>
                                 <script src="js/regisProfesores.js" type="text/javascript"></script>
                                 </body>
                                 </html>
