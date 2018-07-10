@@ -103,11 +103,38 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col s6">
+                            <div class="col s12 center-align">
+                                <a class="waves-effect waves-light btn modal-trigger btn-large grey darken-3" href="#modal1">Seleccionar Productos
+                                    <i class="material-icons right">add_circle_outline</i></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s3"></div>
+                            <div class="col s6 center-align">
+                                <div class="tabla-contenedor2">
+                                    <table class="highlight responsive-table" id="tblRervado">
+                                        <thead id="tblCom">
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Nombre</th>
+                                                <th>Codigo</th>
+                                                <th>Remover</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col s3"></div>
+                        </div>
+                        <!--Modal-->
+                        <div id="modal1" class="modal modal-fixed-footer">
+                            <div class="modal-content">
+                                <h4>Busqueda de Productos</h4>
                                 <div class="row">
                                     <div class="col s1"></div>
                                     <div class="col s10">
-                                        <p>Busqueda de Productos</p>
                                         <div class="input-field">
                                             <i class="material-icons prefix" style="color: green">shopping_cart</i>
                                             <label for="nomProducto">Nombre o Codigo</label>
@@ -118,54 +145,37 @@
                                 </div>
                                 <div class="row">
                                     <div class="col s12">
-                                        <p><strong>Producto para llevar</strong></p>
-                                        <div class="tabla-contenedor2">
-                                            <table class="highlight responsive-table" id="tblRervado">
-                                                <thead id="tblCom">
+                                        <div class="tabla-contenedor">
+                                            <table class="highlight responsive-table" id="tblProductos">
+                                                <thead id="tblCa">
                                                     <tr>
-                                                        <th>Id</th>
-                                                        <th>Nombre</th>
+                                                        <th>ID</th>
+                                                        <th>Nombres</th>
                                                         <th>Codigo</th>
-                                                        <th>Remover</th>
+                                                        <th>Tipo</th>
+                                                        <th>Stock</th>
+                                                        <th>Añadir</th>
                                                     </tr>
                                                 </thead>
+
                                                 <tbody>
+                                                    <!-- data de los productos -->
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col s6">
-                                    <p><strong>Productos Almacenados</strong></p><br>
-                                    <div class="tabla-contenedor">
-                                        <table class="highlight responsive-table" id="tblProductos">
-                                            <thead id="tblCa">
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Nombres</th>
-                                                    <th>Codigo</th>
-                                                    <th>Tipo</th>
-                                                    <th>Stock</th>
-                                                    <th>Añadir</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <!-- data de los productos -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
                             </div>
                         </div>
+                        <!--Fin del Modal-->
                     </div>
                 </div>
             </div>
             <div class="left-sidebar-hover"></div>
         </main>
-        <!--<include file="WEB-INF/template/footer.jspf" %>-->
         <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>

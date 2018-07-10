@@ -1,7 +1,7 @@
 $(document).ready(function () {
     listarProducto();
     var f = new Date();
-    $("#fecha").val(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
+    $("#fecha").val(f.getFullYear() + "-" + (f.getMonth() + 1) + "-" + f.getDate());
 });
 
 //declaracion de variables

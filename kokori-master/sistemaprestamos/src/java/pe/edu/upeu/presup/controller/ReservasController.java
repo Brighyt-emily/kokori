@@ -6,6 +6,10 @@
 package pe.edu.upeu.presup.controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.ReservaDao;
 import pe.edu.upeu.presup.daoimp.ReservaDaoImp;
+import pe.edu.upeu.presup.entity.DetalleReserva;
 import pe.edu.upeu.presup.entity.Reserva;
 
 /**
@@ -75,7 +80,14 @@ public class ReservasController extends HttpServlet {
             case 5:
                 String data = request.getParameter("listProductos");
                 int  r = 0;
-                
+                int iddr = Integer.parseInt(request.getParameter("iddr"));
+                JsonParser parser = new JsonParser();
+                JsonArray gsonArr = parser.parse(data).getAsJsonArray();
+                for(JsonElement obj: gsonArr){
+                    JsonObject gsonObj = obj.getAsJsonObject();
+                    
+                    DetalleReserva dr = new DetalleReserva(iddr, Integer.parseInt(gsonObj.get("idp").getAsString()));
+                }
                 break;
         }
     }
