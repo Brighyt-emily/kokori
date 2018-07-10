@@ -10,14 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-         <%@include file="WEB-INF/template/header.jspf" %>
-                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <%@include file="WEB-INF/template/header.jspf" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
     </head>
     <body>
-        <%@include file="WEB-INF/template/Principal.jspf" %>
+         <%@include file="WEB-INF/template/Principal.jspf" %>
          <main class="mn-inner">
                 <div class="row">
+                    
                   <div class="col s12 m12 l12">
                         <div class="page-title">Productos</div>
                     </div>
@@ -27,7 +28,7 @@
             <div class="col s10">
                 <div class="input-field">
                 <i class="material-icons prefix" style="color: black">search</i>
-                <label for="nomp">buscar..</label>
+                <label for="nomp">Buscar..</label>
                 <input type="text" name="nomp" required id="nomp" style="width: 320px">
               </div>
            </div>
@@ -49,13 +50,12 @@
                                             </tr>
                                         </thead>
                                         <tbody> 
-                                            
                                         </tbody>
                                     </table> 
                             </div>
-
+                        
                         </div>
-
+                   
                     </div>
         <div class="col s12">
             <div class="action-btn-wrapper">
@@ -64,7 +64,7 @@
                         <i class="large material-icons">build</i>
                     </a>
                     <ul>
-                        <li><a class="btn-floating pink teal modal-trigger" href='#modal1' onclick="modal()"><i class="material-icons">add</i></a></li>
+                        <li><a class="btn-floating  modal-trigger" href='#modal1' onclick="modal()"><i class="material-icons">add</i></a></li>
                         <li><a class="btn-floating green"  ><i class="material-icons">assignment</i></a></li>
                     </ul>
                 </div>
@@ -123,11 +123,14 @@
                   <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
 
                 </div>
+                            
             </div>
          </main>
    
-    
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
         <%@include file="WEB-INF/template/footer.jspf" %>
+
         <script src="js/producto.js" type="text/javascript"></script> 
     </body>
 </html>
