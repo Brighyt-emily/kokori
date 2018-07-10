@@ -1,15 +1,32 @@
+<!--   Wizard   -->
+<link href="assetsd/css/bootstrap.min.css" rel="stylesheet" />
+<link href="assetsd/css/paper-bootstrap-wizard.css" rel="stylesheet" />
+
+<!-- CSS Just for demo purpose, don't include it in your project -->
+<link href="assetsd/css/demo.css" rel="stylesheet" />
+
+<!-- Fonts and Icons -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+<link href="assetsd/css/themify-icons.css" rel="stylesheet">
+<!-- Finish Wizard-->
 
 <link href="css/materialize.min.css" rel="stylesheet" type="text/css"/>
 <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
-
 <!-- Theme Styles -->
 <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
+<link rel="stylesheet" href="themify-icons.css">
+<!--[if lt IE 8]><!-->
+<link rel="stylesheet" href="css/ie7.css">
+
 <style>
+    a:hover {
+        text-decoration: none;
+    }
     #loader-wrapper {
         position: fixed;
         top: 0;
