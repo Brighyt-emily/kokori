@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registro Reservas</title>
         <%@include file="WEB-INF/template/header.jspf" %>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
@@ -21,7 +21,7 @@
                 <div class="card-content">
                     <div class="row">
                         <div class="col s12">
-                            <p><b>Lista De Productos Reservados</b><p>
+                            <p><b>Lista Reservas Hechas</b><p>
                         </div>
                     </div>
                     <div class="row">
@@ -42,9 +42,12 @@
                                 <table class="striped highlight responsive-table" id="tblRegistro">
                                     <thead id="tblRegis">
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Item Name</th>
-                                            <th>Item Price</th>
+                                            <th>Fecha Reserva</th>
+                                            <th>Nombres Profesor</th>
+                                            <th>Codigo</th>
+                                            <th>#Dni</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
                                         </tr>
                                     </thead>
 
