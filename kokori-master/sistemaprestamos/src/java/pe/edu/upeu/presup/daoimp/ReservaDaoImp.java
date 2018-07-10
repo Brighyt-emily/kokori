@@ -83,7 +83,7 @@ public class ReservaDaoImp implements ReservaDao {
             cst = cx.prepareCall("{call selecionarProdById(?)}");
             cst.setInt(1, idProducto);
             rs = cst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Map<String, Object> map = new HashMap<>();
                 map.put("idproducto", rs.getInt("idproducto"));
                 map.put("idtipo", rs.getInt("idtipo"));
@@ -92,7 +92,7 @@ public class ReservaDaoImp implements ReservaDao {
                 data.add(map);
             }
         } catch (SQLException e) {
-            System.out.println("Error: " +e);
+            System.out.println("Error: " + e);
         }
         return data;
     }
@@ -138,11 +138,11 @@ public class ReservaDaoImp implements ReservaDao {
     @Override
     public List<Map<String, Object>> listarInfromeRegistro() {
         List<Map<String, Object>> data = new ArrayList<>();
-        try{
+        try {
             cx = Conexion.getConexion();
             cst = cx.prepareCall("{call listarInfromeRegistro()}");
             rs = cst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Map<String, Object> map = new HashMap<>();
                 map.put("idReserva", rs.getInt("idreserva"));
                 map.put("feReserva", rs.getDate("fe_reserva"));
@@ -151,12 +151,40 @@ public class ReservaDaoImp implements ReservaDao {
                 map.put("aplProfesor", rs.getString("apellidos"));
                 map.put("codigo", rs.getString("codigo"));
                 map.put("dni", rs.getString("dni"));
+                map.put("iddr", rs.getInt("iddetalle_reserva"));
                 data.add(map);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.out.println("Error: " + e);
         }
         return data;
     }
 
+    @Override
+    public int eliminarDetalleReserva(int key) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call eliminarDetalleReserva(?)}");
+            cst.setInt(1, key);
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return x;
+    }
+
+    @Override
+    public int eliminarReserva(int key) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call eliminarReserva(?)}");
+            cst.setInt(1, key);
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return x;
+    }
 }

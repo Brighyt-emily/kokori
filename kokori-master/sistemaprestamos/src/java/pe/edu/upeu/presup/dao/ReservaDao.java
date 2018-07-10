@@ -27,4 +27,8 @@ public interface ReservaDao {
     List<Map<String, Object>> selecionarProdById(int idProducto);
     
     List<Map<String, Object>> listarInfromeRegistro();
+    
+    int eliminarDetalleReserva(int key);
+    
+    int eliminarReserva(int key);
 }

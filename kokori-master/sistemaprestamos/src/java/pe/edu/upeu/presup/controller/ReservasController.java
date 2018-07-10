@@ -89,7 +89,6 @@ public class ReservasController extends HttpServlet {
                 JsonArray gsonArr = parser.parse(data).getAsJsonArray();
                 for(JsonElement obj: gsonArr){
                     JsonObject gsonObj = obj.getAsJsonObject();
-                    
                     DetalleReserva dr = new DetalleReserva(iddr, Integer.parseInt(gsonObj.get("idp").getAsString()));
                     r = rd.guardarDetalleReserva(dr);
                 }
@@ -98,6 +97,15 @@ public class ReservasController extends HttpServlet {
                 
             case 6:
                 out.println(g.toJson(rd.listarInfromeRegistro()));
+                break;
+                
+            case 7:
+                int idDeRe = Integer.parseInt(request.getParameter("iddr"));
+                rd.eliminarDetalleReserva(idDeRe);
+                break;
+            case 8:
+                int idRe = Integer.parseInt(request.getParameter("idr"));
+                rd.eliminarReserva(idRe);
                 break;
         }
     }

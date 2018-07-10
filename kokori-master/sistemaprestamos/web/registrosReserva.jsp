@@ -11,7 +11,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro Reservas</title>
         <%@include file="WEB-INF/template/header.jspf" %>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -63,7 +62,6 @@
                 </div>
             </div>
         </main>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/registrosReservas.js" type="text/javascript"></script>
     </body>
