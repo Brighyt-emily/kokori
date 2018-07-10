@@ -51,7 +51,7 @@ public class Test {
         //update();
         //validar();
         //read();
-        nop();
+        jip();
     }
 
     static void conexion() {
@@ -103,6 +103,10 @@ List<Map<String, Object>> lista = new ArrayList<>();
 lista = kop.listarDevolucion();
         System.out.println(lista);
         System.out.println(lista.size());
+    }
+    static void jip()
+    {
+        System.out.println(g.toJson(ko.ko()));
     }
 
 }

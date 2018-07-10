@@ -131,4 +131,22 @@ public class ProductoDaoImp implements ProductoDao {
         }
         return x; }
 
+    @Override
+    public List<Producto> ko() {
+        List<Producto> fui = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call bueno()}");
+            rs = cst.executeQuery();
+            while (rs.next()) {
+                Producto p = new Producto();
+                p.setiTip(rs.getInt("idtipo"));
+                p.setNomTip(rs.getString("nom_tipo"));
+                fui.add(p);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e);
+        }
+        return fui;    }
+
 }

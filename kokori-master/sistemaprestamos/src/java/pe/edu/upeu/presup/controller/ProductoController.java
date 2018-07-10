@@ -63,6 +63,8 @@ public class ProductoController extends HttpServlet {
                 Producto o=new Producto(request.getParameter("nomTip"));
                 pro.crea(o);
                 break;
+            case 7:out.println(g.toJson(pro.ko()));
+                  break;
         }
         }
     }
