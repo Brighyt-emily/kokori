@@ -27,6 +27,7 @@ $(document).ready(function () {
    var toastContent = $('<h1>Ella no te ama</h1>');
   Materialize.toast(toastContent, 100000);
   }
+  
   function funciona(){
       alert("funciona");
   }

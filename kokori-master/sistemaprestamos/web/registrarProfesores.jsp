@@ -94,6 +94,15 @@
 
                                         </div>
                                     </div>
+                                    <div class="col s4">
+                                        <div class="input-field">
+                                            <i class="material-icons prefix">assignment</i>
+
+                                            <input type="text" name="codigo" class="validate" required maxlength="9" id="codigo" placeholder="#">
+                                            <label for="codigo">Ingrese Codigo</label>
+
+                                        </div>
+                                    </div>
                                     </div>   
                                 
                                 <div class="row">
@@ -140,7 +149,7 @@
                         </div>
                         </div>
                         </div>
-        </main>
+                        </main>
                                 
                                 <div class="left-sidebar-hover"></div>
                                 <%@include file="WEB-INF/template/footer.jspf" %>
