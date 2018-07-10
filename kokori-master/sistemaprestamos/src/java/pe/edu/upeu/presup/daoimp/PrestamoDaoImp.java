@@ -30,14 +30,16 @@ public class PrestamoDaoImp implements PrestamoDao {
         int x=0;
         try{
             cx= Conexion.getConexion();
-            cs=cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?)}");
+            cs=cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, p.getFe_prestamo());
-            cs.setString(2, p.getNom_alumno());
-            cs.setString(3, p.getFe_devolucion());
-            cs.setString(4, p.getAula());
-            cs.setInt(5, p.getId_profe());
-            cs.setInt(6, p.getId_documento());
-            cs.setInt(7, p.getId_user());
+            cs.setString(2, p.getHora_pre());
+            cs.setString(3, p.getHora_devo());
+            cs.setString(4, p.getNom_alumno());
+            cs.setString(5, p.getFe_devolucion());
+            cs.setString(6, p.getAula());
+            cs.setInt(7, p.getId_profe());
+            cs.setInt(8, p.getId_documento());
+            cs.setInt(9, p.getId_user());
             x= cs.executeUpdate();
         }
         catch(SQLException e){
