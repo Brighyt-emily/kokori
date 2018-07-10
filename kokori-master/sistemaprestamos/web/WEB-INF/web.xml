@@ -23,7 +23,7 @@
     <servlet>
         <servlet-name>ReservasController</servlet-name>
         <servlet-class>pe.edu.upeu.presup.controller.ReservasController</servlet-class>
-    </servlet>
+    </servlet>    
     <servlet-mapping>
         <servlet-name>PrestamoController</servlet-name>
         <url-pattern>/Pc</url-pattern>
