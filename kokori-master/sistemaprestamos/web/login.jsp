@@ -34,7 +34,7 @@
                                 <div class="card-content ">
                                     <img class="responsive-img" src="images/logo.png">
                                     <div class="row">
-                                        <form method="post" action="menu.jsp">
+                                        <form method="post" action="main">
                                             <div class="input-field col s12">                                                   
                                                 <input id="username" type="text" class="validate" name="user">
                                                 <label for="username">                                                                                                                 
