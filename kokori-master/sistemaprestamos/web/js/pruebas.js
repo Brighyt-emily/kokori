@@ -15,6 +15,7 @@ $(document).ready(function () {
 		labelMonthPrev: 'Mes anterior',
 		labelMonthSelect: 'Selecciona un mes',
 		labelYearSelect: 'Selecciona un año',
+                format: 'yyyy-mm-dd'
   });
   
   function toast(){
