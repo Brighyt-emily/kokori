@@ -31,8 +31,8 @@ $("#tipo").click(function(){
 });
 
 function editarEstado(idp){
-    var toastHTML = '<span>Seguro que desea eliminar?</span><button class="btn-flat toast-action" onclick="holi('+idp+')">Aceptar</button>';
-     M.toast({html: toastHTML});
+    var toastHTML = '<span>Seguro que desea eliminar?<button class="btn-flat toast-action" onclick="holi('+idp+')">Aceptar</button></span>';
+     Materialize.toast( toastHTML,1985);
 }
 
 function holi(idp){

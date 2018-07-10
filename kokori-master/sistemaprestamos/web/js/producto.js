@@ -71,9 +71,17 @@ function salva()
     });
     
 }
- function editar(){
+function unin(x)
+{var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="ok('+x+')">Aceptar</button></span>';
+     Materialize.toast(toastHTML,1980);
+    
+}
+
+
+
+ function editar(x){
      
-    var toastHTML = '<span>Seguro que desea guardar?<button class="btn-flat toast-action" onclick="salva()">Aceptar</button></span>';
+    var toastHTML = '<span>Seguro que desea guardar?<button class="btn-flat toast-action" onclick="salva('+x+')">Aceptar</button></span>';
      Materialize.toast(toastHTML,1980);
 }
    

@@ -53,7 +53,7 @@ public class ProductoController extends HttpServlet {
                 pro.deleate(Integer.parseInt(request.getParameter("idP")));
                 break;
             case 4:
-                Producto lo=new Producto(Integer.parseInt(request.getParameter("idP")),request.getParameter("nom"), request.getParameter("cod"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("iTip")));
+                Producto lo=new Producto(Integer.parseInt(request.getParameter("idP")), Integer.parseInt(request.getParameter("iTip")));
                 pro.update(lo);
                 break;
             case 5:

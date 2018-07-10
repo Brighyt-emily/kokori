@@ -78,7 +78,7 @@ public class Test {
     }
 
     static void update() {
-        Prestamo p = new Prestamo(1, 0);
+        Prestamo p = new Prestamo(1,0);
         if (kop.update(p) > 0) {
             System.out.println("c:");
         } else {
