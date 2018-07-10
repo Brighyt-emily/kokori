@@ -11,9 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Prestamo </title>
-        <script src="js/material/jquery.js" type="text/javascript"></script>
+        
         <%@include file="WEB-INF/template/header.jspf" %>
-        <link href="css/diego.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <%@include file="WEB-INF/template/Principal.jspf" %>
@@ -48,7 +47,7 @@
                                             <i class="material-icons prefix active">face</i>
                                             <label for="dnipro" class="active">Documento responsable</label>
                                             <select id="docu" class="input-field">
-                                                    
+
                                             </select>
                                         </div>
                                     </div>
@@ -113,7 +112,7 @@
                             <div class="col s4">
                                 <div class="input-field">
                                     <form name="fechasdev" id="fechasdev">
-                                       <i class="material-icons prefix active">insert_invitation</i>
+                                        <i class="material-icons prefix active">insert_invitation</i>
                                         <label for="fechadev" class="active">Fecha Devolucion</label>
                                         <input id="fechadev" name="fecha_dev" type="date">
                                     </form>
@@ -138,18 +137,18 @@
                                 </div>
                             </div>
                             <table class="table" id="tablaDetalle" >
-                                    <thead>
-                                        <tr>
-                                            <th>Producto</th>
-                                            <th>N° Prestados</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                    </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>N° Prestados</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
 
-                                    <tbody>
-                                       
-                                    </tbody>
-                                </table>
+                                <tbody>
+
+                                </tbody>
+                            </table>
                         </div>
                         <div class="row">
                             <div class="col s12 right-align">

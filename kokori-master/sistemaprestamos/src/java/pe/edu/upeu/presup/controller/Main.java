@@ -42,6 +42,7 @@ public class Main extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
         int op = Integer.parseInt(request.getParameter("opc"));
+        System.out.println("Hola");
         HttpSession sesion = request.getSession();
         RequestDispatcher rd;
         ServletContext context= getServletContext();

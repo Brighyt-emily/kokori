@@ -37,6 +37,7 @@
                                         <form>
                                             <div class="input-field col s12">                                                   
                                                 <input id="user" type="text" name="user">
+                                                <input type="hidden" value="1" name="op">
                                                 <label for="username">                                                                                                                 
                                                     Usuario</label>
                                             </div>

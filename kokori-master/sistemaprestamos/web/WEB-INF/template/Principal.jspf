@@ -1,5 +1,3 @@
-        
-
 
         <div id="loader-wrapper">
         <div id="loader"></div>
@@ -20,7 +18,7 @@
                             </a>
                         </section>
                         <div class="header-title col s3">      
-                            <span class="chapter-title" ><a href="menu.jsp"> Alphalpha</a></span>
+                            <span class="chapter-title" ><a href="menu.jsp" style="text-decoration: none;"> Alphalpha</a></span>
                         </div>
                         
                         <ul class="right col s9 m3 nav-right-menu">
@@ -231,7 +229,7 @@
                             <img src="assets/images/profile-image.png" class="circle" alt="">
                         </div>
                         <div class="sidebar-profile-info">
-                            <a href="javascript:void(0);" class="account-settings-link">
+                            <a href="javascript:void(0);" class="account-settings-link" style="text-decoration: none;" >
                                 <p>Emily Ccana</p>
                                 <span>emaslkdlad@upeu.edu.pe<i class="material-icons right">arrow_drop_down</i></span>
                             </a>
@@ -250,19 +248,19 @@
                     
                     
                     <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="Prestamo.jsp">
-                        <i class="material-icons green-text" style="height:10px;">assignment_ind</i>Prestamos</a></li>
-                         <li class="no-padding"><a class="waves-effect waves-grey" href="reservas.jsp">
+                        <li class="no-padding" ><a class="waves-effect waves-grey" href="Prestamo.jsp" >
+                                <i class="material-icons green-text" style="height:10px; ">assignment_ind</i>Prestamos</a></li>
+                         <li class="no-padding"><a class="waves-effect waves-grey" href="reservas.jsp" >
                         <i class="material-icons blue-text" style="height:10px;">assignment</i>Reservas</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
                         <i class="material-icons red-text" style="height:10px;">business_center</i>Reportes</a></li>
                         
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="registrarProfesores.jsp" >
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="registrarProfesores.jsp"  >
                         <i class="material-icons" style="height:10px;">add_circle</i>Añadir Profesor</a></li>
                         
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp">
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp" >
                         <i class="material-icons" style="height:10px;">folder_shared</i>Gestion Profesor</a></li>
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp" >
                         <i class="material-icons" style="height:10px;">laptop_windows</i>Gestion Productos</a></li>
                         
                         <!--colapso :,v
@@ -295,4 +293,3 @@
                     </div>
                 </div>
             </aside>
-            

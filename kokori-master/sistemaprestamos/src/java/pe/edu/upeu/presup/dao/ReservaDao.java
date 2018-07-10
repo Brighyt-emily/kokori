@@ -25,4 +25,6 @@ public interface ReservaDao {
     List<Map<String, Object>> listarProductosReserva();
     
     List<Map<String, Object>> selecionarProdById(int idProducto);
+    
+    List<Map<String, Object>> listarInfromeRegistro();
 }
