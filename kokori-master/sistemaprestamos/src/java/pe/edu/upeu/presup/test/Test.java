@@ -49,9 +49,9 @@ public class Test {
         //delete();
         //update();
         //update();
-        //validar();
+        validar();
         //read();
-        jip();
+        //jip();
     }
 
     static void conexion() {

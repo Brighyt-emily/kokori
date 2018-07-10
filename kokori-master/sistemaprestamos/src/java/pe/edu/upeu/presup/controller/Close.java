@@ -36,7 +36,7 @@ public class Close extends HttpServlet {
         HttpSession sesion = request.getSession();
         sesion.invalidate();  
         RequestDispatcher rd;
-        rd = request.getRequestDispatcher("menu");
+        rd = request.getRequestDispatcher("login.jsp");
         rd.forward(request, response);
         
     }

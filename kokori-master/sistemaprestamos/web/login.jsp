@@ -34,7 +34,7 @@
                                 <div class="card-content ">
                                     <img class="responsive-img" src="images/logo.png">
                                     <div class="row">
-                                        <form>
+                                        <form method="post" action="main">
                                             <div class="input-field col s12">                                                   
                                                 <input id="user" type="text" name="user">
                                                 <input type="hidden" value="1" name="op">
@@ -47,7 +47,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input class="btn  waves-light col s12 " id="btnIngresar" type="button">
+                                                    <input class="btn  waves-light col s12 " id="btnIngresar" type="submit" value="Enviar">
                                                 </div>
                                             </div>
                                         </form>
@@ -60,6 +60,5 @@
             </main>
         </div>                
         <%@include file="WEB-INF/template/footerMain.jspf" %>
-        <script src="js/login.js" type="text/javascript"></script>
     </body>
 </html>

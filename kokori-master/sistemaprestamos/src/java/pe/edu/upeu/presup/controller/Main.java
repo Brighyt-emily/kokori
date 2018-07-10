@@ -41,7 +41,7 @@ public class Main extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-        int op = Integer.parseInt(request.getParameter("opc"));
+        int op = Integer.parseInt(request.getParameter("op"));
         System.out.println("Hola");
         HttpSession sesion = request.getSession();
         RequestDispatcher rd;
@@ -59,9 +59,10 @@ public class Main extends HttpServlet {
                         sesion.setAttribute("rol", datos.get("rol"));
                         sesion.setAttribute("idr", datos.get("irol"));
                         sesion.setAttribute("idt", datos.get("itra"));
-                        out.print(datos.size());
+                        rd= request.getRequestDispatcher("/menu");
+                        rd.forward(request, response);
                     }else{
-                        rd= request.getRequestDispatcher("/main");
+                        rd= request.getRequestDispatcher("/login");
                         rd.forward(request, response);
                     }
                     break;
