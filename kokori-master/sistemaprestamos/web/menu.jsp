@@ -14,7 +14,7 @@
         <%@include file="WEB-INF/template/headerMain.jspf" %>
         
     
-        <title>Menu Principal</title>
+        <title>Menu ddPrincipal</title>
         <style>
             a{
           
