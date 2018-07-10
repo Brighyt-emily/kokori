@@ -65,14 +65,14 @@
                     </a>
                     <ul>
                         <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1' onclick="modal()"><i class="material-icons">add</i></a></li>
-                        <li><a class="btn-floating #f06292 pink lighten-2"  ><i class="material-icons">assignment</i></a></li>
+                        <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal3' ><i class="material-icons">assignment</i></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
              
-                 <div id="modal1" class="modal s12 m12 l12" style="max-width: 480px;">
+                 <div id="modal1" class="modal s12 m12 l12" style="max-width: 520px;">
                 <div class="modal-content">
                   
                      <div class="col-sm-8 contact-form" > <!-- div da direita -->
@@ -98,26 +98,25 @@
                                 </div>
                                 
                                 <div class="row">
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">mood</i>
-                                            <input type="text" name="estado"  id="est" placeholder="estado">
-                                            <label for="estado">Estado</label>
-                                           
-                                        </div>
-                                    </div>
+                                       <div class="input-field col s6">
+    <select id="loco">
+      <option value="" disabled selected>Selecciona un estado</option>
+      <option value="1">BUEN ESTADO</option>
+      <option value="0">MAL ESTADO</option>
+      <option value="2">REGULAR</option>
+    </select>
+    <label>Seleciona un estado</label>
+  </div>
+                                   
                                     
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">view_comfy</i>
-                                            <input type="text" name="tipo"  id="iTip" placeholder="tipo">
-                                            <label for="tipo">Tipo</label>
-                                           
-                                        </div>
-                                    </div>
+                                    <div class="input-field col s6">
+                                                <select id="combin" name="selectBox">
+                                                 <option value="0" disabled selected>Selecciona un tipos</option>             
+                                                </select>
+                                                <label>Tipos</label>
                                     
                                 </div>
-                                
+                               
                     
                 </div>
                 </div>
@@ -138,47 +137,14 @@
                      <div class="col-sm-8 contact-form" style="margin-top: 20px" > <!-- div da direita -->
                          <form id="contact" method="post" class="form" role="form" >
                             <div class="row">
-                                <div class="row">
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">local_mall</i>
-                                            <input type="text" name="producto"  id="pro" placeholder="producto">
-                                            <label for="producto">Producto</label>
-                                            <input type="hidden" id="edit_idc" class="form-control">
-
-                                        </div>
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">looks_5</i>
-                                            <input type="text" name="codigo"  id="codi" placeholder="codigo">
-                                            <label for="codigo">Codigo</label>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
                                 
-                                <div class="row">
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">mood</i>
-                                            <input type="text" name="estado"  id="est" placeholder="estado">
-                                            <label for="estado">Estado</label>
-                                           
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">view_comfy</i>
-                                            <input type="text" name="tipo"  id="iTip" placeholder="tipo">
-                                            <label for="tipo">Tipo</label>
-                                           
-                                        </div>
-                                    </div>
-                                    
-                                </div>
                                 
+                               <div class="input-field col s5">
+                                                <select id="combin" name="selectBox">
+                                                 <option value="0" disabled selected>Escuelas de la UPeU</option>             
+                                                </select>
+                                                <label>Escuelas</label>
+                                                </div>
                     
                 </div>
                 </div>
@@ -191,6 +157,37 @@
                      </div>
              
              
+             
+             
+             
+              <div id="modal3" class="modal s12 m12 l12" style="max-width: 530px;">
+                <div class="modal-content">
+                  
+                     <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
+                         <form id="contact" method="post" class="form" role="form" >
+                            <div class="row">
+                                
+                                    <div class="col s6">
+                                        <div class="input-field">
+                                            <i class="material-icons prefix">view_comfy</i>
+                                            <input type="text" name="tipo"  id="tip" placeholder="tipo">
+                                            <label for="tiip">Tipo</label>
+                                           
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                    
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick='esta()'>Registrar</a>
+                  <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+
+                </div>
+                     </div>
+                     </div>
              
              
              

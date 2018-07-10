@@ -24,6 +24,14 @@
         <servlet-name>ReservasController</servlet-name>
         <servlet-class>pe.edu.upeu.presup.controller.ReservasController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Main</servlet-name>
+        <servlet-class>pe.edu.upeu.presup.controller.Main</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>pe.edu.upeu.presup.controller.Home</servlet-class>
+    </servlet>    
     <servlet-mapping>
         <servlet-name>PrestamoController</servlet-name>
         <url-pattern>/Pc</url-pattern>
@@ -43,6 +51,14 @@
     <servlet-mapping>
         <servlet-name>ReservasController</servlet-name>
         <url-pattern>/rc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/menu</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

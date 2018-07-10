@@ -47,19 +47,16 @@ public class Devo extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             int op = Integer.parseInt(request.getParameter("opc"));
            switch(op){
+               
                case 1:
-                   out.println(g.toJson(d.readAll()));
-               break;
-               case 2:
                     Prestamo pre = new Prestamo(Integer.parseInt(request.getParameter("idprestamo")), Integer.parseInt(request.getParameter("estado")));
                     pres.update(pre);
                     break;
-               case 3:
-                    out.println(g.toJson(d.ListarByTipo(request.getParameter("nom_tipo"))));
-                    break;
-               case 4:
-                   out.println(g.toJson(d.listarTipo()));
+               
+               case 2:
+                   out.println(g.toJson(d.listarDevolucion()));
                    break;
+                   
            }
         }
     }
