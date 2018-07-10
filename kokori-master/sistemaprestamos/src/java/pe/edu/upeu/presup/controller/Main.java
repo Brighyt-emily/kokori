@@ -7,6 +7,7 @@ package pe.edu.upeu.presup.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.HashMap;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -39,7 +40,8 @@ public class Main extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int op = Integer.parseInt(request.getParameter("op"));
+        try (PrintWriter out = response.getWriter()) {
+        int op = Integer.parseInt(request.getParameter("opc"));
         HttpSession sesion = request.getSession();
         RequestDispatcher rd;
         ServletContext context= getServletContext();
@@ -56,15 +58,14 @@ public class Main extends HttpServlet {
                         sesion.setAttribute("rol", datos.get("rol"));
                         sesion.setAttribute("idr", datos.get("irol"));
                         sesion.setAttribute("idt", datos.get("itra"));
-                        System.out.println(datos);
-                        rd= request.getRequestDispatcher("/menu");
-                        rd.forward(request, response);
+                        out.print(datos.size());
                     }else{
                         rd= request.getRequestDispatcher("/main");
                         rd.forward(request, response);
                     }
                     break;
         }
+      }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
