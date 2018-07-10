@@ -16,17 +16,17 @@ function listar()
              if (jop==1)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons'>check_circle</i></p>" + "</td><td>" + bibi[i].iTip + "</td><td><a class='waves-effect waves-light btn modal-trigger' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn '   onclick='edit()'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn modal-trigger' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='btn btn-primaty teal modal-trigger' href='#modal2' onclick='jip()'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop==0)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons'>highlight_off</i></p>" + "</td><td>" + bibi[i].iTip + "</td><td><a class='waves-effect waves-light btn modal-trigger'  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn '  onclick= 'edit()'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn modal-trigger'  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn '  onclick= 'edit()'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop==2)
              {
                    $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons'>remove_circle</i></p>" + "</td><td>" + bibi[i].iTip + "</td><td><a class='waves-effect waves-light btn modal-trigger'  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick= 'edit()'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn modal-trigger'  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick= 'edit()'><i class='material-icons'>update</i></a></td></tr>");
              }
         }
     });
@@ -38,39 +38,20 @@ function eliminar(x){
     });
 }
 
-function edit(x)
-{
-    
-    var valores="";
-    $('#tablin').parent("tr").find('td').each(function()
-    {
-       if($(this).html() != "")
-       {
-           valores += $(this).html()+"";
-       }
-       valores = valores +"\n";
-       alert(valores);
-    });
-    
-    
-    var obj = new Object();
-    $('#tablin tr').each(function () {
-        obj.nom = $(this).find("td").eq(1).html();
-        obj.codi = $(this).find("td").eq(2).html();
-        obj.est = $(this).find("td").eq(3).html();
-        obj.iTip = $(this).find("td").eq(4).html();
-        alert(obj.nom);
-        
-    });
-    $.post("pro",{"idP":x,"op":4}, function(data)
-    {
-    var bibi = JSON.parse(data);
-    var jop=bibi.nom;
-    alert(jop);
-    });
-    
 
+function jip(x)
+{
+    $.get("pro",{"opc":2,"idcat":x},function (data) {
+       var x = JSON.parse(data);
+       $("#edit_idcatalogo").val(x.idcat);
+        $("#edit_model").val(x.nom);
+        $("#edit_type").val(x.type);
+    });
+    $('.modal-trigger').leanModal();
 }
+
+
+
 function modal(){
    $('.modal-trigger').leanModal();
    
