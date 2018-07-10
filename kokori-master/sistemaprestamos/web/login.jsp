@@ -59,7 +59,7 @@
                 </div>
             </main>
         </div>                
-        <%@include file="WEB-INF/template/footer.jspf" %>
+        <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/login.js" type="text/javascript"></script>
     </body>
 </html>
