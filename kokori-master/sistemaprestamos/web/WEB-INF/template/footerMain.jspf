@@ -1,12 +1,18 @@
-  <script src="js/material/jquery.js" type="text/javascript"></script>
-    <!--materialize js-->
-    <script src="js/material/materialize.js" type="text/javascript"></script>
-    <!--scrollbar-->
-    <script src="js/material/perfect-scrollbar.min.js" type="text/javascript"></script>
-    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script src="js/material/plugins.js" type="text/javascript"></script>
-    <!--custom-script.js - Add your own theme custom JS-->
-  <script src="js/material/custom-script.js" type="text/javascript"></script>
-  
-  
-   <script src="js/material/materialize.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="assets/plugins/materialize/js/materialize.min.js"></script>
+<script src="assets/js/alpha.min.js"></script>
+<script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+
+
+<script>
+    $(function () {
+        /*Preloader*/
+        $(window).load(function () {
+            setTimeout(function () {
+                $('body').addClass('loaded');
+            }, 400);
+
+        });
+    });
+
+</script>
