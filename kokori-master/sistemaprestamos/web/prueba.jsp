@@ -44,7 +44,7 @@
                                 
                                 <!--DataPicker-->
                                 
-                                <input type="date" id="fecha" class="datepicker">
+                                <input type="text" id="fecha" class="datepicker">
 	          		<label for="fecha">Elige la fecha</label>
                                    <!--toas botom-->
                                  <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a>

@@ -18,7 +18,7 @@ $("#btnBuscar").click(function () {
                 $("#nombres").val(x[0].nombres + " " + x[0].apellidos);
                 $("#idprofesor").val(x[0].idProfesor);
                 /*var toastHTML = '<span>Profesor encontrado</span><button class="btn-flat toast-action">Ok..!</button>';
-                M.toast({html: toastHTML});*/
+                 M.toast({html: toastHTML});*/
             } else {
                 //M.toast({html: 'Codigo mal ingresado'});
             }
@@ -120,16 +120,16 @@ $("#btnRervar").click(function () {
     var fe_prestamo = $("#fe_prestamo").val();
     var h_prestamo = $("#h_prestamo").val();
     if (idProfe > 0) {
-       $.post("rc",{"estado": estado, "fe_reserva": fe_reserva, "fe_devolucion": fe_devolucion, "aula": aula, "idp":idProfe, "fe_prestamo": fe_prestamo, "h_devolucion":h_devolucion, "h_prestamo": h_prestamo},function (xy) {
+        $.post("rc", {"estado": estado, "fe_reserva": fe_reserva, "fe_devolucion": fe_devolucion, "aula": aula, "idp": idProfe, "fe_prestamo": fe_prestamo, "h_devolucion": h_devolucion, "h_prestamo": h_prestamo, "op":4}, function (xy) {
             var idreserva = parseInt(xy);
             if (idreserva > 0) {
-                $.post("rc",{"listProductos":prods, "iddr": idreserva, "op":5},function (data) {
+                $.post("rc", {"listProductos": prods, "iddr": idreserva, "op": 5}, function (data) {
                     if (data > 0) {
                         alert("Reserva Correctamente");
                         cleanAll();
                     }
                 });
-            }else{
+            } else {
                 //M.toast({html: 'Upss!!, Fallo al realizar la reserva'});
                 cleanAll();
             }
@@ -140,11 +140,29 @@ $("#btnRervar").click(function () {
     }
 });
 
-function cleanAll(){
+function cleanAll() {
     //todo se limpiara :v
     listaReservados.length = 0;
 }
 
 $("#btnCancelar").click(function () {
     //M.toast({html: 'Canelara la reserva'});
+});
+
+/// datapicker
+$('.datepicker').pickadate({
+    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    weekdaysFull: [' Dom ', ' Lun ', ' Mar ', ' Mié ', ' Jue ', 'Vie ', 'Sáb '],
+    weekdaysShort: ['D', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+    selectMonths: true,
+    selectYears: 100,
+    today: 'Hoy',
+    clear: 'Limpiar',
+    close: 'Ok',
+    labelMonthNext: 'Siguiente mes',
+    labelMonthPrev: 'Mes anterior',
+    labelMonthSelect: 'Selecciona un mes',
+    labelYearSelect: 'Selecciona un año',
+    format: 'yyyy-mm-dd'
 });

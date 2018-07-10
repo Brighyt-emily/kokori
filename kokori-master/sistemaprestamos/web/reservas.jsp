@@ -74,7 +74,8 @@
                                     <label>Fecha de Prestamo</label>
                                     <div class="input-field">
                                         <i class="material-icons prefix">event</i>
-                                        <input type="date" id="fe_prestamo">
+                                        <!--<input type="date" id="fe_prestamo">-->
+                                        <input type="text" id="fe_prestamo" class="datepicker" placeholder="Año-Mes-Dia">
                                     </div>
                                 </div>
                                 <div class="col s2">
@@ -89,7 +90,7 @@
                                     <label>Fecha de Devolución</label>
                                     <div class="input-field">
                                         <i class="material-icons prefix">assignment_turned_in</i>
-                                        <input type="date" id="fe_devolucion">
+                                        <input type="text" id="fe_devolucion" class="datepicker"  placeholder="Año-Mes-Dia">
                                     </div>
                                 </div>
                                 <div class="col s2">
@@ -176,7 +177,7 @@
             </div>
             <div class="left-sidebar-hover"></div>
         </main>
-        <%@include file="WEB-INF/template/footer.jspf" %>
+        <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>
     </body>
 </html>
