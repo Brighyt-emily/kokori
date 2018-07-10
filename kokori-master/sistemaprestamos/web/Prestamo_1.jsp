@@ -12,6 +12,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Prestamo </title>
         <script src="js/material/jquery.js" type="text/javascript"></script>
+        <!--   Wizard   -->
+        <link href="assetsd/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assetsd/css/paper-bootstrap-wizard.css" rel="stylesheet" />
+
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="assetsd/css/demo.css" rel="stylesheet" />
+
+        <!-- Finish Wizard-->
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
