@@ -37,6 +37,6 @@
         <div class="left-sidebar-hover"></div>
         
         
-       <%@include file="WEB-INF/template/footer.jspf" %>
+       <%@include file="WEB-INF/template/footerMain.jspf" %>
     </body>
 </html>

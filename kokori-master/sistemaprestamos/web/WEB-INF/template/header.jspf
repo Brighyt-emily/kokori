@@ -1,13 +1,4 @@
 
-
-<!-- CSS Just for demo purpose, don't include it in your project -->
-<link href="assetsd/css/demo.css" rel="stylesheet" />
-
-<!-- Fonts and Icons -->
-
-<!-- Finish Wizard-->
-
-
 <link href="css/materialize.min.css" rel="stylesheet" type="text/css"/>
 <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
