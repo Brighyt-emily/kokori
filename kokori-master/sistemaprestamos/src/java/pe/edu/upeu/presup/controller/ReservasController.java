@@ -87,7 +87,9 @@ public class ReservasController extends HttpServlet {
                     JsonObject gsonObj = obj.getAsJsonObject();
                     
                     DetalleReserva dr = new DetalleReserva(iddr, Integer.parseInt(gsonObj.get("idp").getAsString()));
+                    r = rd.guardarDetalleReserva(dr);
                 }
+                out.println(r);
                 break;
         }
     }

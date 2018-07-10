@@ -110,6 +110,7 @@ $("#nomProducto").keyup(function () {
 
 $("#btnRervar").click(function () {
     //obtenemos los valores de las variables requeridas
+    var prods = JSON.stringify(listaReservados);
     var estado = 1;
     var fe_reserva = $("#fecha").val();
     var fe_devolucion = $("#fe_devolucion").val();
@@ -122,15 +123,27 @@ $("#btnRervar").click(function () {
        $.post("rc",{"estado": estado, "fe_reserva": fe_reserva, "fe_devolucion": fe_devolucion, "aula": aula, "idp":idProfe, "fe_prestamo": fe_prestamo, "h_devolucion":h_devolucion, "h_prestamo": h_prestamo},function (xy) {
             var idreserva = parseInt(xy);
             if (idreserva > 0) {
-                //entra al flujo de detalle reserva
+                $.post("rc",{"listProductos":prods, "iddr": idreserva, "op":5},function (data) {
+                    if (data > 0) {
+                        alert("Reserva Correctamente");
+                        cleanAll();
+                    }
+                });
             }else{
                 //M.toast({html: 'Upss!!, Fallo al realizar la reserva'});
+                cleanAll();
             }
         });
     } else {
         alert("Porfavor complete los campos");
+        cleanAll();
     }
 });
+
+function cleanAll(){
+    //todo se limpiara :v
+    listaReservados.length = 0;
+}
 
 $("#btnCancelar").click(function () {
     //M.toast({html: 'Canelara la reserva'});
