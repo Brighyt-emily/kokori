@@ -24,13 +24,13 @@ public class UsuarioDaoImp implements UsuarioDao {
             cst.setString(2, y);
             rs = cst.executeQuery();
             while (rs.next()) {
-                map.put("idu", rs.getInt(4));
-                map.put("user", rs.getString(5));
-                map.put("nom", rs.getString(2));
-                map.put("apell", rs.getString(3));
-                map.put("rol", rs.getString(7));
-                map.put("irol", rs.getInt(6));
-                map.put("itra", rs.getInt(1));
+                map.put("idu", rs.getInt("idusuario"));
+                map.put("user", rs.getString("usuario"));
+                map.put("nom", rs.getString("nombres"));
+                map.put("apell", rs.getString("apellidos"));
+                map.put("rol", rs.getString("nom_rol"));
+                map.put("irol", rs.getInt("idrol"));
+                map.put("itra", rs.getInt("idtrabajador"));
             }
         } catch (SQLException e) {
             System.out.println("Gran errror en : " + e);
