@@ -137,18 +137,18 @@
                                 </div>
                             </div>
                             <table class="table" id="tablaDetalle" >
-                                    <thead>
-                                        <tr>
-                                            <th>Producto</th>
-                                            <th>N° Prestados</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                    </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>N° Prestados</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
 
-                                    <tbody>
-                                       
-                                    </tbody>
-                                </table>
+                                <tbody>
+
+                                </tbody>
+                            </table>
                         </div>
                         <div class="row">
                             <div class="col s12 right-align">
