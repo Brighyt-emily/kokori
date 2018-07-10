@@ -41,13 +41,11 @@ function eliminar(x){
 
 function jip(x)
 {
-    $.get("pro",{"op":5,"idP":x},function (data) {
+   var jip= $('#est').val();
+
+    $.get("pro",{"op":4,"idP":jip},function (data) {
        var x = JSON.parse(data);
-       $("#ediy").val(x.idP);
-        $("#pro").val(x.nom);
-        $("#codi").val(x.cod);
-        $("#est").val(x.est);
-        $("#iTip").val(x.iTip);
+      
         alert(x.est);
     });
     $('.modal-trigger').leanModal();
@@ -64,6 +62,15 @@ function salva()
     var kop= $('#codi').val();
     var jip= $('#est').val();
     var uno= $('#iTip').val();
+    $.get("pc", {"op": 5, "idf": nop}, function (data) {
+            var w = JSON.parse(data);
+            for (var i = 0; i < w.length; i++) {  
+                $("#comboEscuela").append(
+		"<option value='"+w[i].idEscuela+"'>"+w[i].nomEscuela+"</option>");
+            }
+            
+            $("#comboEscuela").material_select();
+        });
     
     $.get("pro",{"nom":jop,"cod":kop,"est":jip,"iTip":uno,"op":2},function()
     {

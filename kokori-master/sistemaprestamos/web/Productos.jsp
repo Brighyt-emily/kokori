@@ -72,7 +72,7 @@
         </div>
     </div>
              
-                 <div id="modal1" class="modal s12 m12 l12" style="max-width: 480px;">
+                 <div id="modal1" class="modal s12 m12 l12" style="max-width: 520px;">
                 <div class="modal-content">
                   
                      <div class="col-sm-8 contact-form" > <!-- div da direita -->
@@ -109,25 +109,14 @@
   </div>
                                    
                                     
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">view_comfy</i>
-                                            <input type="text" name="tipo"  id="iTip" placeholder="tipo">
-                                            <label for="tipo">Tipo</label>
-                                           
-                                        </div>
-                                    </div>
+                                    <div class="input-field col s6">
+                                                <select id="combin" name="selectBox">
+                                                 <option value="0" disabled selected>Selecciona un tipos</option>             
+                                                </select>
+                                                <label>Tipos</label>
                                     
                                 </div>
-                               <div class="input-field col s6">
-    <select>
-      <option value="" disabled selected>Selecciona un estado</option>
-      <option value="1">BUEN ESTADO</option>
-      <option value="0">MAL ESTADO</option>
-      <option value="2">REGULAR</option>
-    </select>
-    <label>Seleciona un estado</label>
-  </div> 
+                               
                     
                 </div>
                 </div>
@@ -150,7 +139,12 @@
                             <div class="row">
                                 
                                 
-                                
+                               <div class="input-field col s5">
+                                                <select id="comboEscuela" name="selectBox">
+                                                 <option value="0" disabled selected>Escuelas de la UPeU</option>             
+                                                </select>
+                                                <label>Escuelas</label>
+                                                </div>
                     
                 </div>
                 </div>

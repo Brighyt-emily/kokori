@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 function ltProductosForDev(){
-    $.get("de", {"opc": 1}, function (data) {
+    $.get("de", {"opc": 2}, function (data) {
         var x = JSON.parse(data);
         $("#tipo option").remove();
         listarTipo();
