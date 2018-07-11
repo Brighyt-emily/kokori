@@ -18,7 +18,7 @@ public class Conexion {
     private static final String URL = "jdbc:mysql://localhost:3306/bdpresup?zeroDateTimeBehavior=convertToNull";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String USER = "root";
-    private static final String PASS = "1412";
+    private static final String PASS = "";
     private static Connection cx = null;
 
     public static Connection getConexion() {
