@@ -89,6 +89,9 @@ public class DevolucionDaoImp implements DevolucionDao {
                 map.put("no",  rs.getString("nombre"));
                 map.put("idprestamo",  rs.getString("idprestamo"));
                 map.put("nom_Tip",  rs.getString("nom_tipo"));
+                map.put("horap",  rs.getTime("hora_prestamo"));
+                map.put("horad",  rs.getTime("hora_devolucion"));
+
 
                 lista.add(map);
             }
