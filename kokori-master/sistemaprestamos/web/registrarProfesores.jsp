@@ -22,7 +22,8 @@
                 <div class="action-btn-wrapper">
                     <div class="fixed-action-btn my-custom-btn vertical">
                         <a class="btn-floating btn-large red">
-                            <i class="large material-icons">build</i>
+                            <i class="large material-icons">settings
+                            </i>
                         </a>
                         <ul>
                             <li><a class="btn-floating #f06292 blue lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Añadir Profesor" href='registrarProfesores.jsp' ><i class="material-icons">add</i></a></li>

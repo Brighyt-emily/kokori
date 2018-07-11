@@ -160,5 +160,12 @@
     .no-js #loader-wrapper {
         display: none;
     }
+    .fixed-action-btn > .btn-floating > .material-icons {
+  transition: transform 0.3s;
+}
+
+.fixed-action-btn.active > .btn-floating > .material-icons {
+  transform: rotate(150deg);
+}
 
 </style>

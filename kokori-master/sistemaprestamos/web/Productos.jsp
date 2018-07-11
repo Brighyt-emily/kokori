@@ -17,28 +17,29 @@
     <body>
          <%@include file="WEB-INF/template/Principal.jspf" %>
          <main class="mn-inner">
-                <div class="row">
-                    
-                  <div class="col s12 m12 l12">
-                        <div class="page-title">Productoss</div>
-                    </div>
-                    <div class="row">
-            <div class="col s12">
-            <div class="row">
-            <div class="col s10">
-                <div class="input-field">
-                <i class="material-icons prefix" style="color: black">search</i>
-                <label for="nomp">Buscar..</label>
-                <input type="text" name="nomp" required id="nomp" style="width: 320px">
-              </div>
-           </div>
-             </div>
-                 </div>
-                        
-                 </div>
+               
+              
                     <div class="col s12 m12 l12">
+                        
                         <div class="card">
+                            
                             <div class="card-content">
+                                <div class="col s12">
+                    <div class="page-title"> <i class="material-icons smoll" >assignment_ind</i><span>Registro de Profesores</span></div>
+                </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="row">
+                                            <div class="col s10">
+                                                <div class="input-field">
+                                                   
+                                                    <label for="nomp">Buscar..</label>
+                                                    <input type="text" name="nomp" required id="nomp" style="width: 320px">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <table class="table highlight centered" id="tablin">
                                         <thead>
                                             <tr>
@@ -51,6 +52,7 @@
                                         </thead>
                                         <tbody> 
                                         </tbody>
+                                        
                                     </table> 
                             </div>
                         
@@ -61,11 +63,11 @@
             <div class="action-btn-wrapper">
                 <div class="fixed-action-btn my-custom-btn vertical">
                     <a class="btn-floating btn-large red">
-                        <i class="large material-icons">build</i>
+                        <i class="large material-icons">settings</i>
                     </a>
                     <ul>
-                        <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1' onclick="modal()"><i class="material-icons">add</i></a></li>
-                        <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal3' ><i class="material-icons">assignment</i></a></li>
+                        <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#modal1' onclick="modal()"><i class="material-icons">add</i></a></li>
+                        <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#modal3' ><i class="material-icons">assignment</i></a></li>
                     </ul>
                 </div>
             </div>
