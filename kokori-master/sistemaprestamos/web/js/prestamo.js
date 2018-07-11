@@ -1,6 +1,7 @@
 $(document).ready(function () {
     ListarProd();
     ListarDoc();
+    Reserva();
 });
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
@@ -118,6 +119,12 @@ function ListarDoc() {
             $("#docu").append("<option value='" + x[i].id + "'>" + x[i].nombre + "</option>");
         }
         $("#docu").material_select();
+    });
+}
+function Reserva(){
+    $.get("Pc", {"opc": 8}, function (data) {
+        var x = JSON.parse(data);
+        alert(data);
     });
 }
 
