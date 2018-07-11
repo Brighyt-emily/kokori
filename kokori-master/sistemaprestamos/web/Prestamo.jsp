@@ -84,7 +84,7 @@
                                                     </div>
                                                     <div class="col s10 " >
                                                         <label for="dnipro"> <i class="material-icons prefix">face</i>Documento Responsable</label>
-                                                        <select id="docu" class="input-field" onmessage="Documento Responsable">  </select>                                                       
+                                                        <select id="docu" class="input-field" onmessage="Documento Responsable"></select>                                                       
                                                     </div>      
 
                                                 </div>
