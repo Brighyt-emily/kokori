@@ -130,14 +130,14 @@ function VerificacionReserva(){
         else{
            $.get("Pc", {"idr":x,"opc": 10}, function (data) {
             var y = JSON.parse(data); 
+            alert(data);
                 $("#fecha_pre").val(y.fe_prestamo);
                 $("#fechadev").val(y.fe_devolucion);
                 $("#hora_pre").val(y.hora_pre);
                 $("#hora_dev").val(y.hora_devo);
                 $("#aula").val(y.aula);
                 $("#prof").val(y.id_profe);
-                $("#dnipro").val(y.nom_profe);
-                
+                $("#dnipro").val(y.nom_profe);          
             });
             $.get("Pc", {"idd":x,"opc": 11}, function (data) {
             var y = JSON.parse(data);
@@ -156,6 +156,7 @@ function VerificacionReserva(){
                 e = "Estado intermedio";
 
             }
+                $("#tablaDetalle tbody tr").remove();
                 $("#tablaDetalle").append("<tr><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
             }    
             });
