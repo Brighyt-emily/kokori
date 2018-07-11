@@ -37,19 +37,19 @@ function listarRegisProfesores(){
             {
                 $("#tblProfesores").append("<tr><td>" + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>"  + "</td><td>" + data[i].nombres + "</td><td>" + data[i].apellidos + "</td><td>"
                         + data[i].dni + "</td><td>" + data[i].codigo + "</td><td>" + data[i].escuela + "</td><td>"
-                        + data[i].email + "</td><td><button data-target='modal1' class='btn-floating btn-large red modal-trigger' onclick='verProfesor(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td><td><button  class='btn-floating' onclick='eliminar(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td></tr></tr>");
+                        + data[i].email + "</td><td><button data-target='modal1' class='btn-floating red modal-trigger' onclick='verProfesor(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td><td><button  class='btn-floating' onclick='eliminar(" + data[i].idProfesor + ");'><i class='material-icons'>delete</i></button></td></tr></tr>");
             }
             if (jop === 0)
             {
                 $("#tblProfesores").append("<tr><td>" + "<p><i class='small material-icons' style='color:#ff0000'>cancel</i></p>"  + "</td><td>" + data[i].nombres + "</td><td>" + data[i].apellidos + "</td><td>"
                         + data[i].dni + "</td><td>" + data[i].codigo + "</td><td>" + data[i].escuela + "</td><td>"
-                        + data[i].email + "</td><td><button data-target='modal1' class='btn-floating btn-large red modal-trigger' onclick='verProfesor(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td><td><button  class='btn-floating' onclick='eliminar(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td></tr></tr>");
+                        + data[i].email + "</td><td><button data-target='modal1' class='btn-floating  red modal-trigger' onclick='verProfesor(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td><td><button  class='btn-floating' onclick='eliminar(" + data[i].idProfesor + ");'><i class='material-icons'>delete</i></button></td></tr></tr>");
             }
             if (jop === 2)
             {
                 $("#tblProfesores").append("<tr><td>" + "<p><i class='small material-icons red' style='color:#ff0000'>remove_circle</i></p>"  + "</td><td>" + data[i].nombres + "</td><td>" + data[i].apellidos + "</td><td>"
                         + data[i].dni + "</td><td>" + data[i].codigo + "</td><td>" + data[i].escuela + "</td><td>"
-                        + data[i].email + "</td><td><button data-target='modal1' class='btn-floating btn-large red modal-trigger' onclick='verProfesor(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td><td><button  class='btn-floating' onclick='eliminar(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td></tr>");
+                        + data[i].email + "</td><td><button data-target='modal1' class='btn-floating  red modal-trigger' onclick='verProfesor(" + data[i].idProfesor + ");'><i class='material-icons'>update</i></button></td><td><button  class='btn-floating' onclick='eliminar(" + data[i].idProfesor + ");'><i class='material-icons'>delete</i></button></td></tr>");
             }
         
         

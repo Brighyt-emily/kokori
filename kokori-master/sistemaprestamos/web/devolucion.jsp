@@ -48,6 +48,8 @@
                                                 <th>Apellido Profesor</th>
                                                 <th>Fecha de Préstamo</th>
                                                 <th>Devolución Programada</th>
+                                                <th>Hora pedido</th>
+                                                <th>Hora devolucion</th>
                                                 <th>Productos</th>
                                             </tr>
                                         </thead>

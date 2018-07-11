@@ -8,10 +8,10 @@ package pe.edu.upeu.presup.daoimp;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.presup.dao.PrestamoDetalleDao;
 import pe.edu.upeu.presup.entity.DetallePrestamo;
-import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -26,8 +26,22 @@ public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
 
     @Override
     public List<DetallePrestamo> readAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   List<DetallePrestamo> datos = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call listarDetallePrestamo()}");
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                DetallePrestamo p = new  DetallePrestamo();
+                 p.setId_detpres(rs.getInt("iddetalle_prestamo"));
+                 p.setId_prestamo(rs.getInt("idprestamo"));
+                p.setId_prod(rs.getInt("idproducto"));
+                datos.add(p);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e);
+        }
+        return datos;   }
 
     @Override
     public boolean search(String dp) {

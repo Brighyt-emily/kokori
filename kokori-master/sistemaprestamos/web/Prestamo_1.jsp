@@ -27,7 +27,7 @@
         <main class="mn-inner">
             <div class="card">
                 <div class="card-content ">
-                    <!--      Wizard container        -->
+                    <!--      Wizard container  -->
                     <div class="card wizard-card" data-color="orange" id="wizardProfile">
 
                         <div class="wizard-header text-center">

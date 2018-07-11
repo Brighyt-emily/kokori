@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.dao.ProfesorDao;
@@ -27,6 +28,7 @@ public class PrestamoController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int op = Integer.parseInt(request.getParameter("opc"));
+            HttpSession sesion = request.getSession();
              switch(op){
                  case 1:
                         Prestamo p =new Prestamo(request.getParameter("fec_pre"),
@@ -57,6 +59,21 @@ public class PrestamoController extends HttpServlet {
                  break;
                  case 7:
                      out.println(g.toJson(pr.detalle(Integer.parseInt(request.getParameter("id")))));
+                 break;
+                 case 8:
+                      int i = Integer.parseInt(request.getParameter("res"));
+                      System.out.println(i);
+                      sesion.setAttribute("res", i);
+                      //out.println(g.toJson(i));
+                 break;
+                 case 9:
+                     out.print(g.toJson(sesion.getAttribute("res")));
+                 break;
+                 case 10:
+                     out.println(g.toJson(pr.Reserva(Integer.parseInt(request.getParameter("idr")))));
+                 break;
+                 case 11:
+                     out.println(g.toJson(pr.DetReserva(Integer.parseInt(request.getParameter("idd")))));
                  break;
              }
         }

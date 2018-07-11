@@ -23,4 +23,6 @@ public interface PrestamoDao {
     Prestamo read(int key);
     List<Documento> readDocument();
     Producto detalle(int key);
+    Prestamo Reserva(int key);
+    List<Producto> DetReserva(int key);
   }

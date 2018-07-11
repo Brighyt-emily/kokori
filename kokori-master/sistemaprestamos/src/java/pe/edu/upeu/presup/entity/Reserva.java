@@ -51,6 +51,16 @@ public class Reserva {
         this.h_prestamo = h_prestamo;
     }
 
+    public Reserva(int idReserva, String fe_devolucion, String aula, String fe_prestamo, String h_devolucion, String h_prestamo) {
+        this.idReserva = idReserva;
+        this.fe_devolucion = fe_devolucion;
+        this.aula = aula;
+        this.fe_prestamo = fe_prestamo;
+        this.h_devolucion = h_devolucion;
+        this.h_prestamo = h_prestamo;
+    }
+    
+
     public int getIdReserva() {
         return idReserva;
     }

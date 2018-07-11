@@ -21,6 +21,7 @@ public class Prestamo {
     int id_profe;
     int id_documento;
     int id_user;
+    String nom_profe;
 
     public Prestamo(int idprestamo) {
         this.idprestamo = idprestamo;
@@ -48,6 +49,14 @@ public class Prestamo {
         this.estado = estado;
     }
 
+    public String getNom_profe() {
+        return nom_profe;
+    }
+
+    public void setNom_profe(String nom_profe) {
+        this.nom_profe = nom_profe;
+    }
+    
     public String getHora_pre() {
         return hora_pre;
     }

@@ -230,8 +230,9 @@
                         </div>
                         <div class="sidebar-profile-info">
                             <a href="javascript:void(0);" class="account-settings-link" style="text-decoration: none;" >
-                                <p>Emily Ccana</p>
-                                <span>emaslkdlad@upeu.edu.pe<i class="material-icons right">arrow_drop_down</i></span>
+                                <p class="text-left">${sessionScope.nombres}</p>
+
+                                <span>${sessionScope.rol}<i class="material-icons right">arrow_drop_down</i></span>
                             </a>
                         </div>
                     </div>

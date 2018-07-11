@@ -22,11 +22,12 @@
                 <div class="action-btn-wrapper">
                     <div class="fixed-action-btn my-custom-btn vertical">
                         <a class="btn-floating btn-large red">
-                            <i class="large material-icons">build</i>
+                            <i class="large material-icons">settings
+                            </i>
                         </a>
                         <ul>
-                            <li><a class="btn-floating #f06292 blue lighten-2 " href='registrarProfesores.jsp' ><i class="material-icons">add</i></a></li>
-                            <li><a class="btn-floating #f06292 green lighten-2" href='tablaProfesores.jsp'><i class="material-icons">grid_on
+                            <li><a class="btn-floating #f06292 blue lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Añadir Profesor" href='registrarProfesores.jsp' ><i class="material-icons">add</i></a></li>
+                            <li><a class="btn-floating #f06292 green lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Lista de Profesores" href='tablaProfesores.jsp'><i class="material-icons">grid_on
                                     </i></a></li>
 
                         </ul>
