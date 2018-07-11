@@ -87,7 +87,7 @@
 
 
 
-    <%@include file="WEB-INF/template/footer.jspf" %>
+    <%@include file="WEB-INF/template/footerMain.jspf" %>
     <script src="js/profesor.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
