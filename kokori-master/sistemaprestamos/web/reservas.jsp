@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="row">
                             <div class="col s8">
-                                <h4>Reservasss</h4>
+                                <h4>Reservas</h4>
                             </div>
                             <div class="col s2">
                                 <button class="btn light-blue darken-4" type="submit" name="action" id="btnRervar">Reservar

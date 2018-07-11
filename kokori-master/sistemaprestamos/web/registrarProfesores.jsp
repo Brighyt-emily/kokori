@@ -18,6 +18,21 @@
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <!--INICIO Contenido -->
         <main class="mn-inner" >
+            <div class="col s12">
+            <div class="action-btn-wrapper">
+                <div class="fixed-action-btn my-custom-btn vertical">
+                    <a class="btn-floating btn-large red">
+                        <i class="large material-icons">build</i>
+                    </a>
+                    <ul>
+                        <li><a class="btn-floating #f06292 blue lighten-2 " href='registrarProfesores.jsp' ><i class="material-icons">add</i></a></li>
+                        <li><a class="btn-floating #f06292 green lighten-2" href='tablaProfesores.jsp'><i class="material-icons">grid_on
+                        </i></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
             <div class="row">
                 <div class="col s12">
                     

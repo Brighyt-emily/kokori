@@ -34,6 +34,14 @@ public class Profesor extends Trabajador{
         this.idEscuela = idEscuela;
     }
 
+    public Profesor(int idProfesor, String codProfesor, int idEscuela ,String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email) {
+        super(nomTrabajador, apelTrabajador, direccion, numCelular, numDni, email);
+        this.idProfesor = idProfesor;
+        this.codProfesor = codProfesor;
+        this.idEscuela = idEscuela;
+    }
+    
+
     public String getNomApe() {
         return nomApe;
     }

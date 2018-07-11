@@ -78,6 +78,7 @@
                                                             <i class="material-icons prefix">assignment</i>
                                                             <label for="dnipro">Ingrese DNI profesor</label>
                                                             <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
+                                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>                                                       
                                                     </div>
                                                     <div class="col s10 row center" >  
@@ -86,7 +87,8 @@
                                                         </div>
                                                         <div class="input-field col s8 row center" >
                                                             <label for="dnipro">Documento Responsable</label>
-                                                            <select id="docu" class="input-field"> </select>
+                                                            <select id="docu" class="input-field"> 
+                                                            </select>
                                                         </div>                                                            
                                                     </div>
                                                     <div class="col s10 input-field">
@@ -101,7 +103,7 @@
                                                     <div class="row center col s10 input-field">
 
                                                         <i class="material-icons prefix">chrome_reader_mode</i>
-                                                        <label for="responsable">Responsable</label>
+                                                        <label for="responsable">Alumno</label>
                                                         <input type="text" name="responsable" id="responsable" required>
 
                                                     </div>
@@ -114,9 +116,9 @@
                                                 <div class="row">
                                                     <div class="col s6 input-field">                                                        
                                                         <form name="fechas" id="fechas">
-                                                            <i class="material-icons prefix">insert_invitation</i>
-                                                            <label for="fechawe">Fecha prestamo</label>
-                                                            <input disabled id="fecha_pre" name="fecha" type="text" class="validate">
+                                                            <i class="material-icons prefix active">insert_invitation</i>
+                                                            <label for="fechawe" class="active">Fecha prestamo</label>
+                                                            <input id="fecha_pre" name="fecha" type="date" class="validate">
                                                         </form> 
                                                     </div>
                                                     <!--Fecha devolucion-->
@@ -132,13 +134,6 @@
                                                             <i class="material-icons prefix active">access_time</i>
                                                             <label for="hor" class="active">Hora prestamo</label>
                                                             <input name="hora" id="hora_pre" type="time" class="validate">
-                                                        </form>
-                                                    </div>
-                                                    <div class="col s6 input-field">
-                                                        <form name="horas" id="horas">
-                                                            <i class="material-icons prefix active">access_time</i>
-                                                            <label for="hor" class="active">Hora devolucion</label>
-                                                            <input name="hora" id="hora_dev" type="time" class="validate">
                                                         </form>
                                                     </div>
                                                 </div>
@@ -184,12 +179,11 @@
                                                 <table class="table" id="tablaDetalle" >
                                                     <thead>
                                                         <tr>
-                                                            <th>Producto</th>
-                                                            <th>N° Prestados</th>
-                                                            <th>Estado</th>
+                                                            <th>PRODUCTO</th>
+                                                            <th>ESTADO</th>
+                                                            <th>TIPO</th>
                                                         </tr>
                                                     </thead>
-
                                                     <tbody>
 
                                                     </tbody>
@@ -204,7 +198,7 @@
                         <div class="wizard-footer">
                             <div class="pull-right">
                                 <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Next' />
-                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Finish' />
+                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Finish' id="registrarPrestamo" />
                             </div>
 
                             <div class="pull-left">
