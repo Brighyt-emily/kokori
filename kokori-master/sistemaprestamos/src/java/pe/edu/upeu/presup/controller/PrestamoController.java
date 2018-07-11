@@ -69,6 +69,9 @@ public class PrestamoController extends HttpServlet {
                  case 9:
                      out.print(g.toJson(sesion.getAttribute("res")));
                  break;
+                 case 10:
+                     out.println(g.toJson(pr.Reserva(Integer.parseInt(request.getParameter("idr")))));
+                 break;
              }
         }
     }

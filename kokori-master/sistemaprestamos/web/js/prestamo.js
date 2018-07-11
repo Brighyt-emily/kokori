@@ -124,11 +124,23 @@ function ListarDoc() {
 function VerificacionReserva(){
     $.get("Pc", {"opc": 9}, function (data) {
         var x = JSON.parse(data);
-        alert(data);
+  
         if(x===null){
         }
         else{
+           $.get("Pc", {"idr":x,"opc": 10}, function (data) {
+            var y = JSON.parse(data); 
+                $("#fecha_pre").val(y.fe_prestamo);
+                $("#fechadev").val(y.fe_devolucion);
+                $("#hora_pre").val(y.hora_pre);
+                $("#hora_dev").val(y.hora_devo);
+                $("#aula").val(y.aula);
+                $("#prof").val(y.id_profe);
+                $("#dnipro").val(y.nom_profe);
+                
+            });
             
+        
         }
         
     });
