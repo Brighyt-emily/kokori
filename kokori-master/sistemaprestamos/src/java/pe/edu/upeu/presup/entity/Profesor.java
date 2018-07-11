@@ -16,6 +16,7 @@ public class Profesor extends Trabajador{
     private String grado;
     private String codProfesor;
     private int idEscuela;
+    
 
     public Profesor() {
     }

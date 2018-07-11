@@ -8,6 +8,7 @@ package pe.edu.upeu.presup.dao;
 import java.util.List;
 import pe.edu.upeu.presup.entity.Devolucion;
 import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.entity.Producto;
 import pe.edu.upeu.presup.entity.Tipo;
 
 /**
@@ -20,4 +21,5 @@ public interface DevolucionDao {
     int update(Prestamo p);
     List<Devolucion> ListarByTipo(String tipo);
     List<Tipo>listarTipo();
+    List<Producto> ListarProductosByFecha(String fe,String nom,String ape);
 }

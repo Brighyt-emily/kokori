@@ -13,6 +13,7 @@ import java.util.List;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.entity.Devolucion;
 import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.entity.Producto;
 import pe.edu.upeu.presup.entity.Tipo;
 import pe.edu.upeu.presup.util.Conexion;
 
@@ -121,6 +122,29 @@ public class DevolucionDaoImp implements DevolucionDao{
         }
         
         return tip;
+    }
+
+    @Override
+    public List<Producto> ListarProductosByFecha(String fe, String nom, String ape) {
+        List<Producto> prod=new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call ListarProductosPorFecha(?,?,?)}");
+            cst.setString(1, fe);
+            cst.setString(2, nom);
+            cst.setString(3, ape);
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Producto p = new Producto();
+                p.setIdP(rs.getInt("codigo"));
+                p.setNom(rs.getString("nombre"));
+                prod.add(p);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return prod;
+
     }
     }
     
