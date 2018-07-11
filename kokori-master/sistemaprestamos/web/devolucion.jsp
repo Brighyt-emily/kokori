@@ -44,7 +44,8 @@
                                         <thead>
                                             <tr>
                                                 <th>Código</th>
-                                                <th>Profesor</th>
+                                                <th>Nombre Profesor</th>
+                                                <th>Apellido Profesor</th>
                                                 <th>Fecha de Préstamo</th>
                                                 <th>Devolución Programada</th>
                                                 <th>Productos</th>
@@ -95,7 +96,7 @@
         </div>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
     </div> 
     <div class="left-sidebar-hover"></div>
