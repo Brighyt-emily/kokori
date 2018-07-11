@@ -151,6 +151,29 @@ public class PrestamoDaoImp implements PrestamoDao {
         }
         return pl;
     }
+
+    @Override
+    public Prestamo Reserva(int key) {
+        Prestamo p = new Prestamo();
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call EspejoReserva(?)}");
+            cs.setInt(1, key); 
+            rs = cs.executeQuery();
+            while(rs.next()){
+                p.setId_profe(rs.getInt(2));
+                p.setFe_devolucion(rs.getString(5));
+                p.setAula(rs.getString(6));
+                p.setFe_prestamo(rs.getString(7));
+                p.setHora_devo(rs.getString(8));
+                p.setHora_pre(rs.getString(9));
+                p.setNom_profe(rs.getString(10));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error:"+ e);
+        }
+        return p;
+    }
     
     
 }

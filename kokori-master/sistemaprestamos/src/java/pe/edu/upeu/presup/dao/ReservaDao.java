@@ -33,4 +33,9 @@ public interface ReservaDao {
     int eliminarReserva(int key);
     
     List<Map<String, Object>> buscarReservaById(int key);
+    
+    int actualizarReserva(Reserva r);
+    
+    int actulizarDetallReserva(DetalleReserva dr);
+    
 }
