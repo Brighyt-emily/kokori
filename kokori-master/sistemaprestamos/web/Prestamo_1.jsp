@@ -86,7 +86,8 @@
                                                         </div>
                                                         <div class="input-field col s8 row center" >
                                                             <label for="dnipro">Documento Responsable</label>
-                                                            <select id="docu" class="input-field"> </select>
+                                                            <select id="docu" class="input-field"> 
+                                                            </select>
                                                         </div>                                                            
                                                     </div>
                                                     <div class="col s10 input-field">
@@ -101,7 +102,7 @@
                                                     <div class="row center col s10 input-field">
 
                                                         <i class="material-icons prefix">chrome_reader_mode</i>
-                                                        <label for="responsable">Responsable</label>
+                                                        <label for="responsable">Alumno</label>
                                                         <input type="text" name="responsable" id="responsable" required>
 
                                                     </div>
@@ -114,9 +115,9 @@
                                                 <div class="row">
                                                     <div class="col s6 input-field">                                                        
                                                         <form name="fechas" id="fechas">
-                                                            <i class="material-icons prefix">insert_invitation</i>
-                                                            <label for="fechawe">Fecha prestamo</label>
-                                                            <input disabled id="fecha_pre" name="fecha" type="text" class="validate">
+                                                            <i class="material-icons prefix active">insert_invitation</i>
+                                                            <label for="fechawe" class="active">Fecha prestamo</label>
+                                                            <input id="fecha_pre" name="fecha" type="date" class="validate">
                                                         </form> 
                                                     </div>
                                                     <!--Fecha devolucion-->
@@ -132,13 +133,6 @@
                                                             <i class="material-icons prefix active">access_time</i>
                                                             <label for="hor" class="active">Hora prestamo</label>
                                                             <input name="hora" id="hora_pre" type="time" class="validate">
-                                                        </form>
-                                                    </div>
-                                                    <div class="col s6 input-field">
-                                                        <form name="horas" id="horas">
-                                                            <i class="material-icons prefix active">access_time</i>
-                                                            <label for="hor" class="active">Hora devolucion</label>
-                                                            <input name="hora" id="hora_dev" type="time" class="validate">
                                                         </form>
                                                     </div>
                                                 </div>

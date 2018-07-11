@@ -10,8 +10,7 @@ $("#btnIngresar").click(function () {
         {
             $(location).attr('href', 'http://localhost:8080/sistemaprestamos/main.jsp');
         } else {
-            $("#alertNotificacion").show(200);
-            $("#alertNotificacion").delay(3000).hide(600);
+    
         }
     });
 });
