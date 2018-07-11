@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     ListarProd();
     ListarDoc();
@@ -22,7 +21,7 @@ function ListarProd() {
 
             }
             $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td><td>"
-                    + "<a href='#' onclick='productoSeleccionado()'>"
+                    + "<a href='#' onclick='productoSeleccionado("+x[i].idP+")'>"
                     + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
 
         }
@@ -48,34 +47,15 @@ $("#searchpro").keyup(function () {
     }
 });
 $("#registrarPrestamo").click(function () {
-    var toastContent = $('<span>Desea completar el prestamo?<a class="btn-flat toast-action red-text" onclick="RegistrarPrestamo()">ACEPTAR</a></span>');
-    Materialize.toast(toastContent, 1980);
-
-});
-
-
-function RegistrarPrestamo() {
     var alum = $("#responsable").val();
     var fe_pre = $("#fecha_pre").val();
-    var fe_dev = $("#fecha_dev").val();
+    var fe_dev = $("#fechadev").val();
     var h_pre = $("#hora_pre").val();
     var h_dev = $("#hora_dev").val();
     var aul = $("#aula").val();
     var prof = $("#prof").val();
     var docu = $("#docu").val();
     var user = 1;//$("#user").val();
-
-
-    $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function () {
-
-    });
-    $('#tablaDetalle tbody tr').each(function () {
-        var nom = $(this).find("td").eq(0).text();
-        M.toast({html: nom });
-        $.post("DPC", {"prod": nom, "opc": 1}, function () {
-        });
-    });
-
     if(alum==="" || fe_pre==="dd/mm/aaaa" || fe_dev==="dd/mm/aaaa" || aul==="" || prof==="" || user===""){
         Materialize.toast("Completar todos los campos de datos", 1980);
     }
@@ -96,9 +76,28 @@ function RegistrarPrestamo() {
 
         }
      
-    }  
-}
+    }
+});
 
+function productoSeleccionado(x){
+    $.get("Pc", {"id":x,"opc": 7}, function (data) {
+        var y = JSON.parse(data);
+          if (y.est === 0) {
+                var e = y.est = "Mal estado";
+
+            }
+            if (y.est === 1) {
+                var e = y.est = "Buen estado";
+
+            }
+            if (y.est === 2) {
+                var e = y.est = "Estado intermedio";
+
+            }
+        $("#tablaDetalle").append("<tr><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
+       // $('#tablaDetalle tr:last').after("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
+        });
+}
 
 $("#dnipro").keyup(function () {
     var dni = $("#dnipro").val();
@@ -106,7 +105,7 @@ $("#dnipro").keyup(function () {
     {
         $.get("Pc", {"dni": dni, "opc": 5}, function (data) {
             var x = JSON.parse(data);
-          M.toast({html: data})
+            alert(data);
             $("#dnipro").val(x.nomApe);
             $("#prof").val(x.idProfesor);
         });
@@ -122,16 +121,4 @@ function ListarDoc() {
     });
 }
 
-function modalres(){
-   $('.modal-trigger').leanModal();
-    $.post("pro",{ "op":7}, function (data) {
-            var w = JSON.parse(data);
-            for (var i = 0; i < w.length; i++) {  
-                $("#combin").append(
-		"<option value='"+w[i].iTip+"'>"+w[i].nomTip+"</option>");
-            }
-            $("#combin").material_select();
-        });
-  
-   
-}
+
