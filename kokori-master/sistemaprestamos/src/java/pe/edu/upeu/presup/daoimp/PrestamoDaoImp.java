@@ -174,6 +174,27 @@ public class PrestamoDaoImp implements PrestamoDao {
         }
         return p;
     }
+
+    @Override
+    public List<Producto> DetReserva(int key) {
+        List<Producto> p = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call EspejoDetalleReserva(?)}");
+            cs.setInt(1, key); 
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Producto pre = new Producto();
+                pre.setNom(rs.getString(1));
+                pre.setEst(rs.getInt(2));
+                pre.setNomTip(rs.getString(3));
+                p.add(pre);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error:"+ e);
+        }
+        return p;
+    }
     
     
 }

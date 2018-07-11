@@ -72,6 +72,9 @@ public class PrestamoController extends HttpServlet {
                  case 10:
                      out.println(g.toJson(pr.Reserva(Integer.parseInt(request.getParameter("idr")))));
                  break;
+                 case 11:
+                     out.println(g.toJson(pr.DetReserva(Integer.parseInt(request.getParameter("idd")))));
+                 break;
              }
         }
     }

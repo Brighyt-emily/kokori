@@ -124,7 +124,7 @@ function ListarDoc() {
 function VerificacionReserva(){
     $.get("Pc", {"opc": 9}, function (data) {
         var x = JSON.parse(data);
-  
+        alert(data);
         if(x===null){
         }
         else{
@@ -139,7 +139,26 @@ function VerificacionReserva(){
                 $("#dnipro").val(y.nom_profe);
                 
             });
-            
+            $.get("Pc", {"idd":x,"opc": 11}, function (data) {
+            var y = JSON.parse(data);
+            var e;
+            alert(data);
+            for (var i = 0; i < y.length; i++) {
+                if (y[i].est === 0) {
+                e  = "Mal estado";
+
+            }
+            if (y[i].est === 1) {
+                e  = "Buen estado";
+
+            }
+            if (y[i].est === 2) {
+                e = "Estado intermedio";
+
+            }
+                $("#tablaDetalle").append("<tr><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
+            }    
+            });
         
         }
         
