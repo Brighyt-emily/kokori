@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pe.edu.upeu.presup.entity;
 
 /**
@@ -37,6 +33,14 @@ public class Profesor extends Trabajador{
         this.codProfesor = codProfesor;
         this.idEscuela = idEscuela;
     }
+
+    public Profesor(int idProfesor, String codProfesor, int idEscuela ,String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email) {
+        super(nomTrabajador, apelTrabajador, direccion, numCelular, numDni, email);
+        this.idProfesor = idProfesor;
+        this.codProfesor = codProfesor;
+        this.idEscuela = idEscuela;
+    }
+    
 
     public String getNomApe() {
         return nomApe;

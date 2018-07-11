@@ -14,8 +14,7 @@ $("#btnMostrar").click(function () {
             for (var i = 0; i < w.length; i++) {  
                 $("#comboEscuela").append(
 		"<option value='"+w[i].idEscuela+"'>"+w[i].nomEscuela+"</option>");
-            }
-            
+            }            
             $("#comboEscuela").material_select();
         });
     $("#comboEscuela option").remove();
