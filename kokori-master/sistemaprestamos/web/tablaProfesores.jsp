@@ -13,8 +13,7 @@
         <%@include file="WEB-INF/template/header.jspf" %>
          <!-- Compiled and minified CSS -->
           <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    
     
             
   
@@ -31,8 +30,10 @@
                             <i class="large material-icons">build</i>
                         </a>
                         <ul>
-                            <li><a class="btn-floating #f06292 blue lighten-2 " href='registrarProfesores.jsp' ><i class="material-icons">add</i></a></li>
-                            <li><a class="btn-floating #f06292 green lighten-2" href='tablaProfesores.jsp'><i class="material-icons">grid_on</i></a></li>
+                            <li><a class="btn-floating #f06292 blue lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Añadir Profesor" href='registrarProfesores.jsp' ><i class="material-icons">add</i></a></li>
+                            <li><a class="btn-floating #f06292 green lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Lista de Profesores" href='tablaProfesores.jsp'><i class="material-icons">grid_on
+                                    </i></a></li>
+                            
                         </ul>
                     </div>
                 </div>
