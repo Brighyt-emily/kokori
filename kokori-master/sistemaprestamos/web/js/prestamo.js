@@ -64,7 +64,7 @@ function RegistrarPrestamo() {
     var prof = $("#prof").val();
     var docu = $("#docu").val();
     var user = 1;//$("#user").val();
-<<<<<<< HEAD
+
 
     $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function () {
 
@@ -75,7 +75,7 @@ function RegistrarPrestamo() {
         $.post("DPC", {"prod": nom, "opc": 1}, function () {
         });
     });
-=======
+
     if(alum==="" || fe_pre==="dd/mm/aaaa" || fe_dev==="dd/mm/aaaa" || aul==="" || prof==="" || user===""){
         Materialize.toast("Completar todos los campos de datos", 1980);
     }
@@ -96,33 +96,9 @@ function RegistrarPrestamo() {
 
         }
      
-    }
-});
->>>>>>> 1ccb585650e7c2419b9a9ac106e467b3745dc649
-
-    // Materialize.Toast.dismiss();     
+    }  
 }
 
-
-<<<<<<< HEAD
-$('#tablaPrestamo tbody tr').click(function () {
-    var nom;
-    var est;
-    var tip;
-    nom = $(this).find("td").eq(1).text();
-    est = $(this).find("td").eq(3).text();
-    tip = $(this).find("td").eq(4).text();
-    alert(nom + est + tip);
-    //    $("#tablaDetalle").append("<tr><td>"+nom+"</td><td>"+est+"</td><td>"+tip+"</td></tr>");
-    $('#tablaDetalle tr:last').after("<tr><td>" + nom + "</td><td>" + est + "</td><td>" + tip + "</td></tr>");
-});
-=======
-            }
-        $("#tablaDetalle").append("<tr><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
-       // $('#tablaDetalle tr:last').after("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
-        });
-}
->>>>>>> 1ccb585650e7c2419b9a9ac106e467b3745dc649
 
 $("#dnipro").keyup(function () {
     var dni = $("#dnipro").val();
