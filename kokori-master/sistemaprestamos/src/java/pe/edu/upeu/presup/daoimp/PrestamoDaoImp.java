@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import pe.edu.upeu.presup.dao.PrestamoDao;
+import pe.edu.upeu.presup.entity.Documento;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.util.Conexion;
 
@@ -29,14 +30,16 @@ public class PrestamoDaoImp implements PrestamoDao {
         int x=0;
         try{
             cx= Conexion.getConexion();
-            cs=cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?)}");
+            cs=cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, p.getFe_prestamo());
-            cs.setString(2, p.getNom_alumno());
-            cs.setString(3, p.getFe_devolucion());
-            cs.setString(4, p.getAula());
-            cs.setInt(5, p.getId_profe());
-            cs.setInt(6, p.getId_documento());
-            cs.setInt(7, p.getId_user());
+            cs.setString(2, p.getHora_pre());
+            cs.setString(3, p.getHora_devo());
+            cs.setString(4, p.getNom_alumno());
+            cs.setString(5, p.getFe_devolucion());
+            cs.setString(6, p.getAula());
+            cs.setInt(7, p.getId_profe());
+            cs.setInt(8, p.getId_documento());
+            cs.setInt(9, p.getId_user());
             x= cs.executeUpdate();
         }
         catch(SQLException e){
@@ -106,6 +109,26 @@ public class PrestamoDaoImp implements PrestamoDao {
             System.out.println("Error:"+ e);
         }
         return p;
+    }
+
+    @Override
+    public List<Documento> readDocument() {
+        List<Documento> doc = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call ListDocumento}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Documento d = new Documento();
+                d.setId(rs.getInt(1));
+                d.setNombre(rs.getString(2));
+                doc.add(d);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return doc; 
     }
     
     

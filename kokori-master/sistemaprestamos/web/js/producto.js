@@ -1,8 +1,8 @@
 $(document).ready(function()
 {
-    $('.modal-trigger').leanModal();
-    
     listar();
+    
+    
 });
 
 function listar()
@@ -11,22 +11,22 @@ function listar()
         var bibi = JSON.parse(data);
         $("#tablin tbody tr").remove();
         for (var i = 0; i < data.length; i++) {
-             var jop=bibi[i].est;
+            var jop =bibi[i].est;
              
-             if (jop==1)
+             if (jop===1)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons'>check_circle</i></p>" + "</td><td>" + bibi[i].iTip + "</td><td><a class='waves-effect waves-light btn modal-trigger' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn '   onclick='edit()'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn ' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='btn btn-primaty teal modal-trigger' href='#modal2' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
-             if(jop==0)
+             if(jop===0)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons'>highlight_off</i></p>" + "</td><td>" + bibi[i].iTip + "</td><td><a class='waves-effect waves-light btn modal-trigger'  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn '  onclick= 'edit()'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
-             if(jop==2)
+             if(jop===2)
              {
                    $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons'>remove_circle</i></p>" + "</td><td>" + bibi[i].iTip + "</td><td><a class='waves-effect waves-light btn modal-trigger'  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick= 'edit()'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' href='#modal2'  onclick= 'jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
         }
     });
@@ -38,58 +38,59 @@ function eliminar(x){
     });
 }
 
-function edit(x)
-{
-    
-    var valores="";
-    $('#tablin').parent("tr").find('td').each(function()
-    {
-       if($(this).html() != "")
-       {
-           valores += $(this).html()+"";
-       }
-       valores = valores +"\n";
-       alert(valores);
-    });
-    
-    
-    var obj = new Object();
-    $('#tablin tr').each(function () {
-        obj.nom = $(this).find("td").eq(1).html();
-        obj.codi = $(this).find("td").eq(2).html();
-        obj.est = $(this).find("td").eq(3).html();
-        obj.iTip = $(this).find("td").eq(4).html();
-        alert(obj.nom);
-        
-    });
-    $.post("pro",{"idP":x,"op":4}, function(data)
-    {
-    var bibi = JSON.parse(data);
-    var jop=bibi.nom;
-    alert(jop);
-    });
-    
 
+function jip(x)
+{
+    alert(x);
+     $('.modal-trigger').leanModal();
+
+    var jip= $('#est').val();
+
+    $.get("pro",{"op":4,"idP":x,"idTip":jip},function (data) {
+        alert(data);
+    });
+    
 }
+
 function modal(){
    $('.modal-trigger').leanModal();
+    $.post("pro",{ "op":7}, function (data) {
+            var w = JSON.parse(data);
+            for (var i = 0; i < w.length; i++) {  
+                $("#combin").append(
+		"<option value='"+w[i].iTip+"'>"+w[i].nomTip+"</option>");
+            }
+            $("#combin").material_select();
+        });
+  
    
 }
 
 function salva()
 {
+    alert('tututu');
     var jop=$('#pro').val();
     var kop= $('#codi').val();
-    var jip= $('#est').val();
-    var uno= $('#iTip').val();
+    var jip= $('#loco').val();
+    var x = $("#combin").val();
+    var ide = parseInt(x);
+
     
-    $.get("pro",{"nom":jop,"cod":kop,"est":jip,"iTip":uno,"op":2},function()
+    $.post("pro",{"nom":jop,"cod":kop,"est":jip,"iTip":ide,"op":2},function()
     {
+        console.log("controlador op 2");
         listar();
     });
     
 }
- function editar(){
+function unin(x){var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="ok('+x+')">Aceptar</button></span>';
+     Materialize.toast(toastHTML,1980);
+    
+}
+
+
+
+ function editar(x){
      
     var toastHTML = '<span>Seguro que desea guardar?<button class="btn-flat toast-action" onclick="salva()">Aceptar</button></span>';
      Materialize.toast(toastHTML,1980);

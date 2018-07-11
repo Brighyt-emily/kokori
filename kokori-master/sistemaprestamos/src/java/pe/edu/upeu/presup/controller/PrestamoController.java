@@ -10,14 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
+import pe.edu.upeu.presup.dao.ProfesorDao;
 import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
+import pe.edu.upeu.presup.daoimp.ProfesorDaoImp;
 import pe.edu.upeu.presup.entity.Prestamo;
 
 public class PrestamoController extends HttpServlet {
     
     private PrestamoDao pr = new PrestamoDaoImp();
     private ProductoDao pro = new ProductoDaoImp();
+    private ProfesorDao prof = new ProfesorDaoImp();
     private Gson g = new Gson();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,6 +32,8 @@ public class PrestamoController extends HttpServlet {
                         Prestamo p =new Prestamo(request.getParameter("fec_pre"),
                                                  request.getParameter("alu"),
                                                  request.getParameter("fe_devo"),
+                                                 request.getParameter("horaPre"),
+                                                 request.getParameter("horadev"),
                                                  request.getParameter("aula"),
                                                  Integer.parseInt(request.getParameter("prof")),
                                                  Integer.parseInt(request.getParameter("docu")),
@@ -43,6 +48,12 @@ public class PrestamoController extends HttpServlet {
                  break;
                  case 4:
                      out.println(g.toJson(pro.readAll()));
+                 break;
+                 case 5:
+                     out.println(g.toJson(prof.SearchDniprof(request.getParameter("dni"))));     
+                 break;
+                 case 6:
+                     out.println(g.toJson(pr.readDocument()));
                  break;
              }
         }

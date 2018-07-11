@@ -16,7 +16,10 @@ public interface ProductoDao {
     int create (Producto p);
     int deleate (int key);
     int update (Producto p);
-    Producto read(Producto key);
+    Producto read(int key);
     List <Producto> readAll();
+    int crea (Producto p);
+    List <Producto> ko();
+    
     
   }

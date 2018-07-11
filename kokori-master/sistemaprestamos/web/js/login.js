@@ -1,24 +1,18 @@
-$(function () {
-    "use strict";
-    var window_width = $(window).width();
-    $(window).load(function () {
-        setTimeout(function () {
-            $('body').addClass('loaded');
-        }, 200);
-        $("#btnIngresar").click(function () {
-            var user = $("#username").val();
-            var contra = $("#password").val();
-            if (user === "emilyc" && contra === "123") {
-                location = 'menu.jsp';
-            } else {
-                var toastHTML = '<i class="material-icons small red-text ">do_not_disturb_on</i><span class="">Usuario y contraseña incorrectos!</span>';
-                M.toast({
-                    html: toastHTML
-                });
-                $("#username").val("");
-                $("#password").val("");
-            }
-        });
+$(document).ready(function () {
+});
+$("#btnIngresar").click(function () {
+    var x = $("#user").val();
+    var y = $("#pass").val();
+    alert(x + y);
+    $.post("main", {"user": x, "pass": y, "opc": 1}, function (data) {
+        alert(data);
+        if (data > 0)
+        {
+            $(location).attr('href', 'http://localhost:8080/sistemaprestamos/main.jsp');
+        } else {
+            $("#alertNotificacion").show(200);
+            $("#alertNotificacion").delay(3000).hide(600);
+        }
     });
 });
 

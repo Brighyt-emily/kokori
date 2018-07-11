@@ -135,7 +135,7 @@
                                 
                             </div>
                             <div class="col s2">
-                                <button class="btn-large light-blue darken-4" type="submit" name="action" id="btnRegistrar">Reservar
+                                <button class="btn-large light-blue darken-4" type="submit" name="action" id="btnRegistrar">Registrar
                                     <i class="material-icons right">save</i>
                                 </button>
                             </div>
@@ -152,7 +152,7 @@
                         </main>
                                 
                                 <div class="left-sidebar-hover"></div>
-                                <%@include file="WEB-INF/template/footer.jspf" %>
+                                <%@include file="WEB-INF/template/footerMain.jspf" %>
                                 <script src="js/regisProfesores.js" type="text/javascript"></script>
                                 </body>
                                 </html>

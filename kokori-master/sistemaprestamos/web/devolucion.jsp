@@ -58,6 +58,29 @@
                         </div>
                     </div>
                 </div>
+
+            </main>
+           <!--FIN Contenido-->
+        <!-- Modal Structure -->
+        <div id="modal2" class="modal s12 m12 l12" style="max-width: 350px;">
+                <div class="modal-content">
+                    <h5>Productos</h5>
+                 <div class="input-field col s12">
+                     <select multiple="" id="combin" name="selectBox">
+                                                 <option value="0" disabled selected>Selecciona un tipos</option>             
+                                                </select>
+                                                <label>Tipos</label>
+                                    
+                 </div>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+        </div>
+
+              
+        <div class="left-sidebar-hover"></div>
+                </div>                   
             </div>
         </div>
     </main>

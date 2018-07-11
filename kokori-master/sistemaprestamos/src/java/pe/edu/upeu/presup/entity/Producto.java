@@ -37,6 +37,23 @@ public class Producto {
         this.iTip = iTip;
     }
 
+    public Producto(int iTip, String nomTip) {
+        this.iTip = iTip;
+        this.nomTip = nomTip;
+    }
+
+    
+    public Producto(String nomTip) {
+        this.nomTip = nomTip;
+    }
+
+    public Producto(int idP, int iTip) {
+        this.idP = idP;
+        this.iTip = iTip;
+    }
+    
+    
+
     public int getStock() {
         return stock;
     }

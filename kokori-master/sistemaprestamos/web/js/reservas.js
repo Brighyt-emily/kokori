@@ -1,7 +1,7 @@
 $(document).ready(function () {
     listarProducto();
     var f = new Date();
-    $("#fecha").val(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
+    $("#fecha").val(f.getFullYear() + "-" + (f.getMonth() + 1) + "-" + f.getDate());
 });
 
 //declaracion de variables
@@ -17,14 +17,16 @@ $("#btnBuscar").click(function () {
             if (x.length > 0) {
                 $("#nombres").val(x[0].nombres + " " + x[0].apellidos);
                 $("#idprofesor").val(x[0].idProfesor);
-                /*var toastHTML = '<span>Profesor encontrado</span><button class="btn-flat toast-action">Ok..!</button>';
-                M.toast({html: toastHTML});*/
+                var toastContent = $('<span class=" green-text"><b>Correcto !!</b></span>');
+                Materialize.toast(toastContent, 1800);
             } else {
-                //M.toast({html: 'Codigo mal ingresado'});
+                var toastContent = $('<span class="yellow-text"><b>Codigo mal ingresado!</b></span>');
+                Materialize.toast(toastContent, 1500);
             }
         });
     } else {
-        //M.toast({html: 'Ingrese un codigo para las reservas', classes: 'rounded'});
+        var toastContent = $('<span class="red-text"><b>Oops!!!   Ingrese un Codigo</b></span>');
+        Materialize.toast(toastContent, 1500);
     }
 });
 
@@ -49,17 +51,18 @@ function productoSeleccionado(w) {
         obj.idp = x[0].idproducto;
         obj.nombre = x[0].nomProducto;
         obj.codigo = x[0].codigo;
-        añadirCarrito(obj);
+        añadirListado(obj);
         listarProdReservados();
     });
 }
 
-function añadirCarrito(objeto) {
+function añadirListado(objeto) {
     if (listaReservados.length > 0) {
         var j = 0;
         while (j < listaReservados.length) {
             if (listaReservados[j].codigo === objeto.codigo) {
-                //M.toast({html: 'Este producto ya esta seleccionado'});
+                var toastContent = $('<span class="white-text"><b>Producto en lista!!</b></span>');
+                Materialize.toast(toastContent, 1800);
                 j = listaReservados.length;
                 objeto = null;
             }
@@ -108,8 +111,9 @@ $("#nomProducto").keyup(function () {
     }
 });
 
-$("#btnRervar").click(function () {
+$("#btnRervar").click(function () {//funcion para guardar la reserva
     //obtenemos los valores de las variables requeridas
+    var prods = JSON.stringify(listaReservados);
     var estado = 1;
     var fe_reserva = $("#fecha").val();
     var fe_devolucion = $("#fe_devolucion").val();
@@ -119,19 +123,77 @@ $("#btnRervar").click(function () {
     var fe_prestamo = $("#fe_prestamo").val();
     var h_prestamo = $("#h_prestamo").val();
     if (idProfe > 0) {
-       $.post("rc",{"estado": estado, "fe_reserva": fe_reserva, "fe_devolucion": fe_devolucion, "aula": aula, "idp":idProfe, "fe_prestamo": fe_prestamo, "h_devolucion":h_devolucion, "h_prestamo": h_prestamo},function (xy) {
+        $.post("rc", {"estado": estado, "fe_reserva": fe_reserva, "fe_devolucion": fe_devolucion, "aula": aula, "idp": idProfe, "fe_prestamo": fe_prestamo, "h_devolucion": h_devolucion, "h_prestamo": h_prestamo, "op": 4}, function (xy) {
             var idreserva = parseInt(xy);
             if (idreserva > 0) {
-                //entra al flujo de detalle reserva
-            }else{
-                //M.toast({html: 'Upss!!, Fallo al realizar la reserva'});
+                $.post("rc", {"listProductos": prods, "iddr": idreserva, "op": 5}, function (data) {
+                    if (data > 0) {
+                        var toastContent = $('<h5 class="white-text">Reserva Realizada!</h5>');
+                        Materialize.toast(toastContent, 1850);
+                        cleanAll();
+                    }
+                });
+            } else {
+                var toastContent = $('<h5 class="red-text">Uy! Ocurrió un Error</h5>');
+                Materialize.toast(toastContent, 1800);
+                cleanAll();
             }
         });
     } else {
-        alert("Porfavor complete los campos");
+        var toastContent = $('<h5 class="white-text">Por favor rellene los datos</h5>');
+        Materialize.toast(toastContent, 1900);
     }
 });
 
+function cleanAll() {//metodo para limpiar todo el formulario
+    $("#tblRervado tbody tr").remove();
+    listaReservados.length = 0;
+    $("#codigo").val("");
+    $("#nombres").val("");
+    $("#idprofesor").val("");
+    $("#aula").val("");
+    $("#fe_prestamo").val("");
+    $("#h_prestamo").val("");
+    $("#fe_devolucion").val("");
+    $("#h_devolucion").val("");
+    $("#nomProducto").val("");
+}
+
 $("#btnCancelar").click(function () {
-    //M.toast({html: 'Canelara la reserva'});
+    var toastContent = $('<span>Desea Cancelar la Reserva?<a class="btn-flat toast-action red-text" onclick="siCancelar();">Aceptar</a>'
+            + '<a class="btn-flat toast-action red-text" onclick="no();">Cancelar</a></span>');
+    Materialize.toast(toastContent, 1900);
 });
+
+function siCancelar() {
+    cleanAll();
+}
+
+// complemento para el datapicker
+$('.datepicker').pickadate({
+    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    weekdaysFull: [' Dom ', ' Lun ', ' Mar ', ' Mié ', ' Jue ', 'Vie ', 'Sáb '],
+    weekdaysShort: ['D', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+    selectMonths: true,
+    selectYears: 100,
+    today: 'Hoy',
+    clear: 'Limpiar',
+    close: 'Ok',
+    labelMonthNext: 'Siguiente mes',
+    labelMonthPrev: 'Mes anterior',
+    labelMonthSelect: 'Selecciona un mes',
+    labelYearSelect: 'Selecciona un año',
+    format: 'yyyy-mm-dd'
+});
+
+function irRegistroReservas() {
+    if (listaReservados.length === 0) {
+        $(location).attr('href', 'registrosReserva.jsp');
+    } else {
+        var opcion = confirm("Formulario Incompleto, ¿Desea salir?");
+        if (opcion === true) {
+            $(location).attr('href', 'registrosReserva.jsp');
+        }
+    }
+}
