@@ -3,17 +3,13 @@ $(document).ready(function(){
 });
 
 function ltProductosForDev(){
-    $.get("de", {"opc": 1}, function (data) {
+    $.get("de",{"opc": 1}, function (data) {
         var x=JSON.parse(data);
-    $.get("de", {"opc": 2}, function (data) {
-        var x = JSON.parse(data);
-        $("#tipo option").remove();
-        listarTipo();
-
         for (var i = 0; i < x.length; i++) {
             $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+" "+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+x[i].fep+"\",\""+x[i].nom+"\",\""+x[i].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
         }    
-    });   
+
+    });
 }
 
 function editarEstado(idp){
