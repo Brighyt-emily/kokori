@@ -9,17 +9,20 @@ import pe.edu.upeu.presup.dao.DevoDao;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
+import pe.edu.upeu.presup.dao.ProfesorDao;
 import pe.edu.upeu.presup.dao.TipoDao;
 import pe.edu.upeu.presup.dao.UsuarioDao;
 import pe.edu.upeu.presup.daoimp.DevoDaoImp;
 import pe.edu.upeu.presup.daoimp.DevolucionDaoImp;
 import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
+import pe.edu.upeu.presup.daoimp.ProfesorDaoImp;
 import pe.edu.upeu.presup.daoimp.TipoDaoImp;
 import pe.edu.upeu.presup.daoimp.UsuarioDaoImp;
 import pe.edu.upeu.presup.entity.Devo;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.entity.Producto;
+import pe.edu.upeu.presup.entity.Profesor;
 import pe.edu.upeu.presup.entity.Tipo;
 import pe.edu.upeu.presup.entity.Usuario;
 import static pe.edu.upeu.presup.test.Test.conexion;
@@ -37,19 +40,19 @@ public class Test {
     static TipoDao i = new TipoDaoImp();
     static DevoDao po = new DevoDaoImp();
     static UsuarioDao us = new UsuarioDaoImp();
-
+    static ProfesorDao pr=new ProfesorDaoImp();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         //conexion();
-        //create();
+        create();
         //listar();
         //delete();
         //update();
         //update();
-        validar();
+        //validar();
         //read();
         //jip();
     }
@@ -63,8 +66,8 @@ public class Test {
     }
 
     static void create() {
-        Producto p = new Producto("LOCURA");
-        if (ko.crea(p) > 0) {
+        Profesor p = new Profesor(1,"201620052",1,"diego","puma","los sacues","123456","123123","tulo");
+        if (pr.update(p) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");
