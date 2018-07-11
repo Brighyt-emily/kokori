@@ -55,6 +55,9 @@ public class PrestamoController extends HttpServlet {
                  case 6:
                      out.println(g.toJson(pr.readDocument()));
                  break;
+                 case 7:
+                     out.println(g.toJson(pr.detalle(Integer.parseInt(request.getParameter("id")))));
+                 break;
              }
         }
     }

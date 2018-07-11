@@ -21,7 +21,7 @@ function ListarProd() {
 
             }
             $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td><td>"
-                    + "<a href='#' onclick='productoSeleccionado()'>"
+                    + "<a href='#' onclick='productoSeleccionado("+x[i].idP+")'>"
                     + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
 
         }
@@ -47,16 +47,9 @@ $("#searchpro").keyup(function () {
     }
 });
 $("#registrarPrestamo").click(function () {
-    var toastContent = $('<span>Desea completar el prestamo?<a class="btn-flat toast-action red-text" onclick="RegistrarPrestamo()">ACEPTAR</a></span>');
-    Materialize.toast(toastContent, 1980);
-
-});
-
-
-function RegistrarPrestamo() {
     var alum = $("#responsable").val();
     var fe_pre = $("#fecha_pre").val();
-    var fe_dev = $("#fecha_dev").val();
+    var fe_dev = $("#fechadev").val();
     var h_pre = $("#hora_pre").val();
     var h_dev = $("#hora_dev").val();
     var aul = $("#aula").val();
@@ -65,30 +58,35 @@ function RegistrarPrestamo() {
     var user = 1;//$("#user").val();
 
     $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function () {
-
     });
     $('#tablaDetalle tbody tr').each(function () {
-        var nom = $(this).find("td").eq(0).text();
-        alert(nom);
+        var nom = $(this).find("td").eq(1).text();
         $.post("DPC", {"prod": nom, "opc": 1}, function () {
         });
     });
+    Materialize.toast("Prestamo exitoso", 1980);
 
-    // Materialize.Toast.dismiss();     
-}
-
-
-$('#tablaPrestamo tbody tr').click(function () {
-    var nom;
-    var est;
-    var tip;
-    nom = $(this).find("td").eq(1).text();
-    est = $(this).find("td").eq(3).text();
-    tip = $(this).find("td").eq(4).text();
-    alert(nom + est + tip);
-    //    $("#tablaDetalle").append("<tr><td>"+nom+"</td><td>"+est+"</td><td>"+tip+"</td></tr>");
-    $('#tablaDetalle tr:last').after("<tr><td>" + nom + "</td><td>" + est + "</td><td>" + tip + "</td></tr>");
 });
+
+function productoSeleccionado(x){
+    $.get("Pc", {"id":x,"opc": 7}, function (data) {
+        var y = JSON.parse(data);
+          if (y.est === 0) {
+                var e = y.est = "Mal estado";
+
+            }
+            if (y.est === 1) {
+                var e = y.est = "Buen estado";
+
+            }
+            if (y.est === 2) {
+                var e = y.est = "Estado intermedio";
+
+            }
+        $("#tablaDetalle").append("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
+       // $('#tablaDetalle tr:last').after("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
+        });
+}
 
 $("#dnipro").keyup(function () {
     var dni = $("#dnipro").val();

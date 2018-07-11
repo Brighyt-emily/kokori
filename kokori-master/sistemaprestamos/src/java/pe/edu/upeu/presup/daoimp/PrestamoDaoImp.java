@@ -13,6 +13,7 @@ import java.util.List;
 import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.entity.Documento;
 import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.entity.Producto;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -129,6 +130,26 @@ public class PrestamoDaoImp implements PrestamoDao {
             System.out.println("Error: "+e);
         }
         return doc; 
+    }
+
+    @Override
+    public Producto detalle(int key) {
+        Producto pl = new Producto();
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call AddProductoDetalle(?)}");
+            cs.setInt(1, key); 
+            rs = cs.executeQuery();
+            while(rs.next()){
+               pl.setIdP(rs.getInt(1));
+                pl.setNom(rs.getString(2));
+                pl.setEst(rs.getInt(3));
+                pl.setNomTip(rs.getString(4));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error:"+ e);
+        }
+        return pl;
     }
     
     

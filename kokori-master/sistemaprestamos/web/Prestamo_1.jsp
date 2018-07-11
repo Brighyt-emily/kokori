@@ -78,6 +78,7 @@
                                                             <i class="material-icons prefix">assignment</i>
                                                             <label for="dnipro">Ingrese DNI profesor</label>
                                                             <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
+                                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>                                                       
                                                     </div>
                                                     <div class="col s10 row center" >  
@@ -178,12 +179,11 @@
                                                 <table class="table" id="tablaDetalle" >
                                                     <thead>
                                                         <tr>
-                                                            <th>Producto</th>
-                                                            <th>N° Prestados</th>
-                                                            <th>Estado</th>
+                                                            <th>PRODUCTO</th>
+                                                            <th>ESTADO</th>
+                                                            <th>TIPO</th>
                                                         </tr>
                                                     </thead>
-
                                                     <tbody>
 
                                                     </tbody>
@@ -198,7 +198,7 @@
                         <div class="wizard-footer">
                             <div class="pull-right">
                                 <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Next' />
-                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Finish' />
+                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Finish' id="registrarPrestamo" />
                             </div>
 
                             <div class="pull-left">

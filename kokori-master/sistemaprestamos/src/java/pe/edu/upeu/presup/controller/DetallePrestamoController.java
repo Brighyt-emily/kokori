@@ -23,7 +23,6 @@ import pe.edu.upeu.presup.entity.DetallePrestamo;
 public class DetallePrestamoController extends HttpServlet {
 
      private PrestamoDetalleDao dp = new DetallePrestamoDaoImp();
-    private Gson g = new Gson();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
