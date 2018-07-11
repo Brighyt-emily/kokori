@@ -3,46 +3,32 @@ $(document).ready(function(){
 });
 
 function ltProductosForDev(){
-    $.get("de", {"opc": 2}, function (data) {
-        var x = JSON.parse(data);
-        $("#tipo option").remove();
-        listarTipo();
+    $.get("de",{"opc": 1}, function (data) {
+        var x=JSON.parse(data);
         for (var i = 0; i < x.length; i++) {
-            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+" "+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td><button class='btn modal-trigger' href='#modal1' onclick='modal()'><i class='material-icons'>visibility</i></button></td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[i].idprestamo+")'>Devuelto</button></td></tr>"); 
-        }
-    });       
-}
+            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+" "+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+x[i].fep+"\",\""+x[i].nom+"\",\""+x[i].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
+        }    
 
-$("#tipo").click(function(){
-    var tipo =  $("#tipo").val();
-    if(tipo=="TODOS"){
-        $("#tb_prestamos tbody tr").remove();
-        ltProductosForDev();
-    }else{
-         $.get("de", {"opc": 3, "nom_tipo": tipo}, function (data) {
-            $("#tb_prestamos tbody tr").remove();
-            var x = JSON.parse(data);
-            for (var j = 0; j < x.length; j++) {
-                $('.modal-trigger').leanModal();
-                $("#tb_prestamos tbody").append("<tr><td>"+x[j].codi+"</td><td>"+ x[j].nom+" "+x[j].ape+"</td><td>"+ x[j].fep+"</td><td>"+ x[j].fed+"</td><td>"+ x[j].no+"</td><td>"+ x[j].noTipo+"</td><td><button class='btn btn-primary teal' onclick='editarEstado("+x[j].idprestamo+")'>Devuelto</button></td></tr>");
-            }
-        });
-    }
-});
+    });
+}
 
 function editarEstado(idp){
     var toastHTML = '<span>Seguro que desea eliminar?<button class="btn-flat toast-action" onclick="holi('+idp+')">Aceptar</button></span>';
      Materialize.toast( toastHTML,1985);
 }
 
-function holi(idp){
-    console.log(idp);  
+function holi(idp){ 
     $.post("de",{"idprestamo":idp,"estado":0,"opc":2}, function () {
     $("#tb_prestamos tbody tr").remove();
         console.log("fiyi");  
-
        ltProductosForDev();
     });
+}
+
+
+function modal(fe,no,ape){
+    $('.modal-trigger').leanModal();
+    editar(fe,no,ape);
 }
 
 function listarTipo(){
@@ -56,7 +42,7 @@ function listarTipo(){
     });
 }
 
-function modal(){
+function modal2(){
    $('.modal-trigger').leanModal();
     $.post("pro",{ "op":7}, function (data) {
             var w = JSON.parse(data);
@@ -68,10 +54,21 @@ function modal(){
         });
 }
 
-$(document).ready( function () {
-    $('#tb_prestamos').DataTable();
-} );
+function editar(fe,no,ape){
+    $.get("de", {"fecha":fe,"nom":no,"ape":ape,"opc": 5}, function (dat) {
+        var x=JSON.parse(dat);
+        var lista=new Array();
+        lista.length = 0;
+        $("#cuerpo").remove();
+        $("#caja").append("<form action='#' class='form' id='cuerpo'></form>")
+        lista.push(x);
+        for (var i = 0; i < x.length; i++) {
+            $("#cuerpo").append("<p><label><input type='checkbox' value="+lista[0][i].nom+"/><span>"+lista[0][i].nom+"</span></label></p>"); 
 
+        }
+    });
+ 
+};
 
 $("#nomp").keyup(function () {
     var tableReg = document.getElementById('tb_prestamos');
@@ -92,3 +89,4 @@ $("#nomp").keyup(function () {
         }
     }
 });
+

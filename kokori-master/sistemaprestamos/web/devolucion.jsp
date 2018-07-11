@@ -58,10 +58,11 @@
                         </div>
                     </div>
                 </div>
+
             </main>
            <!--FIN Contenido-->
-  <!-- Modal Structure -->
- <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
+        <!-- Modal Structure -->
+        <div id="modal2" class="modal s12 m12 l12" style="max-width: 350px;">
                 <div class="modal-content">
                     <h5>Productos</h5>
                  <div class="input-field col s12">
@@ -70,12 +71,12 @@
                                                 </select>
                                                 <label>Tipos</label>
                                     
-                                </div>
+                 </div>
                 </div>
                 <div class="modal-footer">
                   <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
                 </div>
- </div>
+        </div>
 
               
         <div class="left-sidebar-hover"></div>
@@ -87,23 +88,12 @@
     
     <!-- Modal Structure -->
     <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
-        <div class="modal-content">
+        <div class="modal-content" id="caja">
         <h5>Productos</h5>
-    <form action="#">
-        <p>
-          <label>
-            <input type="checkbox" />
-            <span>Red</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input type="checkbox" checked="checked" />
-            <span>Yellow</span>
-          </label>
-        </p>
-    </form>
-    </div>
+        <div id="cuerpo">
+            
+        </div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
@@ -111,7 +101,7 @@
     <div class="left-sidebar-hover"></div>
     
 
-    <%@include file="WEB-INF/template/footer.jspf" %>
+    <%@include file="WEB-INF/template/footerMain.jspf" %>
     <script src="js/devolucion.js" type="text/javascript"></script>
 
     </body>

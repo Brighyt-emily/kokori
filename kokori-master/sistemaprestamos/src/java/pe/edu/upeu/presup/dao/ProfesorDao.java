@@ -22,6 +22,7 @@ public interface ProfesorDao {
     int update(Profesor p);
 
     int delete(int key);
+    int deleteTra(int key);
     
     List<Map<String, Object>> listarRegisProfesores();
     

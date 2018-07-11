@@ -53,13 +53,53 @@ public class ProfesorDaoImp implements ProfesorDao {
 
     @Override
     public int update(Profesor p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call UpdateProfesor(?,?,?,?,?,?,?,?,?)}");
+            cst.setInt(1, p.getIdProfesor());
+            cst.setString(2, p.getCodProfesor());
+            cst.setInt(3, p.getIdEscuela());
+            cst.setString(4, p.getNomTrabajador());
+            cst.setString(5, p.getApelTrabajador());
+            cst.setString(6, p.getDireccion());
+            cst.setString(7, p.getNumCelular());
+            cst.setString(8, p.getNumDni());
+            cst.setString(9, p.getEmail());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return x;
     }
+    
 
     @Override
     public int delete(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call eliminarProfesor(?)}");
+            cst.setInt(1, key);
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e);
+        }
+        return x;
     }
+    
+ @Override
+    public int deleteTra(int key) {
+     int x = 0;
+     try {
+         cx = Conexion.getConexion();
+         cst = cx.prepareCall("{call eliminarPersona(?)}");
+         cst.setInt(1, key);
+         x = cst.executeUpdate();
+     } catch (SQLException e) {
+         System.out.println("ERROR: " + e);
+     }
+     return x;    }
 
     @Override
     public List<Map<String, Object>> listarRegisProfesores() {
@@ -73,6 +113,7 @@ public class ProfesorDaoImp implements ProfesorDao {
                 map.put("idProfesor", rs.getInt("idprofesor"));
                 map.put("idTrabajador", rs.getInt("idtrabajador"));
                 map.put("idescuela", rs.getInt("idescuela"));
+                map.put("estado",rs.getInt("estado"));
                 map.put("nombres", rs.getString("nombres"));
                 map.put("apellidos", rs.getString("apellidos"));
                 map.put("dni", rs.getString("dni"));
@@ -111,6 +152,7 @@ public class ProfesorDaoImp implements ProfesorDao {
                 map.put("idProfesor", rs.getInt("idprofesor"));
                 map.put("idEscuela", rs.getInt("idescuela"));
                 map.put("idFacultad", rs.getInt("idfacultad"));
+                map.put("codigo", rs.getInt("codigo"));
                 lista.add(map);
             }
         } catch (SQLException e) {
@@ -178,4 +220,5 @@ public class ProfesorDaoImp implements ProfesorDao {
         return p;
     }
 
+   
 }
