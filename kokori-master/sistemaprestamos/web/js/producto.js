@@ -16,7 +16,7 @@ function listar()
              if (jop===1)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn ' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='btn btn-primaty teal modal-trigger' href='#modal2' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn ' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn modal-trigger' href='#modal2' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop===0)
              {
@@ -41,13 +41,11 @@ function eliminar(x){
 
 function jip(x)
 {
-    alert(x);
      $('.modal-trigger').leanModal();
 
     var jip= $('#est').val();
 
     $.get("pro",{"op":4,"idP":x,"idTip":jip},function (data) {
-        alert(data);
     });
     
 }

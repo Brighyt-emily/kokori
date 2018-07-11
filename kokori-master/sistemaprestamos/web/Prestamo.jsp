@@ -48,9 +48,9 @@
                                 <li>
                                     <a href="#account" data-toggle="tab">
                                         <div class="icon-circle">
-                                            <i class="ti-arrow-up"><i class="material-icons prefix">shop</i></i>
+                                            <i class="ti-arrow-up"><i class="material-icons prefix">important_devices</i></i>
                                         </div>
-                                        Productos
+                                        Equipos
                                     </a>
                                 </li>
                             </ul>
@@ -78,63 +78,54 @@
                                                             <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>                                                       
                                                     </div>    
-
-                                                    <div class="col s10 row center" >
-                                                        <i class="material-icons prefix">face</i>
-                                                        <br>
-                                                        <div class="input-field">
-                                                            <label for="dnipro">Documento Responsable</label>
-                                                            <select id="docu" class="input-field"> 
-
-                                                            </select>
-                                                        </div> 
-                                                    </div>      
-                                                    <div class="col s10 input-field">
-                                                        <form name="horas" id="horas">
-                                                            <i class="material-icons prefix active">access_time</i>
-                                                            <label for="hora" class="active">Hora devolucion</label>
-                                                            <input name="hora" id="hora_dev" type="time" class="validate">
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="row center col s6 " name="left">
                                                     <div class="row center col s10 input-field">
-
                                                         <i class="material-icons prefix">chrome_reader_mode</i>
                                                         <label for="responsable">Alumno</label>
                                                         <input type="text" name="responsable" id="responsable" required>
-
                                                     </div>
+                                                    <div class="col s10 " >
+                                                        <label for="dnipro"> <i class="material-icons prefix">face</i>Documento Responsable</label>
+                                                        <select id="docu" class="input-field" onmessage="Documento Responsable"></select>                                                       
+                                                    </div>      
+
+                                                </div>
+                                                <div class="row center col s6 " name="left">
+
                                                     <div class="col s10 input-field">
                                                         <i class="material-icons prefix">pin_drop</i>
                                                         <label for="aula">Aula</label>
                                                         <input type="text" name="aula" id="aula" required>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col s6 input-field">                                                        
-                                                        <form name="fechas" id="fechas">
-                                                            <i class="material-icons prefix active">insert_invitation</i>
-                                                            <label for="fechawe" class="active">Fecha prestamo</label>
-                                                            <input id="fecha_pre" name="fecha" type="date" class="validate">
-                                                        </form> 
-                                                    </div>
-                                                    <!--Fecha devolucion-->
-                                                    <div class="col s6 input-field">
-                                                        <form name="fechasdev" id="fechasdev">
-                                                            <i class="material-icons prefix active">insert_invitation</i>
-                                                            <label for="fechadev" class="active">Fecha Devolucion</label>
-                                                            <input id="fechadev" name="fecha_dev" type="date">
-                                                        </form>
-                                                    </div>
-                                                    <div class="col s6 input-field">
-                                                        <form name="horas" id="horas">
-                                                            <i class="material-icons prefix active">access_time</i>
-                                                            <label for="hor" class="active">Hora prestamo</label>
-                                                            <input name="hora" id="hora_pre" type="time" class="validate">
-                                                        </form>
-                                                    </div>
+                                                <div class="col s6 input-field">                                                        
+                                                    <form name="fechas" id="fechas">
+                                                        <i class="material-icons prefix active">insert_invitation</i>
+                                                        <label for="fechawe" class="active">Fecha prestamo</label>
+                                                        <input id="fecha_pre" name="fecha" type="date" class="validate">
+                                                    </form> 
                                                 </div>
+                                                <div class="col s6 input-field">
+                                                    <form name="horas" id="horas">
+                                                        <i class="material-icons prefix active">access_time</i>
+                                                        <label for="hor" class="active">Hora prestamo</label>
+                                                        <input name="hora" id="hora_pre" type="time" class="validate">
+                                                    </form>
+                                                </div>
+                                                <!--Fecha devolucion-->
+                                                <div class="col s6 input-field">
+                                                    <form name="fechasdev" id="fechasdev">
+                                                        <i class="material-icons prefix active">insert_invitation</i>
+                                                        <label for="fechadev" class="active">Fecha Devolucion</label>
+                                                        <input id="fechadev" name="fecha_dev" type="date">
+                                                    </form>
+                                                </div>
+                                                <div class="col s6 input-field">
+                                                    <form name="horas" id="horas">
+                                                        <i class="material-icons prefix active">access_time</i>
+                                                        <label for="hora" class="active">Hora devolucion</label>
+                                                        <input name="hora" id="hora_dev" type="time" class="validate">
+                                                    </form>
+                                                </div>                                                
                                             </div>
                                         </center>
                                     </div>
@@ -145,9 +136,9 @@
                             <div class="tab-pane" id="account">
                                 <h5 class="info-text">Productos </h5>
                                 <div class="row">
-                                    <div class="container input-field col s10 col-lg-12">
+                                    <div class="container input-field col s12">
                                         <div class="row center">
-                                            <div class="col s8">
+                                            <div class="col s7">
                                                 <div class="input-field">
                                                     <i class="material-icons prefix">scanner</i>
                                                     <label for="searchpro">Equipo</label>
@@ -157,7 +148,7 @@
                                         </div>
                                         <div class="row center ">
 
-                                            <div class="row center col s8" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
+                                            <div class="row center col s7" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
                                                 <table class="table" id="tablaPrestamo">
                                                     <thead>
                                                         <tr>
@@ -173,7 +164,7 @@
                                                     <tbody></tbody>
                                                 </table>
                                             </div>
-                                            <div class="row center col s4">
+                                            <div class="row center col s5">
                                                 <table class="table" id="tablaDetalle" >
                                                     <thead>
                                                         <tr>
