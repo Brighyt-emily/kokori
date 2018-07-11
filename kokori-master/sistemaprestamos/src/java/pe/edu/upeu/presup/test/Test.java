@@ -47,6 +47,12 @@ public class Test {
     public static void main(String[] args) {
         // TODO code application logic here
         //conexion();
+        //create();
+       listar();
+        //delete();
+        //update();
+        //update();
+       // validar();
         create();
         //listar();
         //delete();
@@ -55,6 +61,9 @@ public class Test {
         //validar();
         //read();
         //jip();
+    }
+    static void listar(){
+        System.out.println(g.toJson(ko.readAll()));
     }
 
     static void conexion() {

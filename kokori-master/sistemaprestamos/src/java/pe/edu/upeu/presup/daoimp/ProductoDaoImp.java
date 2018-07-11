@@ -107,8 +107,6 @@ public class ProductoDaoImp implements ProductoDao {
                 p.setCod(rs.getString("codigo"));
                 p.setEst(rs.getInt("estado"));
                 p.setiTip(rs.getInt("idtipo"));
-                p.setNomTip(rs.getString("nom_tipo"));
-                p.setStock(rs.getInt("stock"));
                 datos.add(p);
             }
         } catch (SQLException e) {
