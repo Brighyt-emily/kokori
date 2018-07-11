@@ -193,17 +193,64 @@ public class ReservaDaoImp implements ReservaDao {
         List<Map<String, Object>> data = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{}");
+            cst = cx.prepareCall("{call buscarReservaById(?)}");
+            cst.setInt(1, key);
             rs = cst.executeQuery();
             while (rs.next()) {
                 Map<String, Object> map = new HashMap<>();
-                //llenar los datos de la bd
-                map.put("ms", map);
+                map.put("idres", rs.getString("idreserva"));
+                map.put("freserva", rs.getString("fe_reserva"));
+                map.put("aula", rs.getString("aula"));
+                map.put("fprestamo", rs.getString("fe_prestamo"));
+                map.put("hdevo", rs.getString("h_devolucion"));
+                map.put("hpresta", rs.getString("h_prestamo"));
+                map.put("iddr", rs.getString("iddetalle_reserva"));
+                map.put("idprofe", rs.getString("idprofesor"));
+                map.put("codprofe", rs.getString("codigo"));
+                map.put("nomprofe", rs.getString("nombres"));
+                map.put("apelprofe", rs.getString("apellidos"));
+                map.put("idprod", rs.getString("idproducto"));
+                map.put("nomprod", rs.getString("nombre"));
+                map.put("codprod", rs.getString("codigo"));
                 data.add(map);
             }
         } catch (SQLException e) {
             System.out.println("Error : " + e);
         }
         return data;
+    }
+
+    @Override
+    public int actualizarReserva(Reserva r) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call actualizarReserva(?,?,?,?,?,?)}");
+            cst.setInt(1, r.getIdReserva());
+            cst.setString(2, r.getAula());
+            cst.setString(3, r.getFe_prestamo());
+            cst.setString(4, r.getH_prestamo());
+            cst.setString(5, r.getFe_devolucion());
+            cst.setString(6, r.getH_devolucion());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return x;
+    }
+
+    @Override
+    public int actulizarDetallReserva(DetalleReserva dr) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call actualizarDetalleReserva(?,?)}");
+            cst.setInt(1, dr.getIdDetalleReserva());
+            cst.setInt(2, dr.getIdProducto());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + x);
+        }
+        return x;
     }
 }

@@ -28,6 +28,7 @@ public class DetalleReserva {
         this.idReserva = idReserva;
         this.idProducto = idProducto;
     }
+    
 
     public int getIdDetalleReserva() {
         return idDetalleReserva;
