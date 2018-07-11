@@ -7,12 +7,10 @@
 <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
-
-
 <style>
-    a:hover {
+    /**a:hover {
         text-decoration: none;
-    }
+    }*/
     #loader-wrapper {
         position: fixed;
         top: 0;
