@@ -12,14 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Prestamo </title>
         <script src="js/material/jquery.js" type="text/javascript"></script>
-        <!--   Wizard   -->
         <link href="assetsd/css/bootstrap.min.css" rel="stylesheet" />
         <link href="assetsd/css/paper-bootstrap-wizard.css" rel="stylesheet" />
-
-        <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="assetsd/css/demo.css" rel="stylesheet" />
-
-        <!-- Finish Wizard-->
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
@@ -27,6 +22,7 @@
         <main class="mn-inner">
             <div class="card">
                 <div class="card-content ">
+
                     <!--      Wizard container        -->
                     <div class="card wizard-card" data-color="orange" id="wizardProfile">
 
@@ -43,7 +39,7 @@
                                 <li>
                                     <a href="#about" data-toggle="tab">
                                         <div class="icon-circle">                                              
-                                            <span class="ti-arrow-up"></span>
+                                            <span class="ti-arrow-up"><i class="material-icons prefix small">chrome_reader_mode</i></span>
                                         </div>
                                         Datos 
                                     </a>
@@ -51,7 +47,7 @@
                                 <li>
                                     <a href="#account" data-toggle="tab">
                                         <div class="icon-circle">
-                                            <i class="ti-arrow-up"></i>
+                                            <i class="ti-arrow-up"><i class="material-icons prefix">shop</i></i>
                                         </div>
                                         Productos
                                     </a>
@@ -80,21 +76,22 @@
                                                             <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
                                                             <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>                                                       
-                                                    </div>
-                                                    <div class="col s10 row center" >  
-                                                        <div class="col s2 row center">
-                                                            <i class="material-icons prefix">face</i>
-                                                        </div>
-                                                        <div class="input-field col s8 row center" >
+                                                    </div>    
+
+                                                    <div class="col s10 row center" >
+                                                        <i class="material-icons prefix">face</i>
+                                                        <br>
+                                                        <div class="input-field">
                                                             <label for="dnipro">Documento Responsable</label>
                                                             <select id="docu" class="input-field"> 
+
                                                             </select>
-                                                        </div>                                                            
-                                                    </div>
+                                                        </div> 
+                                                    </div>      
                                                     <div class="col s10 input-field">
                                                         <form name="horas" id="horas">
                                                             <i class="material-icons prefix active">access_time</i>
-                                                            <label for="hor" class="active">Hora devolucion</label>
+                                                            <label for="hora" class="active">Hora devolucion</label>
                                                             <input name="hora" id="hora_dev" type="time" class="validate">
                                                         </form>
                                                     </div>
@@ -205,6 +202,19 @@
                                 <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />
                             </div>
                             <div class="clearfix"></div>
+                            <div class="col s12">
+                                <div class="action-btn-wrapper">
+                                    <div class="fixed-action-btn my-custom-btn vertical">
+                                        <a class="btn-floating btn-large red">
+                                            <i class="large material-icons">build</i>
+                                        </a>
+                                        <ul>
+                                            <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1' onclick="modalres()"><i class="material-icons">add</i></a></li>
+                                            <li><a class="btn-floating black lighten-1" href="registrosReserva.jsp" title="Registro de Reservas"><i class="material-icons">remove_red_eye</i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div> <!-- wizard container -->
                 </div>

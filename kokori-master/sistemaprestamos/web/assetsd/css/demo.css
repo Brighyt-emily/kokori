@@ -1,8 +1,11 @@
+a:hover {
+    text-decoration: none;
+}
 .logo-container{
     left: 50px;
     position: absolute;
     top: 20px;
-     z-index: 3;
+    z-index: 3;
 }
 .logo-container .logo{
     overflow: hidden;
@@ -21,38 +24,38 @@
     width: 60px
 }
 .icon-section {
-	margin: 0 0 3em;
-	clear: both;
-	overflow: hidden;
+    margin: 0 0 3em;
+    clear: both;
+    overflow: hidden;
 }
 .icon-container {
-	width: 240px; 
-	padding: .7em 0;
-	float: left; 
-	position: relative;
-	text-align: left;
+    width: 240px; 
+    padding: .7em 0;
+    float: left; 
+    position: relative;
+    text-align: left;
 }
 .icon-container [class^="ti-"], 
 .icon-container [class*=" ti-"] {
-	color: #000;
-	position: absolute;
-	margin-top: 3px;
-	transition: .3s;
+    color: #000;
+    position: absolute;
+    margin-top: 3px;
+    transition: .3s;
 }
 .icon-container:hover [class^="ti-"],
 .icon-container:hover [class*=" ti-"] {
-	font-size: 2.2em;
-	margin-top: -5px;
+    font-size: 2.2em;
+    margin-top: -5px;
 }
 .icon-container:hover .icon-name {
-	color: #000;
+    color: #000;
 }
 .icon-name {
-	color: #aaa;
-	margin-left: 35px;
-	font-size: .8em;
-	transition: .3s;
+    color: #aaa;
+    margin-left: 35px;
+    font-size: .8em;
+    transition: .3s;
 }
 .icon-container:hover .icon-name {
-	margin-left: 45px;
+    margin-left: 45px;
 }
