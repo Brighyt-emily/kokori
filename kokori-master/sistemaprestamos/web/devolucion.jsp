@@ -44,8 +44,8 @@
                                         <thead>
                                             <tr>
                                                 <th>Código</th>
-                                                <th>Nombre Profesor</th>
-                                                <th>Apellido Profesor</th>
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
                                                 <th>Fecha de Préstamo</th>
                                                 <th>Devolución Programada</th>
                                                 <th>Hora pedido</th>
