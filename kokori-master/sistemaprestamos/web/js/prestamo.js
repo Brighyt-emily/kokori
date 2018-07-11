@@ -69,7 +69,7 @@ function RegistrarPrestamo() {
     });
     $('#tablaDetalle tbody tr').each(function () {
         var nom = $(this).find("td").eq(0).text();
-        alert(nom);
+        m.toast();
         $.post("DPC", {"prod": nom, "opc": 1}, function () {
         });
     });

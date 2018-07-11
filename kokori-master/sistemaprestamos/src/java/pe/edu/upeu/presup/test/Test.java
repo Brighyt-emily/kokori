@@ -37,6 +37,7 @@ public class Test {
     static TipoDao i = new TipoDaoImp();
     static DevoDao po = new DevoDaoImp();
     static UsuarioDao us = new UsuarioDaoImp();
+    
 
     /**
      * @param args the command line arguments
@@ -45,13 +46,16 @@ public class Test {
         // TODO code application logic here
         //conexion();
         //create();
-        //listar();
+       listar();
         //delete();
         //update();
         //update();
-        validar();
+       // validar();
         //read();
         //jip();
+    }
+    static void listar(){
+        System.out.println(g.toJson(ko.readAll()));
     }
 
     static void conexion() {
