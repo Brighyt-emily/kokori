@@ -64,22 +64,13 @@
  <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
                 <div class="modal-content">
                     <h5>Productos</h5>
-                  <form action="#">
-    <p>
-      <label>
-        <input type="checkbox" />
-        <span>Red</span>
-      </label>
-    </p>
-    <p>
-      <label>
-        <input type="checkbox" checked="checked" />
-        <span>Yellow</span>
-      </label>
-    </p>
-   
-
-  </form>
+                 <div class="input-field col s12">
+                     <select multiple="" id="combin" name="selectBox">
+                                                 <option value="0" disabled selected>Selecciona un tipos</option>             
+                                                </select>
+                                                <label>Tipos</label>
+                                    
+                                </div>
                 </div>
                 <div class="modal-footer">
                   <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>

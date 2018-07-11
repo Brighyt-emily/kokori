@@ -74,7 +74,7 @@
              
                  <div id="modal1" class="modal s12 m12 l12" style="max-width: 520px;">
                 <div class="modal-content">
-                  
+                 
                      <div class="col-sm-8 contact-form" > <!-- div da direita -->
                          <form id="contact" method="post" class="form" role="form">
                             <div class="row">
@@ -130,32 +130,17 @@
                 
              
              
-             
-              <div id="modal2" class="modal s12 m12 l12" style="max-width: 530px;">
+             <div id="modal2" class="modal s12 m12 l12" style="max-width: 280px;">
                 <div class="modal-content">
-                  
-                     <div class="col-sm-8 contact-form" style="margin-top: 20px" > <!-- div da direita -->
-                         <form id="contact" method="post" class="form" role="form" >
-                            <div class="row">
-                                
-                                
-                               <div class="input-field col s5">
-                                                <select id="combin" name="selectBox">
-                                                 <option value="0" disabled selected>Escuelas de la UPeU</option>             
-                                                </select>
-                                                <label>Escuelas</label>
-                                                </div>
-                    
-                </div>
+                  <h3>Detalle de Devolución:</h3>
+                  <p>¿Desea reportar alguna observación del producto devuelto?</p>
+                  <button class="btn btn primary blue s12 m12 l12" id="yes">Si,deseo reportar</button>
+                  <button class="btn btn primary orange s12 m12 l12" id="no">No,deseo continuar</button>
                 </div>
                 <div class="modal-footer">
-                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick='editar()'>Registrar</a>
-                  <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
                 </div>
-                     </div>
-                     </div>
-             
+ </div>
              
              
              

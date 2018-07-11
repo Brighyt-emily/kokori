@@ -39,6 +39,8 @@ function holi(idp){
     console.log(idp);  
     $.post("de",{"idprestamo":idp,"estado":0,"opc":2}, function () {
     $("#tb_prestamos tbody tr").remove();
+        console.log("fiyi");  
+
        ltProductosForDev();
     });
 }
@@ -56,6 +58,14 @@ function listarTipo(){
 
 function modal(){
    $('.modal-trigger').leanModal();
+    $.post("pro",{ "op":7}, function (data) {
+            var w = JSON.parse(data);
+            for (var i = 0; i < w.length; i++) {  
+                $("#combin").append(
+		"<option value='"+w[i].iTip+"'>"+w[i].nomTip+"</option>");
+            }
+            $("#combin").material_select();
+        });
 }
 
 $(document).ready( function () {

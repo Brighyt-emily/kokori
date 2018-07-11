@@ -1,7 +1,6 @@
 $(document).ready(function()
 {
     listar();
-    $('.modal-trigger').leanModal();
     
     
 });
@@ -22,12 +21,12 @@ function listar()
              if(jop===0)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn '  onclick= 'jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop===2)
              {
                    $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick= 'jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' href='#modal2'  onclick= 'jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
         }
     });
@@ -42,13 +41,15 @@ function eliminar(x){
 
 function jip(x)
 {
-   var jip= $('#est').val();
+    alert(x);
+     $('.modal-trigger').leanModal();
 
-    $.get("pro",{"op":4,"idP":jip},function (data) {
-       var x = JSON.parse(data);
-      
+    var jip= $('#est').val();
+
+    $.get("pro",{"op":4,"idP":x,"idTip":jip},function (data) {
+        alert(data);
     });
-    $('.modal-trigger').leanModal();
+    
 }
 
 function modal(){
