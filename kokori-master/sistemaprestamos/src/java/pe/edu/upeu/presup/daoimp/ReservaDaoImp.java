@@ -187,4 +187,22 @@ public class ReservaDaoImp implements ReservaDao {
         }
         return x;
     }
+
+    @Override
+    public List<Map<String, Object>> buscarReservaById(int key) {
+        List<Map<String, Object>> data = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{}");
+            rs = cst.executeQuery();
+            while (rs.next()) {
+                Map<String, Object> map = new HashMap<>();
+                //llenar los datos de la bd
+                data.add(map);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error : " + e);
+        }
+        return data;
+    }
 }
