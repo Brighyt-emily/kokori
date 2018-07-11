@@ -110,7 +110,7 @@ public class DevolucionDaoImp implements DevolucionDao {
             rs = cst.executeQuery();
             while(rs.next()){
                 Producto p = new Producto();
-                p.setIdP(rs.getInt("codigo"));
+                p.setIdP(rs.getInt("idprestamo"));
                 p.setNom(rs.getString("nombre"));
                 prod.add(p);
             }
