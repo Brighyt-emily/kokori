@@ -47,6 +47,7 @@
                                             <th>#Dni</th>
                                             <th>Editar</th>
                                             <th>Eliminar</th>
+                                            <th>Prestamo</th>
                                         </tr>
                                     </thead>
 

@@ -55,7 +55,7 @@ function listarRegistroReserva() {
                     + listData[i].feRe + "</td><td>"
                     + listData[i].nombres + "</td><td>"
                     + listData[i].codigo + "</td><td>"
-                    + listData[i].dni + "</td><td><a href='#' onclick='editarReserva(" + listData[i].idr + ")'><i class='material-icons'>mode_edit</i></a></td><td><a href = '#' onclick='eliminarReserva(" + listData[i].idr + ")'><i class='material-icons'>delete_sweep</i></a></td></tr>");
+                    + listData[i].dni + "</td><td><a href='#' onclick='editarReserva(" + listData[i].idr + ")'><i class='material-icons'>mode_edit</i></a></td><td><a href = '#' onclick='eliminarReserva(" + listData[i].idr + ")'><i class='material-icons'>delete_sweep</i></a></td><td><a href='#' onclick='realizarPrestamo(" + listData[i].idr + ")'><i class='material-icons'>kitchen</i></a></td></tr>");
         }
     });
 }
@@ -101,7 +101,7 @@ $("#filtNom").keyup(function () {
 });
 
 
-
-
-
 /// PARTE PARA GERSON MALCA CODIGO
+function realizarPrestamo(idr){
+    alert(idr);
+}
