@@ -99,9 +99,3 @@ $("#filtNom").keyup(function () {
         }
     }
 });
-
-
-
-
-
-/// PARTE PARA GERSON MALCA CODIGO
