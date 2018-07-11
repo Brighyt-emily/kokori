@@ -1,7 +1,7 @@
 $(document).ready(function () {
     ListarProd();
     ListarDoc();
-    Reserva();
+    VerificacionReserva();
 });
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
@@ -121,10 +121,16 @@ function ListarDoc() {
         $("#docu").material_select();
     });
 }
-function Reserva(){
-    $.get("Pc", {"opc": 8}, function (data) {
+function VerificacionReserva(){
+    $.get("Pc", {"opc": 9}, function (data) {
         var x = JSON.parse(data);
         alert(data);
+        if(x===null){
+        }
+        else{
+            
+        }
+        
     });
 }
 

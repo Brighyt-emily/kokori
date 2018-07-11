@@ -27,6 +27,7 @@
                     <div class="card wizard-card" data-color="orange" id="wizardProfile">
 
                         <div class="wizard-header text-center">
+                            <input id="ress" value="${sessionScope.res}">
                             <h3 class="wizard-title">Prestamo de equipos</h3>
                             <p class="category">Esta informacion es importante.</p>
                         </div>
