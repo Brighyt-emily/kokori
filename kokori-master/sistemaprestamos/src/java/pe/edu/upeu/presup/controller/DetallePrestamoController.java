@@ -22,17 +22,22 @@ import pe.edu.upeu.presup.entity.DetallePrestamo;
  */
 public class DetallePrestamoController extends HttpServlet {
 
-     private PrestamoDetalleDao dp = new DetallePrestamoDaoImp();
+    private PrestamoDetalleDao dp = new DetallePrestamoDaoImp();
+    private Gson g=new Gson();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int op = Integer.parseInt(request.getParameter("opc"));
-             switch(op){
-                 case 1:
-                        DetallePrestamo d =new DetallePrestamo(request.getParameter("prod"));
-                        dp.create(d);
-                 break;
+            switch (op) {
+                case 1:
+                    DetallePrestamo d = new DetallePrestamo(request.getParameter("prod"));
+                    dp.create(d);
+                    break;
+                case 2:
+                     out.println(g.toJson(dp.readAll()));
+                    break;
             }
         }
     }

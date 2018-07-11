@@ -25,9 +25,7 @@
                             <i class="large material-icons">build</i>
                         </a>
                         <ul>
-                            <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1'><i class="material-icons">add</i></a></li>
-                            <li><a class="btn-floating #f06292 green lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Lista de Profesores" href='#modal1'><i class="material-icons">grid_on
-                                    </i></a></li>                            
+                            <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1'><i class="material-icons">add</i></a></li>                                                  
                         </ul>
                     </div>
                 </div>
@@ -36,11 +34,18 @@
                 <div class="col s12">
                     <div class="page-title"> <i class="material-icons smoll" >assignment_ind</i><span>Detalles Prestamos</span></div>
                 </div>
-                <div class="col s12 m12 l12">
+                <div class="col s12 ">
                     <div class="card">
                         <div class="card-content">
+                            <div class="row center col s10">                                                       
+                                <div class="input-field">
+                                    <i class="material-icons prefix">assignment</i>
+                                    <label for="usua">Ingrese Usuario</label>
+                                    <input  id="usua" class="autocomplete" type="text" name="usua" required>
+                                </div>                                                       
+                            </div>    
 
-                            <table class="highlight" id="tblProfesores">
+                            <table class="highlight" id="tbldetpressm">
                                 <thead>
                                     <tr>
                                         <th>Usuario</th>
@@ -54,35 +59,52 @@
                             </table>                                                                                               
                             <!--Modal para ver detalladamente el resgitro de los profesores-->
                             <!-- Modal Structure -->
-                            <div id="modal1" class="modal s12 m12 l12" style="max-width: 920px;">
+                            <div id="modal1" class="modal s12" style="max-width: 890px;">
                                 <div class="modal-content">
                                     <div class="s12 contact-form" > <!-- div da direita -->
-                                        <form id="contact" method="post" class="form" role="form">
-                                            <div class="row">
-                                                <table class="highlight" id="tblProfesores">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Estado</th>
-                                                            <th>Nombres</th>
-                                                            <th>Apellidos</th>
-                                                            <th>Dni</th>
-                                                            <th>Codigo</th>
-                                                            <th>Escuela</th>
-                                                            <th>Email</th>                                      
-                                                            <th>Actualizar</th>
-                                                            <th>Eliminar</th>
-                                                        </tr>
-                                                    </thead>
+                                        <div class="row">
+                                            <table class="highlight" id="tbldetpres">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Documento Responsable</th>
+                                                        <th>Fecha Prestamo</th>
+                                                        <th>Fecha Devolucion</th>
+                                                        <th>Equipos Prestados</th>
+                                                    </tr>
+                                                </thead>
 
-                                                    <tbody>
-                                                    </tbody>
-                                                </table>                   
-                                            </div>
-                                            <div class="modal-footer">
+                                                <tbody>
+                                                </tbody>
+                                            </table>                   
+                                        </div>
+                                        <div class="modal-footer">
 
-                                                <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>         
-                                            </div>
-                                        </form>
+                                            <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="modal3" class="modal s12" style="max-width: 890px;">
+                                <div class="modal-content">
+                                    <div class="s12 contact-form" > <!-- div da direita -->
+                                        <div class="row">
+                                            <table class="highlight" id="tbldetpro">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Estado</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                </tbody>
+                                            </table>                   
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>         
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -93,13 +115,8 @@
         <!--FIN Contenido-->
     </div>
     <div class="left-sidebar-hover"></div>
+    <script src="js/detallePrestamo.js" type="text/javascript"></script>
 
     <%@include file="WEB-INF/template/footerMain.jspf" %>
-    <script>
-        $(document).ready(function () {
-            console.log("funciona");
-
-        });
-    </script>
 </body>
 </html>
