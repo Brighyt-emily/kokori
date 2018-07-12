@@ -249,7 +249,7 @@ public class ReservaDaoImp implements ReservaDao {
             cst.setInt(2, dr.getIdProducto());
             x = cst.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error: " + x);
+            System.out.println("Error: " + e);
         }
         return x;
     }

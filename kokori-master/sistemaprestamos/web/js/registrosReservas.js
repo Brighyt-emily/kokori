@@ -3,9 +3,11 @@ $(document).ready(function () {
     listarRegistroReserva();
 });
 
-var listData = new Array();//arreglo para la data de la bd
+var listData = new Array();//arreglo para la data de la bd -- reportes de reservas
 
-var listRepeatIddr = new Array();//arreglo para guardar los idDetalle_Reserva 
+var listRepeatIddr = new Array();//arreglo para guardar los idDetalle_Reserva  --reporte de reservas
+
+var databaseActualizar = new Array();// arreglo para guardar la data de bd -- actulizar reservas ** IDDR and productos
 
 function listarRegistroReserva() {
     $.post("rc", {"op": 6}, function (data) {
@@ -77,11 +79,55 @@ function eliminarReserva(idr) {
         });
     });
 }
-function editarReserva(idr) {
-    alert(typeof (idr));
-    //$(location).attr('href', 'editarReserva.jsp');
+function editarReserva(idr) {//funcion para enviar los datos de reserva hacia una nueva vista
     $.get("rc", {"op": 9, "idreserva": idr}, function (data) {
-        alert(data);
+        var x = JSON.parse(data);
+        if (x.length > 0) {
+            $(location).attr('href', 'editarReserva.jsp');//primero se habre la vista 
+            //como el IDreserva se repite los almacenamos en arreglos
+            for (var i = 0; i < x.length; i++) {
+                var obj = new Object();
+                obj.idres = x[i].idres;
+                obj.freserva = x[i].freserva;
+                obj.aula = x[i].aula;
+                obj.fprestamo = x[i].fprestamo;
+                obj.hdevo = x[i].hdevo;
+                obj.hpresta = x[i].hpresta;
+                obj.iddr = x[i].iddr;
+                obj.idprofe = x[i].idprofe;
+                obj.codprofe = x[i].codprofe;
+                obj.nomprofe = x[i].nomprofe;
+                obj.apelprofe = x[i].apelprofe;
+                obj.idprod = x[i].idprod;
+                obj.nomprod = x[i].nomprod;
+                obj.codprod = x[i].codprod;
+                if (databaseActualizar.length > 0) {
+                    var j = 0;
+                    while(j < databaseActualizar.length){
+                        if (databaseActualizar[j].idres === obj.idres ) {
+                            //ingresamos los datos repetitivos al arreglo para los productos
+                            var tt = new Object();
+                            tt.idr = obj.idres;
+                            tt.iddres = obj.iddr;
+                            
+                            j = databaseActualizar.length;
+                            obj = null;
+                        }
+                        j++;
+                    }
+                    if (obj !== null) {
+                        databaseActualizar.push(obj);
+                        //ingresamos los datos repetitivos al arreglo para los productos
+                    }
+                }else{
+                    databaseActualizar.push(obj);
+                    //ingresamos los datos repetitivos al arreglo para los productos
+                }
+            }
+        } else {
+            var toastContent = $('<span class="yellow-text"><b>Oops! Ocurrio Algo</b></span>');
+            Materialize.toast(toastContent, 1800);
+        }
     });
 }
 
