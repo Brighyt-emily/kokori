@@ -168,7 +168,7 @@
   transform: rotate(150deg);
 }
 .colGreen{
-    color:green:
+    color:green;
 }
 
 </style>
