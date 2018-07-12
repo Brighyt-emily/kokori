@@ -9,6 +9,7 @@ $(document).ready(function () {
         });
     });
 });
+
 /*
  * Listar Detalle Prestamo
  */
@@ -23,10 +24,10 @@ function listardtp() {
 <td>" + x[i].id_detpre + "</td>\n\
 <td>" + x[i].id_profesor + "</td>\n\
 <td>" + "<a href='DetallePrestamos.jsp#modal2' onclick='detalleSeleccionado(" + x[i].id_profesor + ")'>" + "<i class = 'material-icons prefix'>remove_red_eye</i></a></td></tr>");
-
         }
     });
 }
+
 function detalleSeleccionado() {
     $.get("Pc", {"opc": 2}, function (data) {
         var x = JSON.parse(data);
@@ -39,10 +40,10 @@ function detalleSeleccionado() {
         }
     });
 }
+
 function listarproducto() {
     $.get("DPC", {"opc": 2}, function (data) {
         var x = JSON.parse(data);
-
         $("#tbldetpressm tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
             $("#tbldetpressm").append("\
@@ -53,16 +54,3 @@ function listarproducto() {
         }
     });
 }
-
-$("#usua").keyup(function () {
-    var dni = $("#usua").val();
-    if (dni.length === 8)
-    {
-        $.get("Pc", {"dni": dni, "opc": 5}, function (data) {
-            var x = JSON.parse(data);
-            alert(data);
-            $("#dnipro").val(x.nomApe);
-            $("#prof").val(x.idProfesor);
-        });
-    }
-});
