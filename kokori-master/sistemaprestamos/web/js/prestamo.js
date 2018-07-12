@@ -156,7 +156,6 @@ function VerificacionReserva(){
                 e = "Estado intermedio";
 
             }
-                $("#tablaDetalle tbody tr").remove();
                 $("#tablaDetalle").append("<tr><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
             }    
             });
