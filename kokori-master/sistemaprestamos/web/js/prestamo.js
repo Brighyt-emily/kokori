@@ -21,10 +21,9 @@ function ListarProd() {
                 var e = x[i].est = "Estado intermedio";
 
             }
-            $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td><td>"
-                    + "<a href='#' onclick='productoSeleccionado("+x[i].idP+")'>"
-                    + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
-
+            $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
+            <td>"+ "<button id='bt"+x[i].idP+"' class='material-icons prefix' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idP+")'>check_circle</button></td</tr>");
+         //  <i class = 'material-icons prefix'>check_circle</i>
         }
     });
 }
@@ -83,7 +82,12 @@ $("#registrarPrestamo").click(function () {
 function productoSeleccionado(x){
     $.get("Pc", {"id":x,"opc": 7}, function (data) {
         var y = JSON.parse(data);
-          if (y.est === 0) {
+        if(document.getElementById("bt"+y.idP+"").style.color === 'green')
+        {
+           Materialize.toast("El equipo ya esta en la lista!", 1980);  
+        }
+        else{
+            if (y.est === 0) {
                 var e = y.est = "Mal estado";
 
             }
@@ -95,9 +99,10 @@ function productoSeleccionado(x){
                 var e = y.est = "Estado intermedio";
 
             }
-        $("#tablaDetalle").append("<tr><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
-       // $('#tablaDetalle tr:last').after("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
-        });
+        $("#tablaDetalle").append("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
+        document.getElementById("bt"+y.idP+"").style.color = 'green';
+        }
+     });
 }
 
 $("#dnipro").keyup(function () {

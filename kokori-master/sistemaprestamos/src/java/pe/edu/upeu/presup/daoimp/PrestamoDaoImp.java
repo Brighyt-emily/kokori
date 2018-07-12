@@ -165,9 +165,9 @@ public class PrestamoDaoImp implements PrestamoDao {
                 p.setFe_devolucion(rs.getString(5));
                 p.setAula(rs.getString(6));
                 p.setFe_prestamo(rs.getString(7));
-                p.setHora_devo(rs.getString(8));
-                p.setHora_pre(rs.getString(9));
-                p.setNom_profe(rs.getString(10));
+                p.setHora_devo(rs.getString("h_devolucion"));
+                p.setHora_pre(rs.getString("h_prestamo"));
+                p.setNom_profe(rs.getString("nombres"));
             }
         } catch (SQLException e) {
             System.out.println("Error:"+ e);
