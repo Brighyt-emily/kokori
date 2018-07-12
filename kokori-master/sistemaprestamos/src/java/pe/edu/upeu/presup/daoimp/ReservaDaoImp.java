@@ -198,18 +198,18 @@ public class ReservaDaoImp implements ReservaDao {
             rs = cst.executeQuery();
             while (rs.next()) {
                 Map<String, Object> map = new HashMap<>();
-                map.put("idres", rs.getString("idreserva"));
+                map.put("idres", rs.getInt("idreserva"));
                 map.put("freserva", rs.getString("fe_reserva"));
                 map.put("aula", rs.getString("aula"));
                 map.put("fprestamo", rs.getString("fe_prestamo"));
-                map.put("hdevo", rs.getString("h_devolucion"));
-                map.put("hpresta", rs.getString("h_prestamo"));
-                map.put("iddr", rs.getString("iddetalle_reserva"));
-                map.put("idprofe", rs.getString("idprofesor"));
+                map.put("hdevo", rs.getTime("h_devolucion"));
+                map.put("hpresta", rs.getTime("h_prestamo"));
+                map.put("iddr", rs.getInt("iddetalle_reserva"));
+                map.put("idprofe", rs.getInt("idprofesor"));
                 map.put("codprofe", rs.getString("codigo"));
                 map.put("nomprofe", rs.getString("nombres"));
                 map.put("apelprofe", rs.getString("apellidos"));
-                map.put("idprod", rs.getString("idproducto"));
+                map.put("idprod", rs.getInt("idproducto"));
                 map.put("nomprod", rs.getString("nombre"));
                 map.put("codprod", rs.getString("codigo"));
                 data.add(map);

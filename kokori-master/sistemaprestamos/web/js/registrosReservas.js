@@ -68,8 +68,8 @@ function eliminarReserva(idr) {
     });
     newArr.map(function (bar) {
         var e = bar.idDRv;
-        $.get("rc",{"op": 7, "iddr": e}, function () {
-            $.get("rc",{"op":8, "idr":idr},function (){
+        $.get("rc", {"op": 7, "iddr": e}, function () {
+            $.get("rc", {"op": 8, "idr": idr}, function () {
                 listarRegistroReserva();
                 listData.length = 0;
                 listRepeatIddr.length = 0;
@@ -78,9 +78,20 @@ function eliminarReserva(idr) {
     });
 }
 function editarReserva(idr) {
-    alert("editar: " + idr);
-    
+    alert(typeof (idr));
+    //$(location).attr('href', 'editarReserva.jsp');
+    $.get("rc", {"op": 9, "idreserva": idr}, function (data) {
+        alert(data);
+    });
 }
+
+$("#btnActualizar").click(function () {
+
+});
+
+$("#btnRegresar").click(function () {
+    $(location).attr('href', 'registrosReserva.jsp');
+});
 
 $("#filtNom").keyup(function () {
     var tableReg = document.getElementById('tblRegistro');
@@ -105,8 +116,8 @@ $("#filtNom").keyup(function () {
 
 
 /// PARTE PARA GERSON MALCA CODIGO
-function realizarPrestamo(idr){
-    $.post("Pc", {"res": idr,"opc":8}, function () {
+function realizarPrestamo(idr) {
+    $.post("Pc", {"res": idr, "opc": 8}, function () {
     });
 }
 

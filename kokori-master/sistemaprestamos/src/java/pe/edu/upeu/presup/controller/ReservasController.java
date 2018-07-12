@@ -108,8 +108,8 @@ public class ReservasController extends HttpServlet {
                 rd.eliminarReserva(idRe);
                 break;
             case 9:
-                int idque = Integer.parseInt(request.getParameter("idr"));
-                out.println(g.toJson(rd.buscarReservaById(idque)));
+                int idqueb = Integer.parseInt(request.getParameter("idreserva"));
+                out.println(g.toJson(rd.buscarReservaById(idqueb)));
                 break;
                 
             case 10:
