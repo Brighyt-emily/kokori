@@ -18,6 +18,9 @@
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
+        <%
+          String id = request.getParameter("idr");  
+            %>
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner">
             <div class="card">
@@ -27,7 +30,7 @@
                     <div class="card wizard-card" data-color="orange" id="wizardProfile">
 
                         <div class="wizard-header text-center">
-                            <input id="ress" value="${sessionScope.res}" hidden="">
+                            <input id="ress" value="<%=id%>">
                             <h3 class="wizard-title">Prestamo de equipos</h3>
                             <p class="category">Esta informacion es importante.</p>
                         </div>

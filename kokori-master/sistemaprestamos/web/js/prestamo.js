@@ -69,6 +69,7 @@ $("#registrarPrestamo").click(function () {
             });
     $('#tablaDetalle tbody tr').each(function () {
         var nom = $(this).find("td").eq(0).text();
+        alert(nom);
         $.post("DPC", {"prod": nom, "opc": 1}, function () {
         });
     });
@@ -127,9 +128,8 @@ function ListarDoc() {
     });
 }
 function VerificacionReserva(){
-    $.get("Pc", {"opc": 9}, function (data) {
-        var x = JSON.parse(data);
-        alert(data);
+        var x=$("#ress").val();
+        alert(x);
         if(x===null){
         }
         else{
@@ -167,6 +167,5 @@ function VerificacionReserva(){
         
         }
         
-    });
 }
 

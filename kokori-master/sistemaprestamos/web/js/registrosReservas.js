@@ -59,7 +59,7 @@ function listarRegistroReserva() {
                     + listData[i].codigo + "</td><td>"
                     + listData[i].dni + "</td><td><a href='#' onclick='editarReserva(" + listData[i].idr + ")'><i class='material-icons'>mode_edit</i></a></td>\n\
                     <td><a href = '#' onclick='eliminarReserva(" + listData[i].idr + ")'><i class='material-icons'>delete_sweep</i></a></td>\n\
-                    <td><a href='Prestamo.jsp' onclick='realizarPrestamo(" + listData[i].idr + ")'><i class='material-icons'>kitchen</i></a></td></tr>");
+                    <td><form action='Prestamo.jsp' method='POST'><input type='text' value='"+ listData[i].idr +"' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:lightblue'>kitchen</button></form></td></tr>");
         }
     });
 }
@@ -162,8 +162,4 @@ $("#filtNom").keyup(function () {
 
 
 /// PARTE PARA GERSON MALCA CODIGO
-function realizarPrestamo(idr) {
-    $.post("Pc", {"res": idr, "opc": 8}, function () {
-    });
-}
 
