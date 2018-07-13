@@ -123,7 +123,7 @@
                             <div class="row">
                                 <div class="col s12">
                                     <div class="tabla-contenedor">
-                                        <table class="highlight responsive-table" id="tblProductos">
+                                        <table class="highlight responsive-table" id="actuProd">
                                             <thead id="tblCa">
                                                 <tr>
                                                     <th>ID</th>
@@ -152,7 +152,7 @@
             </div>
         </div>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
-        <script src="js/reservas.js" type="text/javascript"></script>
+        <!--<script src="js/reservas.js" type="text/javascript"></script>-->
         <script src="js/registrosReservas.js" type="text/javascript"></script>
     </body>
 </html>

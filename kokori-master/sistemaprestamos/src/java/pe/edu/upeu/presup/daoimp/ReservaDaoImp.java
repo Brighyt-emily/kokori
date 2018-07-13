@@ -199,7 +199,7 @@ public class ReservaDaoImp implements ReservaDao {
             while (rs.next()) {
                 Map<String, Object> map = new HashMap<>();
                 map.put("idres", rs.getInt("idreserva"));
-                map.put("freserva", rs.getString("fe_reserva"));
+                map.put("fdevolucion", rs.getString("fe_devolucion"));
                 map.put("aula", rs.getString("aula"));
                 map.put("fprestamo", rs.getString("fe_prestamo"));
                 map.put("hdevo", rs.getTime("h_devolucion"));
