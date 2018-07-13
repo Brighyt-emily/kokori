@@ -60,15 +60,6 @@ public class PrestamoController extends HttpServlet {
                  case 7:
                      out.println(g.toJson(pr.detalle(Integer.parseInt(request.getParameter("id")))));
                  break;
-                 case 8:
-                      int i = Integer.parseInt(request.getParameter("res"));
-                      System.out.println(i);
-                      sesion.setAttribute("res", i);
-                      //out.println(g.toJson(i));
-                 break;
-                 case 9:
-                     out.print(g.toJson(sesion.getAttribute("res")));
-                 break;
                  case 10:
                      out.println(g.toJson(pr.Reserva(Integer.parseInt(request.getParameter("idr")))));
                  break;
