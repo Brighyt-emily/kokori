@@ -1,5 +1,6 @@
 $(document).ready(function () {
     //listarRegistroReservas();
+    listarProductoActu();
     listarRegistroReserva();
 });
 
@@ -8,6 +9,8 @@ var listData = new Array();//arreglo para la data de la bd -- reportes de reserv
 var listRepeatIddr = new Array();//arreglo para guardar los idDetalle_Reserva  --reporte de reservas
 
 var databaseActualizar = new Array();// arreglo para guardar la data de bd -- actulizar reservas ** IDDR and productos
+
+var productoUpdateActu = new Array(); // arreglo para guardar los productos -- actulizar reserva
 
 function listarRegistroReserva() {
     $.post("rc", {"op": 6}, function (data) {
@@ -63,12 +66,25 @@ function listarRegistroReserva() {
         }
     });
 }
+function listarProductoActu() {
+    $("#actuProd tbody tr").remove();
+    $.get("rc", {"op": 2}, function (data) {
+        var w = JSON.parse(data);
+        for (var i = 0; i < w.length; i++) {
+            $("#actuProd").append("<tr><td>" + w[i].idProducto + "</td><td>"
+                    + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>"
+                    + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td>"
+                    + "<a href='#' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
+                    + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
+        }
+    });
+}
 
 function eliminarReserva(idr) {
-    var newArr = listRepeatIddr.filter(function (quebin) {
+    var newArr = listRepeatIddr.filter(function (quebin) {//filatramo el arreglo
         return (quebin.idRev === idr);
     });
-    newArr.map(function (bar) {
+    newArr.map(function (bar) {//imprimimos el arreglos filtrado de acuerdo a la busqueda
         var e = bar.idDRv;
         $.get("rc", {"op": 7, "iddr": e}, function () {
             $.get("rc", {"op": 8, "idr": idr}, function () {
@@ -80,7 +96,9 @@ function eliminarReserva(idr) {
     });
 }
 function editarReserva(idr) {//funcion para enviar los datos de reserva hacia una nueva vista
+
     $.get("rc", {"op": 9, "idreserva": idr}, function (data) {
+        alert(data);
         var x = JSON.parse(data);
         if (x.length > 0) {
             $(location).attr('href', 'editarReserva.jsp');//primero se habre la vista 
@@ -88,7 +106,7 @@ function editarReserva(idr) {//funcion para enviar los datos de reserva hacia un
             for (var i = 0; i < x.length; i++) {
                 var obj = new Object();
                 obj.idres = x[i].idres;
-                obj.freserva = x[i].freserva;
+                obj.fdevo = x[i].fdevolucion;
                 obj.aula = x[i].aula;
                 obj.fprestamo = x[i].fprestamo;
                 obj.hdevo = x[i].hdevo;
@@ -103,13 +121,16 @@ function editarReserva(idr) {//funcion para enviar los datos de reserva hacia un
                 obj.codprod = x[i].codprod;
                 if (databaseActualizar.length > 0) {
                     var j = 0;
-                    while(j < databaseActualizar.length){
-                        if (databaseActualizar[j].idres === obj.idres ) {
+                    while (j < databaseActualizar.length) {
+                        if (databaseActualizar[j].idres === obj.idres) {
                             //ingresamos los datos repetitivos al arreglo para los productos
                             var tt = new Object();
                             tt.idr = obj.idres;
                             tt.iddres = obj.iddr;
-                            
+                            tt.idprod = obj.idprod;
+                            tt.nomprod = obj.nomprod;
+                            tt.codprod = obj.codprod;
+                            productoUpdateActu.push(tt);
                             j = databaseActualizar.length;
                             obj = null;
                         }
@@ -118,17 +139,48 @@ function editarReserva(idr) {//funcion para enviar los datos de reserva hacia un
                     if (obj !== null) {
                         databaseActualizar.push(obj);
                         //ingresamos los datos repetitivos al arreglo para los productos
+                        var tt = new Object();
+                        tt.idr = obj.idres;
+                        tt.iddres = obj.iddr;
+                        tt.idprod = obj.idprod;
+                        tt.nomprod = obj.nomprod;
+                        tt.codprod = obj.codprod;
+                        productoUpdateActu.push(tt);
                     }
-                }else{
+                } else {
                     databaseActualizar.push(obj);
                     //ingresamos los datos repetitivos al arreglo para los productos
+                    var tt = new Object();
+                    tt.idr = obj.idres;
+                    tt.iddres = obj.iddr;
+                    tt.idprod = obj.idprod;
+                    tt.nomprod = obj.nomprod;
+                    tt.codprod = obj.codprod;
+                    productoUpdateActu.push(tt);
                 }
+                enviarDtosUpdate();
             }
         } else {
             var toastContent = $('<span class="yellow-text"><b>Oops! Ocurrio Algo</b></span>');
             Materialize.toast(toastContent, 1800);
         }
     });
+}
+
+function enviarDtosUpdate() {
+    $("#reservado tbody tr").remove();// limpiamos la tabla 
+    //enviamos valores a los input's
+    $("#codigo_r").val(databaseActualizar[0].codprofe);
+    $("#nombres_r").val(databaseActualizar[0].nomprofe + " " + databaseActualizar[0].apelprofe);
+    $("#idprofesor").val(databaseActualizar[0].idprofe);//valor oculto ID
+    $("#aula_r").val(databaseActualizar[0].aula);
+    $("#fe_prestamo_r").val(databaseActualizar[0].fprestamo);
+    $("#h_prestamo_r").val(databaseActualizar[0].hpresta);
+    $("#fe_devolucion_r").val(databaseActualizar[0].fdevo);
+    $("#h_prestamo_r").val(databaseActualizar[0].hpresta);
+    for (var i = 0; i < productoUpdateActu.length; i++) {
+        $("#reservado").append("<tr><td>" + productoUpdateActu[i].idprod + "</td><td>" + productoUpdateActu[i].nomprod + "</td><td>" + productoUpdateActu[i].codprod + "</td><td><a href='#!' id=''><i></i></a></td></tr>");
+    }
 }
 
 $("#btnActualizar").click(function () {
