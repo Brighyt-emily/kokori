@@ -178,6 +178,7 @@
                                                             <th>PRODUCTO</th>
                                                             <th>ESTADO</th>
                                                             <th>TIPO</th>
+                                                            <th>ELIMINAR</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
