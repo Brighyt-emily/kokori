@@ -130,15 +130,12 @@ function ListarDoc() {
     });
 }
 function VerificacionReserva(){
-        var x=$("#ress").val();
+        var x = $("#ress").val();
         alert(x);
-        if(x===null){
-        }
-        else{
+        if(x!==null){
            $.get("Pc", {"idd":x,"opc": 11}, function (data) {
             var y = JSON.parse(data);
             var e;
-            alert(data);
             for (var i = 0; i < y.length; i++) {
                 if (y[i].est === 0) {
                 e  = "Mal estado";
@@ -157,7 +154,6 @@ function VerificacionReserva(){
             });
            $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
             var y = JSON.parse(dat); 
-            alert(dat);
                 $("#fecha_pre").val(y.fe_prestamo);
                 $("#fechadev").val(y.fe_devolucion);
                 $("#hora_pre").val(y.hora_pre);

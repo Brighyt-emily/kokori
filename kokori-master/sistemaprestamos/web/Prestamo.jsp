@@ -30,7 +30,7 @@
                     <div class="card wizard-card" data-color="orange" id="wizardProfile">
 
                         <div class="wizard-header text-center">
-                            <input id="ress" value="<%=id%>">
+                            <input id="ress" value="<%=id%>" hidden>
                             <h3 class="wizard-title">Prestamo de equipos</h3>
                             <p class="category">Esta informacion es importante.</p>
                         </div>
