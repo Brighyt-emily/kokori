@@ -66,15 +66,17 @@ $("#registrarPrestamo").click(function () {
         }
         else{
             $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function () {
-            });
-    $('#tablaDetalle tbody tr').each(function () {
+                $('#tablaDetalle tbody tr').each(function () {
         var nom = $(this).find("td").eq(0).text();
         $.post("DPC", {"prod": nom, "opc": 1}, function () {
         });
     });
+            });
     var idrr = $("#ress").val();
-    $.post("Pc",{"idres":idrr,"opc":8},function(){ 
+    if(idrr!=="null"){
+        $.post("Pc",{"idres":idrr,"opc":8},function(){ 
     });
+    }
     Materialize.toast("Prestamo exitoso", 1980); 
     setTimeout("location.href='Prestamo.jsp'", 2000);
         }
