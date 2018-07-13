@@ -12,16 +12,20 @@ import javax.servlet.http.HttpSession;
 import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.dao.ProfesorDao;
+import pe.edu.upeu.presup.dao.ReservaDao;
 import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
 import pe.edu.upeu.presup.daoimp.ProfesorDaoImp;
+import pe.edu.upeu.presup.daoimp.ReservaDaoImp;
 import pe.edu.upeu.presup.entity.Prestamo;
+import pe.edu.upeu.presup.entity.Reserva;
 
 public class PrestamoController extends HttpServlet {
     
     private PrestamoDao pr = new PrestamoDaoImp();
     private ProductoDao pro = new ProductoDaoImp();
     private ProfesorDao prof = new ProfesorDaoImp();
+    private ReservaDao re = new ReservaDaoImp();
     private Gson g = new Gson();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -59,6 +63,10 @@ public class PrestamoController extends HttpServlet {
                  break;
                  case 7:
                      out.println(g.toJson(pr.detalle(Integer.parseInt(request.getParameter("id")))));
+                 break;
+                 case 8:
+                     Reserva r =new Reserva(Integer.parseInt(request.getParameter("idres")));
+                     pr.updateReserva(r);
                  break;
                  case 10:
                      out.println(g.toJson(pr.Reserva(Integer.parseInt(request.getParameter("idr")))));

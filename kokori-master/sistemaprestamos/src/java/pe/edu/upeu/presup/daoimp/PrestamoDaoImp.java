@@ -14,6 +14,7 @@ import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.entity.Documento;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.entity.Producto;
+import pe.edu.upeu.presup.entity.Reserva;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -186,15 +187,31 @@ public class PrestamoDaoImp implements PrestamoDao {
             rs = cs.executeQuery();
             while(rs.next()){
                 Producto pre = new Producto();
-                pre.setNom(rs.getString(1));
-                pre.setEst(rs.getInt(2));
-                pre.setNomTip(rs.getString(3));
+                pre.setIdP(rs.getInt(1));
+                pre.setNom(rs.getString(2));
+                pre.setEst(rs.getInt(3));
+                pre.setNomTip(rs.getString(4));
                 p.add(pre);
             }
         } catch (SQLException e) {
             System.out.println("Error:"+ e);
         }
         return p;
+    }
+
+    @Override
+    public int updateReserva(Reserva id) {
+        int x=0;
+        try{
+            cx= Conexion.getConexion();
+            cs=cx.prepareCall("{call UpdateEstReserva(?)}");
+            cs.setInt(1, id.getIdReserva());
+            x= cs.executeUpdate();
+        }
+        catch(SQLException e){
+            System.out.println("Error estRes"+e);
+        }
+        return x;
     }
     
     

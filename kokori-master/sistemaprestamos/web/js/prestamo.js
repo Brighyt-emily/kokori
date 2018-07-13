@@ -72,8 +72,11 @@ $("#registrarPrestamo").click(function () {
         $.post("DPC", {"prod": nom, "opc": 1}, function () {
         });
     });
+    var idrr = $("#ress").val();
+    $.post("Pc",{"idres":idrr,"opc":8},function(){ 
+    });
     Materialize.toast("Prestamo exitoso", 1980); 
-
+    setTimeout("location.href='Prestamo.jsp'", 2000);
         }
      
     }
@@ -149,7 +152,7 @@ function VerificacionReserva(){
                 e = "Estado intermedio";
 
             }
-                $("#tablaDetalle").append("<tr><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
+                $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
             }    
             });
            $.get("Pc", {"idr":x,"opc": 10}, function (dat) {

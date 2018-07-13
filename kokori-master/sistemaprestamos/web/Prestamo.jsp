@@ -189,12 +189,12 @@
                         </div>
                         <div class="wizard-footer">
                             <div class="pull-right">
-                                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Next' />
-                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Finish' id="registrarPrestamo" />
+                                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Siguiente' />
+                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Completar' id="registrarPrestamo" />
                             </div>
 
                             <div class="pull-left">
-                                <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />
+                                <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Atras' />
                             </div>
                             <div class="clearfix"></div>
                             <div class="col s12">
