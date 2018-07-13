@@ -161,13 +161,13 @@ public class PrestamoDaoImp implements PrestamoDao {
             cs.setInt(1, key); 
             rs = cs.executeQuery();
             while(rs.next()){
-               pe.setId_profe(rs.getInt(1));
                 pe.setFe_devolucion(rs.getString(2));
                 pe.setAula(rs.getString(3));
                 pe.setFe_prestamo(rs.getString(4));
                 pe.setHora_devo(rs.getString(5));
                 pe.setHora_pre(rs.getString(6));
                 pe.setNom_profe(rs.getString(7));
+               pe.setId_profe(rs.getInt(1));
                
             }
         } catch (SQLException e) {
