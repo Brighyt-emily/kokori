@@ -14,6 +14,9 @@
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <%
+            String id = request.getParameter("idr");
+        %>
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <div class="mn-inner">
             <div class="card">
@@ -21,6 +24,7 @@
                     <div class="row">
                         <div class="col s12">
                             <h5>Edicion de reserva</h5>
+                            <input id="idresquebin" value="<%=id%>" hidden>
                         </div>
                     </div>
                     <div class="row">
@@ -153,6 +157,7 @@
         </div>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
         <!--<script src="js/reservas.js" type="text/javascript"></script>-->
-        <script src="js/registrosReservas.js" type="text/javascript"></script>
+        <!--<script src="js/registrosReservas.js" type="text/javascript"></script>-->
+        <script src="js/actualizarReserva.js" type="text/javascript"></script>
     </body>
 </html>
