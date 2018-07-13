@@ -23,6 +23,7 @@ function ListarProd() {
             }
             $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
             <td>"+ "<button id='bt"+x[i].idP+"' class='material-icons prefix' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idP+")'>check_circle</button></td</tr>");
+            
         }
     });
 }
@@ -149,8 +150,7 @@ function VerificacionReserva(){
                 $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
             }
             $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
-            var y = JSON.parse(dat); 
-                
+            var y = JSON.parse(dat);             
                 $("#fecha_pre").val(y.fe_prestamo);
                 $("#fechadev").val(y.fe_devolucion);
                 $("#hora_pre").val(y.hora_pre);
