@@ -28,6 +28,10 @@ public class Reserva {
     public Reserva() {
     }
 
+    public Reserva(int idReserva) {
+        this.idReserva = idReserva;
+    }
+    
     public Reserva(int estado, String fe_reserva, String fe_devolucion, String aula, int idProfesor, String fe_prestamo, String h_devolucion, String h_prestamo) {
         this.estado = estado;
         this.fe_reserva = fe_reserva;

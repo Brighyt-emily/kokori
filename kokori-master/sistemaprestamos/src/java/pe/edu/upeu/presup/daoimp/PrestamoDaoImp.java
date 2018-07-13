@@ -14,6 +14,7 @@ import pe.edu.upeu.presup.dao.PrestamoDao;
 import pe.edu.upeu.presup.entity.Documento;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.entity.Producto;
+import pe.edu.upeu.presup.entity.Reserva;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -154,25 +155,25 @@ public class PrestamoDaoImp implements PrestamoDao {
 
     @Override
     public Prestamo Reserva(int key) {
-        Prestamo p = new Prestamo();
+        Prestamo pe = new Prestamo();
         try {
             cx = Conexion.getConexion();
             cs = cx.prepareCall("{call EspejoReserva(?)}");
             cs.setInt(1, key); 
             rs = cs.executeQuery();
             while(rs.next()){
-                p.setId_profe(rs.getInt(2));
-                p.setFe_devolucion(rs.getString(5));
-                p.setAula(rs.getString(6));
-                p.setFe_prestamo(rs.getString(7));
-                p.setHora_devo(rs.getString(8));
-                p.setHora_pre(rs.getString(9));
-                p.setNom_profe(rs.getString(10));
+                pe.setId_profe(rs.getInt("idprofesor"));
+                pe.setFe_devolucion(rs.getString("fe_devolucion"));
+                pe.setAula(rs.getString("aula"));
+                pe.setFe_prestamo(rs.getString("fe_prestamo"));
+                pe.setHora_devo(rs.getString("h_devolucion"));
+                pe.setHora_pre(rs.getString("h_prestamo"));
+                pe.setNom_profe(rs.getString("nombres"));
             }
         } catch (SQLException e) {
-            System.out.println("Error:"+ e);
+            System.out.println("Error espejo:"+ e);
         }
-        return p;
+        return pe;
     }
 
     @Override
@@ -185,15 +186,31 @@ public class PrestamoDaoImp implements PrestamoDao {
             rs = cs.executeQuery();
             while(rs.next()){
                 Producto pre = new Producto();
-                pre.setNom(rs.getString(1));
-                pre.setEst(rs.getInt(2));
-                pre.setNomTip(rs.getString(3));
+                pre.setIdP(rs.getInt(1));
+                pre.setNom(rs.getString(2));
+                pre.setEst(rs.getInt(3));
+                pre.setNomTip(rs.getString(4));
                 p.add(pre);
             }
         } catch (SQLException e) {
             System.out.println("Error:"+ e);
         }
         return p;
+    }
+
+    @Override
+    public int updateReserva(Reserva id) {
+        int x=0;
+        try{
+            cx= Conexion.getConexion();
+            cs=cx.prepareCall("{call UpdateEstReserva(?)}");
+            cs.setInt(1, id.getIdReserva());
+            x= cs.executeUpdate();
+        }
+        catch(SQLException e){
+            System.out.println("Error estRes"+e);
+        }
+        return x;
     }
     
     

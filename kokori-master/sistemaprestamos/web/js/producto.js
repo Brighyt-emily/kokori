@@ -16,12 +16,12 @@ function listar()
              if (jop===1)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn ' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn modal-trigger' href='#modal2' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop===0)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop===2)
              {
@@ -37,17 +37,24 @@ function eliminar(x){
         
     });
 }
-
+function ji(x){var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="jip('+x+')">Aceptar</button></span>';
+     Materialize.toast(toastHTML,1980);
+    
+}
 
 function jip(x)
 {
-     $('.modal-trigger').leanModal();
-
-    var jip= $('#est').val();
-
+   var jip= $('#loc').val();
+    alert(jip);
     $.get("pro",{"op":4,"idP":x,"idTip":jip},function (data) {
+        alert(data);
     });
+    listar();
     
+}
+function nop(x)
+{
+      $('.modal-trigger').leanModal();
 }
 
 function modal(){
@@ -64,6 +71,7 @@ function modal(){
    
 }
 
+
 function salva()
 {
     alert('tututu');
@@ -73,6 +81,7 @@ function salva()
     var x = $("#combin").val();
     var ide = parseInt(x);
 
+alert(jip);
     
     $.post("pro",{"nom":jop,"cod":kop,"est":jip,"iTip":ide,"op":2},function()
     {
@@ -85,8 +94,6 @@ function unin(x){var toastHTML = '<span>Seguro que desea editar?<button class="b
      Materialize.toast(toastHTML,1980);
     
 }
-
-
 
  function editar(x){
      

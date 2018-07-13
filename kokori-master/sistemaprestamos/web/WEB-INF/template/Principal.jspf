@@ -20,17 +20,28 @@
                         <div class="header-title col s3">      
                             <span class="chapter-title" ><a href="menu.jsp" style="text-decoration: none;"> Alphalpha</a></span>
                         </div>
-                        
+                       
                         <ul class="right col s9 m3 nav-right-menu">
                            
-                            <li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>
-                            <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
-                            
-                           
-                            
-                          
+                            <!--<li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>-->
+                            <!--<li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>-->
+                            <li><a class=""><i class="material-icons">exit_to_app</i></a></li>
+                            <li><a class=""><i class="material-icons">notifications_none</i></a></li>
+                            <li>
+                                <div class="" style="font-weight: bold;"><a class="btn-floating smoll green" style="width: 10px;height: 10px;"></a>
+                                    ${sessionScope.rol} 
+                                </div>
+                            </li>
+
                         </ul>
                         
+                          
+                      
+                                
+                        
+
+
+                       
                         
                         <!--INICIO Notificaciones-->
                         <ul id="dropdown1" class="dropdown-content notifications-dropdown">
@@ -224,16 +235,23 @@
            
             <aside id="slide-out" class="side-nav white fixed">
                 <div class="side-nav-wrapper">
-                    <div class="sidebar-profile ">
+                    <div class="sidebar-profile center">
                         <div class="sidebar-profile-image">
-                            <img src="assets/images/profile-image.png" class="circle" alt="">
+                            <img src="images/sec.png" class="circle" alt="">
                         </div>
                         <div class="sidebar-profile-info">
-                            <a href="javascript:void(0);" class="account-settings-link" style="text-decoration: none;" >
+                            <a  >
                                 <p class="text-left">${sessionScope.nombres}</p>
-
-                                <span>${sessionScope.rol}<i class="material-icons right">arrow_drop_down</i></span>
+                                
                             </a>
+                                <div class="row">
+                                    <div class="col s2"><a class="btn-floating smoll green" style="width: 10px;height: 10px;"></a></div>
+                                    <div class="col s6" style="margin-top: 5px;">ONLINE</div>
+                                    <a href="javascript:void(0);" class="account-settings-link" style="text-decoration: none;"><i class="material-icons right">arrow_drop_down</i></a>
+                                </div>   
+                                
+                                
+                               
                         </div>
                     </div>
                     

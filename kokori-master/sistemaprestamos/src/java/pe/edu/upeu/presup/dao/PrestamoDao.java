@@ -9,6 +9,7 @@ import java.util.List;
 import pe.edu.upeu.presup.entity.Documento;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.entity.Producto;
+import pe.edu.upeu.presup.entity.Reserva;
 
 
 /**
@@ -25,4 +26,5 @@ public interface PrestamoDao {
     Producto detalle(int key);
     Prestamo Reserva(int key);
     List<Producto> DetReserva(int key);
+    int updateReserva(Reserva id);
   }

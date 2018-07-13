@@ -1,7 +1,7 @@
 $(document).ready(function () {
+    VerificacionReserva();
     ListarProd();
     ListarDoc();
-    VerificacionReserva();
 });
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
@@ -21,10 +21,9 @@ function ListarProd() {
                 var e = x[i].est = "Estado intermedio";
 
             }
-            $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td><td>"
-                    + "<a href='#' onclick='productoSeleccionado("+x[i].idP+")'>"
-                    + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
-
+            $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
+            <td>"+ "<button id='bt"+x[i].idP+"' class='material-icons prefix' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idP+")'>check_circle</button></td</tr>");
+            
         }
     });
 }
@@ -56,7 +55,7 @@ $("#registrarPrestamo").click(function () {
     var aul = $("#aula").val();
     var prof = $("#prof").val();
     var docu = $("#docu").val();
-    var user = 1;//$("#user").val();
+    var user = $("#idu").val();   
     if(alum==="" || fe_pre==="dd/mm/aaaa" || fe_dev==="dd/mm/aaaa" || aul==="" || prof==="" || user===""){
         Materialize.toast("Completar todos los campos de datos", 1980);
     }
@@ -67,14 +66,19 @@ $("#registrarPrestamo").click(function () {
         }
         else{
             $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function () {
-            });
-    $('#tablaDetalle tbody tr').each(function () {
+                $('#tablaDetalle tbody tr').each(function () {
         var nom = $(this).find("td").eq(0).text();
         $.post("DPC", {"prod": nom, "opc": 1}, function () {
         });
     });
+            });
+    var idrr = $("#ress").val();
+    if(idrr!=="null"){
+        $.post("Pc",{"idres":idrr,"opc":8},function(){ 
+    });
+    }
     Materialize.toast("Prestamo exitoso", 1980); 
-
+    setTimeout("location.href='Prestamo.jsp'", 2000);
         }
      
     }
@@ -83,7 +87,12 @@ $("#registrarPrestamo").click(function () {
 function productoSeleccionado(x){
     $.get("Pc", {"id":x,"opc": 7}, function (data) {
         var y = JSON.parse(data);
-          if (y.est === 0) {
+        if(document.getElementById("bt"+y.idP+"").style.color === 'green')
+        {
+           Materialize.toast("El equipo ya esta en la lista!", 1980);  
+        }
+        else{
+            if (y.est === 0) {
                 var e = y.est = "Mal estado";
 
             }
@@ -95,9 +104,11 @@ function productoSeleccionado(x){
                 var e = y.est = "Estado intermedio";
 
             }
-        $("#tablaDetalle").append("<tr><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
-       // $('#tablaDetalle tr:last').after("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td></tr>");
-        });
+        $("#tablaDetalle").append("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td>\n\
+        <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex)'>check_circle</button></td></tr>");
+        document.getElementById("bt"+y.idP+"").style.color = 'green';
+        }
+     });
 }
 
 $("#dnipro").keyup(function () {
@@ -106,8 +117,7 @@ $("#dnipro").keyup(function () {
     {
         $.get("Pc", {"dni": dni, "opc": 5}, function (data) {
             var x = JSON.parse(data);
-            alert(data);
-            $("#dnipro").val(x.nomApe);
+            $("#profe").val(x.nomApe);
             $("#prof").val(x.idProfesor);
         });
     }
@@ -122,27 +132,11 @@ function ListarDoc() {
     });
 }
 function VerificacionReserva(){
-    $.get("Pc", {"opc": 9}, function (data) {
-        var x = JSON.parse(data);
-        alert(data);
-        if(x===null){
-        }
-        else{
-           $.get("Pc", {"idr":x,"opc": 10}, function (data) {
-            var y = JSON.parse(data); 
-            alert(data);
-                $("#fecha_pre").val(y.fe_prestamo);
-                $("#fechadev").val(y.fe_devolucion);
-                $("#hora_pre").val(y.hora_pre);
-                $("#hora_dev").val(y.hora_devo);
-                $("#aula").val(y.aula);
-                $("#prof").val(y.id_profe);
-                $("#dnipro").val(y.nom_profe);          
-            });
-            $.get("Pc", {"idd":x,"opc": 11}, function (data) {
+        var x = $("#ress").val();
+        if(x!=="null"){
+           $.get("Pc", {"idd":x,"opc": 11}, function (data) {
             var y = JSON.parse(data);
             var e;
-            alert(data);
             for (var i = 0; i < y.length; i++) {
                 if (y[i].est === 0) {
                 e  = "Mal estado";
@@ -156,12 +150,25 @@ function VerificacionReserva(){
                 e = "Estado intermedio";
 
             }
-                $("#tablaDetalle").append("<tr><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
-            }    
+                $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td>\n\
+                <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex)'>check_circle</button></td></tr>");
+            }
+            $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
+            var y = JSON.parse(dat);             
+                $("#fecha_pre").val(y.fe_prestamo);
+                $("#fechadev").val(y.fe_devolucion);
+                $("#hora_pre").val(y.hora_pre);
+                $("#hora_dev").val(y.hora_devo);
+                $("#aula").val(y.aula);
+                $("#prof").val(y.id_profe);
+                $("#profe").val(y.nom_profe);          
             });
-        
+            });
         }
         
-    });
+}
+function eliminarEquipo(x){
+    document.getElementById("tablaDetalle").deleteRow(x);
+    
 }
 

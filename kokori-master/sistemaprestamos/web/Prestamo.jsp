@@ -18,6 +18,9 @@
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
+        <%
+          String id = request.getParameter("idr");  
+            %>
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner">
             <div class="card">
@@ -27,7 +30,7 @@
                     <div class="card wizard-card" data-color="orange" id="wizardProfile">
 
                         <div class="wizard-header text-center">
-                            <input id="ress" value="${sessionScope.res}" hidden="">
+                            <input id="ress" value="<%=id%>" hidden>
                             <h3 class="wizard-title">Prestamo de equipos</h3>
                             <p class="category">Esta informacion es importante.</p>
                         </div>
@@ -65,19 +68,21 @@
                                         <center> 
                                             <div class="row  ">
                                                 <div class="row center col s6" name="rigth">
-                                                    <div class="input-field row col s10">
-                                                        <i class="material-icons prefix">person_pin</i>
-                                                        <input disabled value="Emily Ccana" id="disabled" type="text" class="validate">
-                                                        <label for="disabled">Usuario </label>
-                                                    </div>
                                                     <div class="row center col s10">                                                       
                                                         <div class="input-field">
                                                             <i class="material-icons prefix">assignment</i>
                                                             <label for="dnipro">Ingrese DNI profesor</label>
+                                                            <input id="idu" type="text" value="${sessionScope.iduser}" hidden>
                                                             <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
-                                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>                                                       
-                                                    </div>    
+                                                    </div>
+                                                     <div class="input-field row col s10">
+                                                         <div class="input-field">
+                                                        <i class="material-icons prefix">person_pin</i>
+                                                        <input  id="profe" type="text" class="validate" disabled>
+                                                        <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
+                                                        </div>
+                                                    </div>
                                                     <div class="row center col s10 input-field">
                                                         <i class="material-icons prefix">chrome_reader_mode</i>
                                                         <label for="responsable">Alumno</label>
@@ -85,7 +90,9 @@
                                                     </div>
                                                     <div class="col s10 " >
                                                         <label for="dnipro"> <i class="material-icons prefix">face</i>Documento Responsable</label>
-                                                        <select id="docu" class="input-field" onmessage="Documento Responsable"></select>                                                       
+                                                        <select id="docu"  onmessage="Documento Responsable">
+                                                            
+                                                        </select>                                                       
                                                     </div>      
 
                                                 </div>
@@ -171,6 +178,7 @@
                                                             <th>PRODUCTO</th>
                                                             <th>ESTADO</th>
                                                             <th>TIPO</th>
+                                                            <th>ELIMINAR</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -186,12 +194,12 @@
                         </div>
                         <div class="wizard-footer">
                             <div class="pull-right">
-                                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Next' />
-                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Finish' id="registrarPrestamo" />
+                                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Siguiente' />
+                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Completar' id="registrarPrestamo" />
                             </div>
 
                             <div class="pull-left">
-                                <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />
+                                <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Atras' />
                             </div>
                             <div class="clearfix"></div>
                             <div class="col s12">

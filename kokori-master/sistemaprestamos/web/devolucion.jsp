@@ -68,7 +68,7 @@
         <div id="modal2" class="modal s12 m12 l12" style="max-width: 350px;">
                 <div class="modal-content">
                     <h5>Productos</h5>
-                 <div class="input-field col s12">
+                <div class="input-field col s12">
                      <select multiple="" id="combin" name="selectBox">
                                                  <option value="0" disabled selected>Selecciona un tipos</option>             
                                                 </select>
@@ -81,7 +81,19 @@
                 </div>
         </div>
 
-              
+              <div class="col s12">
+            <div class="action-btn-wrapper">
+                <div class="fixed-action-btn my-custom-btn vertical">
+                    <a class="btn-floating btn-large red">
+                        <i class="large material-icons">settings</i>
+                    </a>
+                    <ul>
+                        <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#' onclick="modal()"><i class="material-icons">add</i></a></li>
+                        <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#' ><i class="material-icons">assignment</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="left-sidebar-hover"></div>
                 </div>                   
             </div>
@@ -93,6 +105,17 @@
     <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
         <div class="modal-content" id="caja">
         <h5>Productos</h5>
+        <div id="cuerpo">
+            
+        </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+    </div> 
+    <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px;">
+        <div class="modal-content" id="caja">
+        <h5>Anion</h5>
         <div id="cuerpo">
             
         </div>
