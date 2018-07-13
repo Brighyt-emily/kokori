@@ -144,7 +144,7 @@
                             <div class="row">
                       
                                      <div class="input-field col s6">
-    <select id="loco">
+    <select id="loc">
       <option value="" disabled selected>Selecciona un estado</option>
       <option value="1">BUEN ESTADO</option>
       <option value="0">MAL ESTADO</option>
@@ -159,7 +159,7 @@
                 </div>
                 </div>
                 <div class="modal-footer">
-                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick='esta()'>Registrar</a>
+                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick='ji()'>Registrar</a>
                   <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
 
                 </div>

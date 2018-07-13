@@ -5,9 +5,11 @@ var lis=[];
 function ltProductosForDev(){
     $.get("de",{"opc": 1}, function (data) {
         var x=JSON.parse(data);
-
         for (var i = 0; i < x.length; i++) {
-            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+"</td><td>"+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+x[i].fep+"\",\""+x[i].nom+"\",\""+x[i].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
+            console.log(x[i].horap);
+            console.log(x[i].horad);
+
+            $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+"</td><td>"+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td>"+x[i].horap+"</td><td>"+ x[i].horad+"</td><td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+x[i].fep+"\",\""+x[i].nom+"\",\""+x[i].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
             validar(); 
         }    
        
@@ -16,6 +18,7 @@ function ltProductosForDev(){
 }
 
 function validar(){
+    
     var obj=new Object();
     $('#tb_prestamos tr').each(function () {
         obj.codi = $(this).find("td").eq(0).html();
@@ -23,8 +26,9 @@ function validar(){
         obj.ape = $(this).find("td").eq(2).html();
         obj.fep = $(this).find("td").eq(3).html();
         obj.fed = $(this).find("td").eq(4).html();
+        obj.ho = $(this).find("td").eq(5).html();
+        obj.ha = $(this).find("td").eq(6).html();
     });
-  
     addObject(obj);
     listarObject();
 }   
@@ -50,23 +54,22 @@ function listarObject() {
     $("#tb_prestamos tbody").remove();
     $("#tb_prestamos").append("<tbody></tbody>");
     for (var j = 0; j < lis.length; j++) {
-        $("#tb_prestamos tbody").append("<tr><td>"+lis[j].codi+"</td><td>"+lis[j].nom+"</td><td>"+lis[j].ape+"</td><td>" + lis[j].fep + "</td><td>" + lis[j].fed + "</td>" +
+        $("#tb_prestamos tbody").append("<tr><td>"+lis[j].codi+"</td><td>"+lis[j].nom+"</td><td>" + lis[j].ape + "</td><td>" + lis[j].fep + "</td><td>"+lis[j].fed+"</td><td>" + lis[j].ho + "</td><td>" + lis[j].ha + "</td>" +
                 "<td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+lis[j].fep+"\",\""+lis[j].nom+"\",\""+lis[j].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
     }
 
 }
 
-function editarEstado(idp){
-    var toastHTML = '<span>Seguro que desea eliminar?<button class="btn-flat toast-action" onclick="holi('+idp+')">Aceptar</button></span>';
-     Materialize.toast( toastHTML,1985);
-}
+
 function modal(fe,no,ape){
     $('.modal-trigger').leanModal();
     datosModal(fe,no,ape);
 }
 
 function listarTipo(){
+    alert("sd");
     $.get("de",{"opc":4},function(data){
+        alert(data);
         $("#tipo").append("<option disabled='disabled'>Buscar por Tipo</option>");
         var x=JSON.parse(data);
         for (var i = 0; i < x.length; i++) {
@@ -86,6 +89,11 @@ function modal2(){
             }
             $("#combin").material_select();
         });
+}
+
+function editarEstado(fe,no,ape){
+    var toastHTML = '<span>Seguro que desea devolver?<button class="btn-flat toast-action" onclick="datosMidal('+fe+no+ape+')">Desea agregar una observacion?</button></span>';
+     Materialize.toast( toastHTML,1985);
 }
 
 function datosModal(fe,no,ape){
@@ -110,14 +118,25 @@ function devolver(fe,no,ape){
     for (var i =0; i<100; i++) {
         if( $("#"+i).prop('checked') ) {
             var checkbox=$("#"+i).val();  
+             var toastHTML = '<span>Desea agregar una observacion del producto?<br><button class="btn-flat toast-action" style="color:#F5B7B1" onclick="#">Cerrar</button><button class="btn btn modal-trigger" href="#modal5" onclick="observacion()"><i class="material-icons">visibility</i></button></span>';
+                Materialize.toast( toastHTML,3085);
             $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
                 $("#tb_prestamos tbody tr").remove();
                 datosModal(fe,no,ape);
+                
                 listarObject();
+                
+                
             });
 	}
     }	 
   
+}
+function observacion()
+{
+    alert("modal de cambios");
+    $('.modal-trigger').leanModal();
+    
 }
 
 $("#cerrar").click(function(){
