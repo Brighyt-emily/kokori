@@ -29,22 +29,22 @@
                     </div>
                     <div class="row">
                         <div class="col s2">
+                            <label for="codigo_r">Codigo Docente</label>
                             <div class="input-field">
-                                <input placeholder="Placeholder"  id="codigo_r" type="text" class="validate" disabled="true">
-                                <label for="codigo_r">Codigo Docente</label>
+                                <input id="codigo_r" type="text" class="validate" disabled="true">
                             </div>
                         </div>
                         <div class="col s4">
+                            <label for="nombres_r">Nombres Completos</label>
                             <div class="input-field">
-                                <input placeholder="Placeholder"  id="nombres_r" type="text" class="validate" disabled="true">
-                                <label for="nombres_r">Nombres Completos</label>
+                                <input id="nombres_r" type="text" class="validate" disabled="true">
                                 <input type="hidden" id="idprofesor">
                             </div>
                         </div>
                         <div class="col s2">
+                            <label for="aula_r">Aula</label>
                             <div class="input-field">
-                                <input placeholder="Placeholder"  id="aula_r" type="text" class="validate">
-                                <label for="aula_r">Aula</label>
+                                <input id="aula_r" type="text" class="validate">
                             </div>
                         </div>
                         <div class="col s4">
@@ -60,27 +60,27 @@
                     </div>
                     <div class="row">
                         <div class="col s4">
+                            <label for="fe_prestamo_r">Fecha de Prestamo</label>
                             <div class="input-field">
-                                <input type="text" id="fe_prestamo_r" class="datepicker" placeholder="Año-Mes-Dia">
-                                <label for="aula_r">Fecha de Prestamo</label>
+                                <input type="text" id="fe_prestamo_r" class="datepicker">
                             </div>
                         </div>
                         <div class="col s2">
+                            <label for="h_prestamo_r">Hora Prestamo</label>
                             <div class="input-field">
-                                <input type="text" id="h_prestamo_r" placeholder="00:00">
-                                <label for="aula_r">Hora Prestamo</label>
+                                <input type="text" id="h_prestamo_r">
                             </div>
                         </div>
                         <div class="col s4">
+                            <label for="fe_devolucion_r">Fecha Devolucion</label>
                             <div class="input-field">
-                                <input type="text" id="fe_devolucion_r" class="datepicker" placeholder="Año-Mes-Dia">
-                                <label for="aula_r">Fecha Devolucion</label>
+                                <input type="text" id="fe_devolucion_r" class="datepicker">
                             </div>
                         </div>
                         <div class="col s2">
+                            <label for="h_devolucion_r">Hora Devolución</label>
                             <div class="input-field">
-                                <input type="text" id="h_prestamo_r" placeholder="00:00">
-                                <label for="aula_r">Hora Devolución</label>
+                                <input type="text" id="h_devolucion_r">
                             </div>
                         </div>
                     </div>

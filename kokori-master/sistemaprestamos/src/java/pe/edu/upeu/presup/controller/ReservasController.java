@@ -130,6 +130,11 @@ public class ReservasController extends HttpServlet {
                 DetalleReserva drt = new DetalleReserva(idDr, idRes, idPro);
                 rd.actulizarDetallReserva(drt);
                 break;
+                
+            case 12:
+                int idreq = Integer.parseInt(request.getParameter("idreserva"));
+                out.println(rd.listarReservaById(idreq));
+                break;
         }
     }
 

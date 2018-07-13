@@ -38,4 +38,6 @@ public interface ReservaDao {
     
     int actulizarDetallReserva(DetalleReserva dr);
     
+    List<Map<String, Object>> listarReservaById(int idreserva);
+    
 }
