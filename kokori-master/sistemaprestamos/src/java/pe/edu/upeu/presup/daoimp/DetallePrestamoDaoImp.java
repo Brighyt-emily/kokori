@@ -29,7 +29,7 @@ public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
    List<DetallePrestamo> datos = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cs = cx.prepareCall("{call listarDetallePrestamo()}");
+            cs = cx.prepareCall("{call ListPrestamos()}");
             rs = cs.executeQuery();
             while (rs.next()) {
                 DetallePrestamo p = new  DetallePrestamo();

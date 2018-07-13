@@ -48,6 +48,7 @@
                             <table class="highlight" id="tbldetpressm">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Usuario</th>
                                         <th>Profesor</th>
                                         <th>Acción</th>
@@ -59,7 +60,7 @@
                             </table>                                                                                               
                             <!--Modal para ver detalladamente el resgitro de los profesores-->
                             <!-- Modal Structure -->
-                            <div id="modal1" class="modal s12" style="max-width: 890px;">
+                            <div id="modal1" class="modal1 s12 " style="max-width: 890px;">
                                 <div class="modal-content">
                                     <div class="s12 contact-form" > <!-- div da direita -->
                                         <div class="row">
@@ -114,9 +115,11 @@
         </main>
         <!--FIN Contenido-->
     </div>
+            
     <div class="left-sidebar-hover"></div>
-    <script src="js/detallePrestamo.js" type="text/javascript"></script>
+    
 
     <%@include file="WEB-INF/template/footerMain.jspf" %>
 </body>
+<script src="js/detallePrestamo.js" type="text/javascript"></script>
 </html>

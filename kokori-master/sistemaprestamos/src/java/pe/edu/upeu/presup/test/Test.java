@@ -41,14 +41,15 @@ public class Test {
     static DevoDao po = new DevoDaoImp();
     static UsuarioDao us = new UsuarioDaoImp();
     static ProfesorDao pr=new ProfesorDaoImp();
+    static PrestamoDao psr=new PrestamoDaoImp();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        conexion();
+        //conexion();
         //create();
-     //  listar();
+      listar();
         //delete();
         //update();
         //update();
@@ -63,7 +64,7 @@ public class Test {
         //jip();
     }
     static void listar(){
-        System.out.println(g.toJson(ko.readAll()));
+        System.out.println(g.toJson(psr.readAll()));
     }
 
     static void conexion() {

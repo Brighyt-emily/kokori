@@ -21,18 +21,18 @@ import pe.edu.upeu.presup.util.Conexion;
  *
  * @author HP
  */
-
 public class PrestamoDaoImp implements PrestamoDao {
+
     private java.sql.CallableStatement cs;
     private ResultSet rs;
     private Connection cx;
 
     @Override
     public int create(Prestamo p) {
-        int x=0;
-        try{
-            cx= Conexion.getConexion();
-            cs=cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?,?,?)}");
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, p.getFe_prestamo());
             cs.setString(2, p.getHora_pre());
             cs.setString(3, p.getHora_devo());
@@ -42,10 +42,9 @@ public class PrestamoDaoImp implements PrestamoDao {
             cs.setInt(7, p.getId_profe());
             cs.setInt(8, p.getId_documento());
             cs.setInt(9, p.getId_user());
-            x= cs.executeUpdate();
-        }
-        catch(SQLException e){
-            System.out.println("Error"+e);
+            x = cs.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
         }
         return x;
     }
@@ -61,25 +60,26 @@ public class PrestamoDaoImp implements PrestamoDao {
         try {
             cx = Conexion.getConexion();
             cs = cx.prepareCall("{call ListPrestamos}");
-            
             rs = cs.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Prestamo p = new Prestamo();
                 p.setIdprestamo(rs.getInt(1));
                 p.setEstado(rs.getInt(2));
-                p.setFe_prestamo(rs.getString(3));
-                p.setNom_alumno(rs.getString(4));
-                p.setFe_devolucion(rs.getString(5));
-                p.setAula(rs.getString(6));
-                p.setId_profe(rs.getInt(7));
-                p.setId_documento(rs.getInt(8));
-                p.setId_user(rs.getInt(9));
+                p.setNom_alumno(rs.getString(3));
+                p.setAula(rs.getString(4));
+                p.setFe_prestamo(rs.getString(5));
+                p.setFe_devolucion(rs.getString(6));
+                p.setHora_pre(rs.getString(7));
+                p.setHora_devo(rs.getString(8));
+                p.setId_profe(rs.getInt(9));
+                p.setId_documento(rs.getInt(10));
+                p.setId_user(rs.getInt(11));
                 pre.add(p);
             }
         } catch (SQLException e) {
-            System.out.println("Error: "+e);
+            System.out.println("Error: " + e);
         }
-        return pre;   
+        return pre;
     }
 
     @Override
@@ -93,10 +93,10 @@ public class PrestamoDaoImp implements PrestamoDao {
         try {
             cx = Conexion.getConexion();
             cs = cx.prepareCall("{call SearchPrestamo(?)}");
-            cs.setInt(1, key); 
+            cs.setInt(1, key);
             rs = cs.executeQuery();
-            while(rs.next()){
-               p.setIdprestamo(rs.getInt(1));
+            while (rs.next()) {
+                p.setIdprestamo(rs.getInt(1));
                 p.setEstado(rs.getInt(2));
                 p.setFe_prestamo(rs.getString(3));
                 p.setNom_alumno(rs.getString(4));
@@ -105,10 +105,10 @@ public class PrestamoDaoImp implements PrestamoDao {
                 p.setId_profe(rs.getInt(7));
                 p.setId_documento(rs.getInt(8));
                 p.setId_user(rs.getInt(9));
-               
+
             }
         } catch (SQLException e) {
-            System.out.println("Error:"+ e);
+            System.out.println("Error:" + e);
         }
         return p;
     }
@@ -119,18 +119,18 @@ public class PrestamoDaoImp implements PrestamoDao {
         try {
             cx = Conexion.getConexion();
             cs = cx.prepareCall("{call ListDocumento}");
-            
+
             rs = cs.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Documento d = new Documento();
                 d.setId(rs.getInt(1));
                 d.setNombre(rs.getString(2));
                 doc.add(d);
             }
         } catch (SQLException e) {
-            System.out.println("Error: "+e);
+            System.out.println("Error: " + e);
         }
-        return doc; 
+        return doc;
     }
 
     @Override
@@ -139,16 +139,16 @@ public class PrestamoDaoImp implements PrestamoDao {
         try {
             cx = Conexion.getConexion();
             cs = cx.prepareCall("{call AddProductoDetalle(?)}");
-            cs.setInt(1, key); 
+            cs.setInt(1, key);
             rs = cs.executeQuery();
-            while(rs.next()){
-               pl.setIdP(rs.getInt(1));
+            while (rs.next()) {
+                pl.setIdP(rs.getInt(1));
                 pl.setNom(rs.getString(2));
                 pl.setEst(rs.getInt(3));
                 pl.setNomTip(rs.getString(4));
             }
         } catch (SQLException e) {
-            System.out.println("Error:"+ e);
+            System.out.println("Error:" + e);
         }
         return pl;
     }
@@ -159,9 +159,9 @@ public class PrestamoDaoImp implements PrestamoDao {
         try {
             cx = Conexion.getConexion();
             cs = cx.prepareCall("{call EspejoReserva(?)}");
-            cs.setInt(1, key); 
+            cs.setInt(1, key);
             rs = cs.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 pe.setId_profe(rs.getInt("idprofesor"));
                 pe.setFe_devolucion(rs.getString("fe_devolucion"));
                 pe.setAula(rs.getString("aula"));
@@ -171,7 +171,7 @@ public class PrestamoDaoImp implements PrestamoDao {
                 pe.setNom_profe(rs.getString("nombres"));
             }
         } catch (SQLException e) {
-            System.out.println("Error espejo:"+ e);
+            System.out.println("Error espejo:" + e);
         }
         return pe;
     }
@@ -182,9 +182,9 @@ public class PrestamoDaoImp implements PrestamoDao {
         try {
             cx = Conexion.getConexion();
             cs = cx.prepareCall("{call EspejoDetalleReserva(?)}");
-            cs.setInt(1, key); 
+            cs.setInt(1, key);
             rs = cs.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Producto pre = new Producto();
                 pre.setIdP(rs.getInt(1));
                 pre.setNom(rs.getString(2));
@@ -193,25 +193,23 @@ public class PrestamoDaoImp implements PrestamoDao {
                 p.add(pre);
             }
         } catch (SQLException e) {
-            System.out.println("Error:"+ e);
+            System.out.println("Error:" + e);
         }
         return p;
     }
 
     @Override
     public int updateReserva(Reserva id) {
-        int x=0;
-        try{
-            cx= Conexion.getConexion();
-            cs=cx.prepareCall("{call UpdateEstReserva(?)}");
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call UpdateEstReserva(?)}");
             cs.setInt(1, id.getIdReserva());
-            x= cs.executeUpdate();
-        }
-        catch(SQLException e){
-            System.out.println("Error estRes"+e);
+            x = cs.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error estRes" + e);
         }
         return x;
     }
-    
-    
+
 }
