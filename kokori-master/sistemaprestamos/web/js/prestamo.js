@@ -1,7 +1,7 @@
 $(document).ready(function () {
+    VerificacionReserva();
     ListarProd();
     ListarDoc();
-    VerificacionReserva();
 });
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
@@ -131,7 +131,6 @@ function ListarDoc() {
 }
 function VerificacionReserva(){
         var x = $("#ress").val();
-        alert(x);
         if(x!==null){
            $.get("Pc", {"idd":x,"opc": 11}, function (data) {
             var y = JSON.parse(data);
@@ -150,9 +149,8 @@ function VerificacionReserva(){
 
             }
                 $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td></tr>");
-            }    
-            });
-           $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
+            }
+            $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
             var y = JSON.parse(dat); 
                 $("#fecha_pre").val(y.fe_prestamo);
                 $("#fechadev").val(y.fe_devolucion);
@@ -161,6 +159,7 @@ function VerificacionReserva(){
                 $("#aula").val(y.aula);
                 $("#prof").val(y.id_profe);
                 $("#dnipro").val(y.nom_profe);          
+            });
             });
         }
         
