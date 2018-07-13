@@ -16,12 +16,12 @@ function listar()
              if (jop===1)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn ' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn modal-trigger' href='#modal2' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop===0)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop===2)
              {

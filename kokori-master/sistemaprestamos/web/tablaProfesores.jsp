@@ -12,12 +12,7 @@
         <title>JSP Page</title>
         <%@include file="WEB-INF/template/header.jspf" %>
          <!-- Compiled and minified CSS -->
-          <!-- Compiled and minified CSS -->
-    
-    
-            
-  
-            
+          <!-- Compiled and minified CSS -->       
     </head>
     <body>                          
         <%@include file="WEB-INF/template/Principal.jspf" %>

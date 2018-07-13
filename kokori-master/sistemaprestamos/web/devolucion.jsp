@@ -68,7 +68,7 @@
         <div id="modal2" class="modal s12 m12 l12" style="max-width: 350px;">
                 <div class="modal-content">
                     <h5>Productos</h5>
-                 <div class="input-field col s12">
+                <div class="input-field col s12">
                      <select multiple="" id="combin" name="selectBox">
                                                  <option value="0" disabled selected>Selecciona un tipos</option>             
                                                 </select>
