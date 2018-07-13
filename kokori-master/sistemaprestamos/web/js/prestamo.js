@@ -23,7 +23,6 @@ function ListarProd() {
             }
             $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
             <td>"+ "<button id='bt"+x[i].idP+"' class='material-icons prefix' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idP+")'>check_circle</button></td</tr>");
-         //  <i class = 'material-icons prefix'>check_circle</i>
         }
     });
 }
@@ -55,7 +54,7 @@ $("#registrarPrestamo").click(function () {
     var aul = $("#aula").val();
     var prof = $("#prof").val();
     var docu = $("#docu").val();
-    var user = 1;//$("#user").val();
+    var user = $("#idu").val();   
     if(alum==="" || fe_pre==="dd/mm/aaaa" || fe_dev==="dd/mm/aaaa" || aul==="" || prof==="" || user===""){
         Materialize.toast("Completar todos los campos de datos", 1980);
     }
@@ -114,8 +113,7 @@ $("#dnipro").keyup(function () {
     {
         $.get("Pc", {"dni": dni, "opc": 5}, function (data) {
             var x = JSON.parse(data);
-            alert(data);
-            $("#dnipro").val(x.nomApe);
+            $("#profe").val(x.nomApe);
             $("#prof").val(x.idProfesor);
         });
     }
@@ -131,7 +129,7 @@ function ListarDoc() {
 }
 function VerificacionReserva(){
         var x = $("#ress").val();
-        if(x!==null){
+        if(x!=="null"){
            $.get("Pc", {"idd":x,"opc": 11}, function (data) {
             var y = JSON.parse(data);
             var e;
@@ -152,13 +150,14 @@ function VerificacionReserva(){
             }
             $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
             var y = JSON.parse(dat); 
+                
                 $("#fecha_pre").val(y.fe_prestamo);
                 $("#fechadev").val(y.fe_devolucion);
                 $("#hora_pre").val(y.hora_pre);
                 $("#hora_dev").val(y.hora_devo);
                 $("#aula").val(y.aula);
                 $("#prof").val(y.id_profe);
-                $("#dnipro").val(y.nom_profe);          
+                $("#profe").val(y.nom_profe);          
             });
             });
         }

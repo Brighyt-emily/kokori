@@ -68,19 +68,21 @@
                                         <center> 
                                             <div class="row  ">
                                                 <div class="row center col s6" name="rigth">
-                                                    <div class="input-field row col s10">
-                                                        <i class="material-icons prefix">person_pin</i>
-                                                        <input disabled value="Emily Ccana" id="disabled" type="text" class="validate">
-                                                        <label for="disabled">Usuario </label>
-                                                    </div>
                                                     <div class="row center col s10">                                                       
                                                         <div class="input-field">
                                                             <i class="material-icons prefix">assignment</i>
                                                             <label for="dnipro">Ingrese DNI profesor</label>
+                                                            <input id="idu" type="text" value="${sessionScope.iduser}" hidden>
                                                             <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
-                                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>                                                       
-                                                    </div>    
+                                                    </div>
+                                                     <div class="input-field row col s10">
+                                                         <div class="input-field">
+                                                        <i class="material-icons prefix">person_pin</i>
+                                                        <input  id="profe" type="text" class="validate" disabled>
+                                                        <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
+                                                        </div>
+                                                    </div>
                                                     <div class="row center col s10 input-field">
                                                         <i class="material-icons prefix">chrome_reader_mode</i>
                                                         <label for="responsable">Alumno</label>
@@ -88,7 +90,9 @@
                                                     </div>
                                                     <div class="col s10 " >
                                                         <label for="dnipro"> <i class="material-icons prefix">face</i>Documento Responsable</label>
-                                                        <select id="docu" class="input-field" onmessage="Documento Responsable"></select>                                                       
+                                                        <select id="docu"  onmessage="Documento Responsable">
+                                                            
+                                                        </select>                                                       
                                                     </div>      
 
                                                 </div>
