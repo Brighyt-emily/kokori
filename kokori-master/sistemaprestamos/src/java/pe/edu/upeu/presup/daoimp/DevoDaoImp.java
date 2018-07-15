@@ -8,7 +8,7 @@ package pe.edu.upeu.presup.daoimp;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import pe.edu.upeu.presup.entity.Devo;
+import pe.edu.upeu.presup.entity.Devon;
 import pe.edu.upeu.presup.dao.DevoDao;
 import pe.edu.upeu.presup.util.Conexion;
 
@@ -22,7 +22,7 @@ public class DevoDaoImp implements DevoDao{
     private Connection cx;
 
     @Override
-    public int create(Devo d) {
+    public int create(Devon d) {
         int x=0;
         try
         {

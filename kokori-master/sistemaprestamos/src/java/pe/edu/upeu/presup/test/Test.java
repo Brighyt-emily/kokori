@@ -19,7 +19,7 @@ import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
 import pe.edu.upeu.presup.daoimp.ProfesorDaoImp;
 import pe.edu.upeu.presup.daoimp.TipoDaoImp;
 import pe.edu.upeu.presup.daoimp.UsuarioDaoImp;
-import pe.edu.upeu.presup.entity.Devo;
+import pe.edu.upeu.presup.entity.Devon;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.entity.Producto;
 import pe.edu.upeu.presup.entity.Profesor;

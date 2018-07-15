@@ -88,7 +88,7 @@
                         <i class="large material-icons">settings</i>
                     </a>
                     <ul>
-                        <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#' onclick="modal()"><i class="material-icons">add</i></a></li>
+                        <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#' onclick=""><i class="material-icons">add</i></a></li>
                         <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#' ><i class="material-icons">assignment</i></a></li>
                     </ul>
                 </div>
@@ -115,13 +115,23 @@
     </div> 
     <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px;">
         <div class="modal-content" id="caja">
-        <h5>Anion</h5>
+        <h5>Producto:</h5>
         <div id="cuerpo">
-            
+             <div class="col s6">
+                                        <div class="input-field">
+                                            <i class="material-icons prefix">pencil</i>
+                                            <input type="text" name="tipo"  id="lop" placeholder="tipo">
+                                            <label for="tiip">Detalle</label>
+                                           
+                                        </div>
+                                    </div>
+                                    
         </div>
         </div>
         <div class="modal-footer">
-            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            <a  class="modal-action modal-close waves-effect waves-green btn-flat" style="color:blue" onclick='camb()'>Estado producto</a>
+            <a  class="modal-action modal-close waves-effect waves-green btn-flat" style="color:green" onclick='observacion()'>Registrar</a>
+            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect  waves-green btn-flat" style="color:red">Cerrar</a>
         </div>
     </div> 
     <div class="left-sidebar-hover"></div>

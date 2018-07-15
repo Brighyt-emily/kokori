@@ -9,21 +9,21 @@ package pe.edu.upeu.presup.entity;
  *
  * @author EMILY
  */
-public class Devo {
+public class Devon {
     private int iddevo;
     private String det;
     private int iddetapre;
 
-    public Devo() {
+    public Devon() {
     }
 
-    public Devo(int iddevo, String det, int iddetapre) {
+    public Devon(int iddevo, String det, int iddetapre) {
         this.iddevo = iddevo;
         this.det = det;
         this.iddetapre = iddetapre;
     }
 
-    public Devo(String det, int iddetapre) {
+    public Devon(String det, int iddetapre) {
         this.det = det;
         this.iddetapre = iddetapre;
     }

@@ -99,6 +99,7 @@ function editarEstado(fe,no,ape){
 function datosModal(fe,no,ape){
     $.get("de", {"fecha":fe,"nom":no,"ape":ape,"opc": 5}, function (dat) {
         var x=JSON.parse(dat);
+        
         var lista=new Array();
         lista.length = 0;
         $("#cuerpo").remove();
@@ -107,6 +108,7 @@ function datosModal(fe,no,ape){
 
         for (var i = 0; i < x.length; i++) {
             $("#cuerpo").append("<p><label><input type='checkbox' id="+lista[0][i].idP+" value='"+lista[0][i].idP+"' /><span>"+lista[0][i].nom+"</span></label></p>");  
+      
         }
         
         $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>")
@@ -118,13 +120,14 @@ function devolver(fe,no,ape){
     for (var i =0; i<100; i++) {
         if( $("#"+i).prop('checked') ) {
             var checkbox=$("#"+i).val();  
-             var toastHTML = '<span>Desea agregar una observacion del producto?<br><button class="btn-flat toast-action" style="color:#F5B7B1" onclick="#">Cerrar</button><button class="btn btn modal-trigger" href="#modal5" onclick="observacion()"><i class="material-icons">visibility</i></button></span>';
-                Materialize.toast( toastHTML,3085);
+             
             $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
                 $("#tb_prestamos tbody tr").remove();
                 datosModal(fe,no,ape);
-                
+                var toastHTML = '<span>Desea agregar una observacion del producto?<br><button class="btn-flat toast-action" style="color:#F5B7B1" onclick="#">Cerrar</button><button class="btn btn modal-trigger" href="#modal5" onclick="observacion('+checkbox+')">Aceptar</button></span>';
+                Materialize.toast( toastHTML,3085);
                 listarObject();
+                modal(fe,no,ape).hide;
                 
                 
             });
@@ -132,12 +135,20 @@ function devolver(fe,no,ape){
     }	 
   
 }
-function observacion()
+function observacion(checkbox)
 {
-    alert("modal de cambios");
     $('.modal-trigger').leanModal();
+    alert(checkbox);
+    var deta= $('lop').val('');
+    $.post("de",{"det":deta,"iddetapre":checkbox,"opc":3}, function()
+    {
+        alert(deta);
+        
+    });
+    
     
 }
+
 
 $("#cerrar").click(function(){
     location.reload();
