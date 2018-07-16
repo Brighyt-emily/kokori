@@ -9,7 +9,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.entity.Producto;
 import pe.edu.upeu.presup.util.Conexion;
@@ -64,6 +66,7 @@ public class ProductoDaoImp implements ProductoDao {
             cst = cx.prepareCall("{call updateProducto(?,?)}");
             cst.setInt(1, p.getIdP());
             cst.setInt(2, p.getEst());
+            
             x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
@@ -142,11 +145,31 @@ public class ProductoDaoImp implements ProductoDao {
                 Producto p = new Producto();
                 p.setiTip(rs.getInt("idtipo"));
                 p.setNomTip(rs.getString("nom_tipo"));
+               
                 fui.add(p);
             }
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
         }
         return fui;    }
+
+    @Override
+    public List<Map<String, Object>> liko() {
+List<Map<String, Object>> lista = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarTipo()}");
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Map<String, Object> map = new HashMap<>();
+                map.put("no", rs.getString("nom_tipo"));
+                map.put("st",  rs.getString("stock"));
+
+                lista.add(map);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR: "+e);
+        }
+        return lista;    }
 
 }

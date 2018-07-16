@@ -25,7 +25,7 @@
                             
                             <div class="card-content">
                                 <div class="col s12">
-                    <div class="page-title"> <i class="material-icons smoll" >assignment_ind</i><span>Registro de Profesores</span></div>
+                    <div class="page-title"> <i class="material-icons smoll" >assignment_ind</i><span>Registro de Productos</span></div>
                 </div>
                                 <div class="row">
                                     <div class="col s12">
@@ -68,6 +68,8 @@
                     <ul>
                         <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#modal1' onclick="modal()"><i class="material-icons">add</i></a></li>
                         <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#modal3' ><i class="material-icons">assignment</i></a></li>
+                        <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#modal8' onclick="moto()" ><i class="material-icons">table</i></a></li>
+                   
                     </ul>
                 </div>
             </div>
@@ -202,7 +204,41 @@
              
              
              
-             
+             <div id="modal8" class="modal s12 m12 l12" style="max-width: 530px;">
+                <div class="modal-content">
+                   <label for="tipos">Tipos</label>
+
+                     <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
+                         <form id="contact" method="post" class="form" role="form" >
+                            <div class="row">
+                               
+                                    <div class="col s6">
+                                         <table class="table highlight centered" id="tabp">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nombre</th>
+                                                <th>Stock</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody> 
+                                        </tbody>
+                                        
+                                    </table> 
+                                    </div>
+                                    
+                                </div>
+                                
+                    
+                </div>
+                </div>
+                <div class="modal-footer">
+                    
+                  <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+
+                </div>
+                     </div>
              
          </main>
    

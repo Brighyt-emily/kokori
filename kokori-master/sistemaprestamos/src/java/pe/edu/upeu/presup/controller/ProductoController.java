@@ -53,8 +53,9 @@ public class ProductoController extends HttpServlet {
                 pro.deleate(Integer.parseInt(request.getParameter("idP")));
                 break;
             case 4:
-                Producto lo=new Producto(Integer.parseInt(request.getParameter("idP")), Integer.parseInt(request.getParameter("iTip")));
+                Producto lo=new Producto(Integer.parseInt(request.getParameter("idP")), Integer.parseInt(request.getParameter("est")));
                 pro.update(lo);
+                out.print(lo);
                 break;
             case 5:
                 out.println(g.toJson(pro.read(Integer.parseInt(request.getParameter("idP")))));
@@ -63,7 +64,7 @@ public class ProductoController extends HttpServlet {
                 Producto o=new Producto(request.getParameter("nomTip"));
                 pro.crea(o);
                 break;
-            case 7:out.println(g.toJson(pro.ko()));
+            case 7:out.println(g.toJson(pro.liko()));
                   break;
         }
         }

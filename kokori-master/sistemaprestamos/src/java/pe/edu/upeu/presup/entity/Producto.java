@@ -41,17 +41,18 @@ public class Producto {
         this.iTip = iTip;
         this.nomTip = nomTip;
     }
+    
 
     
     public Producto(String nomTip) {
         this.nomTip = nomTip;
     }
 
-    public Producto(int idP, int iTip) {
+    public Producto(int idP, int est) {
         this.idP = idP;
-        this.iTip = iTip;
+        this.iTip = est;
     }
-    
+   
     
 
     public int getStock() {
