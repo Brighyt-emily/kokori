@@ -89,7 +89,6 @@
                                                         <input type="text" name="responsable" id="responsable" required>
                                                     </div>
                                                     <div class="col s10 " >
-                                                        <label for="dnipro"> <i class="material-icons prefix">face</i>Documento Responsable</label>
                                                         <select id="docu"  onmessage="Documento Responsable">
                                                             
                                                         </select>                                                       
