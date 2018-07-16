@@ -68,7 +68,7 @@
                     <ul>
                         <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#modal1' onclick="modal()"><i class="material-icons">add</i></a></li>
                         <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#modal3' ><i class="material-icons">assignment</i></a></li>
-                        <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#modal8' onclick="moto()" ><i class="material-icons">table</i></a></li>
+                        <li><a class="btn-floating #f06292 orange lighten-2 modal-trigger" href='#modal8' onclick="moto()" ><i class="material-icons">grid_on</i></a></li>
                    
                     </ul>
                 </div>
