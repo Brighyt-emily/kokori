@@ -12,7 +12,6 @@ function listar()
         $("#tablin tbody tr").remove();
         for (var i = 0; i < data.length; i++) {
             var jop =bibi[i].est;
-             
              if (jop===1)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
@@ -21,12 +20,12 @@ function listar()
              if(jop===0)
              {
                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating' onclick='jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
              if(jop===2)
              {
                    $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn '  onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn ' href='#modal2'  onclick= 'jip("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
+                    + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
              }
         }
     });
@@ -37,29 +36,33 @@ function eliminar(x){
         
     });
 }
-function ji(x){var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="jip('+x+')">Aceptar</button></span>';
+function ji(){var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="jip()">Aceptar</button></span>';
      Materialize.toast(toastHTML,1980);
-    
-}
-
-function jip(x)
-{
-   var jip= $('#loc').val();
-    alert(jip);
-    $.get("pro",{"op":4,"idP":x,"idTip":jip},function (data) {
-        alert(data);
-    });
-    listar();
     
 }
 function nop(x)
 {
+    idpro=x;
       $('.modal-trigger').leanModal();
+      
+      
 }
+function jip()
+{
+   var jip= $('#loc').val();
+   var ip=parseInt(idpro);
+   
+    $.get("pro",{"op":4,"idP":ip,"est":jip},function (data) {
+        listar();
+    });
+    
+    
+}
+
 
 function modal(){
    $('.modal-trigger').leanModal();
-    $.post("pro",{ "op":7}, function (data) {
+    $.post("pro",{ "op":1}, function (data) {
             var w = JSON.parse(data);
             for (var i = 0; i < w.length; i++) {  
                 $("#combin").append(
@@ -74,14 +77,11 @@ function modal(){
 
 function salva()
 {
-    alert('tututu');
     var jop=$('#pro').val();
     var kop= $('#codi').val();
     var jip= $('#loco').val();
     var x = $("#combin").val();
     var ide = parseInt(x);
-
-alert(jip);
     
     $.post("pro",{"nom":jop,"cod":kop,"est":jip,"iTip":ide,"op":2},function()
     {
@@ -127,4 +127,40 @@ $("#nomp").keyup(function () {
     }
 });
         
+        function esta()
+        {
+            var tiu=$('#tip').val();
+            
+             $.post("pro",{"nomTip":tiu,"op":6},function()
+    {
+        console.log("unin");
+        var toastHTML = '<span>Tipo guardado correctamente</span>';
+     Materialize.toast(toastHTML,1980);
+    });
+    
+        }
+        
+        
+        function moto()
+        {
+            $('.modal-trigger').leanModal();
+            $.get("pro",{"op":7}, function (data) {
+        var bibi = JSON.parse(data);
+        $("#tabp tbody tr").remove();
+        for (var i = 0; i < data.length; i++) {
+            if( bibi[i].st = bibi[i].st ? bibi[i].st : 0)
+            {
+                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td></tr>");
+             
+            }else
+            {
+                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td></tr>");
+             
+            }
+            
+                  
+             
+        }
+    });
+        }
    

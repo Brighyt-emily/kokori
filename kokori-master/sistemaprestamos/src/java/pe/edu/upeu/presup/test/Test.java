@@ -19,7 +19,7 @@ import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
 import pe.edu.upeu.presup.daoimp.ProfesorDaoImp;
 import pe.edu.upeu.presup.daoimp.TipoDaoImp;
 import pe.edu.upeu.presup.daoimp.UsuarioDaoImp;
-import pe.edu.upeu.presup.entity.Devo;
+import pe.edu.upeu.presup.entity.Devon;
 import pe.edu.upeu.presup.entity.Prestamo;
 import pe.edu.upeu.presup.entity.Producto;
 import pe.edu.upeu.presup.entity.Profesor;
@@ -47,24 +47,25 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //conexion();
+       // conexion();
         //create();
-      listar();
+      //listar();
         //delete();
         //update();
         //update();
        // validar();
-       // create();
+       //create();
         //listar();
         //delete();
         //update();
-        //update();
+        ate();
         //validar();
         //read();
         //jip();
+        //nop();
     }
     static void listar(){
-        System.out.println(g.toJson(psr.readAll()));
+        System.out.println(g.toJson(ko.ko()));
     }
 
     static void conexion() {
@@ -76,8 +77,8 @@ public class Test {
     }
 
     static void create() {
-        Profesor p = new Profesor(1,"201620052",1,"diego","puma","los sacues","123456","123123","tulo");
-        if (pr.update(p) > 0) {
+        Producto p = new Producto("vcv");
+        if (ko.crea(p) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");
@@ -90,9 +91,12 @@ public class Test {
 
     }
 
-    static void update() {
-        Prestamo p = new Prestamo(1,0);
-        if (kop.update(p) > 0) {
+    static void ate() {
+        Producto lop = new Producto(3,1);
+        int p=lop.getEst();
+        System.out.println(p);
+        System.out.println(g.toJson(lop));
+        if (ko.update(lop) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");
@@ -113,7 +117,7 @@ public class Test {
     static void nop()
     {
 List<Map<String, Object>> lista = new ArrayList<>();
-lista = kop.listarDevolucion();
+lista = ko.liko();
         System.out.println(lista);
         System.out.println(lista.size());
     }

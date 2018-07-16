@@ -5,7 +5,7 @@
  */
 package pe.edu.upeu.presup.dao;
 
-import pe.edu.upeu.presup.entity.Devo;
+import pe.edu.upeu.presup.entity.Devon;
 import pe.edu.upeu.presup.entity.Prestamo;
 
 /**
@@ -13,5 +13,5 @@ import pe.edu.upeu.presup.entity.Prestamo;
  * @author EMILY
  */
 public interface DevoDao {
-    int create(Devo d);
+    int create(Devon d);
 }

@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-            </main>
+    </main>
            <!--FIN Contenido-->
         <!-- Modal Structure -->
         <div id="modal2" class="modal s12 m12 l12" style="max-width: 350px;">
@@ -88,7 +88,7 @@
                         <i class="large material-icons">settings</i>
                     </a>
                     <ul>
-                        <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#' onclick="modal()"><i class="material-icons">add</i></a></li>
+                        <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#' onclick=""><i class="material-icons">add</i></a></li>
                         <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#' ><i class="material-icons">assignment</i></a></li>
                     </ul>
                 </div>
@@ -101,7 +101,7 @@
     </main>
     <!--FIN Contenido-->
     
-    <!-- Modal Structure -->
+    <!-- MODAL DE LISTADO DE PRODUCTOS -->
     <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
         <div class="modal-content" id="caja">
         <h5>Productos</h5>
@@ -113,15 +113,22 @@
             <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
     </div> 
-    <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px;">
-        <div class="modal-content" id="caja">
-        <h5>Anion</h5>
-        <div id="cuerpo">
-            
+    <!--Fin del MODAL-->
+    
+    
+    <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px; max-height: 400px">
+        <div class="modal-content">
+        <h5>Observación del Producto:</h5>
+             <div class="form-group">
+                <div class="input-field">
+                <input type="text" name="tipo"  id="lop">
+                <label for="tiip">Detalle</label>
+                </div>
+             </div>                    
         </div>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        <div class="form-group centered" style="padding-bottom:20px; padding-left: 20px; ">
+            <a  class="modal-action modal-close btn btn-primary blue" href="Productos.jsp">Estado producto</a>
+            <a  class="modal-action modal-close btn btn-primary teal" id="regis">Registrar</a>
         </div>
     </div> 
     <div class="left-sidebar-hover"></div>
