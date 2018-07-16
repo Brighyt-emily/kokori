@@ -31,8 +31,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12">
-                    <div class="page-title"> <i class="material-icons smoll" >assignment_ind</i><span>Detalles Prestamos</span></div>
+                <div class=" center-align">
+                    <div class="page-title"> <i class="material-icons smoll" >content_paste</i><span>Detalles Prestamos</span></div>
                 </div>
                 <div class="col s12 ">
                     <div class="card">
@@ -60,20 +60,20 @@
                             </table>                                                                                               
                             <!--Modal para ver detalladamente el resgitro de los profesores-->
                             <!-- Modal Structure -->
-                            <div id="modal1" class="modal1 s12 " style="max-width: 890px;">
+                            <div id="modal1" class="modal s12" style="max-width: 890px;">
                                 <div class="modal-content">
                                     <div class="s12 contact-form" > <!-- div da direita -->
                                         <div class="row">
                                             <table class="highlight" id="tbldetpres">
                                                 <thead>
                                                     <tr>
-                                                        <th>Documento Responsable</th>
-                                                        <th>Fecha Prestamo</th>
-                                                        <th>Fecha Devolucion</th>
+                                                        <th>#</th>
+                                                        <th>Nombre Alumno</th>
+                                                        <th>Fecha y Hora Prestamo</th>
+                                                        <th>Fecha y Hora Devolucion</th>
                                                         <th>Equipos Prestados</th>
                                                     </tr>
                                                 </thead>
-
                                                 <tbody>
                                                 </tbody>
                                             </table>                   
@@ -85,16 +85,18 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div id="modal3" class="modal s12" style="max-width: 890px;">
                                 <div class="modal-content">
-                                    <div class="s12 contact-form" > <!-- div da direita -->
+                                    <div class="s12 contact-form" > 
                                         <div class="row">
                                             <table class="highlight" id="tbldetpro">
                                                 <thead>
                                                     <tr>
+                                                        <th>#</th>
+                                                         <th>Orden de Prestamo</th>
                                                         <th>Nombre</th>
                                                         <th>Cantidad</th>
-                                                        <th>Estado</th>
                                                     </tr>
                                                 </thead>
 
@@ -115,9 +117,9 @@
         </main>
         <!--FIN Contenido-->
     </div>
-            
+
     <div class="left-sidebar-hover"></div>
-    
+
 
     <%@include file="WEB-INF/template/footerMain.jspf" %>
 </body>
