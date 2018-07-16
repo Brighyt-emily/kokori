@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-            </main>
+    </main>
            <!--FIN Contenido-->
         <!-- Modal Structure -->
         <div id="modal2" class="modal s12 m12 l12" style="max-width: 350px;">
@@ -101,7 +101,7 @@
     </main>
     <!--FIN Contenido-->
     
-    <!-- Modal Structure -->
+    <!-- MODAL DE LISTADO DE PRODUCTOS -->
     <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
         <div class="modal-content" id="caja">
         <h5>Productos</h5>
@@ -113,25 +113,22 @@
             <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
     </div> 
-    <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px;">
-        <div class="modal-content" id="caja">
-        <h5>Producto:</h5>
-        <div id="cuerpo">
-             <div class="col s6">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">pencil</i>
-                                            <input type="text" name="tipo"  id="lop" placeholder="tipo">
-                                            <label for="tiip">Detalle</label>
-                                           
-                                        </div>
-                                    </div>
-                                    
+    <!--Fin del MODAL-->
+    
+    
+    <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px; max-height: 400px">
+        <div class="modal-content">
+        <h5>Observación del Producto:</h5>
+             <div class="form-group">
+                <div class="input-field">
+                <input type="text" name="tipo"  id="lop">
+                <label for="tiip">Detalle</label>
+                </div>
+             </div>                    
         </div>
-        </div>
-        <div class="modal-footer">
-            <a  class="modal-action modal-close waves-effect waves-green btn-flat" style="color:blue" onclick='camb()'>Estado producto</a>
-            <a  class="modal-action modal-close waves-effect waves-green btn-flat" style="color:green" onclick='observacion()'>Registrar</a>
-            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect  waves-green btn-flat" style="color:red">Cerrar</a>
+        <div class="form-group centered" style="padding-bottom:20px; padding-left: 20px; ">
+            <a  class="modal-action modal-close btn btn-primary blue" href="Productos.jsp">Estado producto</a>
+            <a  class="modal-action modal-close btn btn-primary teal" id="regis">Registrar</a>
         </div>
     </div> 
     <div class="left-sidebar-hover"></div>

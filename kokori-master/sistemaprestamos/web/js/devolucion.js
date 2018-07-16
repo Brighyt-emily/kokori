@@ -6,9 +6,6 @@ function ltProductosForDev(){
     $.get("de",{"opc": 1}, function (data) {
         var x=JSON.parse(data);
         for (var i = 0; i < x.length; i++) {
-            console.log(x[i].horap);
-            console.log(x[i].horad);
-
             $("#tb_prestamos tbody").append("<tr><td>"+x[i].codi+"</td><td>"+ x[i].nom+"</td><td>"+x[i].ape+"</td><td>"+ x[i].fep+"</td><td>"+ x[i].fed+"</td><td>"+x[i].horap+"</td><td>"+ x[i].horad+"</td><td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+x[i].fep+"\",\""+x[i].nom+"\",\""+x[i].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
             validar(); 
         }    
@@ -18,7 +15,6 @@ function ltProductosForDev(){
 }
 
 function validar(){
-    
     var obj=new Object();
     $('#tb_prestamos tr').each(function () {
         obj.codi = $(this).find("td").eq(0).html();
@@ -66,33 +62,8 @@ function modal(fe,no,ape){
     datosModal(fe,no,ape);
 }
 
-function listarTipo(){
-    alert("sd");
-    $.get("de",{"opc":4},function(data){
-        alert(data);
-        $("#tipo").append("<option disabled='disabled'>Buscar por Tipo</option>");
-        var x=JSON.parse(data);
-        for (var i = 0; i < x.length; i++) {
-            $("#tipo").append("<option>"+x[i].noTipo+"</option>");
-        }
-        $("#tipo").append("<option>TODOS</option>");
-    });
-}
-
-function modal2(){
-   $('.modal-trigger').leanModal();
-    $.post("pro",{ "op":7}, function (data) {
-            var w = JSON.parse(data);
-            for (var i = 0; i < w.length; i++) {  
-                $("#combin").append(
-		"<option value='"+w[i].iTip+"'>"+w[i].nomTip+"</option>");
-            }
-            $("#combin").material_select();
-        });
-}
-
 function editarEstado(fe,no,ape){
-    var toastHTML = '<span>Seguro que desea devolver?<button class="btn-flat toast-action" onclick="datosMidal('+fe+no+ape+')">Desea agregar una observacion?</button></span>';
+    var toastHTML = '<span>Seguro que desea devolver?<button class="btn-flat toast-action" onclick="datosModal('+fe+no+ape+')">¿Desea agregar una observacion?</button></span>';
      Materialize.toast( toastHTML,1985);
 }
 
@@ -120,33 +91,37 @@ function devolver(fe,no,ape){
     for (var i =0; i<100; i++) {
         if( $("#"+i).prop('checked') ) {
             var checkbox=$("#"+i).val();  
-             
-            $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
-                $("#tb_prestamos tbody tr").remove();
-                datosModal(fe,no,ape);
-                var toastHTML = '<span>Desea agregar una observacion del producto?<br><button class="btn-flat toast-action" style="color:#F5B7B1" onclick="#">Cerrar</button><button class="btn btn modal-trigger" href="#modal5" onclick="observacion('+checkbox+')">Aceptar</button></span>';
-                Materialize.toast( toastHTML,3085);
-                listarObject();
-                modal(fe,no,ape).hide;
-                
-                
-            });
+            var toastHTML = "<span>¿Desea agregar una observacion del producto?<br><button class='btn-flat toast-action' style='color:#F5B7B1' onclick='continuar(\""+fe+"\",\""+no+"\",\""+ape+"\","+checkbox+")'>Cerrar</button><button class='btn btn modal-trigger' href='#modal5' onclick='observacion(\""+fe+"\",\""+no+"\",\""+ape+"\","+checkbox+")'>Aceptar</button></span>";
+            Materialize.toast( toastHTML,3085);
 	}
     }	 
-  
 }
-function observacion(checkbox)
+
+function continuar(fe,no,ape,checkbox){
+    $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
+        $("#tb_prestamos tbody tr").remove();
+        datosModal(fe,no,ape);
+        listarObject();
+        modal(fe,no,ape);
+    });
+}
+
+function observacion(fe,no,ape,checkbox)
 {
     $('.modal-trigger').leanModal();
-    alert(checkbox);
-    var deta= $('lop').val('');
-    $.post("de",{"det":deta,"iddetapre":checkbox,"opc":3}, function()
-    {
-        alert(deta);
-        
+    $("#regis").click(function(){
+        $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
+            $("#tb_prestamos tbody tr").remove();
+            datosModal(fe,no,ape);
+            listarObject();
+            modal(fe,no,ape);
+        });
+       var deta= $('#lop').val();
+         $.post("de",{"det":deta,"iddetapre":checkbox,"opc":3}, function(){
+         });
+       
     });
-    
-    
+   
 }
 
 
