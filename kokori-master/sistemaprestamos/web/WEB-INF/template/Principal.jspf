@@ -8,7 +8,7 @@
 
 
 
- <div class="mn-content fixed-sidebar">
+<div class="mn-content fixed-sidebar">
 <header class="mn-header navbar-fixed">
                 <nav class="blue-grey darken-4">
                     <div class="nav-wrapper row">
@@ -32,17 +32,7 @@
                                     ${sessionScope.rol} 
                                 </div>
                             </li>
-
                         </ul>
-                        
-                          
-                      
-                                
-                        
-
-
-                       
-                        
                         <!--INICIO Notificaciones-->
                         <ul id="dropdown1" class="dropdown-content notifications-dropdown">
                             <li class="notificatoins-dropdown-container">
@@ -84,7 +74,6 @@
                                 </ul>
                             </li>
                         </ul>
-                        
                         <!--FINs Notificaciones-->
                     </div>
                 </nav>
@@ -110,7 +99,7 @@
                             <div class="card card-transparent">
                                 <div class="row valign-wrapper">
                                     <div class="col s3">
-                                        <img src="assets/images/profile-image-1.png" alt="" class="circle responsive-img z-depth-1">
+                                        <img src="" alt="" class="circle responsive-img z-depth-1">
                                     </div>
                                     <div class="col s9">
                                         <span class="search-result-text">
@@ -122,7 +111,7 @@
                             <div class="card card-transparent">
                                 <div class="row valign-wrapper">
                                     <div class="col s3">
-                                        <img src="assets/images/profile-image-3.jpg" alt="" class="circle responsive-img z-depth-1">
+                                        <img src="" alt="" class="circle responsive-img z-depth-1">
                                     </div>
                                     <div class="col s9">
                                         <span class="search-result-text">
@@ -134,7 +123,7 @@
                             <div class="card card-transparent">
                                 <div class="row valign-wrapper">
                                     <div class="col s3">
-                                        <img src="assets/images/profile-image.png" alt="" class="circle responsive-img z-depth-1">
+                                        <img src="" alt="" class="circle responsive-img z-depth-1">
                                     </div>
                                     <div class="col s9">
                                         <span class="search-result-text">
@@ -206,33 +195,26 @@
             <aside id="chat-sidebar" class="side-nav white">
                 <div class="side-nav-wrapper">
                     <div class="col s12">
-                        <ul class="tabs tab-demo" style="width: 100%;">
-                           
+                        <ul class="tabs tab-demo" style="width: 100%;">                           
                             <li class="tab col s3"><a href="#sidebar-more-tab">lorem </a></li>
                         </ul>
-                    </div>
-                    
+                    </div>                    
                     <div id="sidebar-more-tab" class="col s12 sidebar-more right-sidebar-panel">
                         <p class="right-sidebar-heading">Notificaciones 2</p>
                         <div class="settings-list">
                             <div class="setting-item">
-                                <div class="setting-text">lorem</div>
-                                
+                                <div class="setting-text">lorem</div>                                
                             </div>
                             <div class="setting-item">
-                                <div class="setting-text">Lorem</div>
-                               
+                                <div class="setting-text">Lorem</div>                               
                             </div>
                             <div class="setting-item">
-                                <div class="setting-text">Lorem</div>
-                                
+                                <div class="setting-text">Lorem</div>                                
                             </div>
-                        </div>
-                      
+                        </div>                     
                     </div>
                 </div>
-            </aside>
-           
+            </aside>           
             <aside id="slide-out" class="side-nav white fixed">
                 <div class="side-nav-wrapper">
                     <div class="sidebar-profile center">
@@ -240,18 +222,14 @@
                             <img src="images/sec.png" class="circle" alt="">
                         </div>
                         <div class="sidebar-profile-info">
-                            <a  >
-                                <p class="text-left">${sessionScope.nombres}</p>
-                                
+                            <a>
+                                <p class="text-left">${sessionScope.nombres}</p>                               
                             </a>
                                 <div class="row">
                                     <div class="col s2"><a class="btn-floating smoll green" style="width: 10px;height: 10px;"></a></div>
                                     <div class="col s6" style="margin-top: 5px;">ONLINE</div>
                                     <a href="javascript:void(0);" class="account-settings-link" style="text-decoration: none;"><i class="material-icons right">arrow_drop_down</i></a>
-                                </div>   
-                                
-                                
-                               
+                                </div>                                                                                                 
                         </div>
                     </div>
                     

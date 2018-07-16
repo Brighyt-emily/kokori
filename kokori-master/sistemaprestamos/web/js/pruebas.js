@@ -1,5 +1,6 @@
 $(document).ready(function () {
     Materialize.toast('Toast al inicio', 4000);
+    
 });
 $('.datepicker').pickadate({
     monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
