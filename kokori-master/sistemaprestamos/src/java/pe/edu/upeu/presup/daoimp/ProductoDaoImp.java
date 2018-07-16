@@ -66,8 +66,8 @@ public class ProductoDaoImp implements ProductoDao {
             cst = cx.prepareCall("{call updateProducto(?,?)}");
             cst.setInt(1, p.getIdP());
             cst.setInt(2, p.getEst());
-            
             x = cst.executeUpdate();
+            System.out.println(x);
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
         }

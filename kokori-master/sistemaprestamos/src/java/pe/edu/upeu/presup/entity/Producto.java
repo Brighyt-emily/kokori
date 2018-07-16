@@ -50,7 +50,7 @@ public class Producto {
 
     public Producto(int idP, int est) {
         this.idP = idP;
-        this.iTip = est;
+        this.est = est;
     }
    
     

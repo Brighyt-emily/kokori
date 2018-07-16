@@ -58,11 +58,11 @@ public class Test {
         //listar();
         //delete();
         //update();
-        //update();
+        ate();
         //validar();
         //read();
         //jip();
-        nop();
+        //nop();
     }
     static void listar(){
         System.out.println(g.toJson(ko.ko()));
@@ -91,8 +91,8 @@ public class Test {
 
     }
 
-    static void update() {
-        Producto lop = new Producto(2,1);
+    static void ate() {
+        Producto lop = new Producto(3,1);
         int p=lop.getEst();
         System.out.println(p);
         System.out.println(g.toJson(lop));

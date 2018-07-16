@@ -51,11 +51,9 @@ function jip()
 {
    var jip= $('#loc').val();
    var ip=parseInt(idpro);
-   alert(jip);
-   alert(ip);
+   
     $.get("pro",{"op":4,"idP":ip,"est":jip},function (data) {
         listar();
-        alert(data);
     });
     
     
@@ -64,7 +62,7 @@ function jip()
 
 function modal(){
    $('.modal-trigger').leanModal();
-    $.post("pro",{ "op":7}, function (data) {
+    $.post("pro",{ "op":1}, function (data) {
             var w = JSON.parse(data);
             for (var i = 0; i < w.length; i++) {  
                 $("#combin").append(
@@ -84,7 +82,7 @@ function salva()
     var jip= $('#loco').val();
     var x = $("#combin").val();
     var ide = parseInt(x);
-
+    
     $.post("pro",{"nom":jop,"cod":kop,"est":jip,"iTip":ide,"op":2},function()
     {
         console.log("controlador op 2");
