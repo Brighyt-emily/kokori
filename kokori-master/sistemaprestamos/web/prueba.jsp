@@ -41,10 +41,7 @@
                                 </div>
                                 
                                 
-                                 <input type="text" class="timepicker">
                                 
-                                <div class="container">
-                   
                                 <!--DataPicker-->
                                 
                                 <input type="text" id="fecha" class="datepicker">
@@ -62,7 +59,7 @@
         <div class="left-sidebar-hover"></div>
   
 
-        <%@include file="WEB-INF/template/footerMain.jspf" %>
+        <%@include file="WEB-INF/template/footer.jspf" %>
         <script src="js/pruebas.js" type="text/javascript"></script>
  <script>alert("sdfdsf");</script>
         
