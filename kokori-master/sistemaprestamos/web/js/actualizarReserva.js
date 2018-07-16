@@ -12,10 +12,10 @@ function mostrarDatosReserva() {
     var x = parseInt(id);
     //alert(x);
     $.post("rc", {"op": 12, "idreserva": x}, function (data) {
-        //alert(data);
+        alert(data);
         var w = JSON.parse(data);
         alert(w);
-        if (w.length > 0) {
+        /**if (w.length > 0) {
             //$("#reservado tbody tr").remove();// limpiamos la tabla 
             //enviamos valores a los input's
             $("#codigo_r").val(w[0].codigo);
@@ -29,9 +29,7 @@ function mostrarDatosReserva() {
         } else {
             var toastContent = $('<span class="yellow-text"><b>Oops! Ocurrio Algo</b></span>');
             Materialize.toast(toastContent, 1800);
-            var toastContent = $('<span class="yellow-text"><b></b></span>');
-            Materialize.toast(toastContent, 1800);
-        }
+        }*/
     });
 }
 
