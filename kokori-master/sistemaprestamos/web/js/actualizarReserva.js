@@ -1,37 +1,41 @@
 $(document).ready(function () {
-    mostrarDatosReserva();
-    $("#codigo_r").val("Hol akevin");
+    mostrarDatosByReserva();
+    //mostrarProdByReserva();
 });
 
 var arregloReserva = new Array();// arreglo para guardar los datos de la reserva
 
 var arregloProductoByIdDr = new Array();// arreglo para guardar los iddr(id de detalle reserva)
 
-function mostrarDatosReserva() {
+function mostrarDatosByReserva() {
+
     var id = $("#idresquebin").val();
     var x = parseInt(id);
-    //alert(x);
-    $.post("rc", {"op": 12, "idreserva": x}, function (data) {
+    //funcion get para los primero datos
+    $.get("rc", {"op": 12, "idreserva": x}, function (data) {
         alert(data);
         var w = JSON.parse(data);
-        alert(w);
-        /**if (w.length > 0) {
-            //$("#reservado tbody tr").remove();// limpiamos la tabla 
-            //enviamos valores a los input's
-            $("#codigo_r").val(w[0].codigo);
-            $("#nombres_r").val(w[0].nombres + " " + w[0].apellidos);
-            $("#idprofesor").val(w[0].idprofesor);//valor oculto ID
-            $("#aula_r").val(w[0].aula);
-            $("#fe_prestamo_r").val(w[0].fe_prestamo);
-            $("#h_prestamo_r").val(w[0].h_prestamo);
-            $("#fe_devolucion_r").val(w[0].fe_devolucion);
-            $("#h_devolucion_r").val(w[0].h_devolucion);
-        } else {
-            var toastContent = $('<span class="yellow-text"><b>Oops! Ocurrio Algo</b></span>');
-            Materialize.toast(toastContent, 1800);
-        }*/
+        $("#reservado tbody tr").remove();// limpiamos la tabla 
+        //enviamos valores a los input's
+        $("#codigo_r").val(w[0].codigo);
+        $("#nombres_r").val(w[0].nombres + " " + w[0].apellidos);
+        $("#idprofesor").val(w[0].idprofesor);//valor oculto ID
+        $("#aula_r").val(w[0].aula);
+        $("#fe_prestamo_r").val(w[0].fe_prestamo);
+        $("#h_prestamo_r").val(w[0].h_prestamo);
+        $("#fe_devolucion_r").val(w[0].fe_devolucion);
+        $("#h_devolucion_r").val(w[0].h_devolucion);
+        //mostramos los datos de lista
+        $.get("rc", {"op": 9, "idreserva": x}, function (dtos) {
+            alert(dtos);
+            var y = JSON.parse(dtos);
+            for (var i = 0; i < y.length; i++) {
+                $("#reservado").append("<tr><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!'><i class='material-icons'>delete_sweep</i></a></td></tr>");
+            }
+        });
     });
 }
+
 
 
 
