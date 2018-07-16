@@ -58,14 +58,14 @@ public class Test {
         //listar();
         //delete();
         //update();
-        ate();
+        //ate();
         //validar();
         //read();
         //jip();
         //nop();
     }
     static void listar(){
-        System.out.println(g.toJson(ko.ko()));
+        System.out.println(g.toJson(kop.listarDevolucion()));
     }
 
     static void conexion() {
@@ -117,7 +117,7 @@ public class Test {
     static void nop()
     {
 List<Map<String, Object>> lista = new ArrayList<>();
-lista = ko.liko();
+lista = po.listt();
         System.out.println(lista);
         System.out.println(lista.size());
     }

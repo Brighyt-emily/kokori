@@ -88,8 +88,7 @@
                         <i class="large material-icons">settings</i>
                     </a>
                     <ul>
-                        <li><a class="btn-floating #f06292 red lighten-2 modal-trigger " href='#' onclick=""><i class="material-icons">add</i></a></li>
-                        <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#' ><i class="material-icons">assignment</i></a></li>
+                        <li><a class="btn-floating #f06292 green lighten-2 modal-trigger" href='#modal8' onclick="okp()"><i class="material-icons">assignment</i></a></li>
                     </ul>
                 </div>
             </div>
@@ -131,6 +130,49 @@
             <a  class="modal-action modal-close btn btn-primary teal" id="regis">Registrar</a>
         </div>
     </div> 
+    
+    
+    
+    
+    
+    <div id="modal8" class="modal s12 m12 l12" style="max-width: 530px;">
+              
+        <div class="modal-content">
+                   <label for="tipos">Tipos</label>
+
+                     <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
+                         <form id="contact" method="post" class="form" role="form" >
+                            <div class="row">
+                               
+                                    <div class="col s6">
+                                         <table class="table highlight centered" id="tabp">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Producto</th>
+                                                <th>Codigo</th>
+                                                <th>Detalle</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody> 
+                                        </tbody>
+                                        
+                                    </table> 
+                                    </div>
+                                    
+                                </div>
+                                
+                    
+                </div>
+                </div>
+                <div class="modal-footer">
+                    
+                  <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+
+                </div>
+                     </div>
+    
     <div class="left-sidebar-hover"></div>
     
 
