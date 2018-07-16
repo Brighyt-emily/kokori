@@ -5,6 +5,9 @@
  */
 package pe.edu.upeu.presup.dao;
 
+import java.util.List;
+import java.util.Map;
+import pe.edu.upeu.presup.controller.Devo;
 import pe.edu.upeu.presup.entity.Devon;
 import pe.edu.upeu.presup.entity.Prestamo;
 
@@ -14,4 +17,5 @@ import pe.edu.upeu.presup.entity.Prestamo;
  */
 public interface DevoDao {
     int create(Devon d);
+    List<Map<String, Object>> listt();
 }

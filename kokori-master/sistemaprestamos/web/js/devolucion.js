@@ -149,3 +149,17 @@ $("#nomp").keyup(function () {
     }
 });
 
+function okp()
+{
+    $.post("de",{"opc":6},function(data)
+    {
+        var x=JSON.parse(data);
+        
+        for (var i = 0; i < x.length; i++) {
+            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+ x[i].cod+"</td><td>"+x[i].detal+"</td></tr>"); 
+             
+        }    
+       
+    });
+}
+

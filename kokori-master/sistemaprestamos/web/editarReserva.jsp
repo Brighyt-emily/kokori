@@ -31,7 +31,7 @@
                         <div class="col s2">
                             <label for="codigo_r">Codigo Docente</label>
                             <div class="input-field">
-                                <input id="codigo_r" type="text" class="validate" disabled="true">
+                                <input id="codigo_r" type="text" class="validate" readonly="readonly">
                             </div>
                         </div>
                         <div class="col s4">

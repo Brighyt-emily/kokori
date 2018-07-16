@@ -189,38 +189,6 @@ public class ReservaDaoImp implements ReservaDao {
     }
 
     @Override
-    public List<Map<String, Object>> buscarReservaById(int key) {
-        List<Map<String, Object>> data = new ArrayList<>();
-        try {
-            cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call buscarReservaById(?)}");
-            cst.setInt(1, key);
-            rs = cst.executeQuery();
-            while (rs.next()) {
-                Map<String, Object> map = new HashMap<>();
-                map.put("idres", rs.getInt("idreserva"));
-                map.put("fdevolucion", rs.getString("fe_devolucion"));
-                map.put("aula", rs.getString("aula"));
-                map.put("fprestamo", rs.getString("fe_prestamo"));
-                map.put("hdevo", rs.getTime("h_devolucion"));
-                map.put("hpresta", rs.getTime("h_prestamo"));
-                map.put("iddr", rs.getInt("iddetalle_reserva"));
-                map.put("idprofe", rs.getInt("idprofesor"));
-                map.put("codprofe", rs.getString("codigo"));
-                map.put("nomprofe", rs.getString("nombres"));
-                map.put("apelprofe", rs.getString("apellidos"));
-                map.put("idprod", rs.getInt("idproducto"));
-                map.put("nomprod", rs.getString("nombre"));
-                map.put("codprod", rs.getString("codigo"));
-                data.add(map);
-            }
-        } catch (SQLException e) {
-            System.out.println("Error : " + e);
-        }
-        return data;
-    }
-
-    @Override
     public int actualizarReserva(Reserva r) {
         int x = 0;
         try {
@@ -277,6 +245,29 @@ public class ReservaDaoImp implements ReservaDao {
                 data.add(map);
             }
                     
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return data;
+    }
+
+    @Override
+    public List<Map<String, Object>> buscarProdReservaById(int key) {
+        List<Map<String, Object>> data = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call buscarProdReservaById(?)}");
+            cst.setInt(1, key);
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Map<String, Object> map  = new HashMap<>();
+                map.put("idreserva", rs.getInt("idreserva"));
+                map.put("iddr", rs.getInt("iddetalle_reserva"));
+                map.put("idproducto", rs.getInt("idproducto"));
+                map.put("nomprod", rs.getString("nombre"));
+                map.put("codprod", rs.getString("codigo"));
+                data.add(map);
+            }
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }

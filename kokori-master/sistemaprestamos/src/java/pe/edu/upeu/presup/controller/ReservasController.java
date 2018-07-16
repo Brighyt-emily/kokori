@@ -109,7 +109,7 @@ public class ReservasController extends HttpServlet {
                 break;
             case 9:
                 int idqueb = Integer.parseInt(request.getParameter("idreserva"));
-                out.println(g.toJson(rd.buscarReservaById(idqueb)));
+                out.println(g.toJson(rd.buscarProdReservaById(idqueb)));
                 break;
                 
             case 10:
@@ -133,7 +133,7 @@ public class ReservasController extends HttpServlet {
                 
             case 12:
                 int idreq = Integer.parseInt(request.getParameter("idreserva"));
-                out.println(rd.listarReservaById(idreq));
+                out.println(g.toJson(rd.listarReservaById(idreq)));
                 break;
         }
     }

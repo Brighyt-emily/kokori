@@ -65,6 +65,8 @@ public class Devo extends HttpServlet {
                case 5:
                     out.println(g.toJson(d.ListarProductosByFecha(request.getParameter("fecha"),request.getParameter("nom"),request.getParameter("ape"))));
                     break;
+               case 6: out.print(g.toJson(k.listt()));
+               break;
                    
            }
         }
