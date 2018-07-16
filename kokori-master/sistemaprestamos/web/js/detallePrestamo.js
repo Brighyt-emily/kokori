@@ -44,7 +44,7 @@ function detalleSeleccionado(id_profe) {
 
         }
     });
-}
+} 
 
 function listarproducto(idprestamo) {
     $('.modal-trigger').leanModal();
