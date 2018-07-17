@@ -92,46 +92,29 @@
     </div> 
     <!--Fin del MODAL N°1 LISTADO DE PRODUCTOS-->
     
-    <!--
-    <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px; max-height: 400px">
-        <div class="modal-content">
-            <h5>Observación del Producto:</h5>
-             <div class="form-group">
-                <div class="input-field">
-                <input type="text" name="tipo"  id="lop">
-                <label for="tiip">Detalle</label>
-                </div>
-             </div>                    
-        </div>
-        <div class="form-group centered" style="padding-bottom:20px; padding-left: 20px; ">
-            <a  class="modal-action modal-close btn btn-primary blue" href="Productos.jsp">Estado del producto</a>
-            <a  class="modal-action modal-close btn btn-primary teal" id="regis">Guardar</a>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-        </div>
-    </div> 
-    -->
-    
     <!--MODAL N°8-->
     <div id="modal8" class="modal s12 m12 l12" style="max-width: 530px;">        
         <div class="modal-content">
-            <label for="tipos">Tipos</label>
+            <h5 for="tipos">PRODUCTOS CON OBSERVACIONES</h5>
                 <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
                     <form id="contact" method="post" class="form" role="form" >
                     <div class="row">
-                        <div class="col s6">
-                        <table class="table highlight centered" id="tabp">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Producto</th>
-                                <th>Codigo</th>
-                                <th>Detalle</th>                    
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                        </table> 
+                        <div class="col l12 m12 s12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <table class="table highlight centered" id="tabp">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Producto</th>
+                                            <th>Codigo</th>
+                                            <th>Detalle</th>                    
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                    </table> 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
