@@ -6,6 +6,7 @@ $(document).ready(function () {
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
         var x = JSON.parse(data);
+        alert(data);
         $("#tablaPrestamo tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
             if (x[i].estado === 0) {
