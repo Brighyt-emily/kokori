@@ -6,8 +6,6 @@ $(document).ready(function () {
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
         var x = JSON.parse(data);
-        alert(data);
-
         $("#tablaPrestamo tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
             if (x[i].estado === 0) {
@@ -107,7 +105,7 @@ function productoSeleccionado(x){
 
             }
         $("#tablaDetalle").append("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td>\n\
-        <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex)'>highlight_off</button></td></tr>");
+        <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex,"+y.idP+")'>highlight_off</button></td></tr>");
         document.getElementById("bt"+y.idP+"").style.color = 'green';
         }
      });
@@ -169,8 +167,10 @@ function VerificacionReserva(){
         }
         
 }
-function eliminarEquipo(x){
+function eliminarEquipo(x,y){
     document.getElementById("tablaDetalle").deleteRow(x);
+    document.getElementById("bt"+y+"").style.color = 'lightblue';
+    
     
 }
 
