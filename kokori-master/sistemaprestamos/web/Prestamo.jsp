@@ -88,11 +88,11 @@
                                                         <label for="responsable">Alumno</label>
                                                         <input type="text" name="responsable" id="responsable" required>
                                                     </div>
-                                                    <div class="col s10 " >
-                                                        <i class="material-icons prefix">chrome_reader_mode</i>
-                                                        <label for="responsable">Alumno</label>
-                                                        <select id="docu"  onmessage="Documento Responsable">
-                                                        </select>                                                       
+                                                    <div class="input-field col s12">
+                                                        <select id="docu">
+                                                        </select>
+                                                        <!-- <i class="material-icons prefix">chrome_reader_mode</i-->
+                                                         <label >Documento</label>
                                                     </div>      
 
                                                 </div>
