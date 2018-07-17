@@ -236,16 +236,19 @@
                                 <i class="material-icons green-text" style="height:10px; ">assignment_ind</i>Prestamos</a></li>
                          <li class="no-padding"><a class="waves-effect waves-grey" href="reservas.jsp" >
                         <i class="material-icons blue-text" style="height:10px;">assignment</i>Reservas</a></li>
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="DetallePrestamos.jsp">
                         <i class="material-icons red-text" style="height:10px;">business_center</i>Reportes</a></li>
                         
                         <li class="no-padding"><a class="waves-effect waves-grey" href="registrarProfesores.jsp"  >
-                        <i class="material-icons" style="height:10px;">add_circle</i>Añadir Profesor</a></li>
+                        <i class="material-icons blue-text" style="height:10px;">add_circle</i>Añadir Profesor</a></li> 
                         
                         <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp" >
                         <i class="material-icons" style="height:10px;">folder_shared</i>Gestion Profesor</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp" >
                         <i class="material-icons" style="height:10px;">laptop_windows</i>Gestion Productos</a></li>
+                        
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="devolucion.jsp"  >
+                        <i class="material-icons blue-text" style="height:10px;">dvr</i>Devolución</a></li> 
                         
                         <!--colapso :,v
                         <li class="no-padding">
