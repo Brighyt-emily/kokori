@@ -82,19 +82,20 @@ public class ProductoDaoImp implements ProductoDao {
             cst = cx.prepareCall("{call searchId(?)}");
             cst.setInt(1, key);
             rs = cst.executeQuery();
-            while(rs.next()){
-                
-               p.setIdP(rs.getInt("idproducto"));                
-               p.setNom(rs.getString("nombre"));                
-               p.setCod(rs.getString("codigo"));
-               p.setEst(rs.getInt("estado"));
-               p.setiTip(rs.getInt("idtipo"));
+            while (rs.next()) {
+
+                p.setIdP(rs.getInt("idproducto"));
+                p.setNom(rs.getString("nombre"));
+                p.setCod(rs.getString("codigo"));
+                p.setEst(rs.getInt("estado"));
+                p.setiTip(rs.getInt("idtipo"));
             }
         } catch (SQLException e) {
-            System.out.println("ERROR:"+ e);
+            System.out.println("ERROR:" + e);
         }
         //call searchId(4);
-        return p;           }
+        return p;
+    }
 
     @Override
     public List<Producto> readAll() {
@@ -132,7 +133,8 @@ public class ProductoDaoImp implements ProductoDao {
         } catch (SQLException e) {
             System.out.println("ERROR" + e);
         }
-        return x; }
+        return x;
+    }
 
     @Override
     public List<Producto> ko() {
@@ -145,31 +147,33 @@ public class ProductoDaoImp implements ProductoDao {
                 Producto p = new Producto();
                 p.setiTip(rs.getInt("idtipo"));
                 p.setNomTip(rs.getString("nom_tipo"));
-               
+
                 fui.add(p);
             }
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
         }
-        return fui;    }
+        return fui;
+    }
 
     @Override
     public List<Map<String, Object>> liko() {
-List<Map<String, Object>> lista = new ArrayList<>();
+        List<Map<String, Object>> lista = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
             cst = cx.prepareCall("{call listarTipo()}");
             rs = cst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 Map<String, Object> map = new HashMap<>();
                 map.put("no", rs.getString("nom_tipo"));
-                map.put("st",  rs.getString("stock"));
+                map.put("st", rs.getString("stock"));
 
                 lista.add(map);
             }
         } catch (SQLException e) {
-            System.out.println("ERROR: "+e);
+            System.out.println("ERROR: " + e);
         }
-        return lista;    }
+        return lista;
+    }
 
 }

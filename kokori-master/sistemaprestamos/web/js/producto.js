@@ -62,11 +62,13 @@ function jip()
 
 function modal(){
    $('.modal-trigger').leanModal();
-    $.post("pro",{ "op":1}, function (data) {
+    $.post("pro",{ "op":8}, function (data) {
             var w = JSON.parse(data);
             for (var i = 0; i < w.length; i++) {  
                 $("#combin").append(
+                       
 		"<option value='"+w[i].iTip+"'>"+w[i].nomTip+"</option>");
+         
             }
             $("#combin").material_select();
         });
