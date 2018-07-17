@@ -107,42 +107,8 @@
                             <div class="res-not-found">No results found</div>
                         </div>
                         <div class="col s12 m4 search-result-container">
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img src="assets/images/profile-image-1.png" alt="" class="circle responsive-img z-depth-1">
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            Search <span class="search-text search-result-highlight"></span><br><span class="secondary-search-text">Last active 2 days ago</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img src="assets/images/profile-image-3.jpg" alt="" class="circle responsive-img z-depth-1">
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            News about <span class="search-text search-result-highlight"></span><br><span class="secondary-search-text">23 Blogs</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-transparent">
-                                <div class="row valign-wrapper">
-                                    <div class="col s3">
-                                        <img src="assets/images/profile-image.png" alt="" class="circle responsive-img z-depth-1">
-                                    </div>
-                                    <div class="col s9">
-                                        <span class="search-result-text">
-                                            Tom King (Works at <span class="search-text search-result-highlight"></span>)<br><span class="secondary-search-text">Avaible for freelance work</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                           
+                          
                         </div>
                         <div class="col s12 m4 search-result-container">
                             <div class="card card-transparent ">
