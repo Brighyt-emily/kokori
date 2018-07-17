@@ -104,6 +104,7 @@
     <div id="modal1" class="modal s12 m12 l12" style="max-width: 350px;">
         <div class="modal-content" id="caja">
         <h5>Productos</h5>
+        <hr>
         <div id="cuerpo">
             
         </div>
