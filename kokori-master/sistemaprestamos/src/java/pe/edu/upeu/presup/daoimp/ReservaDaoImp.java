@@ -67,6 +67,7 @@ public class ReservaDaoImp implements ReservaDao {
                 map.put("codigo", rs.getString("codigo"));
                 map.put("nomTipo", rs.getString("nom_tipo"));
                 map.put("stock", rs.getInt("stock"));
+                map.put("estado", rs.getInt("estado"));
                 datos.add(map);
             }
         } catch (SQLException e) {

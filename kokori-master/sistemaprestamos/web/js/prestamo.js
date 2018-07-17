@@ -6,23 +6,24 @@ $(document).ready(function () {
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
         var x = JSON.parse(data);
+        alert(data);
 
         $("#tablaPrestamo tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
-            if (x[i].est === 0) {
-                var e = x[i].est = "Mal estado";
+            if (x[i].estado === 0) {
+                var e = "Mal estado";
 
             }
-            if (x[i].est === 1) {
-                var e = x[i].est = "Buen estado";
+            if (x[i].estado === 1) {
+                var e = "Buen estado";
 
             }
-            if (x[i].est === 2) {
-                var e = x[i].est = "Estado intermedio";
+            if (x[i].estado === 2) {
+                var e = "Estado intermedio";
 
             }
-            $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nom + "</td><td>" + x[i].cod + "</td><td>" + e + "</td><td>" + x[i].nomTip + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
-            <td>"+ "<button id='bt"+x[i].idP+"' class='material-icons prefix' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idP+")'>check_circle</button></td</tr>");
+            $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nomProd + "</td><td>" + x[i].codigo + "</td><td>" + e + "</td><td>" + x[i].nomTipo + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
+            <td>"+ "<button id='bt"+x[i].idProducto+"' class='material-icons prefix' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idProducto+")'>check_circle</button></td</tr>");
             
         }
     });
