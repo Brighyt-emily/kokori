@@ -8,14 +8,12 @@ var arregloReserva = new Array();// arreglo para guardar los datos de la reserva
 var arregloProductoByIdDr = new Array();// arreglo para guardar los iddr(id de detalle reserva)
 
 function mostrarDatosByReserva() {
-
+    $("#reservado tbody tr").remove();// limpiamos la tabla 
     var id = $("#idresquebin").val();
     var x = parseInt(id);
     //funcion get para los primero datos
     $.get("rc", {"op": 12, "idreserva": x}, function (data) {
-        alert(data);
         var w = JSON.parse(data);
-        $("#reservado tbody tr").remove();// limpiamos la tabla 
         //enviamos valores a los input's
         $("#codigo_r").val(w[0].codigo);
         $("#nombres_r").val(w[0].nombres + " " + w[0].apellidos);
@@ -27,9 +25,14 @@ function mostrarDatosByReserva() {
         $("#h_devolucion_r").val(w[0].h_devolucion);
         //mostramos los datos de lista
         $.get("rc", {"op": 9, "idreserva": x}, function (dtos) {
-            alert(dtos);
             var y = JSON.parse(dtos);
             for (var i = 0; i < y.length; i++) {
+                var obj = new Object();
+                obj.idreserva = y[0].idreserva;
+                obj.iddr = y[0].iddr;
+                obj.idproducto = y[0].idproducto;
+                obj.nomprod = y[0].nomprod;
+                obj.codprod = y[0].codprod;
                 $("#reservado").append("<tr><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!'><i class='material-icons'>delete_sweep</i></a></td></tr>");
             }
         });
