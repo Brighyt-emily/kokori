@@ -25,8 +25,7 @@
                            
                             <!--<li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>-->
                             <!--<li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>-->
-                            <li><a class=""><i class="material-icons">exit_to_app</i></a></li>
-                            <li><a class=""><i class="material-icons">notifications_none</i></a></li>
+                            <li><a class=""><i class="material-icons">exit_to_app</i></a></li>           
                             <li>
                                 <div class="" style="font-weight: bold;"><a class="btn-floating smoll green" style="width: 10px;height: 10px;"></a>
                                     ${sessionScope.rol} 
