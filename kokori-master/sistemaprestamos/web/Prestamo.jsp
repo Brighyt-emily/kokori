@@ -19,8 +19,8 @@
     </head>
     <body>
         <%
-          String id = request.getParameter("idr");  
-            %>
+            String id = request.getParameter("idr");
+        %>
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner">
             <div class="card">
@@ -76,11 +76,11 @@
                                                             <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
                                                         </div>                                                       
                                                     </div>
-                                                     <div class="input-field row col s10">
-                                                         <div class="input-field">
-                                                        <i class="material-icons prefix">person_pin</i>
-                                                        <input  id="profe" type="text" class="validate" disabled>
-                                                        <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
+                                                    <div class="input-field row col s10">
+                                                        <div class="input-field">
+                                                            <i class="material-icons prefix">person_pin</i>
+                                                            <input  id="profe" type="text" class="validate" disabled>
+                                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>
                                                     </div>
                                                     <div class="row center col s10 input-field">
@@ -89,8 +89,9 @@
                                                         <input type="text" name="responsable" id="responsable" required>
                                                     </div>
                                                     <div class="col s10 " >
+                                                        <i class="material-icons prefix">chrome_reader_mode</i>
+                                                        <label for="responsable">Alumno</label>
                                                         <select id="docu"  onmessage="Documento Responsable">
-                                                            
                                                         </select>                                                       
                                                     </div>      
 
