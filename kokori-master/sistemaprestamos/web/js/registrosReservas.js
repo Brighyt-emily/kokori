@@ -35,14 +35,14 @@ function listarRegistroReserva() {
                     j++;
                 }
                 if (objeto !== null) {
-                    listData.push(objeto);
+                    listData.push(objeto);//se mete el obj al arrego
                     var q = new Object();
                     q.idRev = objeto.idr;
                     q.idDRv = objeto.iddr;
                     listRepeatIddr.push(q);
                 }
             } else {
-                listData.push(objeto);
+                listData.push(objeto);// si sta vacia se me te al arreglo
                 var q = new Object();
                 q.idRev = objeto.idr;
                 q.idDRv = objeto.iddr;
