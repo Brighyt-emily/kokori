@@ -129,13 +129,13 @@ $("#btnRervar").click(function () {//funcion para guardar la reserva
                 $.post("rc", {"listProductos": prods, "iddr": idreserva, "op": 5}, function (data) {
                     if (data > 0) {
                         var toastContent = $('<h5 class="white-text">Reserva Realizada!</h5>');
-                        Materialize.toast(toastContent, 1850);
+                        Materialize.toast(toastContent, 1900);
                         cleanAll();
                     }
                 });
             } else {
                 var toastContent = $('<h5 class="red-text">Uy! Ocurrió un Error</h5>');
-                Materialize.toast(toastContent, 1800);
+                Materialize.toast(toastContent, 1900);
                 cleanAll();
             }
         });
