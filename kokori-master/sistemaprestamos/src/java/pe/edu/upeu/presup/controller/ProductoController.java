@@ -66,6 +66,7 @@ public class ProductoController extends HttpServlet {
                 break;
             case 7:out.println(g.toJson(pro.liko()));
                   break;
+            case 8: out.print(g.toJson(pro.ko()));
         }
         }
     }
