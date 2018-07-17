@@ -117,7 +117,7 @@
     
     <div id="modal5" class="modal s12 m12 l12" style="max-width: 350px; max-height: 400px">
         <div class="modal-content">
-        <h5>Observación del Producto:</h5>
+            <h5>Observación del Producto:</h5>
              <div class="form-group">
                 <div class="input-field">
                 <input type="text" name="tipo"  id="lop">
@@ -126,8 +126,11 @@
              </div>                    
         </div>
         <div class="form-group centered" style="padding-bottom:20px; padding-left: 20px; ">
-            <a  class="modal-action modal-close btn btn-primary blue" href="Productos.jsp">Estado producto</a>
-            <a  class="modal-action modal-close btn btn-primary teal" id="regis">Registrar</a>
+            <a  class="modal-action modal-close btn btn-primary blue" href="Productos.jsp">Estado del producto</a>
+            <a  class="modal-action modal-close btn btn-primary teal" id="regis">Guardar</a>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="cerrar" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
     </div> 
     
