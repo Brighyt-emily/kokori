@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     DatosByReserva();
 });
 
@@ -68,19 +67,22 @@ function DatosByReserva() {
         });
     });
 }
-function datosProductos() {
-    var obj = new Object();
-    $("#reservado tr").each(function () {
-        obj.idp = $(this).find("td").eq(0).html();
-        obj.nombre = $(this).find("td").eq(1).html();
-        obj.codigo = $(this).find("td").eq(2).html();
-        productosReserva.push(obj);
-    });
+var tb = document.getElementById("reservado");
+function primerosProductos() {
+    for (var i = 1; i < tb.rows.length; i++) {
+        $("#reservado tbody tr").each(function () {
+            var obj = new Object();
+            obj.idp = $(this).find("td").eq(0).html();
+            obj.nombre = $(this).find("td").eq(1).html();
+            obj.codigo = $(this).find("td").eq(2).html();
+            productosReserva.push(obj);
+        });
+    }
+    alert(JSON.stringify(productosReserva));
 }
 
 function productoSeleccionado(w) {
     $.get("rc", {"op": 3, "idProducto": w}, function (data) {
-
         var x = JSON.parse(data);
         var obj = new Object();
         obj.idp = x[0].idproducto;
@@ -123,3 +125,7 @@ function listarProdReservados() {
 function eliminar(i) {
     alert(i);
 }
+
+$("#btnRegresar").click(function (){
+    primerosProductos();
+});

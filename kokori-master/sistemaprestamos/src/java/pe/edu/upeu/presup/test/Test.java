@@ -47,7 +47,7 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       // conexion();
+        conexion();
         //create();
       //listar();
         //delete();
@@ -58,7 +58,7 @@ public class Test {
         //listar();
         //delete();
         //update();
-        ate();
+        //ate();
         //validar();
         //read();
         //jip();
