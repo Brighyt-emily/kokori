@@ -143,7 +143,6 @@
                                 </div>
                                
                                     <div class="action-btn-wrapper">
-<<<<<<< HEAD
                                         <div class=" my-custom-btn vertical">
                                             <a class="btn-large blue-grey">
                                                 <i class="large material-icons">build</i>
@@ -151,12 +150,10 @@
                                             <ul>
                                                 <li><a class="btn-floating black lighten-1" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a></li>
                                             </ul>
-=======
                                         <div class="fixed-action-btn my-custom-btn vertical">
                                             
                                            <a class="btn-floating  btn-large blue" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a>
                                             
->>>>>>> 07ff287ce71c2d2441d78ae64f50e52d9cf7771e
                                         </div>
                                     </div>
                                 </div>   
