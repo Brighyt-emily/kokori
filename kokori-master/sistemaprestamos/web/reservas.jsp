@@ -129,7 +129,7 @@
                             
                             <div class="row">                           
                                 <div class="col s12 center-align">
-                                    <div class="">
+                                    <div class="tabla-contenedor2">
                                         <table class="highlight responsive-table centered" id="tblRervado">
                                             <thead>
                                                 <tr>
