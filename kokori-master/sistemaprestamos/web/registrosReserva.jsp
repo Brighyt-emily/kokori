@@ -45,7 +45,7 @@
                                             <th>Nombres Profesor</th>
                                             <th>Codigo</th>
                                             <th>#Dni</th>
-                                            <th>Editar</th>
+                                            <th>Ver</th>
                                             <th>Eliminar</th>
                                             <th>Prestamo</th>
                                         </tr>

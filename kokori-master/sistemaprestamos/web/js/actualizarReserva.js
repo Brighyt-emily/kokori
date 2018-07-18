@@ -1,6 +1,5 @@
 $(document).ready(function () {
     DatosByReserva();
-    primerosProductos();
 });
 
 var arregloReserva = new Array();// arreglo para guardar los datos de la reserva
@@ -127,6 +126,6 @@ function eliminar(i) {
     alert(i);
 }
 
-$("#btnRegresar").click(function (){
-    
+$("#btnRegresar").click(function () {
+    primerosProductos();
 });

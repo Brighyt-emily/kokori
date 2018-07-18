@@ -146,8 +146,8 @@
                                 </div>
                                
                                     <div class="action-btn-wrapper">
-                                        <div class="fixed-action-btn my-custom-btn vertical">
-                                            <a class="btn-floating btn-large blue-grey">
+                                        <div class=" my-custom-btn vertical">
+                                            <a class="btn-large blue-grey">
                                                 <i class="large material-icons">build</i>
                                             </a>
                                             <ul>

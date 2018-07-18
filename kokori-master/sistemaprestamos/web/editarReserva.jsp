@@ -109,6 +109,17 @@
                         </div>
                         <div class="col s2"></div>
                     </div>
+                    <!--sdsdsd-->
+                    <div class="action-btn-wrapper">
+                        <div class="fixed-action-btn my-custom-btn vertical">
+                            <a class="btn-floating btn-large blue-grey">
+                                <i class="large material-icons">build</i>
+                            </a>
+                            <ul>
+                                <li><a class="btn-floating black lighten-1" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <!--Modal-->
                     <div id="modal1" class="modal modal-fixed-footer">
                         <div class="modal-content">
