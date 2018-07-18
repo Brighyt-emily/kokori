@@ -131,9 +131,7 @@ $("#btnRervar").click(function () {//funcion para guardar la reserva
                     if (data > 0) {
                         var toastContent = $('<h5 class="white-text">Reserva Realizada!</h5>');
                         Materialize.toast(toastContent, 1900);
-                        
                         cleanAll();
-                        $(location).attr('href', 'registrosReserva.jsp');
                     }
                 });
             } else {
