@@ -19,6 +19,11 @@ public class DetallePrestamo {
     public DetallePrestamo() {
     }
 
+    public DetallePrestamo(int id_prestamo, int id_prod) {
+        this.id_prestamo = id_prestamo;
+        this.id_prod = id_prod;
+    }
+    
     public DetallePrestamo(int id_prestamo, int id_prod, int cantidad, String nom_prod) {
         this.id_prestamo = id_prestamo;
         this.id_prod = id_prod;

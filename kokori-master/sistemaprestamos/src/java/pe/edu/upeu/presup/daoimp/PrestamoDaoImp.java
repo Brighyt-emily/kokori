@@ -29,10 +29,10 @@ public class PrestamoDaoImp implements PrestamoDao {
 
     @Override
     public int create(Prestamo p) {
-        int x = 0;
+        int id = 0;
         try {
             cx = Conexion.getConexion();
-            cs = cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?,?,?)}");
+            cs = cx.prepareCall("{call createPrestamo(?,?,?,?,?,?,?,?,?,?)}");
             cs.setString(1, p.getFe_prestamo());
             cs.setString(2, p.getHora_pre());
             cs.setString(3, p.getHora_devo());
@@ -42,11 +42,13 @@ public class PrestamoDaoImp implements PrestamoDao {
             cs.setInt(7, p.getId_profe());
             cs.setInt(8, p.getId_documento());
             cs.setInt(9, p.getId_user());
-            x = cs.executeUpdate();
+            cs.registerOutParameter(10, java.sql.Types.INTEGER);
+            cs.executeUpdate();
+            id = cs.getInt(10);
         } catch (SQLException e) {
             System.out.println("Error" + e);
         }
-        return x;
+        return id;
     }
 
     @Override
