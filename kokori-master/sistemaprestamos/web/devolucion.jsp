@@ -99,7 +99,7 @@
     <!--Fin del MODAL N°1 LISTADO DE PRODUCTOS-->
     
     <!--MODAL N°8-->
-    <div id="modal8" class="modal s12 m12 l12" style="max-width: 530px;">        
+    <div id="modal8" class="modal s12 m12 l12 modal-fixed-footer" style="max-width: 530px;">        
         <div class="modal-content">
             <h5 for="tipos">PRODUCTOS CON OBSERVACIONES</h5>
                 <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
