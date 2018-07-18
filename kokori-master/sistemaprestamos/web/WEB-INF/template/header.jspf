@@ -8,6 +8,16 @@
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
 <style>
+    
+    
+    @font-face{
+        font-family: Roboto;
+        src:url(css/Roboto-Regular.ttf);
+          
+    }
+    body{
+        font-family:Roboto;
+    }
     /**a:hover {
         text-decoration: none;
     }*/
@@ -25,7 +35,7 @@
         top: 0;
         width: 51%;
         height: 100%;
-        background: #eceff1;
+        background:white;
         z-index: 1000;
         -webkit-transform: translateX(0);
         -ms-transform: translateX(0);

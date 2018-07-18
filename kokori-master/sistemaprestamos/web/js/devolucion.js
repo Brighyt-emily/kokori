@@ -79,7 +79,9 @@ function datosModal(fe,no,ape){
         $("#caja").append("<form action='#' class='form' id='cuerpo'></form>")
         lista.push(x);
         var a="a";
+        
         for (var i = 0; i < x.length; i++) {
+            kio=lista[0][i].idP;
             $("#cuerpo").append("<p><label><input type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idP+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' id="+(a+lista[0][i].idP)+">");  
         }
         //BOTON 'DEVOLVER'//
@@ -103,7 +105,8 @@ function Aceptar(fe,no,ape){
             var checkbox=$("#"+i).val(); 
             var texto=$("#a"+i).val();  
             if(texto===""){
-                $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
+                
+                $.post("de",{"idprestamo":checkbox,"estado":0,"idproducto":kio,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
@@ -112,7 +115,7 @@ function Aceptar(fe,no,ape){
     		continue;
             }else{
 	    	map.set(checkbox,texto);
-                $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
+                $.post("de",{"idprestamo":checkbox,"estado":0,"idproducto":kio,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();

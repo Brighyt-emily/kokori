@@ -53,8 +53,18 @@ public class PrestamoDaoImp implements PrestamoDao {
 
     @Override
     public int update(Prestamo p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cs = cx.prepareCall("{call updatePrestamo(?,?,?)}");
+            cs.setInt(1, p.getIdprestamo());
+            cs.setInt(2, p.getEstado());
+            cs.setInt(3, p.getIdproducto());
+            x = cs.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e);
+        }
+        return x;}
 
     @Override
     public List<Prestamo> readAll() {

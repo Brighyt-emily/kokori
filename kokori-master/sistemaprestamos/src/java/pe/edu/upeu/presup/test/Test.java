@@ -58,7 +58,7 @@ public class Test {
         //listar();
         //delete();
         //update();
-        //ate();
+        ate();
         //validar();
         //read();
         //jip();
@@ -92,15 +92,9 @@ public class Test {
     }
 
     static void ate() {
-        Producto lop = new Producto(3,1);
-        int p=lop.getEst();
-        System.out.println(p);
-        System.out.println(g.toJson(lop));
-        if (ko.update(lop) > 0) {
-            System.out.println("c:");
-        } else {
-            System.out.println(":c");
-        }
+        Prestamo huma=new Prestamo(2,0,2);
+        System.out.println(g.toJson(kop.update(huma)));
+        
     }
 
     static void validar() {
