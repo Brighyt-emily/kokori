@@ -84,7 +84,7 @@ $("#registrarPrestamo").click(function () {
     });
     }
     Materialize.toast("Prestamo exitoso", 1980); 
-  //  setTimeout("location.href='Prestamo.jsp'", 2000);
+    setTimeout("location.href='Prestamo.jsp'", 2000);
         }
      
     }
