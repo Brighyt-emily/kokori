@@ -16,9 +16,21 @@
 
 
         <%@include file="WEB-INF/template/Principal.jspf" %>
+        
         <!--INICIO Contenido -->
         <main class="mn-inner" >
+            <nav class="teal lighten-2" style="margin-top: -20px;">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="tablaProfesores.jsp" class="breadcrumb">Gestion Profesor</a>
+                        <a href="RegistrarProfesores.jsp" class="breadcrumb">Añadir Profesor
+                        </a>
+                       
+                    </div>
+                </div>
+            </nav>
             <div class="col s12">
+                
                 <div class="action-btn-wrapper">
                     <div class="fixed-action-btn my-custom-btn vertical">
                         <a class="btn-floating btn-large red">
@@ -40,10 +52,6 @@
                 </div>
                 <div class="col s12 m12 l12">
                     <div class="card" style="padding:20px;">
-
-                        <i class="material-icons">add_circle</i>
-
-                        Añadir Profesor   
 
                         <div class="card-content">
 
@@ -151,7 +159,7 @@
 
                                 </div>
                                 <div class="col s2">
-                                    <button class="btn-large light-blue darken-4" type="submit" name="action" id="btnRegistrar">Registrar
+                                    <button class="btn-large teal lighten-2" type="submit" name="action" id="btnRegistrar">Registrar
                                         <i class="material-icons right">save</i>
                                     </button>
                                 </div>
