@@ -33,7 +33,7 @@ $("#btnBuscar").click(function () {
 function listarProducto() {
     $("#tblProductos tbody tr").remove();
     $.get("rc", {"op": 2}, function (data) {
-        alert(data);
+        console.log(data);
         var w = JSON.parse(data);
         for (var i = 0; i < w.length; i++) {
             $("#tblProductos").append("<tr><td>" + w[i].idProducto + "</td><td>"

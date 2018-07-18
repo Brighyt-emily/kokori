@@ -45,18 +45,10 @@
                 <nav class="blue-grey darken-1">
                     <div class="nav-wrapper row">
                         
-                        <div class="header-title col s3">      
-                          
-                            <a class="brand-logo"><img class="responsive-img" src="images/logo.png" width="80" heigth="80"></a>
+                        <div class="header-title col s3">                                
+                            <a class="brand-logo">PRESUP</a>
                         </div>
-                          
                         
-                        
-                        
-                        <!--INICIO Notificaciones-->
-                     
-                        
-                        <!--FINs Notificaciones-->
                     </div>
                 </nav>
             </header>
@@ -103,38 +95,7 @@
                                                         </div>
                                                 </div>
                                                 
-                                        </div>
-                            
-                      
-                          
-                                        <div class="col l12 m12 s12">
-                                            <div class="menu-title">
-                                                <div class="container">
-                                              
-                                                 </div>
-                                                
-                                                <i class="material-icons tiny">work</i>Profesor<br/>
-                                                <div class="grey-text" style="margin-bottom:10px;">
-                                                    Gestion Profesores
-                                                </div>
-                                            </div>
-                                          
-                                            <div class="container">
-                                                <div class="row center">
-                                                    <div class="col s6">
-                                                        <a href="registrarProfesores.jsp"  class="btn-floating btn-large waves-effect waves-light blue-grey" style="margin-bottom:20px;">
-                                                            <i class="material-icons" >person_add</i></a>
-                                                        <p class="title bold">Registrar Profesor</p>
-                                                    </div>
-                                                    <div   class="col s6">
-                                                        <a href="tablaProfesores.jsp"  class="btn-floating btn-large waves-effect waves-light blue-grey" style="margin-bottom:20px;">
-                                                            <i class="material-icons">library_books</i></a>
-                                                        <p class="title bold">Reporte Profesor</p>
-                                                    </div>    
-                                                                                                        
-                                                </div>
-                                            </div>
-                                            
+                                        </div>                                                                                                                  
                                         </div>
                     </div>
                 </div>

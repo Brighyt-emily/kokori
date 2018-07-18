@@ -142,29 +142,15 @@
                                     </div>
                                 </div>
                                
-                                    <div class="action-btn-wrapper">
-                                        <div class=" my-custom-btn vertical">
-                                            <a class="btn-large blue-grey">
-                                                <i class="large material-icons">build</i>
-                                            </a>
-                                            <ul>
-                                                <li><a class="btn-floating black lighten-1" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a></li>
-                                            </ul>
-                                        <div class="fixed-action-btn my-custom-btn vertical">
-                                            
-                                           <a class="btn-floating  btn-large blue" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a>
-                                            
-                                        </div>
-                                    </div>
-                                </div>   
+                                      
                             <div class="row centered">  
                                
-                                <div class="col s6">
+                                <div class="col s6 centered">
                                     <button class="btn teal lighten-2" type="submit" name="action" id="btnRervar">Reservar
                                         <i class="material-icons right">save</i>
                                     </button>
                                 </div>
-                                <div class="col s6">
+                                <div class="col s6 centered">
                                     <button class="btn grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
                                         <i class="material-icons right ">delete_forever</i>
                                     </button>
