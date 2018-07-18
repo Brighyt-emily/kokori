@@ -27,7 +27,7 @@
           
             <div class="row">
                 <div class="col s8">
-                    <div class="card">
+                    <div class="card" style="margin-top: 40px;">
                         <div class="card-content">
                             <div class="row">
                                 
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col s2">
                                     <div class="input-field">
-                                        <a class="btn-floating btn-tyni red" id="btnBuscar"><i class="material-icons">search</i></a>
+                                        <a class="btn red" id="btnBuscar">Buscar</a>
                                     </div>
                                 </div>
                                 <div class="col s6">
@@ -88,9 +88,8 @@
                                 <div class="col s4">
                                     <label>Hora de Prestamo</label>
                                     <div class="input-field">
-                                        <i class="material-icons prefix">access_time</i>
-                                        <label for="h_prestamo">00:00</label>
-                                        <input type="text" required name="h_prestamo" id="h_prestamo" maxlength="5">
+                                        <i class="material-icons prefix">access_time</i>                                        
+                                        <input type="time" required name="h_prestamo" id="h_prestamo" maxlength="5">
                                     </div>
                                 </div>
                                 
@@ -105,9 +104,8 @@
                                 <div class="col s4">
                                     <label>Hora de Devolucion</label>
                                     <div class="input-field">
-                                        <i class="material-icons prefix">access_alarms</i>
-                                        <label for="h_devolucion">00:00</label>
-                                        <input type="text" name = "h_devolucion"required id="h_devolucion" maxlength="5">
+                                        <i class="material-icons prefix">access_alarms</i>                                        
+                                        <input type="time" name = "h_devolucion"required id="h_devolucion" >
                                     </div>
                                 </div>                                                                
                             </div>                                                                                    
@@ -118,15 +116,14 @@
                 
                 
                 <div class="col s4">
-                    <div class="card">
+                    <div class="card" style="margin-top: 40px;">
                         <div class="card-content">
                             <div class="row">
                                 <div class="col s12 center-align">
                                     <a class="waves-effect waves-light btn modal-trigger btn-large grey darken-3" href="#modal1">Seleccionar Productos
                                         <i class="material-icons right">add_circle_outline</i></a>
                                 </div>                                                                
-                            </div>
-                            
+                            </div>                            
                             <div class="row">                           
                                 <div class="col s12 center-align">
                                     <div class="tabla-contenedor2">
@@ -146,6 +143,7 @@
                                 </div>
                                
                                     <div class="action-btn-wrapper">
+<<<<<<< HEAD
                                         <div class=" my-custom-btn vertical">
                                             <a class="btn-large blue-grey">
                                                 <i class="large material-icons">build</i>
@@ -153,6 +151,12 @@
                                             <ul>
                                                 <li><a class="btn-floating black lighten-1" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a></li>
                                             </ul>
+=======
+                                        <div class="fixed-action-btn my-custom-btn vertical">
+                                            
+                                           <a class="btn-floating  btn-large blue" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a>
+                                            
+>>>>>>> 07ff287ce71c2d2441d78ae64f50e52d9cf7771e
                                         </div>
                                     </div>
                                 </div>   
@@ -170,11 +174,8 @@
                                 </div>
                             </div>                    
                         </div>               
-                        </div>
-                        
-                      
-                                               
-            </div>
+                        </div>                                                                                             
+                </div>
             
             
                     <!-- nuevo diseño-->
@@ -229,6 +230,7 @@
              
             <div class="left-sidebar-hover"></div>
         </main>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>

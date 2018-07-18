@@ -21,24 +21,30 @@
 
     <!--INICIO Devolucion.jsp -->
     <main class="mn-inner">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="page-title">Devolucion</div>
+        <nav class="teal lighten-2" style="margin-top: -20px;">
+            <div class="nav-wrapper">
+                <div class="col s12">
+                    <a href="devolucion.jsp" class="breadcrumb">Devolución</a>
+                     
+                </div>
             </div>
+        </nav>
+        <div class="row">          
             <div class="col s12 m12 l12">
                 <div class="card">
-                    <div class="col s12">
-                        <div class="col s10">
-                            <div class="input-field">
-                                <i class="material-icons prefix" style="color: black">search</i>
-                                <label for="nomp">Buscar</label>
-                                <input type="text" name="nomp" required id="nomp" style="width: 320px">
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
+                                <div class="col s4">
+                                    
+                                        <div class="input-field">
+                                            <i class="material-icons prefix">search</i>
+                                            <label for="nomp">Buscar</label>
+                                            <input type="text" name="nomp" required id="nomp" >
+                                        </div>
+                                   
+                                </div>
                                 <table class="table highlight centered" id="tb_prestamos">
                                     <thead>
                                         <tr>

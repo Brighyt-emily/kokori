@@ -84,7 +84,7 @@ $("#registrarPrestamo").click(function () {
     });
     }
     Materialize.toast("Prestamo exitoso", 1980); 
-  //  setTimeout("location.href='Prestamo.jsp'", 2000);
+    setTimeout("location.href='Prestamo.jsp'", 2000);
         }
      
     }
@@ -141,7 +141,7 @@ function ListarDoc() {
 function VerificacionReserva(){
         var x = $("#ress").val();
         if(x!=="null"){
-           $.get("Pc", {"idd":x,"opc": 11}, function (data) {
+            $.get("Pc", {"idd":x,"opc": 11}, function (data) {
             var y = JSON.parse(data);
             var e;
             for (var i = 0; i < y.length; i++) {
@@ -159,17 +159,17 @@ function VerificacionReserva(){
             }
                 $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td>\n\
                 <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex)'>highlight_off</button></td></tr>");
-            }
-            $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
-            var y = JSON.parse(dat);             
+                $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
+                var y = JSON.parse(dat);             
                 $("#fecha_pre").val(y.fe_prestamo);
                 $("#fechadev").val(y.fe_devolucion);
                 $("#hora_pre").val(y.hora_pre);
                 $("#hora_dev").val(y.hora_devo);
                 $("#aula").val(y.aula);
                 $("#prof").val(y.id_profe);
-                $("#profe").val(y.nom_profe);          
+                $("#profe").val(y.nom_profe);
             });
+            }
             });
         }
         
