@@ -156,7 +156,7 @@
                                         </div>
                                     </div>
                                 </div>   
-                            <div class="row">  
+                            <div class="row centered">  
                                
                                 <div class="col s6">
                                     <button class="btn teal lighten-2" type="submit" name="action" id="btnRervar">Reservar
