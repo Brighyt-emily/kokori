@@ -22,6 +22,15 @@ public class Prestamo {
     int id_documento;
     int id_user;
     String nom_profe;
+    int idproducto;
+
+    public int getIdproducto() {
+        return idproducto;
+    }
+
+    public void setIdproducto(int idproducto) {
+        this.idproducto = idproducto;
+    }
 
     public Prestamo(int idprestamo) {
         this.idprestamo = idprestamo;
@@ -44,9 +53,10 @@ public class Prestamo {
 
     
 
-    public Prestamo(int idprestamo, int estado) {
+    public Prestamo(int idprestamo, int estado, int idproducto) {
         this.idprestamo = idprestamo;
         this.estado = estado;
+        this.idproducto = idproducto;
     }
 
     public String getNom_profe() {

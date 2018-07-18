@@ -39,9 +39,10 @@ public class DevolucionDaoImp implements DevolucionDao {
         int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call updatePrestamo(?,?)}");
+            cst = cx.prepareCall("{call updatePrestamo(?,?,?)}");
             cst.setInt(1, p.getIdprestamo());
             cst.setInt(2, p.getEstado());
+            cst.setInt(3, p.getIdproducto());
             x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
