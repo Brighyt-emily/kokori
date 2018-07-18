@@ -17,16 +17,16 @@ $("#btnBuscar").click(function () {
             if (x.length > 0) {
                 $("#nombres").val(x[0].nombres + " " + x[0].apellidos);
                 $("#idprofesor").val(x[0].idProfesor);
-                var toastContent = $('<span class=" green-text"><b>Correcto !!</b></span>');
-                Materialize.toast(toastContent, 1800);
+                var toastContent = ('<span><i class="material-icons medium green-text">check</i></span><p>Codigo Correcto<p>');
+                Materialize.toast(toastContent, 1500);
             } else {
-                var toastContent = $('<span class="yellow-text"><b>Codigo mal ingresado!</b></span>');
+                var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Codigo Incorrecto<p>');
                 Materialize.toast(toastContent, 1500);
             }
         });
     } else {
-        var toastContent = $('<span class="red-text"><b>Oops!!!   Ingrese un Codigo</b></span>');
-        Materialize.toast(toastContent, 1500);
+         var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Ingrese codigo<p>');
+                Materialize.toast(toastContent, 1500);
     }
 });
 
@@ -62,8 +62,8 @@ function añadirListado(objeto) {
         var j = 0;
         while (j < listaReservados.length) {
             if (listaReservados[j].codigo === objeto.codigo) {
-                var toastContent = $('<span class="white-text"><b>Producto en lista!!</b></span>');
-                Materialize.toast(toastContent, 1800);
+                var toastContent = ('<span><i class="material-icons medium yellow-text">report</i></span><p>Producto en lista<p>');
+                Materialize.toast(toastContent, 1500);
                 j = listaReservados.length;
                 objeto = null;
             }
@@ -131,18 +131,20 @@ $("#btnRervar").click(function () {//funcion para guardar la reserva
                     if (data > 0) {
                         var toastContent = $('<h5 class="white-text">Reserva Realizada!</h5>');
                         Materialize.toast(toastContent, 1900);
+                        
                         cleanAll();
+                        $(location).attr('href', 'registrosReserva.jsp');
                     }
                 });
             } else {
-                var toastContent = $('<h5 class="red-text">Uy! Ocurrió un Error</h5>');
-                Materialize.toast(toastContent, 1900);
-                cleanAll();
+                var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Complete los datos por favor<p>');
+                Materialize.toast(toastContent, 1500);
+                
             }
         });
     } else {
-        var toastContent = $('<h5 class="white-text">Por favor rellene los datos</h5>');
-        Materialize.toast(toastContent, 1900);
+        var toastContent = ('<span><i class="material-icons medium yellow-text">report</i></span><p>Por favor complete los datos<p>');
+        Materialize.toast(toastContent, 1500);
     }
 });
 
