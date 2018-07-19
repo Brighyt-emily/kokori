@@ -4,12 +4,13 @@ $(document).ready(function () {
     deshabilitarAll();
 });
 
-var arregloReserva = new Array();// arreglo para guardar los datos de la reservaddddd
+var arregloReserva = new Array();// arreglo para guardar los datos de la reserva
 
 var arregloProductoByIdDr = new Array();// arreglo para guardar los iddr(id de detalle reserva)
 
 var productosReserva = new Array();//arreglo para guardar productos de la reserva-- productos antiguos
 
+var cantidadProd;
 
 $("#nomProducto").keyup(function () {
     var tableReg = document.getElementById('actuProd');
@@ -63,7 +64,7 @@ function DatosByReserva() {
             $.get("rc", {"op": 9, "idreserva": x}, function (dtos) {
                 var y = JSON.parse(dtos);
                 for (var i = 0; i < y.length; i++) {
-                    $("#reservado").append("<tr><td hidden>"+y[i].idreserva+"</td><td hidden>"+y[i].iddr+"</td><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
+                    $("#reservado").append("<tr><td hidden>" + y[i].idreserva + "</td><td hidden>" + y[i].iddr + "</td><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
                 }
             });
         });
@@ -81,6 +82,7 @@ function primerosProductos() {
             obj.nombre = $(this).find("td").eq(3).html();
             obj.codigo = $(this).find("td").eq(4).html();
             productosReserva.push(obj);
+            cantidadProd = productosReserva.length;// le asignamos la cantidad de productos que llegaron
         });
     }
 }
@@ -127,14 +129,15 @@ function listarProdReservados() {
 }
 
 function eliminar(i) {
-    alert("var:" + i);
+    productosReserva.splice(i, 1);
+    listarProdReservados();
 }
 
 $("#btnRegresar").click(function () {
-    $(location).attr('href','registrosReserva.jsp');
+    $(location).attr('href', 'registrosReserva.jsp');
 });
 
-$("#btnActualizar").click(function (){
+$("#btnActualizar").click(function () {
     primerosProductos();
     $("#aula_r").removeAttr('disabled');
     $("#fe_prestamo_r").removeAttr('disabled');
@@ -146,15 +149,27 @@ $("#btnActualizar").click(function (){
     $("#btnActualizar").attr("disabled", true);
 });
 
-function deshabilitarAll(){
-    $("#aula_r").attr('disabled','disabled');
-    $("#fe_prestamo_r").attr('disabled','disabled');
-    $("#h_prestamo_r").attr('disabled','disabled');
-    $("#fe_devolucion_r").attr('disabled','disabled');
-    $("#h_devolucion_r").attr('disabled','disabled');
+function deshabilitarAll() {
+    $("#aula_r").attr('disabled', 'disabled');
+    $("#fe_prestamo_r").attr('disabled', 'disabled');
+    $("#h_prestamo_r").attr('disabled', 'disabled');
+    $("#fe_devolucion_r").attr('disabled', 'disabled');
+    $("#h_devolucion_r").attr('disabled', 'disabled');
     $('#btnProd').attr("disabled", true);
 }
 
 $("#btnGuardarCambios").click(function () {
-    alert("longitud del carrito: " + JSON.stringify(productosReserva));
+    alert(JSON.stringify(productosReserva));
+    alert("cantidad de productos llegados: " + cantidadProd);
+    if (cantidadProd > productosReserva.length) {
+        alert("se agrego mas productos");
+    }
+    
+    if (cantidadProd === productosReserva.length) {
+        alert("No se toco ni madres wey");
+    }
+    
+    if (cantidadProd > productosReserva.length) {
+        alert("los productos han menorado");
+    }
 });
