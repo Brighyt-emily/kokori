@@ -48,7 +48,7 @@
                                 <table class="table highlight centered" id="tb_prestamos">
                                     <thead>
                                         <tr>
-                                            <th>Código</th>
+                                            <th>#</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>Fecha de Préstamo</th>
