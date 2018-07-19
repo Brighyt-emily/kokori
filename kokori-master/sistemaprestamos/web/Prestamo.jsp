@@ -25,6 +25,14 @@
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner" >
             <div class="card">
+                <center>
+                    <div class="wizard-header text-center" >
+                        <input id="ress" value="<%=id%>" hidden>
+                        <br>
+                        <h3 class="wizard-title" >Prestamo de equipos</h3>
+                        <p class="category">Esta informacion es importante.</p>
+                    </div>
+                </center>
                 <div class="section scrollspy" id="horizontal-stepper">
                     <div class="horizontal">
                         <ul class="stepper vertical" style="margin-left: 5%;">
@@ -112,6 +120,12 @@
                                                             <input name="hora" id="hora_dev" type="time" class="validate">
                                                         </form>
                                                     </div>                                                
+                                                    <div class="input-field col s12">
+                                                        <select id="docu">
+                                                        </select>
+                                                        <!-- <i class="material-icons prefix">chrome_reader_mode</i-->
+                                                        <label >Documento</label>
+                                                    </div>     
                                                 </div>
                                             </center>
                                         </div>
