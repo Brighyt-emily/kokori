@@ -11,6 +11,7 @@ package pe.edu.upeu.presup.entity;
  * @author  EMILY
  */
 public class Producto {
+    private int idPro;
     private int idP;
     private String nom;
     private String cod;
@@ -19,7 +20,26 @@ public class Producto {
     private String nomTip;
     private int stock;
 
+    public int getIdPro() {
+        return idPro;
+    }
+
+    public void setIdPro(int idPro) {
+        this.idPro = idPro;
+    }
+
     public Producto() {
+    }
+
+    public Producto(int idPro, int idP, String nom, String cod, int est, int iTip, String nomTip, int stock) {
+        this.idPro = idPro;
+        this.idP = idP;
+        this.nom = nom;
+        this.cod = cod;
+        this.est = est;
+        this.iTip = iTip;
+        this.nomTip = nomTip;
+        this.stock = stock;
     }
 
     public Producto(int idP, String nom, String cod, int est, int iTip) {

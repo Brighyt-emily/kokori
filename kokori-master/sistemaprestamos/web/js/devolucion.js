@@ -81,7 +81,7 @@ function datosModal(fe,no,ape){
         var a="a";
         
         for (var i = 0; i < x.length; i++) {
-            kio=lista[0][i].idP;
+            kio=lista[0][i].idPro;
             $("#cuerpo").append("<p><label><input type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idP+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' id="+(a+lista[0][i].idP)+">");  
         }
         //BOTON 'DEVOLVER'//
@@ -110,6 +110,7 @@ function Aceptar(fe,no,ape){
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
+                    alert(kio);
                     modal(fe,no,ape);
                 });
     		continue;
@@ -119,6 +120,7 @@ function Aceptar(fe,no,ape){
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
+                     alert(kio);
                    modal(fe,no,ape);
                 });
                 for (var [clave, valor] of map) {   

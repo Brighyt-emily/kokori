@@ -111,11 +111,13 @@ public class DevolucionDaoImp implements DevolucionDao {
             cst.setString(1, fe);
             cst.setString(2, nom);
             cst.setString(3, ape);
+            
             rs = cst.executeQuery();
             while(rs.next()){
                 Producto p = new Producto();
                 p.setIdP(rs.getInt("idprestamo"));
                 p.setNom(rs.getString("nombre"));
+                p.setIdPro(rs.getInt("idproducto"));
                 prod.add(p);
             }
         } catch (SQLException e) {
