@@ -93,7 +93,7 @@ function datosModal(fe,no,ape){
 //TOAST DE CONFIRMACION DE DEVOLUCION//
 function devolver(fe,no,ape){
    
-    var toastHTML = "<span>¿Está seguro de continuar?</span><br><button class='btn-flat toast-action red-text' href='#'>Cancelar</button><button class='btn-flat toast-action teal-text' onclick='Aceptar(\""+fe+"\",\""+no+"\",\""+ape+"\")'>Aceptar</button>";
+    var toastHTML = "<span>¿Está seguro de continuar?</span><br><button class='btn-flat toast-action red-text' onclick='can()'>Cancelar</button><button class='btn-flat toast-action teal-text' onclick='Aceptar(\""+fe+"\",\""+no+"\",\""+ape+"\")'>Aceptar</button>";
     Materialize.toast( toastHTML,3085);
 }
 
@@ -126,8 +126,13 @@ function Aceptar(fe,no,ape){
                 $.post("de",{"det":valor,"iddetapre":clave,"opc":3}, function(){});
     	    }
             
-        }
+        }location.reload();
     }
+}
+
+function can()
+{
+    location.reload();
 }
 
 $("#cerrar").click(function(){
