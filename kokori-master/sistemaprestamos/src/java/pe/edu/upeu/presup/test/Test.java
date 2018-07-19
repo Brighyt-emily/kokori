@@ -68,7 +68,7 @@ public class Test {
         //nop();
     }
     static void listar(){
-        System.out.println(g.toJson(dp.readDetPre(53)));
+        System.out.println(g.toJson(po.listt()));
     }
 
     static void conexion() {

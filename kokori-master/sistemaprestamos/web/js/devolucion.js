@@ -165,6 +165,7 @@ function okp()
 {
     $.post("de",{"opc":6},function(data)
     {
+        alert(data);
         var x=JSON.parse(data);
       
         for (var i = 0; i < x.length; i++) {
