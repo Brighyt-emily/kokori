@@ -196,7 +196,7 @@ function okp()
       
         for (var i = 0; i < x.length; i++) {
             console.log(data);
-            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+ x[i].cod+"</td><td>"+x[i].detal+"</td></tr>"); 
+            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+x[i].detal+"</td></tr>"); 
              
         }    
        
