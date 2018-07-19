@@ -73,11 +73,7 @@
                                                             <input type="text" name="responsable" id="responsable" required>
                                                         </div>
                                                         <div class="input-field col s12">
-                                                            <select multiple id="docu">
-                                                                <option value="" disabled selected>Choose your option</option>
-                                                                <option value="1">Option 1</option>
-                                                                <option value="2">Option 2</option>
-                                                                <option value="3">Option 3</option>
+                                                            <select id="docu">
                                                             </select>
                                                             <label >Documento</label>
                                                         </div>
@@ -119,19 +115,13 @@
                                                             <label for="hora" class="active">Hora devolucion</label>
                                                             <input name="hora" id="hora_dev" type="time" class="validate">
                                                         </form>
-                                                    </div>                                                
-                                                    <div class="input-field col s12">
-                                                        <select id="docu">
-                                                        </select>
-                                                        <!-- <i class="material-icons prefix">chrome_reader_mode</i-->
-                                                        <label >Documento</label>
-                                                    </div>     
+                                                    </div>                           
                                                 </div>
                                             </center>
                                         </div>
                                     </div>
                                     <div class="step-actions">
-                                        <input href="#account" type='button' class='waves-effect waves-dark btn blue next-step' name='next' value='Siguiente' />                              
+                                        <input location.href="#account" type='button' class='waves-effect waves-dark btn blue previous-step' name='next' value='Siguiente' />                              
                                     </div>
                                 </div>
                                 <!--Final Steep #1-->
@@ -154,7 +144,7 @@
                                                     <div class="input-field">
                                                         <i class="material-icons prefix">scanner</i>
                                                         <label for="searchpro">Equipo</label>
-                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
+                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
                                                     </div>
                                                 </div>
                                             </div>
@@ -195,8 +185,8 @@
                                         </div>
                                     </div>
                                     <div class="step-actions ">
+                                         <input href="#account" type='button' class='waves-effect waves-dark btn-flat previous-step' name='next' value='Regresar' />
                                         <input  type='button' class='waves-effect waves-dark btn blue' name='finish' value='Completar' id="registrarPrestamo" />
-                                        <input href="#account" type='button' class='waves-effect waves-dark btn-flat previous-step' name='next' value='Siguiente' />
                                     </div>
                                 </div>
                                 <!--Final Steep #2-->                          
@@ -224,158 +214,8 @@
                         </div>
                     </div> 
                 </div>
-                <!--Final Steep #1>
-                <ul class="stepper horizontal" id="horizontal">
-                    <li class="step active">
-                        <div  class="step-title waves-effect waves-dark">Datos</div>
-                        <div class="step-content" style="width: 100%; height: 100%;">
-                            <div class="row">
-                                <h5 class="info-text"> Porfavor ingresar datos requeridos.</h5>
-                                <div class="row center col s6" name="rigth">
-                                    <div class="row center col s10">                                                       
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">assignment</i>
-                                            <label for="dnipro">Ingrese DNI profesor</label>
-                                            <input id="idu" type="text" value="${sessionScope.iduser}" hidden>
-                                            <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
-                                        </div>                                                       
-                                    </div>
-                                    <div class="input-field row col s10">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix">person_pin</i>
-                                            <input  id="profe" type="text" class="validate" disabled>
-                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
-                                        </div>
-                                    </div>
-                                    <div class="row center col s10 input-field">
-                                        <i class="material-icons prefix">chrome_reader_mode</i>
-                                        <label for="responsable">Alumno</label>
-                                        <input type="text" name="responsable" id="responsable" required>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <selected id="docu" class="select-dropdown form-control">
-                                            <option value="" disabled selected>Choose your option</option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </selected>
-                <!-- <i class="material-icons prefix">chrome_reader_mode</i>
-                <label >Documento</label>
-            </div>     
-
-        </div>
-        <div class="row center col s6 " name="left">
-
-            <div class="col s10 input-field">
-                <i class="material-icons prefix">pin_drop</i>
-                <label for="aula">Aula</label>
-                <input type="text" name="aula" id="aula" required>
-            </div>
-        </div>
-        <div class="col s6 input-field">                                                        
-            <form name="fechas" id="fechas">
-                <i class="material-icons prefix active">insert_invitation</i>
-                <label for="fechawe" class="active">Fecha prestamo</label>
-                <input id="fecha_pre" name="fecha" type="date" class="validate">
-            </form> 
-        </div>
-        <div class="col s6 input-field">
-            <form name="horas" id="horas">
-                <i class="material-icons prefix active">access_time</i>
-                <label for="hor" class="active">Hora prestamo</label>
-                <input name="hora" id="hora_pre" type="time" class="validate">
-            </form>
-        </div>
-                <!--Fecha devolucion>
-                <div class="col s6 input-field">
-                    <form name="fechasdev" id="fechasdev">
-                        <i class="material-icons prefix active">insert_invitation</i>
-                        <label for="fechadev" class="active">Fecha Devolucion</label>
-                        <input id="fechadev" name="fecha_dev" type="date">
-                    </form>
-                </div>
-                <div class="col s6 input-field">
-                    <form name="horas" id="horas">
-                        <i class="material-icons prefix active">access_time</i>
-                        <label for="hora" class="active">Hora devolucion</label>
-                        <input name="hora" id="hora_dev" type="time" class="validate">
-                    </form>
-                </div>                                                
-            </div>
-        </div>
-                <!--
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn blue next-step">CONTINUE</button>
-                </div
-                </li>
-                <li class="step">
-                    <div class="step-title waves-effect waves-dark">Equipos</div>
-                    <div class="step-content">
-                        <div class="tab-pane" id="account">
-                            <h5 class="info-text">Productos </h5>
-                            <div class="row">
-                                <div class="container input-field col s12">
-                                    <div class="row center">
-                                        <div class="col s7">
-                                            <div class="input-field">
-                                                <i class="material-icons prefix">scanner</i>
-                                                <label for="searchpro">Equipo</label>
-                                                <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row center ">
-
-                                        <div class="row center col s7" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
-                                            <table class="table" id="tablaPrestamo">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">NOMBRE</th>
-                                                        <th scope="col">CODIGO</th>
-                                                        <th scope="col">ESTADO</th>
-                                                        <th scope="col">TIPO</th>
-                                                        <th scope="col">DISPONIBLE</th>
-                                                        <th scope="col">ACCION</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody></tbody>
-                                            </table>
-                                        </div>
-                                        <div class="row center col s5">
-                                            <table class="table" id="tablaDetalle" >
-                                                <thead>
-                                                    <tr>
-                                                        <th>PRODUCTO</th>
-                                                        <th>ESTADO</th>
-                                                        <th>TIPO</th>
-                                                        <th>ELIMINAR</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn blue next-step" data-feedback="someFunction">CONTINUE</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
-                        </div>
-                    </div>
-                </li>                       
-                </ul>
-            </div>
-            <div class="col hide-on-small-only m3 l2">
-                <div class="toc-wrapper" style="top: 0px;">
-                </div>
-            </div>-->
             </div>
         </main>
-
         <%@include file="WEB-INF/template/footerMain.jspf" %>
     </body>
     <script type="text/javascript">
