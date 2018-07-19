@@ -92,7 +92,7 @@ function datosModal(fe,no,ape){
 
 //TOAST DE CONFIRMACION DE DEVOLUCION//
 function devolver(fe,no,ape){
-    //BRIGHYT NO PUDE HACER QUE EL BOTON CANCELAR CERRARA EL TOAST,AYUDAME CON ESO//
+   
     var toastHTML = "<span>¿Está seguro de continuar?</span><br><button class='btn-flat toast-action red-text' href='#'>Cancelar</button><button class='btn-flat toast-action teal-text' onclick='Aceptar(\""+fe+"\",\""+no+"\",\""+ape+"\")'>Aceptar</button>";
     Materialize.toast( toastHTML,3085);
 }
@@ -110,7 +110,6 @@ function Aceptar(fe,no,ape){
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
-                    alert(kio);
                     modal(fe,no,ape);
                 });
     		continue;
@@ -120,7 +119,6 @@ function Aceptar(fe,no,ape){
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
-                     alert(kio);
                    modal(fe,no,ape);
                 });
                 for (var [clave, valor] of map) {   
@@ -131,36 +129,6 @@ function Aceptar(fe,no,ape){
         }
     }
 }
-
-
-//ESTO YA NO VALE//
-function continuar(fe,no,ape,checkbox){
-    $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
-        $("#tb_prestamos tbody tr").remove();
-        datosModal(fe,no,ape);
-        listarObject();
-        modal(fe,no,ape);
-    });
-}
-
-function observacion(fe,no,ape,checkbox)
-{
-    $('.modal-trigger').leanModal();
-    $("#regis").click(function(){
-        $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
-            $("#tb_prestamos tbody tr").remove();
-            datosModal(fe,no,ape);
-            listarObject();
-            modal(fe,no,ape);
-        });
-       var deta= $('#lop').val();
-         $.post("de",{"det":deta,"iddetapre":checkbox,"opc":3}, function(){
-        });
-       
-    });
-   
-}
-//HASTA AQUI//
 
 $("#cerrar").click(function(){
     location.reload();
@@ -187,7 +155,7 @@ $("#nomp").keyup(function () {
     }
 });
 
-//EMILY,ESTO NO SÉ QUE ES;PERO NO LO HE TOCADO//
+
 function okp()
 {
     $.post("de",{"opc":6},function(data)
@@ -195,7 +163,6 @@ function okp()
         var x=JSON.parse(data);
       
         for (var i = 0; i < x.length; i++) {
-            console.log(data);
             $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+ x[i].cod+"</td><td>"+x[i].detal+"</td></tr>"); 
              
         }    
