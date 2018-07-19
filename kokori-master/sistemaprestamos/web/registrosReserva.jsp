@@ -16,13 +16,17 @@
     <body>
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner">
+            <nav class="teal lighten-2" style="margin-top: -20px;">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="reservas.jsp" class="breadcrumb">Realizar Reserva</a>
+                        <a href="tablaProfesores.jsp" class="breadcrumb">Lista Reservas</a>  
+                    </div>
+                </div>
+            </nav>
             <div class="card">
                 <div class="card-content">
-                    <div class="row">
-                        <div class="col s12">
-                            <p><b>Lista Reservas Hechas</b><p>
-                        </div>
-                    </div>
+
                     <div class="row">
                         <div class="col s3"></div>
                         <div class="col s6">
@@ -37,15 +41,15 @@
                     <div class="row">
                         <div class="col s1"></div>
                         <div class="col s10">
-                            <div class="contenedor-tabla">
-                                <table class="striped highlight responsive-table" id="tblRegistro">
-                                    <thead id="tblRegis">
+                            <div>
+                                <table class="striped highlight responsive-table centered" id="tblRegistro">
+                                    <thead >
                                         <tr>
                                             <th>Fecha Reserva</th>
                                             <th>Nombres Profesor</th>
                                             <th>Codigo</th>
                                             <th>#Dni</th>
-                                            <th>Editar</th>
+                                            <th>Ver</th>
                                             <th>Eliminar</th>
                                             <th>Prestamo</th>
                                         </tr>

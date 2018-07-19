@@ -6,7 +6,6 @@ $(document).ready(function () {
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
         var x = JSON.parse(data);
-        alert(data);
         $("#tablaPrestamo tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
             if (x[i].estado === 0) {
@@ -47,6 +46,7 @@ $("#searchpro").keyup(function () {
     }
 });
 $("#registrarPrestamo").click(function () {
+    var produ = [];
     var alum = $("#responsable").val();
     var fe_pre = $("#fecha_pre").val();
     var fe_dev = $("#fechadev").val();
@@ -65,20 +65,32 @@ $("#registrarPrestamo").click(function () {
             Materialize.toast("No hay equipos seleccionados", 1980);
         }
         else{
-            $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function () {
-                $('#tablaDetalle tbody tr').each(function () {
-        var nom = $(this).find("td").eq(0).text();
-        $.post("DPC", {"prod": nom, "opc": 1}, function () {
-        });
-    });
+            $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function (data) {
+              alert(data);
+              var x = JSON.parse(data);
+                if(x===0){
+                    Materialize.toast("Error, prestamo no realizado!", 1980); 
+                }
+                else{
+                    $('#tablaDetalle tbody tr').each(function () {
+                    
+                    var nom = $(this).find("td").eq(0).text();
+                    produ.push(nom);
+                    });
+                    alert(produ);
+                    for (var i = 0; i < produ.length; i++) {
+                        $.post("DPC", {"idp":x,"prod": produ[i], "opc": 1}, function () {
+                        });
+                    }
+                   Materialize.toast("Prestamo exitoso", 1980); 
+                   setTimeout("location.href='Prestamo.jsp'", 2000);
+                   var idrr = $("#ress").val();
+                    if(idrr!=="null"){
+                        $.post("Pc",{"idres":idrr,"opc":8},function(){ 
+                    });
+                    }
+                }
             });
-    var idrr = $("#ress").val();
-    if(idrr!=="null"){
-        $.post("Pc",{"idres":idrr,"opc":8},function(){ 
-    });
-    }
-    Materialize.toast("Prestamo exitoso", 1980); 
-    setTimeout("location.href='Prestamo.jsp'", 2000);
         }
      
     }
@@ -105,7 +117,7 @@ function productoSeleccionado(x){
                 var e = y.est = "Estado intermedio";
 
             }
-        $("#tablaDetalle").append("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td>\n\
+        $("#tablaDetalle").append("<tr><td>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td>\n\
         <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex,"+y.idP+")'>highlight_off</button></td></tr>");
         document.getElementById("bt"+y.idP+"").style.color = 'green';
         }
@@ -135,7 +147,7 @@ function ListarDoc() {
 function VerificacionReserva(){
         var x = $("#ress").val();
         if(x!=="null"){
-           $.get("Pc", {"idd":x,"opc": 11}, function (data) {
+            $.get("Pc", {"idd":x,"opc": 11}, function (data) {
             var y = JSON.parse(data);
             var e;
             for (var i = 0; i < y.length; i++) {
@@ -151,19 +163,19 @@ function VerificacionReserva(){
                 e = "Estado intermedio";
 
             }
-                $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td>\n\
+                $("#tablaDetalle").append("<tr><td>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td>\n\
                 <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex)'>highlight_off</button></td></tr>");
-            }
-            $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
-            var y = JSON.parse(dat);             
+                $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
+                var y = JSON.parse(dat);             
                 $("#fecha_pre").val(y.fe_prestamo);
                 $("#fechadev").val(y.fe_devolucion);
                 $("#hora_pre").val(y.hora_pre);
                 $("#hora_dev").val(y.hora_devo);
                 $("#aula").val(y.aula);
                 $("#prof").val(y.id_profe);
-                $("#profe").val(y.nom_profe);          
+                $("#profe").val(y.nom_profe);
             });
+            }
             });
         }
         

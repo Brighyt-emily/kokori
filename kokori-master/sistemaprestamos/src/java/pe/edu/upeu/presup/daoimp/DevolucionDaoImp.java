@@ -27,21 +27,16 @@ public class DevolucionDaoImp implements DevolucionDao {
     private java.sql.CallableStatement cst;
     private ResultSet rs;
     private Connection cx;
-
-    @Override
-    public int delete(int key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
     @Override
     public int update(Prestamo p) {
         int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call updatePrestamo(?,?)}");
+            cst = cx.prepareCall("{call updatePrestamo(?,?,?)}");
             cst.setInt(1, p.getIdprestamo());
             cst.setInt(2, p.getEstado());
+            cst.setInt(3, p.getIdproducto());
             x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
@@ -49,27 +44,6 @@ public class DevolucionDaoImp implements DevolucionDao {
         return x;
     }
 
-  
-
-    @Override
-    public List<Tipo> listarTipo() {
-        List<Tipo> tip = new ArrayList<>();
-        try {
-            cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call listarTipo()}");
-            rs = cst.executeQuery();
-            while (rs.next()) {
-                Tipo ti = new Tipo();
-                ti.setIdTipo(rs.getInt("idtipo"));
-                ti.setNoTipo(rs.getString("nom_tipo"));
-                tip.add(ti);
-            }
-        } catch (SQLException e) {
-            System.out.println("Error: " + e);
-        }
-
-        return tip;
-    }
 
     @Override
     public List<Map<String, Object>> listarDevolucion() {
@@ -110,11 +84,13 @@ public class DevolucionDaoImp implements DevolucionDao {
             cst.setString(1, fe);
             cst.setString(2, nom);
             cst.setString(3, ape);
+            
             rs = cst.executeQuery();
             while(rs.next()){
                 Producto p = new Producto();
                 p.setIdP(rs.getInt("idprestamo"));
                 p.setNom(rs.getString("nombre"));
+                p.setIdPro(rs.getInt("idproducto"));
                 prod.add(p);
             }
         } catch (SQLException e) {
