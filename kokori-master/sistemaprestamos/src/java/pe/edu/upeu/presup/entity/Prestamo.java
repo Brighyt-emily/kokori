@@ -22,6 +22,16 @@ public class Prestamo {
     int id_documento;
     int id_user;
     String nom_profe;
+    int idproducto;
+    String nom_user;
+
+    public int getIdproducto() {
+        return idproducto;
+    }
+
+    public void setIdproducto(int idproducto) {
+        this.idproducto = idproducto;
+    }
 
     public Prestamo(int idprestamo) {
         this.idprestamo = idprestamo;
@@ -44,11 +54,20 @@ public class Prestamo {
 
     
 
-    public Prestamo(int idprestamo, int estado) {
+    public Prestamo(int idprestamo, int estado, int idproducto) {
         this.idprestamo = idprestamo;
         this.estado = estado;
+        this.idproducto = idproducto;
     }
 
+    public String getNom_user() {
+        return nom_user;
+    }
+
+    public void setNom_user(String nom_user) {
+        this.nom_user = nom_user;
+    }
+    
     public String getNom_profe() {
         return nom_profe;
     }

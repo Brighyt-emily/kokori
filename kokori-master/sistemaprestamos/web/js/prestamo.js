@@ -87,7 +87,7 @@ $("#registrarPrestamo").click(function () {
 function productoSeleccionado(x){
     $.get("Pc", {"id":x,"opc": 7}, function (data) {
         var y = JSON.parse(data);
-        
+        alert(data);
         if(document.getElementById("bt"+y.idP+"").style.color === 'green')
         {
            Materialize.toast("El equipo ya esta en la lista!", 1980);  
