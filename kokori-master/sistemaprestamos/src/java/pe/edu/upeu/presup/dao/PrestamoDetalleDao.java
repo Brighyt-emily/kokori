@@ -15,7 +15,7 @@ import pe.edu.upeu.presup.entity.DetallePrestamo;
  * @author HP
  */
 public interface PrestamoDetalleDao {
-    List<DetallePrestamo> readAll();
+    List<DetallePrestamo> readDetPre(int key);
     int create(DetallePrestamo p);
     boolean search(String dp);
     

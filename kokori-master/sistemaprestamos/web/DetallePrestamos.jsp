@@ -40,18 +40,23 @@
                             <div class="row center col s10">                                                       
                                 <div class="input-field">
                                     <i class="material-icons prefix">assignment</i>
-                                    <label for="usua">Ingrese Usuario</label>
-                                    <input  id="usua" class="autocomplete" type="text" name="usua" required>
+                                    <label for="usua">Buscar por usuario,profesor y fecha</label>
+                                    <input  id="search" class="autocomplete" type="text" name="usua">
                                 </div>                                                       
                             </div>    
 
                             <table class="highlight" id="tbldetpressm">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>#</th>
                                         <th>Usuario</th>
+                                        <th>Fecha Prestamo</th>
+                                        <th>Hora Prestamo</th>
+                                        <th>Fecha Devolucion</th>
+                                        <th>Hora Devolucion</th>
+                                        <th>Aula</th>
                                         <th>Profesor</th>
-                                        <th>Acción</th>
+                                        <th>Alumno</th>
                                     </tr>
                                 </thead>
 
@@ -68,10 +73,9 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Nombre Alumno</th>
-                                                        <th>Fecha y Hora Prestamo</th>
-                                                        <th>Fecha y Hora Devolucion</th>
-                                                        <th>Equipos Prestados</th>
+                                                        <th>Equipo</th>
+                                                        <th>Codigo</th>
+                                                        <th>Estado</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

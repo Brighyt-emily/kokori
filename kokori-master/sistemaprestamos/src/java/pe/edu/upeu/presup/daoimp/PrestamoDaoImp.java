@@ -77,15 +77,18 @@ public class PrestamoDaoImp implements PrestamoDao {
                 Prestamo p = new Prestamo();
                 p.setIdprestamo(rs.getInt(1));
                 p.setEstado(rs.getInt(2));
-                p.setNom_alumno(rs.getString(3));
-                p.setAula(rs.getString(4));
-                p.setFe_prestamo(rs.getString(5));
-                p.setFe_devolucion(rs.getString(6));
-                p.setHora_pre(rs.getString(7));
-                p.setHora_devo(rs.getString(8));
-                p.setId_profe(rs.getInt(9));
-                p.setId_documento(rs.getInt(10));
-                p.setId_user(rs.getInt(11));
+                p.setNom_alumno(rs.getString(4));
+                p.setAula(rs.getString(6));
+                p.setFe_prestamo(rs.getString(3));
+                p.setFe_devolucion(rs.getString(5));
+                p.setHora_pre(rs.getString(10));
+                p.setHora_devo(rs.getString(11));
+                p.setId_profe(rs.getInt(7));
+                p.setId_documento(rs.getInt(8));
+                p.setId_user(rs.getInt(9));
+                p.setNom_user(rs.getString(12));
+                p.setNom_profe(rs.getString(13));
+                
                 pre.add(p);
             }
         } catch (SQLException e) {

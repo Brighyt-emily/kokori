@@ -37,7 +37,7 @@ public class DetallePrestamoController extends HttpServlet {
                     dp.create(d);
                     break;
                 case 2:
-                     out.println(g.toJson(dp.readAll()));
+                     out.println(g.toJson(dp.readDetPre(Integer.parseInt(request.getParameter("idp")))));
                     break;
             }
         }

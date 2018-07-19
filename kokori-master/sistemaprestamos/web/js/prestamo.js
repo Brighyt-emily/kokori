@@ -46,6 +46,7 @@ $("#searchpro").keyup(function () {
     }
 });
 $("#registrarPrestamo").click(function () {
+    var produ = [];
     var alum = $("#responsable").val();
     var fe_pre = $("#fecha_pre").val();
     var fe_dev = $("#fechadev").val();
@@ -67,24 +68,29 @@ $("#registrarPrestamo").click(function () {
             $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function (data) {
               alert(data);
               var x = JSON.parse(data);
-                if(data===0){
+                if(x===0){
                     Materialize.toast("Error, prestamo no realizado!", 1980); 
                 }
                 else{
                     $('#tablaDetalle tbody tr').each(function () {
-                var nom = $(this).find("td").eq(0).text();
-                $.post("DPC", {"idp":x,"prod": nom, "opc": 1}, function () {
-                });
-                });
+                    
+                    var nom = $(this).find("td").eq(0).text();
+                    produ.push(nom);
+                    });
+                    alert(produ);
+                    for (var i = 0; i < produ.length; i++) {
+                        $.post("DPC", {"idp":x,"prod": produ[i], "opc": 1}, function () {
+                        });
+                    }
+                   Materialize.toast("Prestamo exitoso", 1980); 
+                   setTimeout("location.href='Prestamo.jsp'", 2000);
+                   var idrr = $("#ress").val();
+                    if(idrr!=="null"){
+                        $.post("Pc",{"idres":idrr,"opc":8},function(){ 
+                    });
+                    }
                 }
             });
-    var idrr = $("#ress").val();
-    if(idrr!=="null"){
-        $.post("Pc",{"idres":idrr,"opc":8},function(){ 
-    });
-    }
-    Materialize.toast("Prestamo exitoso", 1980); 
-    setTimeout("location.href='Prestamo.jsp'", 2000);
         }
      
     }

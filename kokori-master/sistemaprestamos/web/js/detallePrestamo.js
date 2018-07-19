@@ -1,14 +1,6 @@
-/*
- * Filtrado de tablas
- */
 
 $(document).ready(function () {
-    $("#usua").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $("#tbldetpressm tbody tr").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        });
-    });
+
     listardtp();
 });
 
@@ -22,43 +14,49 @@ function listardtp() {
         for (var i = 0; i < x.length; i++) {
             $("#tbldetpressm").append("\
 <tr><td>" + (i + 1) + "</td>\n\
-<td>" + x[i].id_user + "</td>\n\
-<td>" + x[i].id_profe + "</td>\n\
-<td><a href='#modal1' onclick='detalleSeleccionado(" + x[i].id_profe + ")' class='waves-effect waves-light modal-trigger' ><i class='material-icons'>remove_red_eye</i></a></td></td></tr>");
+<td>" + x[i].nom_user + "</td>\n\
+<td>" + x[i].fe_prestamo + "</td>\n\
+<td>" + x[i].hora_pre + "</td>\n\
+<td>" + x[i].fe_devolucion + "</td>\n\
+<td>" + x[i].hora_devo + "</td>\n\
+<td>" + x[i].aula + "</td>\n\
+<td>" + x[i].nom_profe + "</td>\n\
+<td>" + x[i].nom_alumno + "</td>\n\
+<td><a href='#modal1' onclick='detalleSeleccionado(" + x[i].idprestamo + ")' class='waves-effect waves-light modal-trigger' ><i class='material-icons'>remove_red_eye</i></a></td></td></tr>");
         }
     });
 }
 
-function detalleSeleccionado(id_profe) {
+function detalleSeleccionado(x) {
     $('.modal-trigger').leanModal();
-    $.get("Pc", {"opc": 2}, function (id_profe) {
-        var x = JSON.parse(id_profe);
+    $.get("DPC", {"idp":x,"opc": 2}, function (data) {
+        var x = JSON.parse(data);
         $("#tbldetpres tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
             $("#tbldetpres").append("\
 <tr><td>" + (i + 1) + "</td>\n\
-<td>" + x[i].nom_alumno + "</td>\n\
-<td>" + x[i].fe_prestamo + "<br>" + x[i].hora_pre + "</td>\n\
-<td>" + x[i].fe_devolucion + "<br>" + x[i].hora_devo + "</td>\n\
-<td><a href='#modal3' onclick='listarproducto(" + x[i].idprestamo + ")' class='waves-effect waves-light modal-trigger'><i class = 'material-icons prefix'>remove_red_eye</i></a></td></tr>");
-
+<td>" + x[i].nom_prod + "</td>\n\
+<td>" + x[i].codigo + "</td>\n\
+<td>" + x[i].estado + "</td></tr>");
         }
     });
 } 
-
-function listarproducto(idprestamo) {
-    $('.modal-trigger').leanModal();
-     alert(idprestamo);
-    $.get("DPC", {"opc": 2}, function (idprestamo) {
-        var x = JSON.parse(idprestamo);
-        $("#tbldetpro tbody tr").remove();
-        for (var i = 0; i < x.length; i++) {
-            $("#tbldetpro").append("\
-<tr><td>" + (i + 1) + "</td>\n\
-<td>" + x[i].id_prestamo + "</td>\n\
-<td>" + x[i].id_prod + "</td>\n\
-<td>" + (1) + "</td></tr>");
-
+$("#search").keyup(function () {
+    var tableReg = document.getElementById('tbldetpressm');
+    var searchText = document.getElementById('search').value.toLowerCase();
+    for (var i = 1; i < tableReg.rows.length; i++) {
+        var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+        var encontrado = false;
+        for (var j = 0; j < cellsOfRow.length && !encontrado; j++) {
+            var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+            if (searchText.length === 0 || (compareWith.indexOf(searchText) > -1)) {
+                encontrado = true;
+            }
         }
-    });
-}
+        if (encontrado) {
+            tableReg.rows[i].style.display = '';
+        } else {
+            tableReg.rows[i].style.display = 'none';
+        }
+    }
+});
