@@ -10,11 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        
-         <link rel="icon" href="images/logo.png" sizes="40x40">
+         <link rel="icon" href="images/lo.png" sizes="24x24">
         <%@include file="WEB-INF/template/headerMain.jspf" %>
         
     
-        <title>Menu ddPrincipal</title>
+        <title>Menu Principal</title>
         <style>
             a{
           
