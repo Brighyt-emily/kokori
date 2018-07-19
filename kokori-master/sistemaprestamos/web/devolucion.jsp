@@ -113,7 +113,6 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Producto</th>
-                                            <th>Codigo</th>
                                             <th>Detalle</th>                    
                                         </tr>
                                     </thead>
