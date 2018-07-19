@@ -152,20 +152,21 @@
                                         </div>
                                  
                                 </div>   
+                                              
+                        </div>  
                             <div class="row centered">  
-                               
-                                <div class="col s6">
+
+                                <div class="col s6 centered">
                                     <button class="btn teal lighten-2" type="submit" name="action" id="btnRervar">Reservar
                                         <i class="material-icons right">save</i>
                                     </button>
                                 </div>
                                 <div class="col s6">
                                     <button class="btn grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
-                                        <i class="material-icons right ">delete_forever</i>
+                                        <i class="material-icons right">delete_forever</i>
                                     </button>
                                 </div>
-                            </div>                    
-                        </div>               
+                            </div>  
                         </div>                                                                                             
                 </div>
             
