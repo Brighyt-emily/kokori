@@ -50,11 +50,9 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-<<<<<<< HEAD
+
        conexion();
-=======
         //conexion();
->>>>>>> parent of e499757... Merge branch 'master' of https://github.com/Brighyt-emily/kokori
         //create();
       listar();
         //delete();

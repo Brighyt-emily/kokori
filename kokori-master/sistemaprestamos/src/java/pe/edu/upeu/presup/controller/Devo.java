@@ -55,11 +55,8 @@ public class Devo extends HttpServlet {
                    out.println(g.toJson(d.listarDevolucion()));
                    break;
                case 2:
-<<<<<<< HEAD
-                    Prestamo pre = new Prestamo(Integer.parseInt(request.getParameter("idprestamo")), Integer.parseInt(request.getParameter("estado")),Integer.parseInt(request.getParameter("idPro")));
-=======
                     Prestamo pre = new Prestamo(Integer.parseInt(request.getParameter("idprestamo")), Integer.parseInt(request.getParameter("estado")),Integer.parseInt(request.getParameter("idproducto")));
->>>>>>> parent of e499757... Merge branch 'master' of https://github.com/Brighyt-emily/kokori
+
                     pres.update(pre);
                     break;
                case 3: 
