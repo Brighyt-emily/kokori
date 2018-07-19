@@ -56,7 +56,7 @@ function listarObject() {
     $("#tb_prestamos tbody").remove();
     $("#tb_prestamos").append("<tbody></tbody>");
     for (var j = 0; j < lis.length; j++) {
-        $("#tb_prestamos tbody").append("<tr><td>"+lis[j].codi+"</td><td>"+lis[j].nom+"</td><td>" + lis[j].ape + "</td><td>" + lis[j].fep + "</td><td>"+lis[j].fed+"</td><td>" + lis[j].ho + "</td><td>" + lis[j].ha + "</td>" +
+        $("#tb_prestamos tbody").append("<tr><td>"+(j+1)+"</td><td>"+lis[j].nom+"</td><td>" + lis[j].ape + "</td><td>" + lis[j].fep + "</td><td>"+lis[j].fed+"</td><td>" + lis[j].ho + "</td><td>" + lis[j].ha + "</td>" +
                 "<td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+lis[j].fep+"\",\""+lis[j].nom+"\",\""+lis[j].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
     }
 
@@ -126,17 +126,17 @@ function Aceptar(fe,no,ape){
                 $.post("de",{"det":valor,"iddetapre":clave,"opc":3}, function(){});
     	    }
             
-        }location.reload();
+        }
     }
 }
 
 function can()
 {
-    location.reload();
+    $("#modal1").closeModal();
 }
 
 $("#cerrar").click(function(){
-    location.reload();
+     location.reload();
 });
 
 //BUSQUEDA SENSITIVA DE LA TABLA//
@@ -168,7 +168,7 @@ function okp()
         var x=JSON.parse(data);
       
         for (var i = 0; i < x.length; i++) {
-            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+ x[i].cod+"</td><td>"+x[i].detal+"</td></tr>"); 
+            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+x[i].detal+"</td></tr>"); 
              
         }    
        
