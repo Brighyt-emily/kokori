@@ -21,10 +21,16 @@
         <main class="mn-inner">
             <nav class="teal lighten-2" style="margin-top: -20px;">
                 <div class="nav-wrapper">
-                    <div class="col s12">
-                        <a href="#!" class="breadcrumb">Gestion Profesor</a>                       
-                   </div>
-                </div>
+                    <div class="row">
+                        <div class="col s1">
+                            <i class="material-icons" style="height:10px;">contacts</i>
+                        </div>
+                        <div class="col s11" style="position:absolute;left:30px;top:3px;">
+                            <a href="tablaProfesores.jsp" class="breadcrumb">Gestion Profesores</a>                        
+                        </div>
+
+                    </div>
+                </div>   
             </nav>
             <div class="col s12">
                 <div class="action-btn-wrapper">

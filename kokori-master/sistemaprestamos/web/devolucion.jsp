@@ -23,11 +23,16 @@
     <main class="mn-inner">
         <nav class="teal lighten-2" style="margin-top: -20px;">
             <div class="nav-wrapper">
-                <div class="col s12">
-                    <a href="devolucion.jsp" class="breadcrumb">Devolución</a>
-                     
+                <div class="row">
+                    <div class="col s1">
+                        <i class="material-icons" style="height:10px;">devices_other</i>
+                    </div>
+                    <div class="col s11" style="position:absolute;left:30px;top:3px;">
+                        <a href="reservas.jsp" class="breadcrumb">Devolución</a>                        
+                    </div>
+
                 </div>
-            </div>
+            </div>   
         </nav>
         <div class="row">          
             <div class="col s12 m12 l12">

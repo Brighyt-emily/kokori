@@ -17,16 +17,23 @@
     <body>
          <%@include file="WEB-INF/template/Principal.jspf" %>
          <main class="mn-inner">
-               
+             <nav class="teal lighten-2" style="margin-top: -20px;">
+                 <div class="nav-wrapper">
+                     <div class="row">
+                         <div class="col s1">
+                             <i class="material-icons" style="height:10px;">local_mall</i>
+                         </div>
+                         <div class="col s11" style="position:absolute;left:30px;top:3px;">
+                             <a href="reservas.jsp" class="breadcrumb">Gestion Productos</a>                        
+                         </div>
+
+                     </div>
+                 </div>   
+             </nav>
               
-                    <div class="col s12 m12 l12">
-                        
-                        <div class="card">
-                            
-                            <div class="card-content">
-                                <div class="col s12">
-                    <div class="page-title"> <i class="material-icons smoll" >assignment_ind</i><span>Registro de Productos</span></div>
-                </div>
+                    <div class="col s12 m12 l12">                        
+                        <div class="card">                            
+                            <div class="card-content">                              
                                 <div class="row">
                                     <div class="col s12">
                                         <div class="row">

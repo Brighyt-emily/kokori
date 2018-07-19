@@ -25,13 +25,7 @@
                            
                             <!--<li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>-->
                             <!--<li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>-->
-                            <li><a class=""><i class="material-icons">exit_to_app</i></a></li>           
-                            <li>
-                                <div class="" style="font-weight: bold;"><a class="btn-floating smoll green" style="width: 10px;height: 10px;"></a>
-                                    ${sessionScope.rol} 
-                                </div>
-                            </li>
-
+                            <li><a class=""><i class="material-icons">exit_to_app</i></a></li>                                       
                         </ul>
                        
                         <!--FINs Notificaciones-->
@@ -41,24 +35,20 @@
        
            
             <aside id="slide-out" class="side-nav white fixed">
-                <div class="side-nav-wrapper">
-                    <div class="sidebar-profile center">
+                <div class="side-nav-wrapper">                    
+                    <div class="sidebar-profile center lime lighten-5">
                         <div class="sidebar-profile-image">
                             <img src="images/sec.png" class="circle" alt="">
                         </div>
                         <div class="sidebar-profile-info">
-                            <a  >
-                                <p class="text-left">${sessionScope.nombres}</p>
-                                
+                            <a>
+                                <p class="text-left">${sessionScope.nombres}</p>                                
                             </a>
                                 <div class="row">
                                     <div class="col s2"><a class="btn-floating smoll green" style="width: 10px;height: 10px;"></a></div>
                                     <div class="col s6" style="margin-top: 5px;">ONLINE</div>
                                     <a href="javascript:void(0);" class="account-settings-link" style="text-decoration: none;"><i class="material-icons right">arrow_drop_down</i></a>
-                                </div>   
-                                
-                                
-                               
+                                </div>                                                                                                  
                         </div>
                     </div>
                     
@@ -74,14 +64,23 @@
                     
                     
                     <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                        <li class="no-padding" ><a class="waves-effect waves-grey" href="Prestamo.jsp" >
-                        <i class="material-icons green-text" style="height:10px; ">assignment_ind</i>Prestamos</a></li>
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="reservas.jsp" >
-                        <i class="material-icons blue-text" style="height:10px;">assignment</i>Reservas</a></li>
+                        <li class="no-padding" ><a class="waves-effect waves-grey" href="reservas.jsp" >
+                        <i class="material-icons green-text" style="height:10px; ">date_range</i>Reservas</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="Prestamo.jsp" >
+                        <i class="material-icons blue-text" style="height:10px;">developer_board</i>Prestamos</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="devolucion.jsp">
-                        <i class="material-icons red-text" style="height:10px;">business_center</i>Devolución</a></li>
+                        <i class="material-icons red-text" style="height:10px;">devices_other</i>Devolución</a></li>
                         
                       
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp">
+                        <i class="material-icons" style="height:10px;">contacts</i>Gestion Profesores</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
+                        <i class="material-icons" style="height:10px;">local_mall</i>Gestion Productos</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="main.jsp">
+                        <i class="material-icons" style="height:10px;">mood</i>Gestion Usuarios</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="main.jsp">
+                        <i class="material-icons" style="height:10px;">arrow_back</i>Cerrar Sesión</a></li>
+                        
                         
                         <!--colapso :,v
                         <li class="no-padding">

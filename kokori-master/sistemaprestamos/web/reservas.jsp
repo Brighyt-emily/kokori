@@ -19,10 +19,16 @@
         <main class="mn-inner"> 
             <nav class="teal lighten-2" style="margin-top: -20px;">
                 <div class="nav-wrapper">
-                    <div class="col s12">
-                        <a href="tablaProfesores.jsp" class="breadcrumb">Realizar Reserva</a>                        
+                    <div class="row">
+                        <div class="col s1">
+                            <i class="material-icons" style="height:10px;">date_range</i>
+                        </div>
+                        <div class="col s11" style="position:absolute;left:30px;top:3px;">
+                            <a href="reservas.jsp" class="breadcrumb">Realizar Reserva</a>                        
+                        </div>
+
                     </div>
-                </div>
+                </div>   
             </nav>
           
             <div class="row">
