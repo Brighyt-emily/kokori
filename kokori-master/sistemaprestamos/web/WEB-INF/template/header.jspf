@@ -8,16 +8,6 @@
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
 <style>
-    
-    
-    @font-face{
-        font-family: Roboto;
-        src:url(css/Roboto-Regular.ttf);
-          
-    }
-    body{
-        font-family:Roboto;
-    }
     /**a:hover {
         text-decoration: none;
     }*/
@@ -35,7 +25,7 @@
         top: 0;
         width: 51%;
         height: 100%;
-        background:white;
+        background: #eceff1;
         z-index: 1000;
         -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -170,6 +160,15 @@
     .no-js #loader-wrapper {
         display: none;
     }
-    
+    .fixed-action-btn > .btn-floating > .material-icons {
+  transition: transform 0.3s;
+}
+
+.fixed-action-btn.active > .btn-floating > .material-icons {
+  transform: rotate(150deg);
+}
+.colGreen{
+    color:green;
+}
 
 </style>

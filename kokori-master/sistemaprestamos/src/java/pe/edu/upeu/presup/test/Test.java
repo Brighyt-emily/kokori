@@ -8,12 +8,10 @@ import java.util.Map;
 import pe.edu.upeu.presup.dao.DevoDao;
 import pe.edu.upeu.presup.dao.DevolucionDao;
 import pe.edu.upeu.presup.dao.PrestamoDao;
-import pe.edu.upeu.presup.dao.PrestamoDetalleDao;
 import pe.edu.upeu.presup.dao.ProductoDao;
 import pe.edu.upeu.presup.dao.ProfesorDao;
 import pe.edu.upeu.presup.dao.TipoDao;
 import pe.edu.upeu.presup.dao.UsuarioDao;
-import pe.edu.upeu.presup.daoimp.DetallePrestamoDaoImp;
 import pe.edu.upeu.presup.daoimp.DevoDaoImp;
 import pe.edu.upeu.presup.daoimp.DevolucionDaoImp;
 import pe.edu.upeu.presup.daoimp.PrestamoDaoImp;
@@ -44,15 +42,14 @@ public class Test {
     static UsuarioDao us = new UsuarioDaoImp();
     static ProfesorDao pr=new ProfesorDaoImp();
     static PrestamoDao psr=new PrestamoDaoImp();
-    static PrestamoDetalleDao dp=new DetallePrestamoDaoImp();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //conexion();
+       // conexion();
         //create();
-      listar();
+      //listar();
         //delete();
         //update();
         //update();
@@ -68,7 +65,7 @@ public class Test {
         //nop();
     }
     static void listar(){
-        System.out.println(g.toJson(po.listt()));
+        System.out.println(g.toJson(kop.listarDevolucion()));
     }
 
     static void conexion() {
@@ -95,9 +92,15 @@ public class Test {
     }
 
     static void ate() {
-        Prestamo huma=new Prestamo(2,0,2);
-        System.out.println(g.toJson(kop.update(huma)));
-        
+        Producto lop = new Producto(3,1);
+        int p=lop.getEst();
+        System.out.println(p);
+        System.out.println(g.toJson(lop));
+        if (ko.update(lop) > 0) {
+            System.out.println("c:");
+        } else {
+            System.out.println(":c");
+        }
     }
 
     static void validar() {

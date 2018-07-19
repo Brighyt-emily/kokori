@@ -16,7 +16,9 @@ import pe.edu.upeu.presup.entity.Tipo;
  * @author EMILY
  */
 public interface DevolucionDao {
+    int delete (int key);
     int update(Prestamo p);
+    List<Tipo>listarTipo();
     List<Producto> ListarProductosByFecha(String fe,String nom,String ape);
     List<Map<String, Object>> listarDevolucion();
 

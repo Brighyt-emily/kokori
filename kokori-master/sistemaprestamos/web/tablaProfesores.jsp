@@ -16,16 +16,8 @@
     </head>
     <body>                          
         <%@include file="WEB-INF/template/Principal.jspf" %>
-        
         <!--INICIO Contenido -->
         <main class="mn-inner">
-            <nav class="teal lighten-2" style="margin-top: -20px;">
-                <div class="nav-wrapper">
-                    <div class="col s12">
-                        <a href="#!" class="breadcrumb">Gestion Profesor</a>                       
-                   </div>
-                </div>
-            </nav>
             <div class="col s12">
                 <div class="action-btn-wrapper">
                     <div class="fixed-action-btn my-custom-btn vertical">
@@ -41,17 +33,15 @@
                     </div>
                 </div>
             </div>
-    
             <div class="row">
                 <div class="col s12">
-                 
-                    <div class="page-title"><!--Titulo del cartel--></div>
+                    <div class="page-title"> <i class="material-icons smoll" >assignment_ind</i><span>Registro de Profesores</span></div>
                 </div>
                 <div class="col s12 m12 l12">
                     <div class="card">
                         <div class="card-content">
 
-                            <table class="highlight centered" id="tblProfesores">
+                            <table class="highlight" id="tblProfesores">
                                 <thead>
                                     <tr>
                                         <th>Estado</th>

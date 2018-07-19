@@ -13,38 +13,17 @@ public class DetallePrestamo {
     int id_detpres;
     int id_prestamo;
     int id_prod;
+    int cantidad;
     String nom_prod;
-    String  codigo;
-    int estado;
 
     public DetallePrestamo() {
     }
 
-    public DetallePrestamo(int id_prestamo, int id_prod) {
+    public DetallePrestamo(int id_prestamo, int id_prod, int cantidad, String nom_prod) {
         this.id_prestamo = id_prestamo;
         this.id_prod = id_prod;
-    }
-    
-    public DetallePrestamo(int id_prestamo, int id_prod, String nom_prod) {
-        this.id_prestamo = id_prestamo;
-        this.id_prod = id_prod;
+        this.cantidad = cantidad;
         this.nom_prod = nom_prod;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
     }
     
     public DetallePrestamo(int id_prod) {
@@ -86,5 +65,14 @@ public class DetallePrestamo {
     public void setId_prod(int id_prod) {
         this.id_prod = id_prod;
     }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
     
 }

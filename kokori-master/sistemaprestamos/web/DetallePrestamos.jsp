@@ -25,7 +25,7 @@
                             <i class="large material-icons">build</i>
                         </a>
                         <ul>
-                            <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1'><i class="material-icons">add</i></a></li>                                                  
+                             <li><a class="btn-floating black lighten-1" href="Prestamo.jsp" title="Prestamo"><i class="material-icons">add</i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,23 +40,18 @@
                             <div class="row center col s10">                                                       
                                 <div class="input-field">
                                     <i class="material-icons prefix">assignment</i>
-                                    <label for="usua">Buscar por usuario,profesor y fecha</label>
-                                    <input  id="search" class="autocomplete" type="text" name="usua">
+                                    <label for="usua">Ingrese Usuario</label>
+                                    <input  id="usua" class="autocomplete" type="text" name="usua" required>
                                 </div>                                                       
                             </div>    
 
                             <table class="highlight" id="tbldetpressm">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>ID</th>
                                         <th>Usuario</th>
-                                        <th>Fecha Prestamo</th>
-                                        <th>Hora Prestamo</th>
-                                        <th>Fecha Devolucion</th>
-                                        <th>Hora Devolucion</th>
-                                        <th>Aula</th>
                                         <th>Profesor</th>
-                                        <th>Alumno</th>
+                                        <th>Acción</th>
                                     </tr>
                                 </thead>
 
@@ -73,9 +68,10 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>Equipo</th>
-                                                        <th>Codigo</th>
-                                                        <th>Estado</th>
+                                                        <th>Nombre Alumno</th>
+                                                        <th>Fecha y Hora Prestamo</th>
+                                                        <th>Fecha y Hora Devolucion</th>
+                                                        <th>Equipos Prestados</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -98,7 +94,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                         <th>Orden de Prestamo</th>
+                                                        <th>Orden de Prestamo</th>
                                                         <th>Nombre</th>
                                                         <th>Cantidad</th>
                                                     </tr>
@@ -120,12 +116,11 @@
                 </div>
         </main>
         <!--FIN Contenido-->
-    </div>
 
-    <div class="left-sidebar-hover"></div>
+        <div class="left-sidebar-hover"></div>
 
 
-    <%@include file="WEB-INF/template/footerMain.jspf" %>
-</body>
-<script src="js/detallePrestamo.js" type="text/javascript"></script>
+        <%@include file="WEB-INF/template/footerMain.jspf" %>
+    </body>
+    <script src="js/detallePrestamo.js" type="text/javascript"></script>
 </html>

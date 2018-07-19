@@ -86,7 +86,7 @@
                     </div>
                     <div class="row">
                         <div class="col s12 center-align">
-                            <a href="#modal1" class="waves-effect waves-light btn-large green darken-3 modal-trigger" id="btnProd"><i class="material-icons right">dns</i>Añadir Productos</a>                            
+                            <a href="#modal1" class="waves-effect waves-light btn-large green darken-3 modal-trigger"><i class="material-icons right">dns</i>Añadir Productos</a>                            
                         </div>
                     </div>
                     <div class="row">
@@ -108,14 +108,6 @@
                             </div>
                         </div>
                         <div class="col s2"></div>
-                    </div>
-                    <!--sdsdsd-->
-                    <div class="action-btn-wrapper">
-                        <div class="fixed-action-btn my-custom-btn vertical">
-                            <a class="btn-floating btn-large green-text" id="btnGuardarCambios">
-                                <i class="large material-icons">save</i>
-                            </a>
-                        </div>
                     </div>
                     <!--Modal-->
                     <div id="modal1" class="modal modal-fixed-footer">

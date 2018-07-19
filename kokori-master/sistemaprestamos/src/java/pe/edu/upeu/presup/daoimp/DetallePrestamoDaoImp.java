@@ -25,21 +25,17 @@ public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
     private Connection cx;
 
     @Override
-    public List<DetallePrestamo> readDetPre(int key) {
+    public List<DetallePrestamo> readAll() {
    List<DetallePrestamo> datos = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cs = cx.prepareCall("{call ListDetalleRepoPrestamo(?)}");
-            cs.setInt(1,key);
+            cs = cx.prepareCall("{call listardetallePrestamo()}");
             rs = cs.executeQuery();
             while (rs.next()) {
                 DetallePrestamo p = new  DetallePrestamo();
                  p.setId_detpres(rs.getInt("iddetalle_prestamo"));
                  p.setId_prestamo(rs.getInt("idprestamo"));
-                 p.setId_prod(rs.getInt("idproducto"));
-                 p.setNom_prod(rs.getString("nombre"));
-                 p.setCodigo(rs.getString("codigo"));
-                 p.setEstado(rs.getInt("estado"));
+                p.setId_prod(rs.getInt("idproducto"));
                 datos.add(p);
             }
         } catch (SQLException e) {
@@ -57,10 +53,8 @@ public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
         int x=0;
         try{
             cx= Conexion.getConexion();
-            cs=cx.prepareCall("{call createDetallePrestamo(?,?)}");
+            cs=cx.prepareCall("{call createDetallePrestamo(?)}");
             cs.setInt(1,p.getId_prod());
-            cs.setInt(2,p.getId_prestamo());
-            
             x= cs.executeUpdate();
         }
         catch(SQLException e){

@@ -35,8 +35,7 @@ public class PrestamoController extends HttpServlet {
             HttpSession sesion = request.getSession();
              switch(op){
                  case 1:
-                     int idv;
-                        idv = pr.create(new Prestamo(request.getParameter("fec_pre"),
+                        Prestamo p =new Prestamo(request.getParameter("fec_pre"),
                                                  request.getParameter("alu"),
                                                  request.getParameter("fe_devo"),
                                                  request.getParameter("horaPre"),
@@ -44,14 +43,8 @@ public class PrestamoController extends HttpServlet {
                                                  request.getParameter("aula"),
                                                  Integer.parseInt(request.getParameter("prof")),
                                                  Integer.parseInt(request.getParameter("docu")),
-                                                 Integer.parseInt(request.getParameter("user"))));
-                       if(idv>0){
-                           out.println(idv);                       
-                       }else{
-                           out.println(0);
-                        }
-                                          
-                                                 
+                                                 Integer.parseInt(request.getParameter("user")));
+                                                 pr.create(p);
                  break;
                  case 2:
                      out.println(g.toJson(pr.readAll()));

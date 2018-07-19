@@ -56,7 +56,7 @@ function listarObject() {
     $("#tb_prestamos tbody").remove();
     $("#tb_prestamos").append("<tbody></tbody>");
     for (var j = 0; j < lis.length; j++) {
-        $("#tb_prestamos tbody").append("<tr><td>"+(j+1)+"</td><td>"+lis[j].nom+"</td><td>" + lis[j].ape + "</td><td>" + lis[j].fep + "</td><td>"+lis[j].fed+"</td><td>" + lis[j].ho + "</td><td>" + lis[j].ha + "</td>" +
+        $("#tb_prestamos tbody").append("<tr><td>"+lis[j].codi+"</td><td>"+lis[j].nom+"</td><td>" + lis[j].ape + "</td><td>" + lis[j].fep + "</td><td>"+lis[j].fed+"</td><td>" + lis[j].ho + "</td><td>" + lis[j].ha + "</td>" +
                 "<td><button class='btn btn modal-trigger' href='#modal1' onclick='modal(\""+lis[j].fep+"\",\""+lis[j].nom+"\",\""+lis[j].ape+"\")'><i class='material-icons'>visibility</i></button></td></tr>"); 
     }
 
@@ -79,9 +79,7 @@ function datosModal(fe,no,ape){
         $("#caja").append("<form action='#' class='form' id='cuerpo'></form>")
         lista.push(x);
         var a="a";
-        
         for (var i = 0; i < x.length; i++) {
-            kio=lista[0][i].idPro;
             $("#cuerpo").append("<p><label><input type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idP+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' id="+(a+lista[0][i].idP)+">");  
         }
         //BOTON 'DEVOLVER'//
@@ -92,8 +90,8 @@ function datosModal(fe,no,ape){
 
 //TOAST DE CONFIRMACION DE DEVOLUCION//
 function devolver(fe,no,ape){
-   
-    var toastHTML = "<span>¿Está seguro de continuar?</span><br><button class='btn-flat toast-action red-text' onclick='can()'>Cancelar</button><button class='btn-flat toast-action teal-text' onclick='Aceptar(\""+fe+"\",\""+no+"\",\""+ape+"\")'>Aceptar</button>";
+    //BRIGHYT NO PUDE HACER QUE EL BOTON CANCELAR CERRARA EL TOAST,AYUDAME CON ESO//
+    var toastHTML = "<span>¿Está seguro de continuar?</span><br><button class='btn-flat toast-action red-text' href='#'>Cancelar</button><button class='btn-flat toast-action teal-text' onclick='Aceptar(\""+fe+"\",\""+no+"\",\""+ape+"\")'>Aceptar</button>";
     Materialize.toast( toastHTML,3085);
 }
 
@@ -105,8 +103,7 @@ function Aceptar(fe,no,ape){
             var checkbox=$("#"+i).val(); 
             var texto=$("#a"+i).val();  
             if(texto===""){
-                
-                $.post("de",{"idprestamo":checkbox,"estado":0,"idproducto":kio,"opc":2}, function () {
+                $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
@@ -115,7 +112,7 @@ function Aceptar(fe,no,ape){
     		continue;
             }else{
 	    	map.set(checkbox,texto);
-                $.post("de",{"idprestamo":checkbox,"estado":0,"idproducto":kio,"opc":2}, function () {
+                $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
@@ -130,13 +127,38 @@ function Aceptar(fe,no,ape){
     }
 }
 
-function can()
-{
-    $("#modal1").closeModal();
+
+//ESTO YA NO VALE//
+function continuar(fe,no,ape,checkbox){
+    $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
+        $("#tb_prestamos tbody tr").remove();
+        datosModal(fe,no,ape);
+        listarObject();
+        modal(fe,no,ape);
+    });
 }
 
+function observacion(fe,no,ape,checkbox)
+{
+    $('.modal-trigger').leanModal();
+    $("#regis").click(function(){
+        $.post("de",{"idprestamo":checkbox,"estado":0,"opc":2}, function () {
+            $("#tb_prestamos tbody tr").remove();
+            datosModal(fe,no,ape);
+            listarObject();
+            modal(fe,no,ape);
+        });
+       var deta= $('#lop').val();
+         $.post("de",{"det":deta,"iddetapre":checkbox,"opc":3}, function(){
+        });
+       
+    });
+   
+}
+//HASTA AQUI//
+
 $("#cerrar").click(function(){
-     location.reload();
+    location.reload();
 });
 
 //BUSQUEDA SENSITIVA DE LA TABLA//
@@ -160,16 +182,16 @@ $("#nomp").keyup(function () {
     }
 });
 
-
+//EMILY,ESTO NO SÉ QUE ES;PERO NO LO HE TOCADO//
 function okp()
 {
     $.post("de",{"opc":6},function(data)
     {
-        alert(data);
         var x=JSON.parse(data);
       
         for (var i = 0; i < x.length; i++) {
-            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+x[i].detal+"</td></tr>"); 
+            console.log(data);
+            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+ x[i].cod+"</td><td>"+x[i].detal+"</td></tr>"); 
              
         }    
        

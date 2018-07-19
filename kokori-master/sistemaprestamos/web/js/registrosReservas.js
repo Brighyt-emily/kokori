@@ -57,9 +57,9 @@ function listarRegistroReserva() {
                     + listData[i].nombres + "</td><td>"
                     + listData[i].codigo + "</td><td>"
                     + listData[i].dni 
-                    + "</td><td><form action='editarReserva.jsp' method='POST'><input type='text' value='" + listData[i].idr + "' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:blue'>remove_red_eye</button></form></td>\n\
-                    <td><a href = '#' onclick='eliminarReserva(" + listData[i].idr + ")'><i class='material-icons red-text'>delete_sweep</i></a></td>\n\
-                    <td><form action='Prestamo.jsp' method='POST'><input type='text' value='"+ listData[i].idr +"' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:green'>kitchen</button></form></td></tr>");
+                    + "</td><td><form action='editarReserva.jsp' method='POST'><input type='text' value='" + listData[i].idr + "' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:lightblue'>mode_edit</button></form></td>\n\
+                    <td><a href = '#' onclick='eliminarReserva(" + listData[i].idr + ")'><i class='material-icons'>delete_sweep</i></a></td>\n\
+                    <td><form action='Prestamo.jsp' method='POST'><input type='text' value='"+ listData[i].idr +"' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:lightblue'>kitchen</button></form></td></tr>");
         }
     });
 }

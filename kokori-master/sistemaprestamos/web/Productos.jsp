@@ -198,7 +198,13 @@
 
                 </div>
                      </div>
-             <div id="modal8" class="modal s12 m12 l12 modal-fixed-footer" style="max-width: 530px;">
+                    
+             
+             
+             
+             
+             
+             <div id="modal8" class="modal s12 m12 l12" style="max-width: 530px;">
                 <div class="modal-content">
                    <label for="tipos">Tipos</label>
 

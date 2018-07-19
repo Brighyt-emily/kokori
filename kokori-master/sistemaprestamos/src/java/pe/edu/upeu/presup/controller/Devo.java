@@ -55,7 +55,7 @@ public class Devo extends HttpServlet {
                    out.println(g.toJson(d.listarDevolucion()));
                    break;
                case 2:
-                    Prestamo pre = new Prestamo(Integer.parseInt(request.getParameter("idprestamo")), Integer.parseInt(request.getParameter("estado")),Integer.parseInt(request.getParameter("idproducto")));
+                    Prestamo pre = new Prestamo(Integer.parseInt(request.getParameter("idprestamo")), Integer.parseInt(request.getParameter("estado")));
                     pres.update(pre);
                     break;
                case 3: 
