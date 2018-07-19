@@ -25,7 +25,7 @@
                             <i class="large material-icons">build</i>
                         </a>
                         <ul>
-                            <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1'><i class="material-icons">add</i></a></li>                                                  
+                             <li><a class="btn-floating black lighten-1" href="Prestamo.jsp" title="Prestamo"><i class="material-icons">add</i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                         <th>Orden de Prestamo</th>
+                                                        <th>Orden de Prestamo</th>
                                                         <th>Nombre</th>
                                                         <th>Cantidad</th>
                                                     </tr>
@@ -116,12 +116,11 @@
                 </div>
         </main>
         <!--FIN Contenido-->
-    </div>
 
-    <div class="left-sidebar-hover"></div>
+        <div class="left-sidebar-hover"></div>
 
 
-    <%@include file="WEB-INF/template/footerMain.jspf" %>
-</body>
-<script src="js/detallePrestamo.js" type="text/javascript"></script>
+        <%@include file="WEB-INF/template/footerMain.jspf" %>
+    </body>
+    <script src="js/detallePrestamo.js" type="text/javascript"></script>
 </html>
