@@ -4,7 +4,7 @@ $(document).ready(function () {
     deshabilitarAll();
 });
 
-var arregloReserva = new Array();// arreglo para guardar los datos de la reserva
+var arregloReserva = new Array();// arreglo para guardar los datos de la reservaddddd
 
 var arregloProductoByIdDr = new Array();// arreglo para guardar los iddr(id de detalle reserva)
 
