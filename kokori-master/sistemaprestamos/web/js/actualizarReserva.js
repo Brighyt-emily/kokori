@@ -63,7 +63,7 @@ function DatosByReserva() {
             $.get("rc", {"op": 9, "idreserva": x}, function (dtos) {
                 var y = JSON.parse(dtos);
                 for (var i = 0; i < y.length; i++) {
-                    $("#reservado").append("<tr><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
+                    $("#reservado").append("<tr><td hidden>"+y[i].idreserva+"</td><td hidden>"+y[i].iddr+"</td><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
                 }
             });
         });
@@ -75,9 +75,11 @@ function primerosProductos() {
     for (var i = 2; i < tb.rows.length; i++) {
         $("#reservado tbody tr").each(function () {
             var obj = new Object();
-            obj.idp = $(this).find("td").eq(0).html();
-            obj.nombre = $(this).find("td").eq(1).html();
-            obj.codigo = $(this).find("td").eq(2).html();
+            obj.idr = $(this).find("td").eq(0).html();
+            obj.iddr = $(this).find("td").eq(1).html();
+            obj.idp = $(this).find("td").eq(2).html();
+            obj.nombre = $(this).find("td").eq(3).html();
+            obj.codigo = $(this).find("td").eq(4).html();
             productosReserva.push(obj);
         });
     }
@@ -152,3 +154,7 @@ function deshabilitarAll(){
     $("#h_devolucion_r").attr('disabled','disabled');
     $('#btnProd').attr("disabled", true);
 }
+
+$("#btnGuardarCambios").click(function () {
+    alert("longitud del carrito: " + JSON.stringify(productosReserva));
+});
