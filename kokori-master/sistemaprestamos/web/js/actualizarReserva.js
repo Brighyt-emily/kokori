@@ -1,5 +1,7 @@
 $(document).ready(function () {
+    $('#btnGuardarCambios').attr("disabled", true);
     DatosByReserva();
+    deshabilitarAll();
 });
 
 var arregloReserva = new Array();// arreglo para guardar los datos de la reserva
@@ -61,14 +63,15 @@ function DatosByReserva() {
             $.get("rc", {"op": 9, "idreserva": x}, function (dtos) {
                 var y = JSON.parse(dtos);
                 for (var i = 0; i < y.length; i++) {
-                    $("#reservado").append("<tr><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!'><i class='material-icons'>delete_sweep</i></a></td></tr>");
+                    $("#reservado").append("<tr><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td><a href='#!' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
                 }
             });
         });
     });
 }
-var tb = document.getElementById("reservado");
+
 function primerosProductos() {
+    var tb = document.getElementById("reservado");
     for (var i = 2; i < tb.rows.length; i++) {
         $("#reservado tbody tr").each(function () {
             var obj = new Object();
@@ -78,7 +81,6 @@ function primerosProductos() {
             productosReserva.push(obj);
         });
     }
-    alert(JSON.stringify(productosReserva));
 }
 
 function productoSeleccionado(w) {
@@ -123,9 +125,30 @@ function listarProdReservados() {
 }
 
 function eliminar(i) {
-    alert(i);
+    alert("var:" + i);
 }
 
 $("#btnRegresar").click(function () {
-    primerosProductos();
+    $(location).attr('href','registrosReserva.jsp');
 });
+
+$("#btnActualizar").click(function (){
+    primerosProductos();
+    $("#aula_r").removeAttr('disabled');
+    $("#fe_prestamo_r").removeAttr('disabled');
+    $("#h_prestamo_r").removeAttr('disabled');
+    $("#fe_devolucion_r").removeAttr('disabled');
+    $("#h_devolucion_r").removeAttr('disabled');
+    $('#btnProd').attr("disabled", false);
+    $('#btnGuardarCambios').attr("disabled", false);
+    $("#btnActualizar").attr("disabled", true);
+});
+
+function deshabilitarAll(){
+    $("#aula_r").attr('disabled','disabled');
+    $("#fe_prestamo_r").attr('disabled','disabled');
+    $("#h_prestamo_r").attr('disabled','disabled');
+    $("#fe_devolucion_r").attr('disabled','disabled');
+    $("#h_devolucion_r").attr('disabled','disabled');
+    $('#btnProd').attr("disabled", true);
+}
