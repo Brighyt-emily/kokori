@@ -5,36 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Pasdfsdge</title>
-       <%@include file="WEB-INF/template/header.jspf" %>
-       
-
-            
+       <%@include file="WEB-INF/template/header.jspf" %>            
     </head>
     <body>  
-        <%
-         try{
-             HttpSession sesion = request.getSession();
-         if(sesion.getAttribute("idr")==null){
-             response.sendRedirect("login.jsp");
-         }
-         else{
-             String rol = sesion.getAttribute("idr").toString();
-             if(!rol.equals("2")){
-                 response.sendRedirect("login.jsp");
-         }
-            }
-            }
-         catch(Exception e){
-             System.out.println("Error: "+e);
-                 
-                 }
-            %>
             <%@include file="WEB-INF/template/Principal.jspf" %>
             <!--INICIO Contenido -->
             <main class="mn-inner">
