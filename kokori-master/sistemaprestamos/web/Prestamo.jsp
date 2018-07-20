@@ -143,15 +143,11 @@
                                             <!--Modal-->
                                             <div id="modalequi" class="modal modal-fixed-footer">
                                                 <div class="modal-content">
-                                                    <div class="center">
-                                                        <div class="col s7">
-                                                            <div class="input-field">
-                                                                <i class="material-icons prefix">scanner</i>
-                                                                <label for="searchpro">Equipo</label>
-                                                                <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
-                                                            </div>
+                                                        <div class="col s12 input-field">
+                                                            <i class="material-icons prefix">scanner</i>
+                                                            <label for="searchpro">Equipo</label>
+                                                            <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
                                                         </div>
-                                                    </div>
                                                     <div class=" center col s12" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
                                                         <table class="table" id="tablaPrestamo">
                                                             <thead>
@@ -197,10 +193,10 @@
                                     <br>
                                     <hr>
                                     <center>
-                                    <div class="step-actions ">
-                                        <input href="#account" type='button' class='waves-effect waves-dark btn-flat previous-step' name='next' value='Regresar' />
-                                        <input  type='button' class='waves-effect waves-dark btn blue' name='finish' value='Completar' id="registrarPrestamo" />
-                                    </div></center>
+                                        <div class="step-actions ">
+                                            <input href="#account" type='button' class='waves-effect waves-dark btn-flat previous-step' name='next' value='Regresar' />
+                                            <input  type='button' class='waves-effect waves-dark btn blue' name='finish' value='Completar' id="registrarPrestamo" />
+                                        </div></center>
                                 </div>
                                 <!--Final Steep #2-->                          
                             </li>
