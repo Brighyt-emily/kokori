@@ -111,6 +111,7 @@ function Aceptar(fe,no,ape){
                     datosModal(fe,no,ape);
                     listarObject();
                     modal(fe,no,ape);
+                    location.reload();
                 });
     		continue;
             }else{
@@ -124,6 +125,7 @@ function Aceptar(fe,no,ape){
                 for (var [clave, valor] of map) {   
                 }
                 $.post("de",{"det":valor,"iddetapre":clave,"opc":3}, function(){});
+                location.reload();
     	    }
             
         }
