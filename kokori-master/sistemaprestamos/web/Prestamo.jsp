@@ -122,7 +122,6 @@
                                     </div>
                                 </div>
                                 <!--Final Steep #1-->
-
                             </li>
                             <li  class="step" id="account">
                                 <a data-toggle="tab">
