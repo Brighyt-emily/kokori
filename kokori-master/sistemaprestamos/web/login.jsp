@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bienvenido al sistema Alphalpha</title>
+        <title>Login sistema</title>
 
         <%@include file="WEB-INF/template/header.jspf" %>
         <!-- Compiled and minified CSS -->

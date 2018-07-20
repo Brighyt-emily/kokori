@@ -78,7 +78,7 @@
                             <div class="row ">
                                 <div class="input-field col s5">
                                     <i class="material-icons prefix">class</i>
-                                    <select id="secRol">
+                                    <select id="secRol"> 
                                         <option value="0" disabled selected>ROL</option>
                                         <option value="1">TRABAJADOR</option>
                                         <option value="2">PROFESOR</option>

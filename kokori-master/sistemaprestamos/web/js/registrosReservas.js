@@ -86,7 +86,7 @@ function eliminarReserva(idr) {
         $.get("rc", {"op": 7, "iddr": e}, function () {
             $.get("rc", {"op": 8, "idr": idr}, function () {
                 listarRegistroReserva();
-                listData.length = 0;
+                listData.length = 0; 
                 listRepeatIddr.length = 0;
             });
         });
