@@ -157,7 +157,7 @@
                                     </button>
                                 </div>
                                 <div class="col s2">
-                                    <button class="btn-large grey darken-3" type="submit" name="action" onclick="limpiar()">Cancelar
+                                    <button class="btn-large grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
                                         <i class="material-icons right ">delete_forever</i>
                                     </button>
                                 </div>

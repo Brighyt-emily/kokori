@@ -1,7 +1,5 @@
 package pe.edu.upeu.presup.entity;
-
 public class Usuario {
-
     private int iduser;
     private String user;
     private String contrauser;
@@ -14,14 +12,6 @@ public class Usuario {
 
     public Usuario(int iduser, String user, String contrauser, int estaduser, int idroluser, int idtrabajuser) {
         this.iduser = iduser;
-        this.user = user;
-        this.contrauser = contrauser;
-        this.estaduser = estaduser;
-        this.idroluser = idroluser;
-        this.idtrabajuser = idtrabajuser;
-    }
-
-    public Usuario(String user, String contrauser, int estaduser, int idroluser, int idtrabajuser) {
         this.user = user;
         this.contrauser = contrauser;
         this.estaduser = estaduser;
@@ -81,5 +71,5 @@ public class Usuario {
     public void setIdtrabajuser(int idtrabajuser) {
         this.idtrabajuser = idtrabajuser;
     }
-
+    
 }

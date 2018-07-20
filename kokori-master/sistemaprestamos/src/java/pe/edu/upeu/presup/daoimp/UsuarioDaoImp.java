@@ -44,14 +44,12 @@ public class UsuarioDaoImp implements UsuarioDao {
        int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call crearUsuario(?,?,?,?,?)}");
+            cst = cx.prepareCall("{call createUsuario(?,?,?,?)}");
             cst.setString(1, usu.getUser());
             cst.setString(2, usu.getContrauser());
             cst.setInt(3, usu.getEstaduser());
             cst.setInt(4, usu.getIdroluser());
-            cst.setInt(5, usu.getIdtrabajuser());
-            cst.executeUpdate();
-            x= cst.getInt(5);
+            x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }

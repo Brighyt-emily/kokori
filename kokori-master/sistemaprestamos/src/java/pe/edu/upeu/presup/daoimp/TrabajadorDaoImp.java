@@ -8,7 +8,14 @@ package pe.edu.upeu.presup.daoimp;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import pe.edu.upeu.presup.dao.TrabajadorDao;
+import pe.edu.upeu.presup.entity.Escuela;
+import pe.edu.upeu.presup.entity.Facultad;
+import pe.edu.upeu.presup.entity.Profesor;
 import pe.edu.upeu.presup.entity.Trabajador;
 import pe.edu.upeu.presup.util.Conexion;
 
@@ -27,16 +34,15 @@ public class TrabajadorDaoImp implements TrabajadorDao {
        int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call crearTrabajador(?,?,?,?,?,?,?)}");
-            cst.setString(1, tr.getNomTrabajador());
-            cst.setString(2, tr.getApelTrabajador());
-            cst.setString(3, tr.getDireccion());
-            cst.setString(4, tr.getNumCelular());
-            cst.setString(5, tr.getNumDni());
-            cst.setString(6, tr.getEmail());
-            cst.registerOutParameter(7, java.sql.Types.INTEGER);
-            cst.executeUpdate();
-            x= cst.getInt(7);
+            cst = cx.prepareCall("{call crearTrabajador(?,?,?,?,?,?)}");
+            cst.setInt(1, tr.getIdTrabajador());
+            cst.setString(2, tr.getNomTrabajador());
+            cst.setString(3, tr.getApelTrabajador());
+            cst.setString(4, tr.getDireccion());
+            cst.setString(5, tr.getNumCelular());
+            cst.setString(6, tr.getNumDni());
+            cst.setString(7, tr.getEmail());
+            x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }

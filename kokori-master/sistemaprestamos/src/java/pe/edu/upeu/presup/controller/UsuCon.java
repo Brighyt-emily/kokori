@@ -46,21 +46,24 @@ public class UsuCon extends HttpServlet {
         switch (op) {
             case 1:
                 Usuario usu = new Usuario(
+                        Integer.parseInt(request.getParameter("iduser")),
                         request.getParameter("usu"),
                         request.getParameter("cont"),
-                        Integer.parseInt(request.getParameter("std")),
-                        Integer.parseInt(request.getParameter("idr")),
+                         Integer.parseInt(request.getParameter("estaduser")),
+                        Integer.parseInt(request.getParameter("idr")),                        
                         Integer.parseInt(request.getParameter("idt")));
                 out.println(g.toJson(myUsu.create(usu)));
                 break;
-            case 2:
+            case 2 :
                 Trabajador trab = new Trabajador(
-                        request.getParameter("nom"),
-                        request.getParameter("ape"),
-                        request.getParameter("dire"),
-                        request.getParameter("num"),
-                        request.getParameter("dn"),
-                        request.getParameter("ema"));
+                        Integer.parseInt(request.getParameter("idTrabajador")),
+                        request.getParameter("usu"),
+                        request.getParameter("cont"),
+                        request.getParameter("idr"),
+                        request.getParameter("usu"),
+                        request.getParameter("cont"),
+                        request.getParameter("idr")
+                      );
                 out.println(g.toJson(myTraba.create(trab)));
                 break;
 
