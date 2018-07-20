@@ -73,10 +73,12 @@ function DatosByReserva() {
         });
     });
 }
-var tb = document.getElementById("reservado");
+
 function primerosProductos() {
-    
-    for (var i = 2; i < tb.rows.length; i++) {
+    //var tb = document.getElementById("reservado");
+    var tb = $("#reservado tbody tr").length;
+    alert("num de fila :" + tb);
+    for (var i = 0; i < tb; i++) {
         $("#reservado tbody tr").each(function () {
             var obj = new Object();
             obj.idr = $(this).find("td").eq(0).html();
@@ -138,8 +140,7 @@ function eliminar(i) {
 }
 
 $("#btnRegresar").click(function () {
-    //$(location).attr('href', 'registrosReserva.jsp');
-    alert(JSON.stringify(prodCompar));
+    $(location).attr('href', 'registrosReserva.jsp');
 });
 
 $("#btnActualizar").click(function () {

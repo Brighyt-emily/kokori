@@ -16,23 +16,21 @@
     </head>
     <body>
         <%
-            try{
-             HttpSession sesion = request.getSession();
-                 if(sesion.getAttribute("idr")==null){
-                     response.sendRedirect("login.jsp");
-                 }
-                 else{
-                     String rol = sesion.getAttribute("idr").toString();
-                     if(!rol.equals("2")){
-                         response.sendRedirect("login.jsp");
+            try {
+                HttpSession sesion = request.getSession();
+                if (sesion.getAttribute("idr") == null) {
+                    response.sendRedirect("login.jsp");
+                } else {
+                    String rol = sesion.getAttribute("idr").toString();
+                    if (!rol.equals("2")) {
+                        response.sendRedirect("login.jsp");
                     }
-                 }
+                }
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
+
             }
-         catch(Exception e){
-             System.out.println("Error: "+e);
-                 
-         }
-            %>
+        %>
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner">
             <nav class="teal lighten-2" style="margin-top: -20px;">
