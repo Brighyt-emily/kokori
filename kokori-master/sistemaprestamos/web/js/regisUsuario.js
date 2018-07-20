@@ -26,7 +26,7 @@ $("#btnregispers").click(function () {
     var dni=$("#dni").val();
     var email=$("#email").val();
     var direccion=$("#direccion").val();
-    $.get("UsuCon", {"op": 2, "nomu": nomusu, "apellidos": apellido,"apellidos": celular,"apellidos": dni,"apellidos": email,"apellidos": direccion}, function (data) {
+    $.get("UsuCon", {"op": 2, "nom": nomusu, "ape": apellido,"num": celular,"dn": dni,"ema": email,"dire": direccion}, function (data) {
         alert("Registro exitoso");
     });
 });
