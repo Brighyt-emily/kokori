@@ -31,9 +31,7 @@
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
         </div>
-
-        
-        
+                
         <header class="mn-header navbar-fixed">
                 <nav class="blue-grey darken-1">
                     <div class="nav-wrapper row">
@@ -47,12 +45,7 @@
             </header>
         
         
-        <div class="container" style="width:1000px;margin-top:160px;">
-            
-                        
-            
-                          
-                                                
+        <div class="container" style="width:1000px;margin-top:160px;">                                                                                                                          
                                             <div style="">
                                                         <div class="row center">
                                                             <div class="col s3">
@@ -77,11 +70,8 @@
                                                             </div> 
                                         
                                                         </div>
-                                                </div>
-                                                
-                                        </div>                                                                                                                  
-                                       
-               
+                                                </div>                                                
+                                        </div>                                                                                                                                                                        
          <%@include file="WEB-INF/template/footerMain.jspf" %>
          <script src="js/menu.js" type="text/javascript"></script>
     </body>
