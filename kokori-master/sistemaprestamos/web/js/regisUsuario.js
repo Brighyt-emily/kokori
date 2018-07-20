@@ -2,18 +2,13 @@ $(document).ready(function () {
 });
 
 $("#btnRegistrar").click(function () {
-
     var es = 1;
     var nomusu = $("#nomusu").val();
     var password = $("#pass1").val();
-    var select = document.getElementById('secRol');
-    select.addEventListener('change',
-            function () {
-                var selectedOption = this.options[select.selectedIndex];
-            });
-    alert(selectedOption);
-    $.get("UsuCon", {"op": 1, "usu": nomusu, "cont": password, "idr": options, "idt": es}, function (data) {
-        alert("Registro exitoso");
+    var cod = document.getElementById("secRol").value;
+   
+    $.get("UsuCon", {"op": 1, "usu": nomusu, "cont": password, "idr": cod, "idt": es}, function (data) {
+     Materialize.toast("Usuario Creado Exitosamente", 1980);
     });
 });
 
@@ -27,6 +22,6 @@ $("#btnregispers").click(function () {
     var email=$("#email").val();
     var direccion=$("#direccion").val();
     $.get("UsuCon", {"op": 2, "nom": nomusu, "ape": apellido,"num": celular,"dn": dni,"ema": email,"dire": direccion}, function (data) {
-        alert("Registro exitoso");
+        Materialize.toast("Usuario Creado Exitosamente", 1980);
     });
 });
