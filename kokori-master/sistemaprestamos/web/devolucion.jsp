@@ -148,7 +148,7 @@
                 </div>
         </div>
         <div class="modal-footer">
-            <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            <a  class="modal-action modal-close btn grey darken-3">Cerrar</a>
         </div>
     </div>
     <div class="left-sidebar-hover"></div>
