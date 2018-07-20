@@ -16,7 +16,7 @@ import pe.edu.upeu.presup.entity.DetallePrestamo;
  */
 public interface PrestamoDetalleDao {
     List<DetallePrestamo> readDetPre(int key);
-    int create(DetallePrestamo p);
+    int create(int idp, String [] array);
     boolean search(String dp);
     
   }

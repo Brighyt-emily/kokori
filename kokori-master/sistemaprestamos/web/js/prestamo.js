@@ -78,12 +78,27 @@ $("#registrarPrestamo").click(function () {
                     produ.push(nom);
                     });
                     alert(produ);
-                    for (var i = 0; i < produ.length; i++) {
-                        console.log(produ);
-                        console.log(produ[i]+'  '+x);
-                        $.post("DPC", {"idp":x,"prod": produ[i], "opc": 1}, function () {
+//                        $.post("DPC", {"idp":x,"prod": produ, "opc": 1}, function () {
+//                        });
+                        $.ajax({
+                           url: "DPC",
+                           type:'POST',
+                           dataType:'json',
+                           data: {
+                               opc:1,
+                               idp:x,
+                               prod:produ
+                           },
+                           success:function(data){
+                               console.log("muy bien");
+                               if (data>0){
+                                   console.log("mucho mejor");
+                               }
+                           },
+                           error:function(){
+                               console.log("errorrrr");
+                           }
                         });
-                    }
                     produ=[];
                     
                    Materialize.toast("Prestamo exitoso", 1980); 

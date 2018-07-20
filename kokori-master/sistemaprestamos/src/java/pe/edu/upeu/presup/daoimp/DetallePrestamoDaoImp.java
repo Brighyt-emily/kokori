@@ -53,17 +53,28 @@ public class DetallePrestamoDaoImp implements PrestamoDetalleDao {
     } 
 
     @Override
-    public int create(DetallePrestamo p) {
+    public int create(int idp, String [] array) {
         int x=0;
+        int idequipo =0;
         try{
             cx= Conexion.getConexion();
             cs=cx.prepareCall("{call createDetallePrestamo(?,?)}");
-            cs.setInt(1,p.getId_prod());
-            cs.setInt(2,p.getId_prestamo());
             
-            x= cs.executeUpdate();
+            for (String elemento : array) {
+                  idequipo = Integer.parseInt(elemento.trim());
+                  System.out.println("id equipo: "+elemento);
+                  cs.setInt(1,idequipo);
+                  cs.setInt(2,idp);
+                  cs.executeUpdate();
+                  x++;
+            }
+            
+
+            
+            
+            
         }
-        catch(SQLException e){
+        catch(Exception e){
             System.out.println("Error"+e);
         }
         return x;

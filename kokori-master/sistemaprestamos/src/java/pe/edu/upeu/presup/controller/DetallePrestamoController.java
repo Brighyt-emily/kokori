@@ -8,13 +8,13 @@ package pe.edu.upeu.presup.controller;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.PrestamoDetalleDao;
 import pe.edu.upeu.presup.daoimp.DetallePrestamoDaoImp;
-import pe.edu.upeu.presup.entity.DetallePrestamo;
 
 /**
  *
@@ -32,9 +32,16 @@ public class DetallePrestamoController extends HttpServlet {
             int op = Integer.parseInt(request.getParameter("opc"));
             switch (op) {
                 case 1:
-                    System.out.println(Integer.parseInt(request.getParameter("prod")));
-                    DetallePrestamo d = new DetallePrestamo(Integer.parseInt(request.getParameter("idp")),Integer.parseInt(request.getParameter("prod")));
-                    dp.create(d);
+                    String prod []= request.getParameterValues("prod[]");
+                    int idp = Integer.parseInt(request.getParameter("idp"));
+                    System.out.println("Imprimiendo el array"+Arrays.toString(prod));
+             //       DetallePrestamo d = new DetallePrestamo(Integer.parseInt(request.getParameter("idp")),Integer.parseInt(request.getParameter("prod")));
+                    //dp.create(d);
+                    if(dp.create(idp,prod)>0){
+                        out.println(1);
+                    }else{
+                        out.println(0);
+                    }
                     break;
                 case 2:
                      out.println(g.toJson(dp.readDetPre(Integer.parseInt(request.getParameter("idp")))));
