@@ -26,7 +26,7 @@ import pe.edu.upeu.presup.entity.Reserva;
  * @author Kevin Peinado
  */
 public class ReservasController extends HttpServlet {
-    
+
     private ReservaDao rd = new ReservaDaoImp();
     private Gson g = new Gson();
 
@@ -53,16 +53,16 @@ public class ReservasController extends HttpServlet {
                     out.println(0);
                 }
                 break;
-            
+
             case 2:
                 out.println(g.toJson(rd.listarProductosReserva()));
                 break;
-            
+
             case 3:
                 int idp = Integer.parseInt(request.getParameter("idProducto"));
                 out.print(g.toJson(rd.selecionarProdById(idp)));
                 break;
-            
+
             case 4:
                 int estado = Integer.parseInt(request.getParameter("estado"));
                 String fe_reserva = request.getParameter("fe_reserva");
@@ -80,7 +80,7 @@ public class ReservasController extends HttpServlet {
                     out.println(0);
                 }
                 break;
-            
+
             case 5:
                 String data = request.getParameter("listProductos");
                 int r = 0;
@@ -94,11 +94,11 @@ public class ReservasController extends HttpServlet {
                 }
                 out.println(r);
                 break;
-            
+
             case 6:
                 out.println(g.toJson(rd.listarInfromeRegistro()));
                 break;
-            
+
             case 7:
                 int idDeRe = Integer.parseInt(request.getParameter("iddr"));
                 rd.eliminarDetalleReserva(idDeRe);
@@ -111,7 +111,7 @@ public class ReservasController extends HttpServlet {
                 int idqueb = Integer.parseInt(request.getParameter("idreserva"));
                 out.println(g.toJson(rd.buscarProdReservaById(idqueb)));
                 break;
-                
+
             case 10:
                 int idResr = Integer.parseInt(request.getParameter("idr"));
                 String aular = request.getParameter("aula");
@@ -122,7 +122,7 @@ public class ReservasController extends HttpServlet {
                 Reserva re = new Reserva(idResr, feDevo, aular, fePre, hDevo, hPre);
                 rd.actualizarReserva(re);
                 break;
-                
+
             case 11:
                 int idDr = Integer.parseInt(request.getParameter("iddr"));
                 int idRes = Integer.parseInt(request.getParameter("idr"));
@@ -130,7 +130,7 @@ public class ReservasController extends HttpServlet {
                 DetalleReserva drt = new DetalleReserva(idDr, idRes, idPro);
                 rd.actulizarDetallReserva(drt);
                 break;
-                
+
             case 12:
                 int idreq = Integer.parseInt(request.getParameter("idreserva"));
                 out.println(g.toJson(rd.listarReservaById(idreq)));

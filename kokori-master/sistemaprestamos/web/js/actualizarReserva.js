@@ -73,9 +73,9 @@ function DatosByReserva() {
         });
     });
 }
-
+var tb = document.getElementById("reservado");
 function primerosProductos() {
-    var tb = document.getElementById("reservado");
+    
     for (var i = 2; i < tb.rows.length; i++) {
         $("#reservado tbody tr").each(function () {
             var obj = new Object();
@@ -138,7 +138,8 @@ function eliminar(i) {
 }
 
 $("#btnRegresar").click(function () {
-    $(location).attr('href', 'registrosReserva.jsp');
+    //$(location).attr('href', 'registrosReserva.jsp');
+    alert(JSON.stringify(prodCompar));
 });
 
 $("#btnActualizar").click(function () {
@@ -160,22 +161,28 @@ function deshabilitarAll() {
     $("#fe_devolucion_r").attr('disabled', 'disabled');
     $("#h_devolucion_r").attr('disabled', 'disabled');
     $('#btnProd').attr("disabled", true);
+    
 }
-$("#btnGuardarCambios").click(function () {
-    console.log(JSON.stringify(productosReserva));
+function desaAll2(){
+    $("#aula_r").attr('disabled', 'disabled');
+    $("#fe_prestamo_r").attr('disabled', 'disabled');
+    $("#h_prestamo_r").attr('disabled', 'disabled');
+    $("#fe_devolucion_r").attr('disabled', 'disabled');
+    $("#h_devolucion_r").attr('disabled', 'disabled');
+    $('#btnProd').attr("disabled", true);
+    $('#btnGuardarCambios').attr("disabled", true);
+    $("#btnActualizar").removeAttr("disabled"); 
+}
+$("#btnGuardarCambios").click(function () { // funcion para guardar cambios
     //asginamos valores para la actualizacion
     var x = $("#idresquebin").val();
-    //
     var idr = parseInt(x);
     var aula = $("#aula_r").val();
     var fepres = $("#fe_prestamo_r").val();
     var hpres = $("#h_prestamo_r").val();
     var fedevo = $("#fe_devolucion_r").val();
     var hdevo = $("#h_devolucion_r").val();
-
-
     $.get("rc", {"op": 10, "idr": idr, "aula": aula, "fePrest": fepres, "hpre": hpres, "feDevo": fedevo, "hDevo": hdevo}, function () {
-
         if (cantidadProd < productosReserva.length) {// los producto se han agregado
             for (var j = 0; j < productosReserva.length; j++) {
                 var queb = new Object();
@@ -183,10 +190,26 @@ $("#btnGuardarCambios").click(function () {
                 queb.nombre = productosReserva[j].nombre;
                 queb.codigo = productosReserva[j].codigo;
                 arregloReservaProd.push(queb);
-                alert(JSON.stringify(arregloReservaProd));
-                
-                $.get("rc",);
             }
+            var listaa = JSON.stringify(arregloReservaProd);
+            for (var o = 0; o < prodCompar.length; o++) {
+                var e = prodCompar[o].iddr;
+                $.get("rc", {"op": 7, "iddr": e});
+            }
+            $.post("rc", {"listProductos": listaa, "iddr": idr, "op": 5}, function (data) {
+                if (data > 0) {
+                    var toastContent = $('<h5 class="white-text">Actualización Correcta!</h5>');
+                    Materialize.toast(toastContent, 1900);
+                    prodCompar.length = 0;
+                    desaAll2();
+                    productosReserva.length = 0;
+                    arregloReservaProd.length = 0;
+                    cantidadProd = 0;
+                } else {
+                    var toastContent = $('<h5 class="yellow-text">Oops! Algo salio mal</h5>');
+                    Materialize.toast(toastContent, 1900);
+                }
+            });
         }
 
         if (cantidadProd === productosReserva.length) {// la cantidad de productos agregados
@@ -200,34 +223,64 @@ $("#btnGuardarCambios").click(function () {
                     }
                 }
                 if (!encuentra) {
-                    //los productos no son iguales
-                    // se agregaran los nuevo productos --------------------------------------- atenciouun!!!
                     for (var j = 0; j < productosReserva.length; j++) {
                         var queb = new Object();
                         queb.idp = productosReserva[j].idp;
                         queb.nombre = productosReserva[j].nombre;
                         queb.codigo = productosReserva[j].codigo;
                         arregloReservaProd.push(queb);
-                        alert(JSON.stringify(arregloReservaProd));
                     }
+                    var listaa = JSON.stringify(arregloReservaProd);
+                    for (var o = 0; o < prodCompar.length; o++) {
+                        var e = prodCompar[o].iddr;
+                        $.get("rc", {"op": 7, "iddr": e});
+                    }
+                    $.post("rc", {"listProductos": listaa, "iddr": idr, "op": 5}, function (data) {
+                        if (data > 0) {
+                            var toastContent = $('<h5 class="white-text">Actualización Correcta!</h5>');
+                            Materialize.toast(toastContent, 1900);
+                            prodCompar.length = 0;
+                            desaAll2();
+                            productosReserva.length = 0;
+                            arregloReservaProd.length = 0;
+                            cantidadProd = 0;
+                        } else {
+                            var toastContent = $('<h5 class="yellow-text">Oops! Algo salio mal</h5>');
+                            Materialize.toast(toastContent, 1900);
+                        }
+                    });
                     break;
                 }
-            }
-            if (encuentra) {
-                // los productos son iguales no se toca la actulizacion
-                //si los productos son iguales por lo tanto no se actualizan
             }
         }
 
         if (cantidadProd > productosReserva.length) { // los productos han menorado 
-            for (var j = 0; j < productosReserva.length; j++) {
+            for (var j = 0; j < productosReserva.length; j++) { // seleccion de los valores necesarios
                 var queb = new Object();
                 queb.idp = productosReserva[j].idp;
                 queb.nombre = productosReserva[j].nombre;
                 queb.codigo = productosReserva[j].codigo;
                 arregloReservaProd.push(queb);
-                alert(JSON.stringify(arregloReservaProd));
             }
+            var listaa = JSON.stringify(arregloReservaProd);
+            for (var o = 0; o < prodCompar.length; o++) {
+                var e = prodCompar[o].iddr;
+                $.get("rc", {"op": 7, "iddr": e});
+            }
+            $.post("rc", {"listProductos": listaa, "iddr": idr, "op": 5}, function (data) {
+                if (data > 0) {
+                    var toastContent = $('<h5 class="white-text">Actualización Correcta!</h5>');
+                    Materialize.toast(toastContent, 1900);
+                    prodCompar.length = 0;
+                    desaAll2();
+                    productosReserva.length = 0;
+                    arregloReservaProd.length = 0;
+                    cantidadProd = 0;
+                } else {
+                    var toastContent = $('<h5 class="yellow-text">Oops! Algo salio mal</h5>');
+                    Materialize.toast(toastContent, 1900);
+                }
+            });
         }
 
     });
