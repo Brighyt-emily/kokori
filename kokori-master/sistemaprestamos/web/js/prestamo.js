@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    VerificacionReserva();
     ListarProd();
     ListarDoc();
+    VerificacionReserva();
 });
 function ListarProd() {
     $.get("Pc", {"opc": 4}, function (data) {
@@ -154,9 +154,9 @@ function VerificacionReserva(){
             var y = JSON.parse(data);
             var e;
             for (var i = 0; i < y.length; i++) {
+                document.getElementById("bt"+ y[i].idP +"").style.color = 'green';
                 if (y[i].est === 0) {
                 e  = "Mal estado";
-
             }
             if (y[i].est === 1) {
                 e  = "Buen estado";
@@ -166,8 +166,8 @@ function VerificacionReserva(){
                 e = "Estado intermedio";
 
             }
-                $("#tablaDetalle").append("<tr><td>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td>\n\
-                <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex)'>highlight_off</button></td></tr>");
+                $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td>\n\
+                <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex)'>highlight_off</button></td></tr>"); 
                 $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
                 var y = JSON.parse(dat);             
                 $("#fecha_pre").val(y.fe_prestamo);
