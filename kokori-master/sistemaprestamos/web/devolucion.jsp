@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +19,24 @@
     </head>
     <body>
     <%@include file="WEB-INF/template/Principal.jspf" %>
-
+    <%
+            try{
+             HttpSession sesion = request.getSession();
+                 if(sesion.getAttribute("idr")==null){
+                     response.sendRedirect("login.jsp");
+                 }
+                 else{
+                     String rol = sesion.getAttribute("idr").toString();
+                     if(!rol.equals("2")){
+                         response.sendRedirect("login.jsp");
+                    }
+                 }
+            }
+         catch(Exception e){
+             System.out.println("Error: "+e);
+                 
+         }
+            %>
     <!--INICIO Devolucion.jsp -->
     <main class="mn-inner">
         <nav class="teal lighten-2" style="margin-top: -20px;">

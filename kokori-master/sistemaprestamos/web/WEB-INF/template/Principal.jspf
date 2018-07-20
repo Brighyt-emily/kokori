@@ -25,7 +25,7 @@
                            
                             <!--<li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>-->
                             <!--<li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>-->
-                            <li><a class=""><i class="material-icons">exit_to_app</i></a></li>                                       
+                            <li><a class="" href="lgt"><i class="material-icons">exit_to_app</i></a></li>                                       
                         </ul>
                        
                         <!--FINs Notificaciones-->
@@ -78,7 +78,7 @@
                         <i class="material-icons" style="height:10px;">local_mall</i>Gestion Productos</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="main.jsp">
                         <i class="material-icons" style="height:10px;">mood</i>Gestion Usuarios</a></li>
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="main.jsp">
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="lgt">
                         <i class="material-icons" style="height:10px;">arrow_back</i>Cerrar Sesión</a></li>
                         
                         
