@@ -4,13 +4,16 @@ $(document).ready(function () {
     deshabilitarAll();
 });
 
-var arregloReserva = new Array();// arreglo para guardar los datos de la reserva
+var arregloReservaProd = new Array();// arreglo para guardar los datos de la reserva
 
 var arregloProductoByIdDr = new Array();// arreglo para guardar los iddr(id de detalle reserva)
 
 var productosReserva = new Array();//arreglo para guardar productos de la reserva-- productos antiguos
 
-var cantidadProd;
+var prodCompar = new Array();// arreglo para comparar
+
+var cantidadProd;//variable para alamcenar la cantidad de productos en el arreglo
+
 
 $("#nomProducto").keyup(function () {
     var tableReg = document.getElementById('actuProd');
@@ -81,6 +84,7 @@ function primerosProductos() {
             obj.idp = $(this).find("td").eq(2).html();
             obj.nombre = $(this).find("td").eq(3).html();
             obj.codigo = $(this).find("td").eq(4).html();
+            prodCompar.push(obj);
             productosReserva.push(obj);
             cantidadProd = productosReserva.length;// le asignamos la cantidad de productos que llegaron
         });
@@ -157,19 +161,75 @@ function deshabilitarAll() {
     $("#h_devolucion_r").attr('disabled', 'disabled');
     $('#btnProd').attr("disabled", true);
 }
-
 $("#btnGuardarCambios").click(function () {
-    alert(JSON.stringify(productosReserva));
-    alert("cantidad de productos llegados: " + cantidadProd);
-    if (cantidadProd > productosReserva.length) {
-        alert("se agrego mas productos");
-    }
-    
-    if (cantidadProd === productosReserva.length) {
-        alert("No se toco ni madres wey");
-    }
-    
-    if (cantidadProd > productosReserva.length) {
-        alert("los productos han menorado");
-    }
+    console.log(JSON.stringify(productosReserva));
+    //asginamos valores para la actualizacion
+    var x = $("#idresquebin").val();
+    //
+    var idr = parseInt(x);
+    var aula = $("#aula_r").val();
+    var fepres = $("#fe_prestamo_r").val();
+    var hpres = $("#h_prestamo_r").val();
+    var fedevo = $("#fe_devolucion_r").val();
+    var hdevo = $("#h_devolucion_r").val();
+
+
+    $.get("rc", {"op": 10, "idr": idr, "aula": aula, "fePrest": fepres, "hpre": hpres, "feDevo": fedevo, "hDevo": hdevo}, function () {
+
+        if (cantidadProd < productosReserva.length) {// los producto se han agregado
+            for (var j = 0; j < productosReserva.length; j++) {
+                var queb = new Object();
+                queb.idp = productosReserva[j].idp;
+                queb.nombre = productosReserva[j].nombre;
+                queb.codigo = productosReserva[j].codigo;
+                arregloReservaProd.push(queb);
+                alert(JSON.stringify(arregloReservaProd));
+                
+                $.get("rc",);
+            }
+        }
+
+        if (cantidadProd === productosReserva.length) {// la cantidad de productos agregados
+            var encuentra = false;
+            for (var i = 0; i < productosReserva.length; i++) {
+                encuentra = false;
+                for (var j = 0; j < prodCompar.length; j++) {
+                    if (productosReserva[i] === prodCompar[j]) {
+                        encuentra = true;
+                        break;
+                    }
+                }
+                if (!encuentra) {
+                    //los productos no son iguales
+                    // se agregaran los nuevo productos --------------------------------------- atenciouun!!!
+                    for (var j = 0; j < productosReserva.length; j++) {
+                        var queb = new Object();
+                        queb.idp = productosReserva[j].idp;
+                        queb.nombre = productosReserva[j].nombre;
+                        queb.codigo = productosReserva[j].codigo;
+                        arregloReservaProd.push(queb);
+                        alert(JSON.stringify(arregloReservaProd));
+                    }
+                    break;
+                }
+            }
+            if (encuentra) {
+                // los productos son iguales no se toca la actulizacion
+                //si los productos son iguales por lo tanto no se actualizan
+            }
+        }
+
+        if (cantidadProd > productosReserva.length) { // los productos han menorado 
+            for (var j = 0; j < productosReserva.length; j++) {
+                var queb = new Object();
+                queb.idp = productosReserva[j].idp;
+                queb.nombre = productosReserva[j].nombre;
+                queb.codigo = productosReserva[j].codigo;
+                arregloReservaProd.push(queb);
+                alert(JSON.stringify(arregloReservaProd));
+            }
+        }
+
+    });
+
 });
