@@ -105,8 +105,8 @@ function Aceptar(fe,no,ape){
             var checkbox=$("#"+i).val(); 
             var texto=$("#a"+i).val();  
             if(texto===""){
-                
-                $.post("de",{"idprestamo":checkbox,"estado":0,"idproducto":kio,"opc":2}, function () {
+                alert(checkbox);
+                /*$.post("de",{"idprestamo":checkbox,"idproducto":kio,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
@@ -126,11 +126,11 @@ function Aceptar(fe,no,ape){
                 }
                 $.post("de",{"det":valor,"iddetapre":clave,"opc":3}, function(){});
                 location.reload();
-    	    }
+    	    }*/
             
-        }
-    }
-}
+       // }
+   // }
+//}
 
 function can()
 {

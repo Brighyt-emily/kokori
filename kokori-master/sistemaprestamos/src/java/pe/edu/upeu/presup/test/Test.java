@@ -50,11 +50,11 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
-       conexion();
+hio();
+       //conexion();
         //conexion();
         //create();
-      listar();
+      //listar();
         //delete();
         //update();
         //update();
@@ -88,6 +88,12 @@ public class Test {
         } else {
             System.out.println(":c");
         }
+    }
+    static void hio()
+    {
+        Prestamo lop=new Prestamo(3,2);
+        System.out.println(psr.update(lop));
+        
     }
 
    

@@ -37,6 +37,13 @@ public class Prestamo {
         this.idprestamo = idprestamo;
     }
 
+    public Prestamo(int idprestamo, int idproducto) {
+        this.idprestamo = idprestamo;
+        this.idproducto = idproducto;
+    }
+
+  
+
     public Prestamo() {
     }
 

@@ -53,13 +53,12 @@ public class PrestamoDaoImp implements PrestamoDao {
 
     @Override
     public int update(Prestamo p) {
-        int x = 0;
+         int x = 0;
         try {
             cx = Conexion.getConexion();
-            cs = cx.prepareCall("{call updatePrestamo(?,?,?)}");
-            cs.setInt(1, p.getIdprestamo());
-            cs.setInt(2, p.getEstado());
-            cs.setInt(3, p.getIdproducto());
+            cs = cx.prepareCall("{call updateDisPro(?,?)}");
+            cs.setInt(1, p.getIdproducto());
+            cs.setInt(2, p.getIdprestamo());
             x = cs.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
