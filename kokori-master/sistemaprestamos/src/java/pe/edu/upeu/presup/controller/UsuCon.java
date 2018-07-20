@@ -12,8 +12,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.edu.upeu.presup.dao.TrabajadorDao;
 import pe.edu.upeu.presup.dao.UsuarioDao;
+import pe.edu.upeu.presup.daoimp.TrabajadorDaoImp;
 import pe.edu.upeu.presup.daoimp.UsuarioDaoImp;
+import pe.edu.upeu.presup.entity.Trabajador;
 import pe.edu.upeu.presup.entity.Usuario;
 
 /**
@@ -23,6 +26,7 @@ import pe.edu.upeu.presup.entity.Usuario;
 public class UsuCon extends HttpServlet {
 
     private UsuarioDao myUsu = new UsuarioDaoImp();
+    private TrabajadorDao myTraba = new TrabajadorDaoImp();
     private Gson g = new Gson();
 
     /**
@@ -41,16 +45,26 @@ public class UsuCon extends HttpServlet {
         int op = Integer.parseInt(request.getParameter("op"));
         switch (op) {
             case 1:
-
-                Usuario usu = new Usuario(request.getParameter("usu"),
+                Usuario usu = new Usuario(
+                        Integer.parseInt(request.getParameter("iduser")),
+                        request.getParameter("usu"),
+                        request.getParameter("cont"),
+                         Integer.parseInt(request.getParameter("estaduser")),
+                        Integer.parseInt(request.getParameter("idr")),                        
+                        Integer.parseInt(request.getParameter("idt")));
+                out.println(g.toJson(myUsu.create(usu)));
+                break;
+            case 2 :
+                Trabajador trab = new Trabajador(
+                        Integer.parseInt(request.getParameter("idTrabajador")),
+                        request.getParameter("usu"),
                         request.getParameter("cont"),
                         request.getParameter("idr"),
-                        Integer.parseInt(request.getParameter("escuela")),
-                        request.getParameter("nombres"), request.getParameter("apellidos"),
-                        request.getParameter("direccion"), request.getParameter("celular"),
-                        request.getParameter("dni"),
-                        request.getParameter("email"));
-                out.println(g.toJson(myUsu.create(usu)));
+                        request.getParameter("usu"),
+                        request.getParameter("cont"),
+                        request.getParameter("idr")
+                      );
+                out.println(g.toJson(myTraba.create(trab)));
                 break;
 
         }
