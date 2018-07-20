@@ -11,29 +11,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        
          <link rel="icon" href="images/lo.png" sizes="24x24">
-        <%@include file="WEB-INF/template/headerMain.jspf" %>
-        
-    
+        <%@include file="WEB-INF/template/headerMain.jspf" %>            
         <title>Menu Principal</title>
         <style>
-            a{
-          
-            transition: transform .2s; /* Animation */
-            
+            a{          
+            transition: transform .2s; /* Animation */            
             }
-
             a:hover {
             transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-            
-            
-            
+            }                                    
         </style>
         
     </head>
     <body>
         
-          <div id="loader-wrapper">
+          
+        <div id="loader-wrapper">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
@@ -46,7 +39,7 @@
                     <div class="nav-wrapper row">
                         
                         <div class="header-title col s3">                                
-                            <a class="brand-logo">PRESUP</a>
+                            <b class="brand-logo" style="font-size:20px;">PRESUP</b>
                         </div>
                         
                     </div>
@@ -54,55 +47,41 @@
             </header>
         
         
-        <div class="container" style="width:600px;">
+        <div class="container" style="width:1000px;margin-top:160px;">
             
                         
             
-                           <div class="card center" >
-                                <div class="card-content">
-                                    <div class="row">
-                                        <div class="col l12 m12 s12" style="padding:10px;">
-                                            <div class="menu-title">
-                                                <i class="material-icons tiny">computer</i>General <br/>
-                                                <div class="grey-text" style="margin-bottom:10px;">
-                                                 Accesos y funciones generales del sistema
-                                                </div>
-                                            </div>
+                          
                                                 
-                                                <div class="container">
+                                            <div style="">
                                                         <div class="row center">
                                                             <div class="col s3">
-                                                                <a  class="btn-floating btn-large waves-effect waves-light blue-grey" style="margin-bottom:20px;" >
-                                                                <i class="material-icons">insert_emoticon</i></a>
-                                                                <p class="title bold">Mi Perfil</p>
+                                                                <a href="registrosReserva.jsp" class="btn-floating btn-large waves-effect waves-light blue-grey center" style="margin-bottom:30px;width: 150px;height: 150px;" >
+                                                                    <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">assignment</i></a>
+                                                                <p class="title bold">Lista Reservas</p>
                                                             </div>
                                                             <div class="col s3">
-                                                                <a href="reservas.jsp" class="btn-floating btn-large waves-effect waves-light blue" style="margin-bottom:20px;">
-                                                                <i class="material-icons">event_available</i></a>
-                                                                <p class="title bold">Reservas</p>
+                                                                <a href="reservas.jsp" class="btn-floating btn-large waves-effect waves-light green center" style="margin-bottom:30px;width: 150px;height: 150px;" >
+                                                                    <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">date_range</i></a>
+                                                                <p class="title bold">Realizar Reserva</p>
                                                             </div>    
                                                             <div class="col s3">
-                                                                <a href="./Prestamo.jsp"  class="btn-floating btn-large waves-effect waves-light green" style="margin-bottom:20px;">
-                                                                <i class="material-icons">dvr</i></a>
-                                                                <p class="title bold">Prestamos</p>
+                                                                <a href="Prestamo.jsp" class="btn-floating btn-large waves-effect waves-light blue center" style="margin-bottom:30px;width: 150px;height: 150px;" >
+                                                                    <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">developer_board</i></a>
+                                                                <p class="title bold">Realizar Prestamo</p>
                                                             </div> 
                                                             <div class="col s3">
-                                                                <a class="btn-floating btn-large waves-effect waves-light red" style="margin-bottom:20px;">
-                                                                <i class="material-icons">event_note</i></a>
-                                                                <p class="title bold">Reportes</p>
+                                                                <a href="devolucion.jsp" class="btn-floating btn-large waves-effect waves-light red center" style="margin-bottom:30px;width: 150px;height: 150px;" >
+                                                                    <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">devices_other</i></a>
+                                                                <p class="title bold">Realizar Devolución</p>
                                                             </div> 
                                         
                                                         </div>
                                                 </div>
                                                 
                                         </div>                                                                                                                  
-                                        </div>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-        
+                                       
+               
          <%@include file="WEB-INF/template/footerMain.jspf" %>
          <script src="js/menu.js" type="text/javascript"></script>
     </body>
