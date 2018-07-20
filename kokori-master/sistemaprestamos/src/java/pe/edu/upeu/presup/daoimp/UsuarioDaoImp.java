@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import pe.edu.upeu.presup.dao.UsuarioDao;
+import pe.edu.upeu.presup.entity.Usuario;
 import pe.edu.upeu.presup.util.Conexion;
 
 public class UsuarioDaoImp implements UsuarioDao {
@@ -36,6 +37,23 @@ public class UsuarioDaoImp implements UsuarioDao {
             System.out.println("Gran errror en : " + e);
         }
         return map;
+    }
+
+    @Override
+    public int create(Usuario usu) {
+       int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call createUsuario(?,?,?,?)}");
+            cst.setString(1, usu.getUser());
+            cst.setString(2, usu.getContrauser());
+            cst.setInt(3, usu.getEstaduser());
+            cst.setInt(4, usu.getIdroluser());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return x;
     }
 
 }

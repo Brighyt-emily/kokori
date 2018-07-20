@@ -31,11 +31,15 @@
     <servlet>
         <servlet-name>Home</servlet-name>
         <servlet-class>pe.edu.upeu.presup.controller.Home</servlet-class>
-    </servlet>  
+    </servlet>
     <servlet>
         <servlet-name>Close</servlet-name>
         <servlet-class>pe.edu.upeu.presup.controller.Close</servlet-class>
-    </servlet>  
+    </servlet>
+    <servlet>
+        <servlet-name>UsuCon</servlet-name>
+        <servlet-class>pe.edu.upeu.presup.controller.UsuCon</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrestamoController</servlet-name>
         <url-pattern>/Pc</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>Close</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuCon</servlet-name>
+        <url-pattern>/UsuCon</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

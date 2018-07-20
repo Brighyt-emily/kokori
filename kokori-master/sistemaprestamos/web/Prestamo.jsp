@@ -3,41 +3,20 @@
     Created on : 05/07/2018, 02:17:04 PM
     Author     : nicob
 --%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Prestamo </title>
-        <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" media="screen,projection" />
-        <link type="text/css" rel="stylesheet" href="https://rawgit.com/Kinark/Materialize-stepper/master/materialize-stepper.min.css" media="screen,projection" />
+        <link href="css/materialize-stepper.min.css" rel="stylesheet" type="text/css"/>
         <%@include file="WEB-INF/template/header.jspf" %>
     </head>
     <body>
         <%
-            try{
-             HttpSession sesion = request.getSession();
-         if(sesion.getAttribute("idr")==null){
-             response.sendRedirect("login.jsp");
-         }
-         else{
-             String rol = sesion.getAttribute("idr").toString();
-             if(!rol.equals("2")){
-                 response.sendRedirect("login.jsp");
-         }
-            }
-            }
-         catch(Exception e){
-             System.out.println("Error: "+e);
-                 
-                 }
-            %>
-        <%
-
             String id = request.getParameter("idr");
         %>
         <%@include file="WEB-INF/template/Principal.jspf" %>
@@ -162,13 +141,13 @@
                                                     <div class="input-field">
                                                         <i class="material-icons prefix">scanner</i>
                                                         <label for="searchpro">Equipo</label>
-                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
+                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row center ">
 
-                                                <div class="row center col s7" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; " >
+                                                <div class="row center col s7" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
                                                     <table class="table" id="tablaPrestamo">
                                                         <thead>
                                                             <tr>
@@ -188,7 +167,7 @@
                                                     <table class="table" id="tablaDetalle" >
                                                         <thead>
                                                             <tr>
-                                                                <th>PRODUCTO</th>
+                                                                <th>EQUIPO</th>
                                                                 <th>ESTADO</th>
                                                                 <th>TIPO</th>
                                                                 <th>ELIMINAR</th>
@@ -256,7 +235,7 @@
             $('.stepper').activateStepper();
         });
     </script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-    <script src="https://rawgit.com/Kinark/Materialize-stepper/master/materialize-stepper.min.js"></script>
+    <script src="js/material/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/material/materialize-stepper.min.js" type="text/javascript"></script>
     <script src="js/prestamo.js" type="text/javascript"></script>
 </html>
