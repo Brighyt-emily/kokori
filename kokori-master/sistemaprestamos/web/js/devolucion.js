@@ -76,7 +76,7 @@ function datosModal(fe,no,ape){
         var lista=new Array();
         lista.length = 0;
         $("#cuerpo").remove();
-        $("#caja").append("<form action='#' class='form' id='cuerpo'></form>")
+        $("#caja").append("<form action='#' class='form' id='cuerpo'></form>");
         lista.push(x);
         var a="a";
         
@@ -85,7 +85,7 @@ function datosModal(fe,no,ape){
             $("#cuerpo").append("<p><label><input type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idP+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' id="+(a+lista[0][i].idP)+">");  
         }
         //BOTON 'DEVOLVER'//
-        $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>")
+        $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>");
     });
  
 };

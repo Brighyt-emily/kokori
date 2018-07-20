@@ -79,11 +79,15 @@ $("#registrarPrestamo").click(function () {
                     });
                     alert(produ);
                     for (var i = 0; i < produ.length; i++) {
+                        console.log(produ);
+                        console.log(produ[i]+'  '+x);
                         $.post("DPC", {"idp":x,"prod": produ[i], "opc": 1}, function () {
                         });
                     }
+                    produ=[];
+                    
                    Materialize.toast("Prestamo exitoso", 1980); 
-                   setTimeout("location.href='Prestamo.jsp'", 2000);
+                 //  setTimeout("location.href='Prestamo.jsp'", 2000);
                    var idrr = $("#ress").val();
                     if(idrr!=="null"){
                         $.post("Pc",{"idres":idrr,"opc":8},function(){ 
@@ -99,7 +103,6 @@ $("#registrarPrestamo").click(function () {
 function productoSeleccionado(x){
     $.get("Pc", {"id":x,"opc": 7}, function (data) {
         var y = JSON.parse(data);
-        alert(data);
         if(document.getElementById("bt"+y.idP+"").style.color === 'green')
         {
            Materialize.toast("El equipo ya esta en la lista!", 1980);  
@@ -117,7 +120,7 @@ function productoSeleccionado(x){
                 var e = y.est = "Estado intermedio";
 
             }
-        $("#tablaDetalle").append("<tr><td>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td>\n\
+        $("#tablaDetalle").append("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td>\n\
         <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex,"+y.idP+")'>highlight_off</button></td></tr>");
         document.getElementById("bt"+y.idP+"").style.color = 'green';
         }
