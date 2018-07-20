@@ -19,104 +19,152 @@
         %>
         <%@include file="WEB-INF/template/Principal.jspf" %>
         <div class="mn-inner">
-            <div class="card">
-                <div class="card-content">
-                    <div class="row">
-                        <div class="col s12">
-                            <h5>Edicion de reserva</h5>
-                            <input id="idresquebin" value="<%=id%>" hidden>
-                        </div>
+            <nav class="teal lighten-2" style="margin-top: -20px;">
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="reservas.jsp" class="breadcrumb">Realizar Reserva</a>
+                        <a href="registrosReserva.jsp" class="breadcrumb">Lista Reservas</a> 
+                        <a href="editarReserva.jsp" class="breadcrumb">Editar Reservas</a>  
                     </div>
-                    <div class="row">
-                        <div class="col s2">
-                            <label for="codigo_r">Codigo Docente</label>
-                            <div class="input-field">
-                                <input id="codigo_r" type="text" class="validate" readonly="readonly">
+                </div>
+            </nav>
+            
+            
+            
+            <div class="row">
+                <div class="col s7 ">
+                    <div class="card ">                        
+                        <div class="card-content "> 
+                            
+                            <div class="row">                                
+                                <div class="col s3">                                    
+                                    <div class="input-field">
+                                        <input id="codigo_r" type="text" class="validate" readonly="readonly">
+                                        <label for="codigo_r">Codigo</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col s6">                                    
+                                    <div class="input-field">
+                                        <input id="nombres_r" type="text" class="validate" disabled="true">
+                                        <input type="hidden" id="idprofesor">
+                                        <label for="nombres_r">Nombres Completos</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col s3">
+                                  
+                                    <div class="input-field">
+                                        <input id="aula_r" type="text" class="validate">
+                                          <label for="aula_r">Aula</label>
+                                    </div>
+                                </div>                                                              
+                                
                             </div>
-                        </div>
-                        <div class="col s4">
-                            <label for="nombres_r">Nombres Completos</label>
-                            <div class="input-field">
-                                <input id="nombres_r" type="text" class="validate" disabled="true">
-                                <input type="hidden" id="idprofesor">
-                            </div>
-                        </div>
-                        <div class="col s2">
-                            <label for="aula_r">Aula</label>
-                            <div class="input-field">
-                                <input id="aula_r" type="text" class="validate">
-                            </div>
-                        </div>
-                        <div class="col s4">
+                            
+                            
                             <div class="row">
-                                <div class="col s6 right-align">
-                                    <a class="btn-floating btn-large pulse grey darken-4" id="btnRegresar"><i class="material-icons">restore_page</i></a>
+                                
+                                <div class="col s3">
+                                  
+                                    <div class="input-field">
+                                        <input type="text" id="fe_prestamo_r" class="datepicker">
+                                          <label for="fe_prestamo_r">Fecha Prestamo</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col s3">                                   
+                                    <div class="input-field">
+                                        <input type="text" id="h_prestamo_r">
+                                         <label for="h_prestamo_r">HPrestamo</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col s3">                                    
+                                    <div class="input-field">
+                                        <input type="text" id="fe_devolucion_r" class="datepicker">
+                                        <label for="fe_devolucion_r">Fecha Devolucion</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col s3">                                    
+                                    <div class="input-field">
+                                        <input type="text" id="h_devolucion_r">
+                                        <label for="h_devolucion_r">Hora Devolución</label>
+                                    </div>
+                                </div>
+                                
+                            </div>  
+                            
+                            <div class="row center">
+                                <div class="col s6">
+                                    <a class="btn-floating btn-large pulse grey darken-4" id="btnRegresar"><i class="material-icons">restore_page</i></a>                                                                         
+
                                 </div>
                                 <div class="col s6">
                                     <a class="btn-floating btn-large pulse light-blue darken-4" id="btnActualizar"><i class="material-icons">edit</i></a>
                                 </div>
+                                
+                                
                             </div>
+                            
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s4">
-                            <label for="fe_prestamo_r">Fecha de Prestamo</label>
-                            <div class="input-field">
-                                <input type="text" id="fe_prestamo_r" class="datepicker">
-                            </div>
-                        </div>
-                        <div class="col s2">
-                            <label for="h_prestamo_r">Hora Prestamo</label>
-                            <div class="input-field">
-                                <input type="text" id="h_prestamo_r">
-                            </div>
-                        </div>
-                        <div class="col s4">
-                            <label for="fe_devolucion_r">Fecha Devolucion</label>
-                            <div class="input-field">
-                                <input type="text" id="fe_devolucion_r" class="datepicker">
-                            </div>
-                        </div>
-                        <div class="col s2">
-                            <label for="h_devolucion_r">Hora Devolución</label>
-                            <div class="input-field">
-                                <input type="text" id="h_devolucion_r">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 center-align">
-                            <a href="#modal1" class="waves-effect waves-light btn-large green darken-3 modal-trigger" id="btnProd"><i class="material-icons right">dns</i>Añadir Productos</a>                            
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s2"></div>
-                        <div class="col s8">
-                            <div class="tabla-contenedor2">
-                                <table class="highlight responsive-table" id="reservado">
-                                    <thead id="tblCom">
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Nombre</th>
-                                            <th>Codigo</th>
-                                            <th>Remover</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="col s2"></div>
-                    </div>
+                    </div>                    
+                </div>
+                
+                
+                
+                <div class="col s5">
+                    <div class="card" style="height: 300px;">
+                         <div class="car-contend">
+                             
+                             <div class="row" >
+                                 <div class="col s12 center-align" style="margin-top: 20px;">
+                                     <a href="#modal1" class=" btn-large teal lighten-2 modal-trigger" id="btnProd"><i class="material-icons right">dns</i>Añadir Productos</a>                            
+                                 </div>
+                             </div>
+                             
+                             <div class="row centered">
+                                 
+                                 <div class="col s12">
+                                     
+                                         <table class="highlight responsive-table centered" id="reservado">
+                                             <thead>
+                                                 <tr>
+                                                     <th>Id</th>
+                                                     <th>Nombre</th>
+                                                     <th>Codigo</th>
+                                                     <th>Remover</th>
+                                                 </tr>
+                                             </thead>
+                                             <tbody>
+                                             </tbody>
+                                         </table>                                     
+                                 </div>                               
+                         </div>                         
+                    </div>                                         
+                </div>                                                
+            </div>
+                
+            
+            
+            
+            
+                    
+                    
+                    
+                   
+                   
                     <!--sdsdsd-->
                     <div class="action-btn-wrapper">
                         <div class="fixed-action-btn my-custom-btn vertical">
-                            <a class="btn-floating btn-large green-text" id="btnGuardarCambios">
+                            <a class="btn-floating btn-large green-text tooltipped" id="btnGuardarCambios" data-position="left" data-delay="50" data-tooltip="Guardar Cambios">
                                 <i class="large material-icons">save</i>
                             </a>
                         </div>
                     </div>
+                    
+                    
                     <!--Modal-->
                     <div id="modal1" class="modal modal-fixed-footer">
                         <div class="modal-content">
@@ -160,8 +208,7 @@
                         </div>
                     </div>
                     <!--Fin del Modal-->
-                </div>
-            </div>
+             
         </div>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
         <!--<script src="js/reservas.js" type="text/javascript"></script>-->

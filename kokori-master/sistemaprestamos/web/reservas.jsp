@@ -12,7 +12,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reserva</title>
         <%@include file="WEB-INF/template/header.jspf" %>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
         <link href="css/estilos-quebin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -172,7 +171,7 @@
                                            
                                         <div class="fixed-action-btn my-custom-btn vertical">
                                             
-                                           <a class="btn-floating  btn-large blue" onclick="irRegistroReservas();"><i class="material-icons">assignment</i></a>
+                                           <a class="btn-floating  btn-large blue tooltipped" onclick="irRegistroReservas();" data-position="left" data-delay="50" data-tooltip="Ir a Registros Reservas"><i class="material-icons">assignment</i></a>
                                             
                                         </div>
                                  
@@ -238,7 +237,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                                <a href="#!" class="modal-action modal-close btn grey darken-3">Cerrar</a>
                             </div>
                         </div>
                         <!--Fin del Modal-->

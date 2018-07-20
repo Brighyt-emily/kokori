@@ -1,4 +1,5 @@
 
+
         <div id="loader-wrapper">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
@@ -69,15 +70,9 @@
                         <li class="no-padding"><a class="waves-effect waves-grey" href="Prestamo.jsp" >
                         <i class="material-icons blue-text" style="height:10px;">developer_board</i>Prestamos</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="devolucion.jsp">
-                        <i class="material-icons red-text" style="height:10px;">devices_other</i>Devolución</a></li>
-                        
-                      
+                        <i class="material-icons red-text" style="height:10px;">devices_other</i>Devolución</a></li>                                              
                         <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp">
-                        <i class="material-icons" style="height:10px;">contacts</i>Gestion Profesores</a></li>
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
-                        <i class="material-icons" style="height:10px;">local_mall</i>Gestion Productos</a></li>
-                        <li class="no-padding"><a class="waves-effect waves-grey" href="main.jsp">
-                        <i class="material-icons" style="height:10px;">mood</i>Gestion Usuarios</a></li>
+                        <i class="material-icons" style="height:10px;">contacts</i>Gestion Profesores</a></li>                                             
                         <li class="no-padding"><a class="waves-effect waves-grey" href="lgt">
                         <i class="material-icons" style="height:10px;">arrow_back</i>Cerrar Sesión</a></li>
                         
@@ -97,14 +92,7 @@
                             </div>
                         </li>
                         -->
-                        
-                       
-                                
-                     
-                       
-                        
-                        
-                        
+                                                                                                                                                                                                   
                     </ul>
                     <div class="footer">
                         <p class="copyright">PRESUP ©</p>
