@@ -135,55 +135,72 @@
                                     <center><div><h5 class="info-text"> Equipos </h5></div></center>
                                     <div class="row">
                                         <div class="container input-field col s12">
-                                            <div class="row center">
-                                                <div class="col s7">
-                                                    <div class="input-field">
-                                                        <i class="material-icons prefix">scanner</i>
-                                                        <label for="searchpro">Equipo</label>
-                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
+                                            <br>
+                                            <center>
+                                                <a class="waves-effect waves-light modal-trigger" href="#modalequi">Seleccionar Equipos
+                                                    <i class="material-icons right">important_devices</i></a>
+                                            </center>
+                                            <!--Modal-->
+                                            <div id="modalequi" class="modal modal-fixed-footer">
+                                                <div class="modal-content">
+                                                    <div class="center">
+                                                        <div class="col s7">
+                                                            <div class="input-field">
+                                                                <i class="material-icons prefix">scanner</i>
+                                                                <label for="searchpro">Equipo</label>
+                                                                <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                    <div class=" center col s12" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
+                                                        <table class="table" id="tablaPrestamo">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">NOMBRE</th>
+                                                                    <th scope="col">CODIGO</th>
+                                                                    <th scope="col">ESTADO</th>
+                                                                    <th scope="col">TIPO</th>
+                                                                    <th scope="col">DISPONIBLE</th>
+                                                                    <th scope="col">ACCION</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
                                                 </div>
                                             </div>
-                                            <div class="row center ">
+                                            <!--Fin del Modal-->
 
-                                                <div class="row center col s7" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
-                                                    <table class="table" id="tablaPrestamo">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">NOMBRE</th>
-                                                                <th scope="col">CODIGO</th>
-                                                                <th scope="col">ESTADO</th>
-                                                                <th scope="col">TIPO</th>
-                                                                <th scope="col">DISPONIBLE</th>
-                                                                <th scope="col">ACCION</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody></tbody>
-                                                    </table>
-                                                </div>
-                                                <div class="row center col s5">
-                                                    <table class="table" id="tablaDetalle" >
-                                                        <thead>
-                                                            <tr>
-                                                                <th>EQUIPO</th>
-                                                                <th>ESTADO</th>
-                                                                <th>TIPO</th>
-                                                                <th>ELIMINAR</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
+                                            <div class="center col s12">
+                                                <table class="table" id="tablaDetalle" >
+                                                    <thead>
+                                                        <tr>
+                                                            <th>EQUIPO</th>
+                                                            <th>ESTADO</th>
+                                                            <th>TIPO</th>
+                                                            <th>ELIMINAR</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
 
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
+                                    <br>
+                                    <hr>
+                                    <center>
                                     <div class="step-actions ">
-                                         <input href="#account" type='button' class='waves-effect waves-dark btn-flat previous-step' name='next' value='Regresar' />
+                                        <input href="#account" type='button' class='waves-effect waves-dark btn-flat previous-step' name='next' value='Regresar' />
                                         <input  type='button' class='waves-effect waves-dark btn blue' name='finish' value='Completar' id="registrarPrestamo" />
-                                    </div>
+                                    </div></center>
                                 </div>
                                 <!--Final Steep #2-->                          
                             </li>
