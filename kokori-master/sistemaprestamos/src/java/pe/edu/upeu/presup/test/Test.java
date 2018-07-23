@@ -39,6 +39,7 @@ public class Test {
     static ProductoDao ko = new ProductoDaoImp();
     static Gson g = new Gson();
     static DevolucionDao kop = new DevolucionDaoImp();
+    static DevoDao uni = new DevoDaoImp();
     static TipoDao i = new TipoDaoImp();
     static DevoDao po = new DevoDaoImp();
     static UsuarioDao us = new UsuarioDaoImp();
@@ -68,7 +69,8 @@ public class Test {
         //read();
         //jip();
         //nop();
-        jio();
+       // jio();
+       create();
     }
     static void listar(){
         System.out.println(g.toJson(po.listt()));
@@ -83,8 +85,8 @@ public class Test {
     }
 
     static void create() {
-        Producto p = new Producto("vcv");
-        if (ko.crea(p) > 0) {
+        Devon p = new Devon("vcv",2);
+        if (po.create(p) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");

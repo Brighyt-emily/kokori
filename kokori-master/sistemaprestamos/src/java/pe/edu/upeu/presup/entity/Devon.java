@@ -13,6 +13,23 @@ public class Devon {
     private int iddevo;
     private String det;
     private int iddetapre;
+    private int idPro;
+
+    public Devon(int iddevo, String det, int iddetapre, int idPro) {
+        this.iddevo = iddevo;
+        this.det = det;
+        this.iddetapre = iddetapre;
+        this.idPro = idPro;
+    }
+
+    public int getIdPro() {
+        return idPro;
+    }
+
+    public void setIdPro(int idPro) {
+        this.idPro = idPro;
+    }
+    
 
     public Devon() {
     }
@@ -23,9 +40,9 @@ public class Devon {
         this.iddetapre = iddetapre;
     }
 
-    public Devon(String det, int iddetapre) {
+    public Devon(String det, int idPro) {
         this.det = det;
-        this.iddetapre = iddetapre;
+        this.idPro = idPro;
     }
 
     public int getIddevo() {
