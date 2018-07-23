@@ -77,7 +77,6 @@ function DatosByReserva() {
 function primerosProductos() {
     //var tb = document.getElementById("reservado");
     var tb = $("#reservado tbody tr").length;
-    alert("num de fila :" + tb);
     for (var i = 0; i < tb; i++) {
         $("#reservado tbody tr").each(function () {
             var obj = new Object();
