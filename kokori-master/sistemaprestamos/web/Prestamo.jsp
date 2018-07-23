@@ -93,7 +93,7 @@
                                                     <div class="col s6 input-field">                                                        
                                                         <form name="fechas" id="fechas">
                                                             <i class="material-icons prefix active">insert_invitation</i>
-                                                            <label for="fechawe" class="active">Fecha prestamo</label>
+                                                            <label for="fechawe" class="active">Fecha prestamo</label> 
                                                             <input id="fecha_pre" name="fecha" type="date" class="validate">
                                                         </form> 
                                                     </div>

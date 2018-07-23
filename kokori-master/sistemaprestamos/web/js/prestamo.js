@@ -17,7 +17,7 @@ function ListarProd() {
 
             }
             if (x[i].estado === 2) {
-                var e = "Estado intermedio";
+                var e = "Estado intermedio"; 
 
             }
             $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nomProd + "</td><td>" + x[i].codigo + "</td><td>" + e + "</td><td>" + x[i].nomTipo + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
