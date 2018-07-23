@@ -81,8 +81,10 @@ function datosModal(fe,no,ape){
         var a="a";
         
         for (var i = 0; i < x.length; i++) {
-            kio=lista[0][i].idPro;
+            kio=lista[0][i].idPro;//
             idpre=lista[0][i].idP;
+            foo=a+lista[0][i].idP;
+            alert(foo);
             
             $("#cuerpo").append("<p><label><input class='jiopk' type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idPro+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' class='observa' id="+(a+lista[0][i].idP)+">");  
       
@@ -109,10 +111,11 @@ function Aceptar(fe,no,ape){
     function() {
        var seleccionado=$(this).val();
        
-            koko=$(".observa").values(); 
+    koko=$(".observa").val(); 
+    u=foo.values;     
        
-      alert(koko);
-        if(koko==="")
+      alert(u);
+        if(u==="")
         {
              $.post("de",{"idprestamo":idpre,"idproducto":seleccionado,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
@@ -130,7 +133,7 @@ function Aceptar(fe,no,ape){
                     listarObject();
                     modal(fe,no,ape);
                 });
-           $.post("de",{"det":koko,"idpro":seleccionado,"opc":3}, function(){});
+           $.post("de",{"det":u,"idpro":seleccionado,"opc":3}, function(){});
             alert(seleccionado);    
             location.reload();   
         

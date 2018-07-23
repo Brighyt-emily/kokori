@@ -132,11 +132,12 @@ $("#nomp").keyup(function () {
         function esta()
         {
             var tiu=$('#tip').val();
-            if(tiu>0)
+            alert(tiu);
+            if(tiu=!"")
             {
                   $.post("pro",{"nomTip":tiu,"op":6},function()
     {
-        console.log("unin");
+        console.log(6);
         var toastHTML = '<span>Tipo guardado correctamente</span>';
      Materialize.toast(toastHTML,1980);
     });
