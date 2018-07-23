@@ -79,7 +79,6 @@ function datosModal(fe,no,ape){
         $("#caja").append("<form action='#' class='form' id='cuerpo'></form>");
         lista.push(x);
         var a="a";
-        
         for (var i = 0; i < x.length; i++) {
             kio=lista[0][i].idPro;
             $("#cuerpo").append("<p><label><input type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idP+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' id="+(a+lista[0][i].idP)+">");  
@@ -98,39 +97,28 @@ function devolver(fe,no,ape){
 }
 
 //DEVOLUCION,CAMBIA EL ESTADO DEL PRESTAMO Y ENVIA UNA OBSERVACION DEL PROUDCTO EN CASO DE DEVOLUCION CON FALLO//
+    var cont;
 function Aceptar(fe,no,ape){
-    var map=new Map();
-    for (var i =0; i<100; i++) {
+    cont++;
+    alert("sd00");
+         for (var i =0; i<100; i++) {
         if( $("#"+i).prop('checked') ) {
             var checkbox=$("#"+i).val(); 
-            var texto=$("#a"+i).val();  
-            if(texto===""){
                 alert(checkbox);
-                /*$.post("de",{"idprestamo":checkbox,"idproducto":kio,"opc":2}, function () {
+                $.post("de",{"idprestamo":checkbox,"idproducto":kio,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
+                    alert("mkl");
                     datosModal(fe,no,ape);
                     listarObject();
                     modal(fe,no,ape);
                     location.reload();
                 });
     		continue;
-            }else{
-	    	map.set(checkbox,texto);
-                $.post("de",{"idprestamo":checkbox,"estado":0,"idproducto":kio,"opc":2}, function () {
-                    $("#tb_prestamos tbody tr").remove();
-                    datosModal(fe,no,ape);
-                    listarObject();
-                   modal(fe,no,ape);
-                });
-                for (var [clave, valor] of map) {   
-                }
-                $.post("de",{"det":valor,"iddetapre":clave,"opc":3}, function(){});
-                location.reload();
-    	    }*/
-            
-       // }
-   // }
-//}
+           
+        }
+    }
+   
+}
 
 function can()
 {

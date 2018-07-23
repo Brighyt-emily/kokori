@@ -79,7 +79,7 @@ public class DevolucionDaoImp implements DevolucionDao {
         List<Producto> prod=new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call ListarProductosPorFecha(?,?,?)}");
+            cst = cx.prepareCall("{call PROBAR(?,?,?)}");
             cst.setString(1, fe);
             cst.setString(2, nom);
             cst.setString(3, ape);
@@ -90,6 +90,7 @@ public class DevolucionDaoImp implements DevolucionDao {
                 p.setIdP(rs.getInt("idprestamo"));
                 p.setNom(rs.getString("nombre"));
                 p.setIdPro(rs.getInt("idproducto"));
+                p.setDispo(rs.getInt("disposicion"));
                 prod.add(p);
             }
         } catch (SQLException e) {

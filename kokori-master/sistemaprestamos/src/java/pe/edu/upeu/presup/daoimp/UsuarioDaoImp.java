@@ -56,4 +56,20 @@ public class UsuarioDaoImp implements UsuarioDao {
         return x;
     }
 
+    @Override
+    public int update(Usuario u) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call editarUsuario(?,?,?)}");
+            cst.setInt(1, u.getIduser());
+            cst.setString(2, u.getUser());
+            cst.setString(3, u.getContrauser());
+            
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e);
+        }
+        return x;    }
+
 }

@@ -8,4 +8,6 @@ public interface UsuarioDao {
      int create(Usuario usu);
     
     HashMap<String,Object> validar(String x, String y);
+    
+    int update(Usuario u);
 }
