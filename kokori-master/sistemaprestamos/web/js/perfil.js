@@ -22,14 +22,13 @@ function acept()
 {
     var uno=$("#usu").val();
     var dos=$("#contra").val();
-    var tres=$("#unin").val();
+    var tres=$("#unin").html();
     
-    alert(tres);
-
     $.post("UsuCon",{"idu":tres,"usu":uno,"cont":dos,"op":3}, function () {
       var toastHTML = "<span>Usuario actualizado</span>";
-    Materialize.toast( toastHTML,2085);             
-                    window.location.href = "login.jsp";
+    Materialize.toast( toastHTML,2085);  
+    
+     window.location.href = "lgt";
                    
                 });
 }
