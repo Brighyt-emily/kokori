@@ -54,7 +54,7 @@
                                                                 <i class="material-icons prefix">assignment</i>
                                                                 <label for="dnipro">Ingrese DNI profesor</label>
                                                                 <input id="idu" type="text" value="${sessionScope.iduser}" hidden>
-                                                                <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
+                                                                <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" important>
                                                             </div>                                                       
                                                         </div>
                                                         <div class="input-field col s12">
