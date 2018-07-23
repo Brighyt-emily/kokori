@@ -10,6 +10,12 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(int iduser, String user, String contrauser) {
+        this.iduser = iduser;
+        this.user = user;
+        this.contrauser = contrauser;
+    }
+
     public Usuario(int iduser, String user, String contrauser, int estaduser, int idroluser, int idtrabajuser) {
         this.iduser = iduser;
         this.user = user;

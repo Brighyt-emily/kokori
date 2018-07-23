@@ -40,22 +40,31 @@
                                     
                                         <div class="row">
         <div class="input-field col s6">
-          <input placeholder="${sessionScope.user}" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+            <a>Usuario</a>
+          <input disabled value="${sessionScope.user}" id="usu" type="text" class="validate">
+          <label for="disabled"></label>
         </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">${sessionScope.user}</label>
+          <input disabled value="${sessionScope.iduser}" id="unin" type="text" class="validate">
+          
+          
+       <div class="input-field col s6">
+            <a>Contraseña</a>
+          <input disabled value="${sessionScope.pass}" id="contra" type="text" class="validate">
+          
         </div>
       </div>
-        
-                                   
+        <div class="col s6">
+            <a class="btn-floating btn-large pulse light-red darken-4" id="btnActualizar" onclick="editar()"><i class="material-icons">edit</i></a>
+        </div>
+          <div class="col s6">
+              <a class="btn-floating btn-large pulse red darken-4" id="btnAcept" onclick="acept()" style="padding-top: -60px"><i class="material-icons">check</i></a>
+        </div>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
-                    <!-- ABRIR MODAL N°8 -->
+                    
                    
                     
                 </div>   
@@ -63,7 +72,7 @@
     </main>
 
     <%@include file="WEB-INF/template/footerMain.jspf" %>
-    <script src="js/devolucion.js" type="text/javascript"></script>
+    <script src="js/perfil.js" type="text/javascript"></script>
 
     </body>
 </html>

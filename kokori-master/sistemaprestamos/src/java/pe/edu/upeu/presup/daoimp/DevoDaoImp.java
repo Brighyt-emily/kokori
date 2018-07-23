@@ -34,7 +34,7 @@ public class DevoDaoImp implements DevoDao{
             cx= Conexion.getConexion();
             cst = cx.prepareCall("{call createDevolucion(?,?)}");
             cst.setString(1, d.getDet());
-            cst.setInt(2, d.getIddetapre());
+            cst.setInt(2, d.getIdPro());
             x = cst.executeUpdate();
             
         }catch(SQLException e)

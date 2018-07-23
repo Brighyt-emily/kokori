@@ -39,6 +39,7 @@ public class Test {
     static ProductoDao ko = new ProductoDaoImp();
     static Gson g = new Gson();
     static DevolucionDao kop = new DevolucionDaoImp();
+    static DevoDao uni = new DevoDaoImp();
     static TipoDao i = new TipoDaoImp();
     static DevoDao po = new DevoDaoImp();
     static UsuarioDao us = new UsuarioDaoImp();
@@ -50,7 +51,7 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-hio();
+        //hio();
        //conexion();
         //conexion();
         //create();
@@ -68,6 +69,8 @@ hio();
         //read();
         //jip();
         //nop();
+       // jio();
+       create();
     }
     static void listar(){
         System.out.println(g.toJson(po.listt()));
@@ -82,8 +85,8 @@ hio();
     }
 
     static void create() {
-        Producto p = new Producto("vcv");
-        if (ko.crea(p) > 0) {
+        Devon p = new Devon("vcv",2);
+        if (po.create(p) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");
@@ -114,6 +117,11 @@ hio();
         System.out.println(data);
         System.out.println(data.size());
 
+    }
+    static void jio()
+    {
+        Usuario jio=new Usuario(2,"lolo","kop");
+        System.out.println(us.update(jio));
     }
     static void read()
     {

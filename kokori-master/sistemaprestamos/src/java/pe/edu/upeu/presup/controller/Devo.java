@@ -60,7 +60,7 @@ public class Devo extends HttpServlet {
                     pres.update(pre);
                     break;
                case 3: 
-                   Devon kop = new Devon(request.getParameter("det"),Integer.parseInt(request.getParameter("iddetapre")));
+                   Devon kop = new Devon(request.getParameter("det"),Integer.parseInt(request.getParameter("idpro")));
                    k.create(kop);
                    break;
                case 5:

@@ -19,6 +19,16 @@ public class Producto {
     private int iTip;
     private String nomTip;
     private int stock;
+    private int dispo;
+
+    public int getDispo() {
+        return dispo;
+    }
+
+    public void setDispo(int dispo) {
+        this.dispo = dispo;
+    }
+    
 
     public int getIdPro() {
         return idPro;
