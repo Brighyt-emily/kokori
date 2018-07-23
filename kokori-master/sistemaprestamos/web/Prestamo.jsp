@@ -57,32 +57,38 @@
                                                                 <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
                                                             </div>                                                       
                                                         </div>
-                                                        <div class="input-field row col s10">
-                                                            <div class="input-field">
-                                                                <i class="material-icons prefix">person_pin</i>
-                                                                <input  id="profe" type="text" class="validate" disabled>
-                                                                <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row center col s10 input-field">
-                                                            <i class="material-icons prefix">chrome_reader_mode</i>
-                                                            <label for="responsable">Alumno</label>
-                                                            <input type="text" name="responsable" id="responsable" required>
-                                                        </div>
                                                         <div class="input-field col s12">
                                                             <select id="docu">
                                                             </select>
                                                             <label >Documento</label>
                                                         </div>
+                                                        <div class="col s12 input-field">
+                                                            <form name="horas" id="horas">
+                                                                <i class="material-icons prefix active">access_time</i>
+                                                                <label for="hor" class="active">Hora prestamo</label>
+                                                                <input name="hora" id="hora_pre" type="time" class="validate">
+                                                            </form>
+                                                        </div>
+                                                        <div class="col s12 input-field">
+                                                            <form name="horas" id="horas">
+                                                                <i class="material-icons prefix active">access_time</i>
+                                                                <label for="hora" class="active">Hora devolucion</label>
+                                                                <input name="hora" id="hora_dev" type="time" class="validate">
+                                                            </form>
+                                                        </div> 
 
                                                     </div>
                                                     <div class="row center col s6 " name="left">
-
-                                                        <div class="col s10 input-field">
-                                                            <i class="material-icons prefix">pin_drop</i>
-                                                            <label for="aula">Aula</label>
-                                                            <input type="text" name="aula" id="aula" required>
+                                                        <div class="input-field">
+                                                            <i class="material-icons prefix">person_pin</i>
+                                                            <input  id="profe" type="text" class="validate" disabled>
+                                                            <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>
+                                                    </div>
+                                                    <div class="col s6 input-field">
+                                                        <i class="material-icons prefix">chrome_reader_mode</i>
+                                                        <label for="responsable">Alumno</label>
+                                                        <input type="text" name="responsable" id="responsable" required>
                                                     </div>
                                                     <div class="col s6 input-field">                                                        
                                                         <form name="fechas" id="fechas">
@@ -91,13 +97,7 @@
                                                             <input id="fecha_pre" name="fecha" type="date" class="validate">
                                                         </form> 
                                                     </div>
-                                                    <div class="col s6 input-field">
-                                                        <form name="horas" id="horas">
-                                                            <i class="material-icons prefix active">access_time</i>
-                                                            <label for="hor" class="active">Hora prestamo</label>
-                                                            <input name="hora" id="hora_pre" type="time" class="validate">
-                                                        </form>
-                                                    </div>
+
                                                     <!--Fecha devolucion-->
                                                     <div class="col s6 input-field">
                                                         <form name="fechasdev" id="fechasdev">
@@ -106,13 +106,11 @@
                                                             <input id="fechadev" name="fecha_dev" type="date">
                                                         </form>
                                                     </div>
-                                                    <div class="col s6 input-field">
-                                                        <form name="horas" id="horas">
-                                                            <i class="material-icons prefix active">access_time</i>
-                                                            <label for="hora" class="active">Hora devolucion</label>
-                                                            <input name="hora" id="hora_dev" type="time" class="validate">
-                                                        </form>
-                                                    </div>                           
+                                                    <div class="col s16 input-field">
+                                                        <i class="material-icons prefix">pin_drop</i>
+                                                        <label for="aula">Aula</label>
+                                                        <input type="text" name="aula" id="aula" required>
+                                                    </div>
                                                 </div>
                                             </center>
                                         </div>
@@ -134,20 +132,20 @@
                                 <div class="step-content" id="account">
                                     <center><div><h5 class="info-text"> Equipos </h5></div></center>
                                     <div class="row">
-                                        <div class="container input-field col s12">
+                                        <div class="container input-field col s12" >
                                             <br>
                                             <center>
-                                                <a class="waves-effect waves-light modal-trigger" href="#modalequi">Seleccionar Equipos
+                                                <a class="waves-effect waves-light modal-trigger" href="#modalequi" >Seleccionar Equipos
                                                     <i class="material-icons right">important_devices</i></a>
                                             </center>
                                             <!--Modal-->
                                             <div id="modalequi" class="modal modal-fixed-footer">
                                                 <div class="modal-content">
-                                                        <div class="col s12 input-field">
-                                                            <i class="material-icons prefix">scanner</i>
-                                                            <label for="searchpro">Equipo</label>
-                                                            <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
-                                                        </div>
+                                                    <div class="col s12 input-field">
+                                                        <i class="material-icons prefix">scanner</i>
+                                                        <label for="searchpro">Equipo</label>
+                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
+                                                    </div>
                                                     <div class=" center col s12" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
                                                         <table class="table" id="tablaPrestamo">
                                                             <thead>
