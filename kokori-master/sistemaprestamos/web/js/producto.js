@@ -133,7 +133,7 @@ $("#nomp").keyup(function () {
         {
             var tiu=$('#tip').val();
             alert(tiu);
-            if(tiu=!"")
+            if(tiu!="")
             {
                   $.post("pro",{"nomTip":tiu,"op":6},function()
     {
