@@ -79,13 +79,17 @@ function datosModal(fe,no,ape){
         $("#caja").append("<form action='#' class='form' id='cuerpo'></form>");
         lista.push(x);
         var a="a";
+        
         for (var i = 0; i < x.length; i++) {
             kio=lista[0][i].idPro;
-            $("#cuerpo").append("<p><label><input type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idP+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' id="+(a+lista[0][i].idP)+">");  
+            idpre=lista[0][i].idP;
+            $("#cuerpo").append("<p><label><input class='jiopk' type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idPro+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' id="+(a+lista[0][i].idP)+">");  
+      
         }
         //BOTON 'DEVOLVER'//
-        $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>");
-    });
+        
+                $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>");
+   alert(lista[0][i].idP); });
  
 };
 
@@ -97,26 +101,26 @@ function devolver(fe,no,ape){
 }
 
 //DEVOLUCION,CAMBIA EL ESTADO DEL PRESTAMO Y ENVIA UNA OBSERVACION DEL PROUDCTO EN CASO DE DEVOLUCION CON FALLO//
-    var cont;
+   
 function Aceptar(fe,no,ape){
-    cont++;
-    alert("sd00");
-         for (var i =0; i<100; i++) {
-        if( $("#"+i).prop('checked') ) {
-            var checkbox=$("#"+i).val(); 
-                alert(checkbox);
-                $.post("de",{"idprestamo":checkbox,"idproducto":kio,"opc":2}, function () {
+    
+            $('.jiopk:checked').each(
+    function() {
+       var seleccionado=$(this).val();
+        $.post("de",{"idprestamo":idpre,"idproducto":seleccionado,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
-                    alert("mkl");
                     datosModal(fe,no,ape);
                     listarObject();
                     modal(fe,no,ape);
                     location.reload();
                 });
-    		continue;
-           
-        }
     }
+);
+       
+               
+             
+           
+    
    
 }
 
