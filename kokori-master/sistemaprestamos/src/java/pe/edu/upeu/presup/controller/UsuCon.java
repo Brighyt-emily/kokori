@@ -67,8 +67,7 @@ public class UsuCon extends HttpServlet {
                 out.println(g.toJson(myTraba.create(trab)));
                 break;
             case 3:
-                Usuario uj = new Usuario(Integer.parseInt(request.getParameter("idu")),
-                        request.getParameter("usu"),
+                Usuario uj = new Usuario(Integer.parseInt(request.getParameter("idu")),request.getParameter("usu"),
                         request.getParameter("cont"));
                     myUsu.update(uj);
                 break;

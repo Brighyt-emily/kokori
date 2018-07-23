@@ -45,7 +45,6 @@
                                         <input disabled value="${sessionScope.user}" id="usu" type="text" class="validate">
                                         <label for="disabled"></label>
                                     </div>
-                                    <input disabled value="${sessionScope.iduser}" id="unin" type="text" class="validate">
 
 
                                     <div class="input-field col s6">
@@ -53,6 +52,7 @@
                                         <input disabled value="${sessionScope.pass}" id="contra" type="text" class="validate">
 
                                     </div>
+                                          <a  id="unin">${sessionScope.iduser}</a>
                                 </div>
                                 <!-- end -->
                                 </div>
