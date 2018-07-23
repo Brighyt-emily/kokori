@@ -144,7 +144,7 @@
                                                     <div class="col s12 input-field">
                                                         <i class="material-icons prefix">scanner</i>
                                                         <label for="searchpro">Equipo</label>
-                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro">
+                                                        <input  id="searchpro" class="autocomplete" type="text" maxlength="8" name="dnipro" required>
                                                     </div>
                                                     <div class=" center col s12" id="visualizarProducto" style="border: 1px solid #eae8e8; border-radius: 5px; margin: 10px 0px 5px 0px; padding: 10pX 10Px 0px 10px; ">
                                                         <table class="table" id="tablaPrestamo">
