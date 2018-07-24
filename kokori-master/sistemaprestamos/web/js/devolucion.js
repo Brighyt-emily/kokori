@@ -73,21 +73,26 @@ function datosModal(fe,no,ape){
     //PRODUCTOS//
     $.get("de", {"fecha":fe,"nom":no,"ape":ape,"opc": 5}, function (dat) {
         var x=JSON.parse(dat);
-        var lista=new Array();
-        lista.length = 0;
-        $("#cuerpo").remove();
-        $("#caja").append("<form action='#' class='form' id='cuerpo'></form>");
-        lista.push(x);
-        var a="a";
-        for (var i = 0; i < x.length; i++) {
-            kio=lista[0][i].idPro;//
-            idpre=lista[0][i].idP;
-           
-            $("#cuerpo").append("<p><label><input class='jiopk' type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idPro+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' class='observa' id="+(a+lista[0][i].idPro)+">");  
-      
-        }
+        if (x.length===0){
+            location.reload();
+        }else{
+            var lista=new Array();
+            lista.length = 0;
+            $("#cuerpo").remove();
+            $("#caja").append("<form action='#' class='form' id='cuerpo'></form>");
+            lista.push(x);
+            var a="a";
+            for (var i = 0; i < x.length; i++) {
+                kio=lista[0][i].idPro;//
+                idpre=lista[0][i].idP;
+
+                $("#cuerpo").append("<p><label><input class='jiopk' type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idPro+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' class='observa' id="+(a+lista[0][i].idPro)+">");  
+
+            }
+        
         //BOTON 'DEVOLVER'//
          $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>");
+         }
     });
  
 };
