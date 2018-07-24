@@ -45,11 +45,12 @@
                         </ul>
                     </div>
                 </div>
+                
             </div>
+            
+            
             <div class="row">
-                <div class="col s12">
-
-                </div>
+                
                 <div class="col s12 m12 l12">
                     <div class="card" style="padding:20px;">
 
@@ -154,6 +155,8 @@
 
                                 </div>
                             </div>
+                            
+                            
                             <div class="row">
                                 <div class="col s8">
 
