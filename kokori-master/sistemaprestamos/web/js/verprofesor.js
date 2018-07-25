@@ -30,12 +30,9 @@ function cardVer(){
     });
     
     
-    console.log("llego a prestamos :,)");
-    var id = $("#idP").val();
-    var idp = parseInt(id);
-    $.get("pc", {"idProf": idp, "op": 8}, function (data) {
-        alert(data);
-        var w = JSON.parse(data);
+    $.get("pc", {"idProf": idpars, "op": 8}, function (datas) {
+        alert(datas);
+        var w = JSON.parse(datas);
         alert("estos es la data" + w);
         alert(w[0].fechaP);
         console.log("llego a controlador");
