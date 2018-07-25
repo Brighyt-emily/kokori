@@ -148,7 +148,7 @@ $("#dnipro").keyup(function () {
     {
         $.get("Pc", {"dni": dni, "opc": 5}, function (data) {
             if(data===0){
-                Materialize.toast("El equipo ya esta en la lista!", 1980);
+                Materialize.toast("Error! Ingresar DNI solo de un profesor", 1980);
             } else {
                 var x = JSON.parse(data);
                 $("#profe").val(x.nomApe);
