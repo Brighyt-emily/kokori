@@ -136,7 +136,7 @@ function productoSeleccionado(x){
 
             }
         $("#tablaDetalle").append("<tr><td hidden>"+y.idP+"</td><td>" + y.nom + "</td><td>" + e + "</td><td>" + y.nomTip + "</td>\n\
-        <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex,"+y.idP+")'>highlight_off</button></td></tr>");
+        <td><a class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex,"+y.idP+")'>highlight_off</a></td></tr>");
         document.getElementById("bt"+y.idP+"").style.color = 'green';
         }
      });
