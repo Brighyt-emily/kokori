@@ -75,7 +75,14 @@ function modal(){
   
    
 }
-
+function pris(x)
+{
+   
+     hui=x;
+      $('.modal-trigger').leanModal();
+      
+      
+}
 
 function salva()
 {
@@ -90,6 +97,9 @@ function salva()
         console.log("controlador op 2");
         listar();
     });
+    var unito = '<span>Producto guardado correctamente</span>';
+     Materialize.toast(unito,1980);
+    
     
 }
 function unin(x){var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="ok('+x+')">Aceptar</button></span>';
@@ -97,12 +107,7 @@ function unin(x){var toastHTML = '<span>Seguro que desea editar?<button class="b
     
 }
 
- function editar(x){
-     
-    var toastHTML = '<span>Seguro que desea guardar?<button class="btn-flat toast-action" onclick="salva()">Aceptar</button></span>';
-     Materialize.toast(toastHTML,1980);
-}
-   
+
 function eco(x){
     
      var toastContent = $('<span>Seguro que desea eliminar?<button class="btn-flat toast-action" onclick="eliminar('+x+')">Aceptar</button></span>');
@@ -151,6 +156,19 @@ $("#nomp").keyup(function () {
            
         }
         
+        function updateTipo()
+        {
+            var nom=$("#no").val();
+            alert(hui);
+            alert(nom);
+             $.post("pro",{"idTipo":hui,"nomTip":nom,"op":9},function()
+    {
+        
+        var holi = '<span>Tipo actualizado correctamente</span>';
+        Materialize.toast(holi,1980);
+    });
+        }
+        
         
         function moto()
         {
@@ -161,14 +179,12 @@ $("#nomp").keyup(function () {
         for (var i = 0; i < data.length; i++) {
             if( bibi[i].st = bibi[i].st ? bibi[i].st : 0)
             {
-                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td></tr>");
+                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal16' onclick='pris("+bibi[i].loco+")'><i class='material-icons'>update</i></a></td></tr>");
              
             }else
             {
-                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td></tr>");
-             
+                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal16' onclick='pris("+bibi[i].loco+")'><i class='material-icons'>update</i></a></td></tr>");
             }
-            
                   
              
         }

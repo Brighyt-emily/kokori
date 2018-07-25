@@ -13,4 +13,5 @@ import pe.edu.upeu.presup.entity.Tipo;
  */
 public interface TipoDao {
     int create(Tipo t);
+    int update(Tipo y);
 }

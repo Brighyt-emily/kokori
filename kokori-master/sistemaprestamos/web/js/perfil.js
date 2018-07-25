@@ -3,6 +3,7 @@ $(document).ready(function () {
 $('#usu').attr("disabled", true);
  $('#contra').attr("disabled", true);
 $("#unin").css('visibility', 'hidden'); 
+
 });
 
 

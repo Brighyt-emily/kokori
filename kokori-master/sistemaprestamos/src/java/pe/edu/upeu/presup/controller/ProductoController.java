@@ -14,8 +14,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.upeu.presup.dao.ProductoDao;
+import pe.edu.upeu.presup.dao.TipoDao;
 import pe.edu.upeu.presup.daoimp.ProductoDaoImp;
+import pe.edu.upeu.presup.daoimp.TipoDaoImp;
 import pe.edu.upeu.presup.entity.Producto;
+import pe.edu.upeu.presup.entity.Tipo;
 
 /**
  *
@@ -24,6 +27,7 @@ import pe.edu.upeu.presup.entity.Producto;
 @WebServlet(name = "pro", urlPatterns = {"/pro"})
 public class ProductoController extends HttpServlet {
     private ProductoDao pro=new ProductoDaoImp();
+    private TipoDao jio=new TipoDaoImp();
     private Gson g=new Gson();
 
     /**
@@ -67,6 +71,10 @@ public class ProductoController extends HttpServlet {
             case 7:out.println(g.toJson(pro.liko()));
                   break;
             case 8: out.print(g.toJson(pro.ko()));
+            break;
+            case 9:Tipo ti = new Tipo(Integer.parseInt(request.getParameter("iu")),request.getParameter("nom"));
+                 jio.update(ti);
+                break;
         }
         }
     }

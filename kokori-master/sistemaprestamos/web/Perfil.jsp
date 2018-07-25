@@ -57,10 +57,10 @@
                                 <!-- end -->
                                 </div>
                                 <div class="col s6">
-                                    <a class="btn-floating btn-large pulse light-red darken-4" id="btnActualizar" onclick="editar()"><i class="material-icons">edit</i></a>
+                                    <a class="btn-floating btn-large pulse light-red darken-4" id="btnActualizar" onclick="editar()" data-tooltip="Edita usuario"><i class="material-icons">edit</i></a>
                                 </div>
                                 <div class="col s6">
-                                    <a class="btn-floating btn-large pulse red darken-4" id="btnAcept" onclick="acept()" style="padding-top: -60px"><i class="material-icons">check</i></a>
+                                    <a class="btn-floating btn-large pulse red darken-4" id="btnAcept" onclick="acept()" style="padding-top: -60px" data-tooltip="Registra"><i class="material-icons">check</i></a>
                                 </div>
                             </div>
 

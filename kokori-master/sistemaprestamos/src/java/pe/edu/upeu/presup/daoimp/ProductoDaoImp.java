@@ -167,6 +167,8 @@ public class ProductoDaoImp implements ProductoDao {
                 Map<String, Object> map = new HashMap<>();
                 map.put("no", rs.getString("nom_tipo"));
                 map.put("st", rs.getString("stock"));
+                map.put("loco", rs.getString("idtipo"));
+                
 
                 lista.add(map);
             }

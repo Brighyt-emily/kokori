@@ -16,24 +16,7 @@
 
     </head>
     <body>
-        <%
-            try{
-             HttpSession sesion = request.getSession();
-                 if(sesion.getAttribute("idr")==null){
-                     response.sendRedirect("login.jsp");
-                 }
-                 else{
-                     String rol = sesion.getAttribute("idr").toString();
-                     if(!rol.equals("2")){
-                         response.sendRedirect("login.jsp");
-                    }
-                 }
-            }
-         catch(Exception e){
-             System.out.println("Error: "+e);
-                 
-         }
-            %>
+        
          <%@include file="WEB-INF/template/Principal.jspf" %>
          <main class="mn-inner">
              <nav class="teal lighten-2" style="margin-top: -20px;">
@@ -151,7 +134,7 @@
                 </div>
                 </div>
                 <div class="modal-footer">
-                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick='editar()'>Registrar</a>
+                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick='salva()'>Registrar</a>
                   <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
 
                 </div>
@@ -239,6 +222,7 @@
                                                 <th>#</th>
                                                 <th>Nombre</th>
                                                 <th>Stock</th>
+                                                <th>Accion</th>
                                                 
                                             </tr>
                                         </thead>
@@ -246,14 +230,46 @@
                                         </tbody>
                                         
                                     </table> 
-                                    </div>
+                                      
                                     
-                                </div>
+                                    </div>
+                                   
+                           </div>
                                 
                     
                 </div>
                 </div>
                 <div class="modal-footer">
+                    
+                  <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+
+                </div>
+                     </div>
+             
+             
+             
+             <div id="modal16" class="modal s12 m12 l12 modal-fixed-footer" style="max-width: 530px;">
+                <div class="modal-content">
+                   <label for="tipos">Actualizar Tipo</label>
+
+                     <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
+                         <form id="contact" method="post" class="form" role="form" >
+                            <div class="row">
+                               
+                            <div class="input-field col s6">
+                                        <a>Usuario</a>
+                                        <input  id="no" type="text" class="validate">
+                                        <label for=""></label>
+                                    </div>        
+                                   
+                           </div>
+                             
+                             
+                                
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick="updateTipo()"> Guardar</a>
                     
                   <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
 

@@ -37,5 +37,22 @@ private java.sql.CallableStatement cst;
         }
         return x;
     }
+
+    @Override
+    public int update(Tipo y) {
+        int x=0;
+        try
+        {
+            cx= Conexion.getConexion();
+            cst = cx.prepareCall("{call updateTupo(?,?)}");
+            cst.setInt(1, y.getIdTipo());
+            cst.setString(2, y.getNoTipo());
+            x = cst.executeUpdate();
+            
+        }catch(SQLException e)
+        {
+            System.out.println("ERROR"+e);
+        }
+        return x;    }
     
 }
