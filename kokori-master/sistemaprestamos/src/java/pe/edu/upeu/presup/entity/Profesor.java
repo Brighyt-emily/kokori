@@ -40,8 +40,11 @@ public class Profesor extends Trabajador{
         this.codProfesor = codProfesor;
         this.idEscuela = idEscuela;
     }
-    
 
+  
+    
+    
+    
     public String getNomApe() {
         return nomApe;
     }

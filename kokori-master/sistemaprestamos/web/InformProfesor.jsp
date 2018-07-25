@@ -126,7 +126,7 @@
                                                   <label>Facultades</label>
                                               </div>
                                               <div class="col s2 center-align">
-                                                  <a class="btn-floating btn-large waves-effect waves-light blue-grey" id="btnMostrar"><i class="material-icons">keyboard_arrow_right</i></a>
+                                                  <a class="btn-floating btn-medium waves-effect waves-light blue-grey" id="btnMostrar"><i class="material-icons">keyboard_arrow_right</i></a>
                                               </div>
 
                                               <div class="input-field col s5">
@@ -137,7 +137,16 @@
                                               </div>
 
                                           </div>
-                                         </div>
+                                          
+                                          <div class="row">    
+                                              <div class="col s12 left">
+                                              
+                                                  <a class="waves-effect waves-light btn" id="editar">Editar</a>
+                                              
+                                              </div>
+                                          
+                                          </div>
+                                      </div>
                                   </div>
                                   
                                   

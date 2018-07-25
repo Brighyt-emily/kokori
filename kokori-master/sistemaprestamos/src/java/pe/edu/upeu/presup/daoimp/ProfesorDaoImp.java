@@ -51,27 +51,7 @@ public class ProfesorDaoImp implements ProfesorDao {
         return x;
     }
 
-    @Override
-    public int update(Profesor p) {
-        int x = 0;
-        try {
-            cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call UpdateProfesor(?,?,?,?,?,?,?,?,?)}");
-            cst.setInt(1, p.getIdProfesor());
-            cst.setString(2, p.getCodProfesor());
-            cst.setInt(3, p.getIdEscuela());
-            cst.setString(4, p.getNomTrabajador());
-            cst.setString(5, p.getApelTrabajador());
-            cst.setString(6, p.getDireccion());
-            cst.setString(7, p.getNumCelular());
-            cst.setString(8, p.getNumDni());
-            cst.setString(9, p.getEmail());
-            x = cst.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Error: " + e);
-        }
-        return x;
-    }
+   
     
 
     @Override
@@ -244,6 +224,30 @@ public class ProfesorDaoImp implements ProfesorDao {
             System.out.println("Error: "+e);
         }
         return p;
+    }
+
+    @Override
+    public int update(int id, String nombres, String apellidos, String Dni, String Celular, String direccion, String email, int escuela) {
+
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call updateProfesor(?,?,?,?,?,?,?,?)}");
+            cst.setInt(1,id);
+            cst.setString(2,nombres);
+            cst.setString(3, apellidos);
+            cst.setString(4,Dni);
+            cst.setString(5,Celular);
+            cst.setString(6,direccion);
+            cst.setString(7,email);
+            cst.setInt(8,escuela);          
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return x;
+
+
     }
 
   

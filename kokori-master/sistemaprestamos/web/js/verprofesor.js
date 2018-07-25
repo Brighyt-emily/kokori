@@ -1,7 +1,7 @@
 $(document).ready(function () {   
    
    cardVer();   
-   
+   alert("esto funciona");
 });
 
 function cardVer(){    
@@ -17,7 +17,8 @@ function cardVer(){
         $("#email").text(w[0].email);
         $("#grado").text(w[0].grado);
         $("#escuela").text(w[0].nomEscuela);
-        $("#direccion").text(w[0].direccion);                        
+        $("#direccion").text(w[0].direccion); 
+        
         $("#txtnombre").val(w[0].nombres);
         $("#txtapellido").val(w[0].apellidos);
         $("#txtdni").val(w[0].numDni);
@@ -58,10 +59,9 @@ function actualizapro(){
         var id = $("#idP").val();
    var idpars = parseInt(id);
     $.get("pc", {"idProf": idpars, "op": 8}, function (datas) {
-        alert(datas);
+       
         var w = JSON.parse(datas);
-        alert("estos es la data" + w);
-        alert(w[0].fechaP);
+       
         console.log("llego a controlador");
         for (var i = 0; i < w.length; i++) {
             $("#tblprestamos").append("<tr><td hidden>" + w[i].idprestamo + "</td><td>"
@@ -74,6 +74,36 @@ function actualizapro(){
 }
 
 
+
+$("#editar").click(function () {
+        
+         var id = $("#idP").val();
+         var idpars = parseInt(id);
+         var nombre= $("#txtnombre").val();             
+         var apellido=$("#txtapellido").val();
+         var dni=$("#txtdni").val();       
+         var celular=$("#txtcelular").val();
+         var email=$("#txtemail").val();       
+         var escuela=$("#txtescuela").val();
+        var direccion=$("#txtdireccion").val();
+        var combo=$("#comboEscuela").val();
+        var idparss = parseInt(combo);
+               console.log("funciona");
+        $.post("pc", {
+            "id":idpars,
+            "nombre":nombre,
+            "apellido":apellido,
+            "dni":dni,
+            "celular":celular,
+            "direccion":direccion,
+            "email":email,
+            "ides":idparss,
+            "op": 5}, function (){
+    
+        console.log("lo trajo");
+        cardVer();
+     });
+});
 
 
 function verproductos(x){

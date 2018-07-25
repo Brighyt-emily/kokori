@@ -18,7 +18,8 @@ import pe.edu.upeu.presup.entity.Profesor;
 public interface ProfesorDao {
     
     int create(Profesor p);
-    int update(Profesor p);
+    //perdon :,)
+    int update(int id,String nombres,String apellidos,String Dni,String Celular,String direccion,String email,int escuela);
     int delete(int key);
     int deleteTra(int key);   
     List<Map<String, Object>> listarRegisProfesores();    
