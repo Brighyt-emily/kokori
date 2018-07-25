@@ -24,8 +24,6 @@ $("#btnMostrar").click(function () {
     
 });
 
-
-
 $("#btnRegistrar").click(function () {
     
     var es=0;
@@ -40,8 +38,8 @@ $("#btnRegistrar").click(function () {
     var x = $("#comboEscuela").val();
     var ide = parseInt(x);
     
-alert(ide);
-$.get("pc", {"op":4, "nombres": nombres,"apellidos":apellidos,"celular":celular,"email":email,"direccion":direccion,"grado":grado,"dni":dni,"codigo":codigo,"escuela":ide,"estado":0}, function (data) {
-alert("Registro exitoso");
+
+$.get("pc", {"op":4, "nombres": nombres,"apellidos":apellidos,"celular":celular,"email":email,"direccion":direccion,"grado":grado,"dni":dni,"codigo":codigo,"escuela":ide,"estado":1}, function (data) {
+    Materialize.toast('Profesor Registrado', 3000, 'rounded');             
 });     
 });

@@ -1,7 +1,5 @@
-$(document).ready(function () {   
-   
-   cardVer();   
-   alert("esto funciona");
+$(document).ready(function () {      
+   cardVer();    
 });
 
 function cardVer(){    
@@ -9,7 +7,7 @@ function cardVer(){
    var idpars = parseInt(id);
     $.get("pc",{"op":2,"idp":idpars}, function (data) {
         var w = JSON.parse(data);
-        alert("estos son los nombre"+w[0].nombres);       
+             
         $("#nombres").text(w[0].nombres+" "+w[0].apellidos);
         $("#dni").text(w[0].numDni);
         $("#codigo").text(w[0].codigo);
@@ -28,16 +26,14 @@ function cardVer(){
         $("#txtgrado").val(w[0].grado);
         $("#txtescuela").val(w[0].nomEscuela);
         $("#txtdireccion").val(w[0].direccion);
-        actualizapro();
-    });
-    
-   
+        actualizapro(); 
+    });       
 }
 
 $("#btnMostrar").click(function () {
     var x = $("#secFacultad").val();
     var idf = parseInt(x);
-    alert(idf);
+ 
     if (idf !== 0) {
         $.get("pc", {"op": 3, "idf": idf}, function (data) {
             var w = JSON.parse(data);
@@ -62,7 +58,7 @@ function actualizapro(){
        
         var w = JSON.parse(datas);
        
-        console.log("llego a controlador");
+      
         for (var i = 0; i < w.length; i++) {
             $("#tblprestamos").append("<tr><td hidden>" + w[i].idprestamo + "</td><td>"
                     + w[i].fechaP + "</td><td>" + w[i].fechaD + "</td><td>"
@@ -88,7 +84,7 @@ $("#editar").click(function () {
         var direccion=$("#txtdireccion").val();
         var combo=$("#comboEscuela").val();
         var idparss = parseInt(combo);
-               console.log("funciona");
+             
         $.post("pc", {
             "id":idpars,
             "nombre":nombre,
@@ -99,9 +95,9 @@ $("#editar").click(function () {
             "email":email,
             "ides":idparss,
             "op": 5}, function (){
-    
-        console.log("lo trajo");
+    Materialize.toast('Profesor Actualizado', 3000, 'rounded')             
         cardVer();
+        actualizapro();
      });
 });
 
