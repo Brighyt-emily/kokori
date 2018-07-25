@@ -159,16 +159,21 @@
                                               <th>Fecha Devolucion</th>
                                               <th>Hora Prestamo</th>
                                               <th>Hora Devolucion</th>                                              
-                                              <th>Aula</th>
-                                              <th>Alumno</th>
+                                              <th>Estado</th>
+                                            
                                           </tr>
                                       </thead>
 
                                       <tbody>
                                           
                                       </tbody>
+                                      
                                   </table>
-                              </div>                                                  
+                              </div>    
+                                  
+                                  
+                                  
+                                  
                       </div>
                  </div>             
              </div>

@@ -1,5 +1,6 @@
 $(document).ready(function () {      
-   cardVer();    
+   cardVer();
+  
 });
 
 function cardVer(){    
@@ -60,10 +61,24 @@ function actualizapro(){
        
       
         for (var i = 0; i < w.length; i++) {
-            $("#tblprestamos").append("<tr><td hidden>" + w[i].idprestamo + "</td><td>"
-                    + w[i].fechaP + "</td><td>" + w[i].fechaD + "</td><td>"
-                    + w[i].horaP + "</td><td>" + w[i].horaD + "</td><td>" + w[i].aula + "</td><td><a href='#' onclick='verproductos(" + w[i].idprestamo + ")'>"
-                    + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
+             alert(w[i].esta);
+            if (w[i].esta ==="1")
+            {
+                
+                $("#tblprestamos").append("<tr><td hidden>" + w[i].idprestamo + "</td><td>"
+                        + w[i].fechaP + "</td><td>" + w[i].fechaD + "</td><td>"
+                        + w[i].horaP + "</td><td>" + w[i].horaD + "</td><td><i class = 'material-icons prefix'>do_not_disturb_on</i></td></tr>");
+               
+            }
+            if (w[i].esta ==="2")
+            {
+                
+                $("#tblprestamos").append("<tr><td hidden>" + w[i].idprestamo + "</td><td>"
+                        + w[i].fechaP + "</td><td>" + w[i].fechaD + "</td><td>"
+                        + w[i].horaP + "</td><td>" + w[i].horaD + "</td><td><i class = 'material-icons prefix'>done_all</i></td></tr>");
+            }
+            
+            
         }
 
     });
@@ -102,7 +117,17 @@ $("#editar").click(function () {
 });
 
 
-function verproductos(x){
-    alert(x);
+function verproductos(x){  
+    var idf = parseInt(x);
+     $('.modal-trigger').leanModal();          
+     $.get("pc", {"idPres":idf, "op":9}, function (datas) {
+             var w = JSON.parse(datas);
+             alert(w);
+               for (var i = 0; i < w.length; i++) {
+                $("#tablita").append("<tr><td>" + w[i].nombre+ "</td></tr>");
+      
+        }       
+    });
+
 }
 //idProf

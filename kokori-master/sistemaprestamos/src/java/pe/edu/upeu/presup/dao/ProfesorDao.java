@@ -27,5 +27,6 @@ public interface ProfesorDao {
     List<Facultad> listFacultad();    
     List<Escuela> listEscuelaByIdFacultad(int key);    
     Profesor SearchDniprof(String x);    
-    List<Map<String, Object>> prestamosIdProfesor(int key);        
+    List<Map<String, Object>> prestamosIdProfesor(int key);  
+   
 }
