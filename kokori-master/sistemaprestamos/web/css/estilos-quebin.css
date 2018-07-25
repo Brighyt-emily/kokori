@@ -37,3 +37,8 @@
     background-color: #3366ff;
     color: white;
 }
+.quebintrf{
+    overflow-y: auto;
+    max-height: 240px;
+    overflow-x: auto;
+}

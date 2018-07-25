@@ -29,97 +29,69 @@
                     </div>
                 </div>
             </nav>
-
-
-
             <div class="row">
                 <div class="col s7 ">
                     <div class="card ">                        
                         <div class="card-content "> 
-
                             <div class="row">                                
                                 <div class="col s3">
                                     <label for="codigo_r">Codigo</label>                                    
                                     <div class="input-field">
                                         <input id="codigo_r" type="text" class="validate" readonly="readonly">
-
                                     </div>
                                 </div>
-
                                 <div class="col s6">             
                                     <label for="nombres_r">Nombres Completos</label>
                                     <div class="input-field">
                                         <input id="nombres_r" type="text" class="validate" disabled="true">
                                         <input type="hidden" id="idprofesor">
-
                                     </div>
                                 </div>
-
                                 <div class="col s3">
                                     <label for="aula_r">Aula</label>
                                     <div class="input-field">
                                         <input id="aula_r" type="text" class="validate">
-
                                     </div>
-                                </div>                                                              
-
+                                </div>                  
                             </div>
-
-
                             <div class="row">
-
                                 <div class="col s3">
                                     <label for="fe_prestamo_r">Fecha Prestamo</label>
                                     <div class="input-field">
                                         <input type="text" id="fe_prestamo_r" class="datepicker">
-
                                     </div>
                                 </div>
-
                                 <div class="col s3">      
                                     <label for="h_prestamo_r">HPrestamo</label>
                                     <div class="input-field">
                                         <input type="text" id="h_prestamo_r">
-
                                     </div>
                                 </div>
-
                                 <div class="col s3">      
                                     <label for="fe_devolucion_r">Fecha Devolucion</label>
                                     <div class="input-field">
                                         <input type="text" id="fe_devolucion_r" class="datepicker">
-
                                     </div>
                                 </div>
-
                                 <div class="col s3">
                                     <label for="h_devolucion_r">Hora Devolución</label>                                    
                                     <div class="input-field">
                                         <input type="text" id="h_devolucion_r">
-
                                     </div>
                                 </div>
-
                             </div>  
-
                             <div class="row center">
                                 <div class="col s6">
                                     <a class="btn-floating btn-large pulse grey darken-4" id="btnRegresar"><i class="material-icons">restore_page</i></a>                                                                         
-
                                 </div>
                                 <div class="col s6">
                                     <a class="btn-floating btn-large pulse light-blue darken-4" id="btnActualizar"><i class="material-icons">edit</i></a>
                                 </div>
-
-
                             </div>
 
                         </div>
                     </div>                    
                 </div>
-
-
-
                 <div class="col s5">
                     <div class="card" style="height: 350px;">
                         <div class="car-contend">
@@ -131,36 +103,24 @@
                             </div>
 
                             <div class="row centered">
-
                                 <div class="col s12">
-
-                                    <table class="highlight responsive-table centered" id="reservado">
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Nombre</th>
-                                                <th>Codigo</th>
-                                                <th>Remover</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>                                     
+                                    <div class="quebintrf">
+                                        <table class="highlight responsive-table centered" id="reservado">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Codigo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>        
+                                    </div>
                                 </div>                               
                             </div>                         
                         </div>                                         
                     </div>                                                
                 </div>
-
-
-
-
-
-
-
-
-
-
                 <!--sdsdsd-->
                 <div class="action-btn-wrapper">
                     <div class="fixed-action-btn my-custom-btn vertical">
@@ -169,8 +129,6 @@
                         </a>
                     </div>
                 </div>
-
-
                 <!--Modal-->
                 <div id="modal1" class="modal modal-fixed-footer">
                     <div class="modal-content">
@@ -192,7 +150,6 @@
                                     <table class="highlight responsive-table" id="actuProd">
                                         <thead id="tblCa">
                                             <tr>
-                                                <th>ID</th>
                                                 <th>Nombres</th>
                                                 <th>Codigo</th>
                                                 <th>Tipo</th>

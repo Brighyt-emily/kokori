@@ -37,7 +37,7 @@
                 <div class="nav-wrapper">
                     <div class="col s12">
                         <a href="reservas.jsp" class="breadcrumb">Realizar Reserva</a>
-                        <a href="tablaProfesores.jsp" class="breadcrumb">Lista Reservas</a>  
+                        <a href="registrosReserva.jsp" class="breadcrumb">Lista Reservas</a>  
                     </div>
                 </div>
             </nav>

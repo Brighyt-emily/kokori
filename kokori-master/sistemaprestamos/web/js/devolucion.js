@@ -73,32 +73,32 @@ function datosModal(fe,no,ape){
     //PRODUCTOS//
     $.get("de", {"fecha":fe,"nom":no,"ape":ape,"opc": 5}, function (dat) {
         var x=JSON.parse(dat);
-        var lista=new Array();
-        lista.length = 0;
-        $("#cuerpo").remove();
-        $("#caja").append("<form action='#' class='form' id='cuerpo'></form>");
-        lista.push(x);
-        var a="a";
+        if (x.length===0){
+            location.reload();
+        }else{
+            var lista=new Array();
+            lista.length = 0;
+            $("#cuerpo").remove();
+            $("#caja").append("<form action='#' class='form' id='cuerpo'></form>");
+            lista.push(x);
+            var a="a";
+            for (var i = 0; i < x.length; i++) {
+                kio=lista[0][i].idPro;//
+                idpre=lista[0][i].idP;
+
+                $("#cuerpo").append("<p><label><input class='jiopk' type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idPro+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' class='observa' id="+(a+lista[0][i].idPro)+">");  
+
+            }
         
-        for (var i = 0; i < x.length; i++) {
-            kio=lista[0][i].idPro;//
-            idpre=lista[0][i].idP;
-            foo=a+lista[0][i].idP;
-            alert(foo);
-            
-            $("#cuerpo").append("<p><label><input class='jiopk' type='checkbox' id="+lista[0][i].idP+" value="+lista[0][i].idPro+" /><span>"+lista[0][i].nom+"</span></label></p>"+"<label for='n'>Observación:(Opcional)</label><input type='text' class='observa' id="+(a+lista[0][i].idP)+">");  
-      
-        }
         //BOTON 'DEVOLVER'//
-        
-                $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>");
-   alert(lista[0][i].idP); });
+         $("#cuerpo").append("<button class='btn btn-primary teal' onclick='devolver(\""+fe+"\",\""+no+"\",\""+ape+"\")' >Devolver</button>");
+         }
+    });
  
 };
 
 //TOAST DE CONFIRMACION DE DEVOLUCION//
 function devolver(fe,no,ape){
-   
     var toastHTML = "<span>¿Está seguro de continuar?</span><br><button class='btn-flat toast-action red-text' onclick='can()'>Cancelar</button><button class='btn-flat toast-action teal-text' onclick='Aceptar(\""+fe+"\",\""+no+"\",\""+ape+"\")'>Aceptar</button>";
     Materialize.toast( toastHTML,3085);
 }
@@ -106,47 +106,29 @@ function devolver(fe,no,ape){
 //DEVOLUCION,CAMBIA EL ESTADO DEL PRESTAMO Y ENVIA UNA OBSERVACION DEL PROUDCTO EN CASO DE DEVOLUCION CON FALLO//
    
 function Aceptar(fe,no,ape){
-    
-            $('.jiopk:checked').each(
-    function() {
+    var map=new Map();
+    $('.jiopk:checked').each(function() {
        var seleccionado=$(this).val();
-       
-    koko=$(".observa").val(); 
-    u=foo.values;     
-       
-      alert(u);
-        if(u==="")
-        {
-             $.post("de",{"idprestamo":idpre,"idproducto":seleccionado,"opc":2}, function () {
-                    $("#tb_prestamos tbody tr").remove();
-                    datosModal(fe,no,ape);
-                    listarObject();
-                    modal(fe,no,ape);
-                    location.reload();
-                });
-        }else
-        {
-            
+       var texto=$("#a"+seleccionado).val();
+       if(texto===""){
+            $.post("de",{"idprestamo":idpre,"idproducto":seleccionado,"opc":2}, function () {
+                $("#tb_prestamos tbody tr").remove();
+                datosModal(fe,no,ape);
+                listarObject();
+                modal(fe,no,ape);
+            });
+       }else{
+           map.set(seleccionado,texto);
            $.post("de",{"idprestamo":idpre,"idproducto":seleccionado,"opc":2}, function () {
                     $("#tb_prestamos tbody tr").remove();
                     datosModal(fe,no,ape);
                     listarObject();
                     modal(fe,no,ape);
                 });
-           $.post("de",{"det":u,"idpro":seleccionado,"opc":3}, function(){});
-            alert(seleccionado);    
-            location.reload();   
-        
-        }
-                
-    }
-);
-       
-               
-             
-           
-    
-   
+           $.post("de",{"det":texto,"idpro":seleccionado,"opc":3}, function(){});  
+            
+       }     
+    });
 }
 
 function can()
@@ -183,13 +165,10 @@ $("#nomp").keyup(function () {
 function okp()
 {
     $.post("de",{"opc":6},function(data)
-    {
-        alert(data);
+    {   
         var x=JSON.parse(data);
-      
         for (var i = 0; i < x.length; i++) {
-            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+x[i].detal+"</td></tr>"); 
-             
+            $("#tabp tbody").append("<tr><td>"+(i+1)+"</td><td>"+x[i].nom+"</td><td>"+x[i].detal+"</td></tr>");    
         }    
        
     });

@@ -41,7 +41,7 @@ function DatosByReserva() {// imprimimos los datos necesarios para la edicion
     $.get("rc", {"op": 2}, function (data) {
         var w = JSON.parse(data);
         for (var i = 0; i < w.length; i++) {
-            $("#actuProd").append("<tr><td>" + w[i].idProducto + "</td><td>"
+            $("#actuProd").append("<tr><td hidden>" + w[i].idProducto + "</td><td>"
                     + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>"
                     + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td>"
                     + "<a href='#' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
@@ -69,7 +69,7 @@ function DatosByReserva() {// imprimimos los datos necesarios para la edicion
             $.get("rc", {"op": 9, "idreserva": x}, function (dtos) {
                 var y = JSON.parse(dtos);   
                 for (var i = 0; i < y.length; i++) {
-                    $("#reservado").append("<tr><td hidden>" + y[i].idreserva + "</td><td hidden>" + y[i].iddr + "</td><td>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td> </td></tr>");
+                    $("#reservado").append("<tr><td hidden>" + y[i].idreserva + "</td><td hidden>" + y[i].iddr + "</td><td hidden>" + y[i].idproducto + "</td><td>" + y[i].nomprod + "</td><td>" + y[i].codprod + "</td><td> </td></tr>");
                     // creamos el objeto y despues llenamos en 2 arreglos
                     var obj = new Object();
                     obj.idr = y[i].idreserva;
@@ -122,7 +122,7 @@ function añadirListado(objeto) {
 function listarProdReservados() {
     $("#reservado tbody tr").remove();
     for (var i = 0; i < productosReserva.length; i++) {
-        $("#reservado").append("<tr><td>" + productosReserva[i].idp
+        $("#reservado").append("<tr><td hidden>" + productosReserva[i].idp
                 + "</td><td>" + productosReserva[i].nombre + "</td><td>"
                 + productosReserva[i].codigo
                 + "</td><td><a href ='#' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");

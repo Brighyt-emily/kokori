@@ -28,7 +28,7 @@
                         <i class="material-icons" style="height:10px;">devices_other</i>
                     </div>
                     <div class="col s11" style="position:absolute;left:30px;top:3px;">
-                        <a href="reservas.jsp" class="breadcrumb">Devolución</a>                        
+                        <a href="devolucion.jsp" class="breadcrumb">Devolución</a>                        
                     </div>
 
                 </div>
