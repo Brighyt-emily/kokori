@@ -137,7 +137,6 @@ $("#nomp").keyup(function () {
         function esta()
         {
             var tiu=$('#tip').val();
-            alert(tiu);
             if(tiu!="")
             {
                   $.post("pro",{"nomTip":tiu,"op":6},function()
@@ -159,13 +158,13 @@ $("#nomp").keyup(function () {
         function updateTipo()
         {
             var nom=$("#no").val();
-            alert(hui);
-            alert(nom);
+            
              $.post("pro",{"idTipo":hui,"nomTip":nom,"op":9},function()
     {
         
         var holi = '<span>Tipo actualizado correctamente</span>';
         Materialize.toast(holi,1980);
+        moto();
     });
         }
         

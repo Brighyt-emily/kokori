@@ -71,7 +71,8 @@ public class Test {
         //nop();
        // jio();
        //create();
-       pro();
+       //pro();
+       lost();
     }
     static void listar(){
         System.out.println(g.toJson(po.listt()));
@@ -145,6 +146,11 @@ lista = po.listt();
         
         System.out.println(pr.prestamosIdProfesor(1));
         
+    }
+    static void lost()
+    {
+        Tipo ijoijo=new Tipo(9,"lost");
+        System.out.println(i.update(ijoijo));
     }
 
 }
