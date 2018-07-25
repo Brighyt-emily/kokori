@@ -147,12 +147,12 @@ $("#dnipro").keyup(function () {
     if (dni.length === 8)
     {
         $.get("Pc", {"dni": dni, "opc": 5}, function (data) {
-            if(data===0){
-                Materialize.toast("Error! Ingresar DNI solo de un profesor", 1980);
-            } else {
+            if(data>0){
                 var x = JSON.parse(data);
                 $("#profe").val(x.nomApe);
                 $("#prof").val(x.idProfesor); 
+            } else {
+                Materialize.toast("Error! Ingresar DNI solo de un profesor", 1980);
             }
         });
     }
