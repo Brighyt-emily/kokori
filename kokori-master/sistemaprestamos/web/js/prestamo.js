@@ -147,9 +147,13 @@ $("#dnipro").keyup(function () {
     if (dni.length === 8)
     {
         $.get("Pc", {"dni": dni, "opc": 5}, function (data) {
-            var x = JSON.parse(data);
-            $("#profe").val(x.nomApe);
-            $("#prof").val(x.idProfesor);
+            if(data===0){
+                Materialize.toast("El equipo ya esta en la lista!", 1980);
+            } else {
+                var x = JSON.parse(data);
+                $("#profe").val(x.nomApe);
+                $("#prof").val(x.idProfesor); 
+            }
         });
     }
 });
