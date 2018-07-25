@@ -32,7 +32,7 @@
             </div>
             <div class="row">
                 <div class=" center-align">
-                    <div class="page-title"> <i class="material-icons smoll" >content_paste</i><span>Detalles Prestamos</span></div>
+                    <div class="page-title"> <i class="material-icons smoll" >content_paste</i><span>Reporte de usuarios</span></div>
                 </div>
                 <div class="col s12 ">
                     <div class="card">
@@ -65,28 +65,24 @@
                             </table>                                                                                               
                             <!--Modal para ver detalladamente el resgitro de los profesores-->
                             <!-- Modal Structure -->
-                            <div id="modal1" class="modal s12" style="max-width: 890px;">
+                            <div id="modal1" class="modal modal-fixed-footer" style="max-width: 890px;">
                                 <div class="modal-content">
-                                    <div class="s12 contact-form" > <!-- div da direita -->
-                                        <div class="row">
-                                            <table class="highlight" id="tbldetpres">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Equipo</th>
-                                                        <th>Codigo</th>
-                                                        <th>Estado</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>                   
-                                        </div>
-                                        <div class="modal-footer">
-
-                                            <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>         
-                                        </div>
-                                    </div>
+                                    <h4>Productos Emprestados</h4>
+                                    <table class="highlight" id="tbldetpres">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Equipo</th>
+                                                <th>Codigo</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>                   
+                                </div>
+                                <div class="modal-footer">
+                                    <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>         
                                 </div>
                             </div>
 
@@ -98,7 +94,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                         <th>Orden de Prestamo</th>
+                                                        <th>Orden de Prestamo</th>
                                                         <th>Nombre</th>
                                                         <th>Cantidad</th>
                                                     </tr>

@@ -214,12 +214,11 @@
                      <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
                          <form id="contact" method="post" class="form" role="form" >
                             <div class="row">
-                               
-                                    <div class="col s6">
+                                <div class="col s1"></div>
+                                    <div class="col s10">
                                          <table class="table highlight centered" id="tabp">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
                                                 <th>Nombre</th>
                                                 <th>Stock</th>
                                                 <th>Accion</th>
@@ -233,6 +232,7 @@
                                       
                                     
                                     </div>
+                                <div class="col s1"></div>
                                    
                            </div>
                                 
@@ -248,7 +248,7 @@
              
              
              
-             <div id="modal16" class="modal s12 m12 l12 modal-fixed-footer" style="max-width: 530px;">
+             <div id="modal16" class="modal s12 m12 l12 modal-fixed-footer" style="max-width: 300px; max-height: 280px;">
                 <div class="modal-content">
                    <label for="tipos">Actualizar Tipo</label>
 
@@ -256,9 +256,10 @@
                          <form id="contact" method="post" class="form" role="form" >
                             <div class="row">
                                
-                            <div class="input-field col s6">
-                                        <a>Usuario</a>
+                            <div class="input-field col s12">
+                                        <a></a>
                                         <input  id="no" type="text" class="validate">
+                                        <input id="idt" type="hidden">
                                         <label for=""></label>
                                     </div>        
                                    
@@ -269,7 +270,7 @@
                 </div>
                 </div>
                 <div class="modal-footer">
-                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" onclick="updateTipo()"> Guardar</a>
+                    <a  class="modal-action modal-close waves-effect waves-green btn-flat" id="btnActu"> Guardar</a>
                     
                   <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
 
