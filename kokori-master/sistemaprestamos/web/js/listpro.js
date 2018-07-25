@@ -38,6 +38,7 @@ function verProfesor(x){
        var ids=x.toString();
       $("#lol").val(ids);
        window.location='InformProfesor.jsp';  
+        
 }
 
 

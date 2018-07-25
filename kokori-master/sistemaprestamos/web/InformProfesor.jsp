@@ -50,9 +50,9 @@
                                     Codigo: <label id="codigo"></label><br>
                                     Celular: <label id="celular"></label><br>
                                     Email:<label id="email"></label><br>
-                                    Grado: <label id="grado">Doctor</label><br>
-                                    Escuela: <label id="escuela">Sistemas</label><br>
-                                    Direccion: <label id="direccion">los sauces 500</label><br>
+                                    Grado: <label id="grado"></label><br>
+                                    Escuela: <label id="escuela"></label><br>
+                                    Direccion: <label id="direccion"></label><br>
                                 </div>
                              </div>
                              
@@ -140,7 +140,7 @@
                                   
                                   
                                   <div id="test2" class="col s12">
-                                  <table>
+                                  <table id="tblprestamos">
                                       <thead>
                                           <tr>
                                               <th>Fecha Prestamo</th>
@@ -169,7 +169,7 @@
                 
              
                  
-           
+          
               
               
               

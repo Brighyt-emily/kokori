@@ -81,6 +81,10 @@ public class ProfesorController extends HttpServlet {
             case 7:
                 myProf.deleteTra(Integer.parseInt(request.getParameter("idTraba")));
                 break;
+                
+            case 8:
+                out.println(g.toJson(myProf.prestamosIdProfesor(Integer.parseInt(request.getParameter("idProf")))));
+                
         }
     }
 

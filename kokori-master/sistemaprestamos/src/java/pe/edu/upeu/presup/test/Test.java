@@ -70,7 +70,8 @@ public class Test {
         //jip();
         //nop();
        // jio();
-       create();
+       //create();
+       pro();
     }
     static void listar(){
         System.out.println(g.toJson(po.listt()));
@@ -137,6 +138,13 @@ lista = po.listt();
     static void jip()
     {
         System.out.println(g.toJson(ko.ko()));
+    }
+    
+    
+    static void pro(){
+        
+        System.out.println(pr.prestamosIdProfesor(1));
+        
     }
 
 }

@@ -200,6 +200,32 @@ public class ProfesorDaoImp implements ProfesorDao {
         }
         return list;
     }
+    @Override
+    public List<Map<String, Object>> prestamosIdProfesor(int key) {
+        List<Map<String, Object>> lista = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call prestamosIdProfesor(?)}");
+            cst.setInt(1, key);
+            rs = cst.executeQuery();
+            while (rs.next()) {
+               // idprestamo,fe_prestamo,fe_devolucion,hora_prestamo,hora_devolucion,aula
+                Map<String, Object> map = new HashMap<>();                
+                map.put("idprestamo", rs.getInt("idprestamo"));
+                map.put("fechaP", rs.getDate("fe_prestamo"));
+                map.put("fechaD", rs.getDate("fe_devolucion"));
+                map.put("horaP", rs.getTime("hora_prestamo"));
+                map.put("horaD", rs.getTime("hora_devolucion"));
+                map.put("aula", rs.getString("aula"));                
+                lista.add(map);
+                
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return lista;
+
+    }
 
     @Override
     public Profesor SearchDniprof(String x) {
@@ -219,6 +245,8 @@ public class ProfesorDaoImp implements ProfesorDao {
         }
         return p;
     }
+
+  
 
    
 }
