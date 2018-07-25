@@ -11,8 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%@include file="WEB-INF/template/header.jspf" %>
-         <!-- Compiled and minified CSS -->
-          <!-- Compiled and minified CSS -->       
+             
     </head>
     <body>                 
         
@@ -93,6 +92,7 @@
 
 
     <%@include file="WEB-INF/template/footerMain.jspf" %>
-    <script src="js/listpro.js" type="text/javascript"></script>
+    <script src="js/gestionProfesores.js" type="text/javascript"></script>
+   
 </body>
 </html>

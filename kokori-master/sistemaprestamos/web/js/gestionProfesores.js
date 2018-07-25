@@ -2,7 +2,7 @@ $(document).ready(function () {
     listarRegisProfesores();
     /**console.log("funciona: JQUERY");
     $('select').formSelect();*/
-   
+    alert("asdsa");
     
 });
 
@@ -27,10 +27,10 @@ function listarRegisProfesores(){
         $("#tblProfesores tbody tr").remove();
        
         for (var i = 0; i < data.length; i++) {
-                              
+                           
         $("#tblProfesores").append("<tr><td>" + data[i].dni + "</td><td>" + data[i].codigo+"</td><td>"+data[i].nombres + "</td><td>"
         + data[i].apellidos+
-        "</td><td><form action='InformProfesor.jsp' method='POST'><input type='text' value='"+ data[i].idProfesor +"' name='idProfesor' hidden><button class='btn-floating red' onclick='verProfesor(" + data[i].idProfesor + ");'><i class='material-icons'>portrait</i></button></td><td><a  class='btn-floating' onclick='eliminarr(" + data[i].idProfesor + ")'><i class='material-icons'>delete</i></a></td></tr></tr>");                      
+        "</td><td><form action='InformProfesor.jsp' method='POST'><input type='text' value='"+ data[i].idProfesor +"' name='idProfesor' hidden><button class='btn-floating red' onclick='verProfesor(" + data[i].idProfesor +");' ><i class='material-icons'>portrait</i></button></td><td><button  class='btn-floating' onclick='eliminarr(" + data[i].idProfesor+");'><i class='material-icons'>delete</i></button></td></tr></tr>");                      
         }
     });
 }
@@ -43,11 +43,15 @@ function verProfesor(x){
         
 }
 
+function eliminarr(s){
 
-function eliminarr(s){        
-    alert(s);  
-        
+   $.get("pc",{"idProfe":s,"op":6},function () {    
+       Materialize.toast('Profesor Eliminado', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
+       listarRegisProfesores();
+    });
+    
 }
+
 
 
 

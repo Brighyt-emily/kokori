@@ -79,7 +79,7 @@ public class ProfesorDaoImp implements ProfesorDao {
                 int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call eliminarProfesor(?)}");
+            cst = cx.prepareCall("{call DeleteProfesor(?)}");
             cst.setInt(1, key);
             x = cst.executeUpdate();
         } catch (SQLException e) {
@@ -93,7 +93,7 @@ public class ProfesorDaoImp implements ProfesorDao {
      int x = 0;
      try {
          cx = Conexion.getConexion();
-         cst = cx.prepareCall("{call eliminarPersona(?)}");
+         cst = cx.prepareCall("{call deleteTrabajador(?)}");
          cst.setInt(1, key);
          x = cst.executeUpdate();
      } catch (SQLException e) {
