@@ -154,10 +154,8 @@
                                         <table class="highlight responsive-table centered" id="tblRervado">
                                             <thead>
                                                 <tr>
-                                                    <th>Id</th>
                                                     <th>Nombre</th>
                                                     <th>Codigo</th>
-                                                    <th>Remover</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -219,7 +217,6 @@
                                             <table class="highlight responsive-table centered" id="tblProductos">
                                                 <thead >
                                                     <tr>
-                                                        <th>ID</th>
                                                         <th>Nombres</th>
                                                         <th>Codigo</th>
                                                         <th>Tipo</th>

@@ -2,8 +2,6 @@ $(document).ready(function () {
     listarRegisProfesores();
     /**console.log("funciona: JQUERY");
     $('select').formSelect();*/
-  
- alert("looocc");
 });
 
 /**
@@ -22,7 +20,6 @@ $("#btnRegistro").click(function () {
 
 function listarRegisProfesores(){
     $.get("pc",{"op":1}, function (datos) {
-        alert("sdsd");
         
         var data = JSON.parse(datos);
         $("#tblProfesores tbody tr").remove();
@@ -39,9 +36,7 @@ function listarRegisProfesores(){
 function verProfesor(x){        
        
        var ids=x.toString();
-       alert(ids);
       $("#lol").val(ids);
-      alert(ids);
        window.location='InformProfesor.jsp';  
 }
 
@@ -49,11 +44,9 @@ function verProfesor(x){
 
 
 function eliminar(x){
-    $.get("pro",{"idProfe":x,"op":6},function () {      
-          console.log("eliminno Profe");      
+    $.get("pro",{"idProfe":x,"op":6},function () {  
           $.get("pro",{"idTraba":x,"op":7},function () {
           listarRegisProfesores();
-          console.log("eliminno Trabajdor");
         
     });
     });       

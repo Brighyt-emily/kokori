@@ -36,7 +36,7 @@ function listarProducto() {
         console.log(data);
         var w = JSON.parse(data);
         for (var i = 0; i < w.length; i++) {
-            $("#tblProductos").append("<tr><td>" + w[i].idProducto + "</td><td>"
+            $("#tblProductos").append("<tr><td hidden>" + w[i].idProducto + "</td><td>"
                     + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>"
                     + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td>"
                     + "<a href='#' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
@@ -80,7 +80,7 @@ function añadirListado(objeto) {
 function listarProdReservados() {
     $("#tblRervado tbody tr").remove();
     for (var i = 0; i < listaReservados.length; i++) {
-        $("#tblRervado").append("<tr><td>" + listaReservados[i].idp
+        $("#tblRervado").append("<tr><td hidden>" + listaReservados[i].idp
                 + "</td><td>" + listaReservados[i].nombre + "</td><td>"
                 + listaReservados[i].codigo
                 + "</td><td><a href ='#' onclick='eliminar(" + i + ");'><i class='material-icons'>delete_sweep</i></a></td></tr>");
