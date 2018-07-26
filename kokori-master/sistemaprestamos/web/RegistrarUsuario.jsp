@@ -98,7 +98,7 @@
                                     <select id="secRol">
                                         <option value="0" disabled="disabled">ROL</option>
                                         <option value="1">TRABAJADOR</option>
-                                        <option value="2">PROFESOR</option>
+                                        <option value="2">ADMINSTRADOR</option>
                                     </select>
                                     <label>ROLES</label>
                                 </div>
