@@ -28,7 +28,21 @@
                     </div>
                 </div>   
             </nav>
-    
+            
+            <div class="col s12">
+
+                <div class="action-btn-wrapper">
+                    <div class="fixed-action-btn my-custom-btn vertical">
+                        <a class="btn-floating btn-large black">
+                            <i class="large material-icons">settings</i>
+                        </a>
+                        <ul>
+                            <li><a class="btn-floating orange lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Agregar Trabajador" href='RegistrarUsuario.jsp'><i class="material-icons">group_add</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="col s12">
                  

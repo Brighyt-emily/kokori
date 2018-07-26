@@ -13,7 +13,7 @@ $("#btnRegistrarTrabajador").click(function () {
     if(nomusu==="" && apellido==="" && celular==="" && celular==="" && dni==="" && email==="" && direccion===""){
         Materialize.toast("Complete todos los campos por favor", 1980);
     }else{
-        $.post("UsuCon", {"op": 2, "nom": nomusu, "apel": apellido,"dir": direccion,"celular": celular,"numDni": dni,"email": email}, function (d) {
+        $.get("UsuCon", {"op": 2, "nom": nomusu, "apel": apellido,"dir": direccion,"celular": celular,"numDni": dni,"email": email}, function (d) {
             console.log(d);
             $.post("UsuCon",{"op":5},function(data){  
                 var x=JSON.parse(data);

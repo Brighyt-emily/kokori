@@ -49,21 +49,21 @@
                         <hr>
                         <div class="row">
                             <div class="center">
-                                <div class="col s10 row center-align">
+                                <div class="col s10 m10 l10 row center-align">
                                     <div class="input-field">
                                         <i class="material-icons prefix">person_pin</i>
                                         <input id="nomusu" type="text" class="validate tooltipped"  data-tooltip="Su usuario debe contener al menos 7 caracteres"><span id="evaluar"></span>
                                         <label for="nomusu">Nombre de Usuario</label>
                                     </div>
                                 </div>
-                                <div class="col s10 row center-align">
+                                <div class="col s10 m10 l10 row center-align">
                                     <div class="input-field">
                                         <i class="material-icons prefix">lock_outline</i>
                                         <input type="password" name="password" id="pass1" class="validate tooltipped" data-tooltip="Su contraseña debe contener 6 caracteres o más"><span id="val2"></span>
                                          <label for="pass">Contraseña</label>
                                     </div>
                                 </div>
-                                <div class="col s10 row center-align">
+                                <div class="col s10 m10 l10 row center-align">
                                     <div class="input-field">
                                         <i class="material-icons prefix">vpn_key</i>
                                         <input type="password" name="password" id="pass2" class="validate tooltipped" data-tooltip="Por favor vuelva a ingresar su contraseña"><span id="val"></span>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>   
                             <div class="row ">
-                                <div class="input-field col s10">
+                                <div class="input-field col s10 m10 l10">
                                     <i class="material-icons prefix">portrait</i>
                                     <select id="secRol">
                                         <option value="0" disabled="disabled">ROL</option>
@@ -99,26 +99,26 @@
                     <div class="card" style="padding:20px;">
                         <div class="row">
                             <div class="row">
-                                <div class="center col s12">
-                                    <div class="input-field col s6">
+                                <div class="center col s12 m12 l12">
+                                    <div class="input-field col s6 m6 l6">
                                         <i class="material-icons prefix">face</i>
                                         <label for="nombres">Nombres</label>
                                         <input id="nombres" type="text" class="validate">
                                     </div>
-                                    <div class="input-field col s6">
+                                    <div class="input-field col s6 m6 l6">
                                         <i class="material-icons prefix">person_pin</i>
                                         <label for="apellidos">Apellidos</label>
                                         <input id="apellidos" type="text" class="validate">
                                     </div>
 
                                 </div>
-                                <div class=" center col s12">
+                                <div class=" center col s12 m12 l12">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">dialer_sip</i>
                                         <label for="celular">Numero de Celular</label>
                                         <input class="validate" type="text" name="celular" placeholder="#"  required maxlength="9" id="celular">
                                     </div>
-                                    <div class="input-field col s6">
+                                    <div class="input-field col s6 m6 l6">
                                         <i class="material-icons prefix">assignment</i>
 
                                         <input type="text" name="dni" class="validate" required maxlength="8" id="dni" placeholder="#">
@@ -151,10 +151,10 @@
                                     </button>
                                 </div>
                                 
-                                <div class="col s6 m6 l6">
+                                <div class="col s3 m3 l3">
                                     
                                 </div>
-                                <div class="col s3 m3 l3">
+                                <div class="col s6 m6 l6">
                                     <button class="btn-large black lighten-2 modal-trigger tooltipped" data-tooltip="Crear Usuario"  href="#modalusu" type="submit" name="action" id="btnCrearUsuario">Crear Usuario
                                         <i class="material-icons right">add</i>
                                     </button>
