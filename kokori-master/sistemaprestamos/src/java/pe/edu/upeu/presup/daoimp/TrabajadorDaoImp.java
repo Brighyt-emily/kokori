@@ -32,21 +32,23 @@ public class TrabajadorDaoImp implements TrabajadorDao {
 
     @Override
     public int create(Trabajador tr) {
-       int x = 0;
+        int id = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call crearTrabajador(?,?,?,?,?,?)}");
+            cst = cx.prepareCall("{call crearTrabajador(?,?,?,?,?,?,?)}");
             cst.setString(1, tr.getNomTrabajador());
             cst.setString(2, tr.getApelTrabajador());
             cst.setString(3, tr.getDireccion());
             cst.setString(4, tr.getNumCelular());
             cst.setString(5, tr.getNumDni());
-            cst.setString(6, tr.getEmail());
-            x = cst.executeUpdate();
+            cst.setString(6, tr.getEmail()); 
+            cst.registerOutParameter(7,java.sql.Types.INTEGER);
+            cst.executeUpdate();
+            id=cst.getInt(7);
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }
-        return x;  }
+        return id;  }
 
     @Override
     public List<Trabajador> listarIdTrabajador() {

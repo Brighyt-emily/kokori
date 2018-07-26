@@ -14,20 +14,12 @@ $("#btnRegistrarTrabajador").click(function () {
         Materialize.toast("Complete todos los campos por favor", 1980);
     }else{
         $.get("UsuCon", {"op": 2, "nom": nomusu, "apel": apellido,"dir": direccion,"celular": celular,"numDni": dni,"email": email}, function (d) {
-            console.log(d);
-            $.post("UsuCon",{"op":5},function(data){  
-                var x=JSON.parse(data);
-                var id=x[0].idTrabajador;
-                li.push(id);
-                console.log(li);
-                
-            });
+            var x=JSON.parse(d);
+            li.push(x);
             Materialize.toast("Trabajador Registrado con éxito", 1980);
             LimpiarTra();
             $("#btnCrearUsuario").attr("disabled", false);
-            
         });
-       
     }
 });
 
