@@ -121,11 +121,7 @@ public class Test {
         System.out.println(data.size());
 
     }
-    static void jio()
-    {
-        Usuario jio=new Usuario(2,"lolo","kop");
-        System.out.println(us.update(jio));
-    }
+    
     static void read()
     {
         System.out.println(g.toJson(ko.read(1)));

@@ -18,7 +18,7 @@ public class Profesor extends Trabajador{
     }
 
     public Profesor(int idProfesor, int estado, String grado, String codProfesor, int idEscuela, int idTrabajador, String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email) {
-        super(idTrabajador, nomTrabajador, apelTrabajador, direccion, numCelular, numDni, email);
+       
         this.idProfesor = idProfesor;
         this.estado = estado;
         this.grado = grado;
