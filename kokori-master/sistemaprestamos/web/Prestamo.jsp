@@ -29,11 +29,11 @@
                 } else {
                     String rol = sesion.getAttribute("idr").toString();
                     if (rol.equals("2")) {
-        %><%@include file="WEB-INF/template/Principal.jspf"%><%
+            %><%@include file="WEB-INF/template/Principal.jspf"%><%
                             }
 
                             if (rol.equals("1")) {
-        %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%
+            %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%
                                      }
                                  }
 
