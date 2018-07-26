@@ -1,6 +1,7 @@
 package pe.edu.upeu.presup.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import pe.edu.upeu.presup.entity.Usuario;
 
 public interface UsuarioDao {
@@ -9,5 +10,7 @@ public interface UsuarioDao {
     
     HashMap<String,Object> validar(String x, String y);
     
-    int update(Usuario u);
+    List<Usuario>listarNomUsuario();
+    
+    int CambiarEstadoUsuario(Usuario u);
 }

@@ -46,32 +46,54 @@ public class UsuCon extends HttpServlet {
         switch (op) {
             case 1:
                 Usuario usu = new Usuario(
-                        Integer.parseInt(request.getParameter("iduser")),
                         request.getParameter("usu"),
                         request.getParameter("cont"),
-                         Integer.parseInt(request.getParameter("estaduser")),
                         Integer.parseInt(request.getParameter("idr")),                        
                         Integer.parseInt(request.getParameter("idt")));
                 out.println(g.toJson(myUsu.create(usu)));
                 break;
             case 2 :
                 Trabajador trab = new Trabajador(
-                        Integer.parseInt(request.getParameter("idTrabajador")),
-                        request.getParameter("usu"),
-                        request.getParameter("cont"),
-                        request.getParameter("idr"),
-                        request.getParameter("usu"),
-                        request.getParameter("cont"),
-                        request.getParameter("idr")
+                        request.getParameter("nom"),
+                        request.getParameter("apel"),
+                        request.getParameter("dir"),
+                        request.getParameter("celular"),
+                        request.getParameter("numDni"),
+                        request.getParameter("email")
                       );
                 out.println(g.toJson(myTraba.create(trab)));
                 break;
             case 3:
-                Usuario uj = new Usuario(Integer.parseInt(request.getParameter("idu")),request.getParameter("usu"),
-                        request.getParameter("cont"));
-                    myUsu.update(uj);
+                Trabajador tr=new Trabajador(
+                        request.getParameter("no"),
+                        request.getParameter("ape"),
+                        request.getParameter("dir"), 
+                        request.getParameter("num"), 
+                        request.getParameter("numDn"), 
+                        request.getParameter("ema"),
+                        Integer.parseInt(request.getParameter("idt")));
+                Usuario us = new Usuario(
+                        request.getParameter("user"),
+                        request.getParameter("contra"));
+                myTraba.updatePersona(tr,us);
                 break;
-
+                
+            case 4:
+                out.println(g.toJson(myUsu.listarNomUsuario()));
+                break;
+            case 5:
+                out.println(g.toJson(myTraba.listarIdTrabajador()));
+                break;
+            case 6:
+                out.println(g.toJson(myTraba.listarTrabajador()));
+                break;
+            case 7:
+                Usuario u = new Usuario(Integer.parseInt(request.getParameter("idt")));
+                myUsu.CambiarEstadoUsuario(u);
+                break;
+            case 8:
+                out.println(g.toJson(myTraba.listarPersona(Integer.parseInt(request.getParameter("idtra")))));
+                break;
         }
     }
 

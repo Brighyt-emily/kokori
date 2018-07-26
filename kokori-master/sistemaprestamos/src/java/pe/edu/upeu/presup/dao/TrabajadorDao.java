@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package pe.edu.upeu.presup.dao;
-
+import java.util.List;
 import pe.edu.upeu.presup.entity.Trabajador;
+import pe.edu.upeu.presup.entity.Usuario;
 
 
 
@@ -15,4 +16,8 @@ import pe.edu.upeu.presup.entity.Trabajador;
  */
 public interface TrabajadorDao {
     int create(Trabajador tr);
+    List<Trabajador> listarIdTrabajador();
+    List<Trabajador>listarTrabajador();
+    int updatePersona(Trabajador trab,Usuario usua);
+    List<Trabajador>listarPersona(Integer id);
 }

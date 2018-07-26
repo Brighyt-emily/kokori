@@ -17,6 +17,7 @@ import pe.edu.upeu.presup.entity.Escuela;
 import pe.edu.upeu.presup.entity.Facultad;
 import pe.edu.upeu.presup.entity.Profesor;
 import pe.edu.upeu.presup.entity.Trabajador;
+import pe.edu.upeu.presup.entity.Usuario;
 import pe.edu.upeu.presup.util.Conexion;
 
 /**
@@ -35,19 +36,111 @@ public class TrabajadorDaoImp implements TrabajadorDao {
         try {
             cx = Conexion.getConexion();
             cst = cx.prepareCall("{call crearTrabajador(?,?,?,?,?,?)}");
-            cst.setInt(1, tr.getIdTrabajador());
-            cst.setString(2, tr.getNomTrabajador());
-            cst.setString(3, tr.getApelTrabajador());
-            cst.setString(4, tr.getDireccion());
-            cst.setString(5, tr.getNumCelular());
-            cst.setString(6, tr.getNumDni());
-            cst.setString(7, tr.getEmail());
+            cst.setString(1, tr.getNomTrabajador());
+            cst.setString(2, tr.getApelTrabajador());
+            cst.setString(3, tr.getDireccion());
+            cst.setString(4, tr.getNumCelular());
+            cst.setString(5, tr.getNumDni());
+            cst.setString(6, tr.getEmail());
             x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }
         return x;  }
 
-   
-   
+    @Override
+    public List<Trabajador> listarIdTrabajador() {
+        List<Trabajador> lis=new ArrayList<>();
+        try{
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarIdTrabajador()}");
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Trabajador t = new Trabajador();
+                t.setIdTrabajador(rs.getInt("idtrabajador"));
+                lis.add(t);
+            }
+        }catch(SQLException e){
+            System.out.println("ERROR:"+e);
+        }
+        return lis;
+
+    }
+
+    @Override
+    public List<Trabajador> listarTrabajador() {
+       List<Trabajador> lista=new ArrayList<>();
+        try{
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarTrabajador()}");
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Trabajador tra = new Trabajador();
+                tra.setIdTrabajador(rs.getInt("idtrabajador"));
+                tra.setNomTrabajador(rs.getString("nombres"));
+                tra.setApelTrabajador(rs.getString("apellidos"));
+                tra.setDireccion(rs.getString("direccion"));
+                tra.setNumCelular(rs.getString("num_celular"));
+                tra.setNumDni(rs.getString("dni"));
+                tra.setEmail(rs.getString("email"));
+                lista.add(tra);
+            }
+        }catch(SQLException e){
+            System.out.println("ERROR:"+e);
+        }
+        return lista;
+    }
+
+    @Override
+    public int updatePersona(Trabajador trab, Usuario usua) {
+        int x = 0;
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call updatePersona(?,?,?,?,?,?,?,?,?)}");
+            cst.setString(1,trab.getNomTrabajador());
+            cst.setString(2,trab.getApelTrabajador());
+            cst.setString(3,trab.getDireccion());
+            cst.setString(4,trab.getNumCelular());
+            cst.setString(5,trab.getNumDni());
+            cst.setString(6,trab.getEmail());
+            cst.setInt(7,trab.getIdTrabajador());
+            cst.setString(8,usua.getUser());
+            cst.setString(9,usua.getContrauser());
+            x = cst.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e);
+        }
+        return x;   
+    }
+
+    @Override
+    public List<Trabajador> listarPersona(Integer id) {
+       List<Trabajador> lis=new ArrayList<>();
+        try{
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarPersona(?)}");
+            cst.setInt(1,id);
+            rs = cst.executeQuery();
+            while(rs.next()){
+                
+                Trabajador tr = new Trabajador();
+                tr.setNomTrabajador(rs.getString("nombres"));
+                tr.setApelTrabajador(rs.getString("apellidos"));
+                tr.setDireccion(rs.getString("direccion"));
+                tr.setNumCelular(rs.getString("num_celular"));
+                tr.setNumDni(rs.getString("dni"));
+                tr.setEmail(rs.getString("email"));
+                tr.setUser(rs.getString("usuario"));
+                tr.setContrauser(rs.getString("contrasenia"));
+                lis.add(tr);
+            }
+        }catch(SQLException e){
+            System.out.println("ERROR:"+e);
+        }
+        return lis;
+        
+    }
+
+
+
 }

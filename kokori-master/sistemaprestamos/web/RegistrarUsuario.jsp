@@ -22,9 +22,7 @@
             <nav class="teal lighten-2" style="margin-top: -20px;">
                 <div class="nav-wrapper">
                     <div class="col s12">
-                        <a href="RegistrarUsuario.jsp" class="breadcrumb">Añadir Persona
-                        </a>
-
+                        <a href="RegistrarUsuario.jsp" class="breadcrumb">Registro de Trabajador</a>
                     </div>
                 </div>
             </nav>
@@ -33,53 +31,51 @@
                 <div class="action-btn-wrapper">
                     <div class="fixed-action-btn my-custom-btn vertical">
                         <a class="btn-floating btn-large red">
-                            <i class="large material-icons">settings
-                            </i>
+                            <i class="large material-icons">settings</i>
                         </a>
                         <ul>
-                            <li><a class="btn-floating #f06292 blue lighten-2 tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Registrar Usuario" href="#modalusu"><i class="material-icons">add</i></a></li>
-                            <li><a class="btn-floating #f06292 green lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Lista de Profesores" href='tablaProfesores.jsp'><i class="material-icons">grid_on</i></a></li>
-
+                            <li><a class="btn-floating #f06292 green lighten-2 tooltipped" data-position="left" data-delay="50" data-tooltip="Lista de Trabajadores" href='tbTrabajador.jsp'><i class="material-icons">grid_on</i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+            
+            
             <!--Modal-->
-            <div id="modalusu" class="modal modal-fixed-footer">
+            <div id="modalusu" class="col s12 l12 m12 modal modal-fixed-footer" style="max-width: 450px;">
                 <div class="modal-content">
                     <div class="card-content">
-                        <nav class="teal lighten-2" style="margin-top: -20px;">
-                            <div class="nav-wrapper">
-                                <div class="col s12">
-                                    <a href="RegistrarUsuario.jsp" class="breadcrumb">Añadir Persona </a>
-                                    <a href="RegistrarProfesores.jsp" class="breadcrumb">Registro de Usuarios</a>
-
-                                </div>
-                            </div>
-                        </nav>
+                        <h5>Crear Usuario</h5>
+                        <hr>
                         <div class="row">
                             <div class="center">
-                                <div class="col s8 row center-align">
-                                    <div class="input-field">
-                                        <i class="material-icons prefix">face</i>
-                                        <label for="nomusu">Nombre de Usuario</label>
-                                        <input id="nomusu" type="text" class="validate">
-                                    </div>
-                                </div>
-                                <div class="col s8 row center-align">
+                                <div class="col s10 row center-align">
                                     <div class="input-field">
                                         <i class="material-icons prefix">person_pin</i>
-                                        <label for="pass">Contraseña</label>
-                                        <input type="text" name="password" id="pass1" class="validate">
-
+                                        <input id="nomusu" type="text" class="validate tooltipped"  data-tooltip="Su usuario debe contener al menos 7 caracteres"><span id="evaluar"></span>
+                                        <label for="nomusu">Nombre de Usuario</label>
+                                    </div>
+                                </div>
+                                <div class="col s10 row center-align">
+                                    <div class="input-field">
+                                        <i class="material-icons prefix">lock_outline</i>
+                                        <input type="password" name="password" id="pass1" class="validate tooltipped" data-tooltip="Su contraseña debe contener 6 caracteres o más"><span id="val2"></span>
+                                         <label for="pass">Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="col s10 row center-align">
+                                    <div class="input-field">
+                                        <i class="material-icons prefix">vpn_key</i>
+                                        <input type="password" name="password" id="pass2" class="validate tooltipped" data-tooltip="Por favor vuelva a ingresar su contraseña"><span id="val"></span>
+                                        <label for="pass">Confirmar Contraseña</label>
                                     </div>
                                 </div>
                             </div>   
                             <div class="row ">
-                                <div class="input-field col s5">
-                                    <i class="material-icons prefix">class</i>
-                                    <select id="secRol"> 
-                                        <option value="0" disabled selected>ROL</option>
+                                <div class="input-field col s10">
+                                    <i class="material-icons prefix">portrait</i>
+                                    <select id="secRol">
+                                        <option value="0" disabled="disabled">ROL</option>
                                         <option value="1">TRABAJADOR</option>
                                         <option value="2">PROFESOR</option>
                                     </select>
@@ -87,16 +83,17 @@
                                 </div>
                             </div>
                         </div>
-
+                        <button class="modal-action btn btn-primary teal right" type="submit" name="action" id="btnRegistrarUser">Registrar<i class="material-icons right">save</i></button>
                     </div>
+                    
                 </div>
-                <div class="modal-footer row">
+                <div class="modal-footer">
                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                    <a class="modal-action modal-close waves-effect waves-blue btn-flatr" type="submit" name="action" id="btnRegistrar">Registrar<i class="material-icons right">save</i></a>
-
                 </div>
             </div>
             <!--Fin del Modal-->
+            
+            
             <div class="row">
                 <div class="col s12 m12 l12">
                     <div class="card" style="padding:20px;">
@@ -131,7 +128,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col s6">
+                                <div class="col s6 m6 l6">
                                     <div class="input-field">
                                         <i class="material-icons prefix">mail</i>
                                         <input type="email" name="email"  id="email" class="validate">
@@ -139,7 +136,7 @@
 
                                     </div>
                                 </div>
-                                <div class="col s6">
+                                <div class="col s6 m6 l6">
                                     <div class="input-field">
                                         <i class="material-icons prefix">location_city</i>                                           
                                         <input class="validate" type="text" name="direccion" required id="direccion" placeholder="">
@@ -148,17 +145,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col s8">
-
-                                </div>
-                                <div class="col s2">
-                                    <button class="btn-large teal lighten-2" type="submit" name="action" id="btnregispers">Registrar
-                                        <i class="material-icons right">save</i>
+                                <div class="col m6 l6 s6">
+                                    <button class="btn-large teal lighten-2 tooltipped" id="btnRegistrarTrabajador" data-tooltip="Registrar Trabajador">Registrar Trabajador
+                                    <i class="material-icons right">save</i>    
                                     </button>
                                 </div>
-                                <div class="col s2">
-                                    <button class="btn-large grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
-                                        <i class="material-icons right ">delete_forever</i>
+                                
+                                <div class="col s6 m6 l6">
+                                    
+                                </div>
+                                <div class="col s3 m3 l3">
+                                    <button class="btn-large black lighten-2 modal-trigger tooltipped" data-tooltip="Crear Usuario"  href="#modalusu" type="submit" name="action" id="btnCrearUsuario">Crear Usuario
+                                        <i class="material-icons right">add</i>
                                     </button>
                                 </div>
                             </div>

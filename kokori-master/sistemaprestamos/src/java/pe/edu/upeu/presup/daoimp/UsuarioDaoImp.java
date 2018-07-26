@@ -4,7 +4,9 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import pe.edu.upeu.presup.dao.UsuarioDao;
 import pe.edu.upeu.presup.entity.Usuario;
 import pe.edu.upeu.presup.util.Conexion;
@@ -44,11 +46,11 @@ public class UsuarioDaoImp implements UsuarioDao {
        int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call createUsuario(?,?,?,?)}");
+            cst = cx.prepareCall("{call crearUsuario(?,?,?,?)}");
             cst.setString(1, usu.getUser());
             cst.setString(2, usu.getContrauser());
-            cst.setInt(3, usu.getEstaduser());
-            cst.setInt(4, usu.getIdroluser());
+            cst.setInt(3, usu.getIdroluser());
+            cst.setInt(4, usu.getIdtrabajuser());
             x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error: " + e);
@@ -57,19 +59,38 @@ public class UsuarioDaoImp implements UsuarioDao {
     }
 
     @Override
-    public int update(Usuario u) {
+    public List<Usuario> listarNomUsuario() {
+        List<Usuario> lis=new ArrayList<>();
+        try{
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call listarNomUsuario()}"); 
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Usuario u = new Usuario();
+                u.setUser(rs.getString("usuario"));
+                lis.add(u);
+            }
+        }catch(SQLException e){
+            System.out.println("ERROR:"+e);
+        }
+        return lis;
+        
+    }
+
+    @Override
+    public int CambiarEstadoUsuario(Usuario u) {
         int x = 0;
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call editarUsuario(?,?,?)}");
-            cst.setInt(1, u.getIduser());
-            cst.setString(2, u.getUser());
-            cst.setString(3, u.getContrauser());
-            
+            cst = cx.prepareCall("{call CambiarEstadoUsuario(?)}");
+            cst.setInt(1, u.getIdtrabajuser());
+
             x = cst.executeUpdate();
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
         }
-        return x;    }
+        return x;    
+    }
+   
 
 }

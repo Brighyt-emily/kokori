@@ -16,6 +16,19 @@ public class Usuario {
         this.contrauser = contrauser;
     }
 
+    public Usuario(String user, String contrauser, int idroluser, int idtrabajuser) {
+        this.user = user;
+        this.contrauser = contrauser;
+        this.idroluser = idroluser;
+        this.idtrabajuser = idtrabajuser;
+    }
+
+    public Usuario(int idtrabajuser) {
+        this.idtrabajuser = idtrabajuser;
+    }
+    
+    
+    
     public Usuario(int iduser, String user, String contrauser, int estaduser, int idroluser, int idtrabajuser) {
         this.iduser = iduser;
         this.user = user;

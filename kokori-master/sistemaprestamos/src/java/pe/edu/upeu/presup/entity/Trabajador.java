@@ -9,7 +9,7 @@ package pe.edu.upeu.presup.entity;
  *
  * @author Kevin Peinado
  */
-public class Trabajador {
+public class Trabajador extends Usuario{
 
     private int idTrabajador;
     private String nomTrabajador;
@@ -22,7 +22,8 @@ public class Trabajador {
     public Trabajador() {
     }
 
-    public Trabajador(int idTrabajador, String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email) {
+    public Trabajador(int idTrabajador, String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email, String user, String contrauser) {
+        super(user, contrauser);
         this.idTrabajador = idTrabajador;
         this.nomTrabajador = nomTrabajador;
         this.apelTrabajador = apelTrabajador;
@@ -30,6 +31,17 @@ public class Trabajador {
         this.numCelular = numCelular;
         this.numDni = numDni;
         this.email = email;
+    }
+    
+    public Trabajador(String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email,int idTrabajador) {
+        
+        this.nomTrabajador = nomTrabajador;
+        this.apelTrabajador = apelTrabajador;
+        this.direccion = direccion;
+        this.numCelular = numCelular;
+        this.numDni = numDni;
+        this.email = email;
+        this.idTrabajador = idTrabajador;
     }
 
     public Trabajador(String nomTrabajador, String apelTrabajador, String direccion, String numCelular, String numDni, String email) {
@@ -41,6 +53,7 @@ public class Trabajador {
         this.email = email;
     }
 
+    
     public int getIdTrabajador() {
         return idTrabajador;
     }
