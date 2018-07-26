@@ -3,6 +3,7 @@ $(document).ready(function () {
 $('#usu').attr("disabled", true);
  $('#contra').attr("disabled", true);
 $("#unin").css('visibility', 'hidden'); 
+listado();
 
 });
 
@@ -32,4 +33,26 @@ function acept()
      window.location.href = "lgt";
                    
                 });
+}
+
+function listado()
+{
+    
+    $.get("pro",{"op":10}, function (data) {
+        var bibi = JSON.parse(data);
+        if(bibi[0].idug=unin)
+        {
+           $("#nop").text(bibi[0].nom);
+          $("#oi").text(bibi[0].ape);
+          $("#dn").text(bibi[0].dn);
+          $("#celuar").text(bibi[0].nucel);
+          $("#dire").text(bibi[0].dire);
+          $("#corre").text(bibi[0].corr);
+          $("#ro").text(bibi[0].nor);
+        }
+          
+          
+         
+        
+    });
 }

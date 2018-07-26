@@ -76,6 +76,9 @@ public class ProductoController extends HttpServlet {
                 System.out.println(request.getParameter("nomTip"));    
             jio.update(ti);
                 break;
+            case 10:
+                out.println(g.toJson(jio.liston()));
+                break;
         }
         }
     }

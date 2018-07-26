@@ -72,7 +72,8 @@ public class Test {
        // jio();
        //create();
        //pro();
-       lost();
+       //lost();
+       nop();
     }
     static void listar(){
         System.out.println(g.toJson(po.listt()));
@@ -131,8 +132,8 @@ public class Test {
     }
     static void nop()
     {
-List<Map<String, Object>> lista = new ArrayList<>();
-lista = po.listt();
+    List<Map<String, Object>> lista = new ArrayList<>();
+    lista = i.liston();
         System.out.println(lista);
         System.out.println(lista.size());
     }
