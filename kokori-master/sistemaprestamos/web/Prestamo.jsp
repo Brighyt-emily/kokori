@@ -42,7 +42,6 @@
 
                              }
         %>
-        <%@include file="WEB-INF/template/Principal.jspf" %>
         <main class="mn-inner" >
             <div class="card">
                 <center>
