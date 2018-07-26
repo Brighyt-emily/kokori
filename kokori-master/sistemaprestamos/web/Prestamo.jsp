@@ -235,8 +235,7 @@
                                         <i class="large material-icons">build</i>
                                     </a>
                                     <ul>
-                                        <li><a class="btn-floating #f06292 pink lighten-2 tooltipped modal-trigger" data-position="left" data-delay="50" href='#modal1' onclick="modalres()" data-tooltip="Registrar Usuario"><i class="material-icons">add</i></a></li>
-                                        <li><a class="btn-floating #f06292 blue lighten-2 tooltipped" data-position="left" data-delay="50" href="registrosReserva.jsp" data-tooltip="Ver Reservas"><i class="material-icons">remove_red_eye</i></a></li>
+                                       <li><a class="btn-floating #f06292 blue lighten-2 tooltipped" data-position="left" data-delay="50" href="registrosReserva.jsp" data-tooltip="Ver Reservas"><i class="material-icons">remove_red_eye</i></a></li>
                                     </ul>
                                 </div>
                             </div>
