@@ -78,6 +78,8 @@
                         <i class="material-icons" style="height:10px;">local_mall</i>Gestion Productos</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="RegistrarUsuario.jsp">
                         <i class="material-icons" style="height:10px;">mood</i>Gestion Usuarios</a></li>
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="DetallePrestamos.jsp">
+                        <i class="material-icons" style="height:10px;">assignment</i>Reporte de Prestamos</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="lgt">
                         <i class="material-icons" style="height:10px;">arrow_back</i>Cerrar Sesión</a></li>
                         
