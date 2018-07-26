@@ -33,9 +33,7 @@
          }
          else{
              String rol = sesion.getAttribute("idr").toString();
-             if(!rol.equals("2")){
-                 response.sendRedirect("login.jsp");
-             }
+             
          }
          }
          catch(Exception e){

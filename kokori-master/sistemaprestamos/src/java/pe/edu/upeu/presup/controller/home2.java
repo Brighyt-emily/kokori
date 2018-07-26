@@ -4,30 +4,21 @@
  * and open the template in the editor.
  */
 package pe.edu.upeu.presup.controller;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import pe.edu.upeu.presup.dao.UsuarioDao;
-import pe.edu.upeu.presup.daoimp.UsuarioDaoImp;
 
 /**
  *
- * @author Marco
+ * @author dieguito
  */
-
-@WebServlet(name = "Main", urlPatterns = {"/Main"})
-public class Main extends HttpServlet {
-
-    
-    private UsuarioDao us = new UsuarioDaoImp();
+@WebServlet(name = "home2", urlPatterns = {"/home2"})
+public class home2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,34 +33,16 @@ public class Main extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int op = Integer.parseInt(request.getParameter("op"));
-            HttpSession sesion = request.getSession();
-            RequestDispatcher rd;
-            ServletContext context = getServletContext();
-            HashMap<String, Object> datos = new HashMap<>();
-            datos = us.validar(request.getParameter("user"), request.getParameter("pass"));
-            switch (op) {
-                case 1:
-                    
-                    if (datos.size() > 0) {
-                        System.out.println(datos);
-                        sesion.setAttribute("iduser", datos.get("idu"));
-                        sesion.setAttribute("user", datos.get("user"));
-                        String nombres = datos.get("nom") + " " + datos.get("apell");
-                        sesion.setAttribute("nombres", nombres);
-                        sesion.setAttribute("rol", datos.get("rol"));
-                        sesion.setAttribute("idr", datos.get("irol"));
-                        sesion.setAttribute("idt", datos.get("itra"));
-                        rd = request.getRequestDispatcher("/menu");
-                        rd.forward(request, response);
-                    } else {
-                        rd = request.getRequestDispatcher("/login");
-                        rd.forward(request, response);
-                    }
-                    
-                    break;
-                    
-            }
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet home2</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet home2 at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

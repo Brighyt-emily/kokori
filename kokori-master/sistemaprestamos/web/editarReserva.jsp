@@ -17,7 +17,30 @@
         <%
             String id = request.getParameter("idr");
         %>
-        <%@include file="WEB-INF/template/Principal.jspf" %>
+        
+        
+        <%
+            try {
+                HttpSession sesion = request.getSession();
+                if (sesion.getAttribute("idr") == null) {
+                    response.sendRedirect("login.jsp");
+
+                } else {
+                    String rol = sesion.getAttribute("idr").toString();
+                    if (rol.equals("2")) {
+        %><%@include file="WEB-INF/template/Principal.jspf"%><%
+                            }
+
+                            if (rol.equals("1")) {
+        %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%
+                                     }
+                                 }
+
+                             } catch (Exception e) {
+                                 System.out.println("Error: " + e);
+
+                             }
+        %>
         <div class="mn-inner">
             <nav class="teal lighten-2" style="margin-top: -20px;">
                 <div class="nav-wrapper">
