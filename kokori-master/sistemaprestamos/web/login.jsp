@@ -16,7 +16,6 @@
         <%@include file="WEB-INF/template/header.jspf" %>
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> 
     </head>
@@ -29,8 +28,10 @@
         </div>
         <div class="mn-content valign-wrapper">
             <main class="mn-inner container">
+                <div class="valign">
                     <div class="row">
-                        <div class="col s6 offset-s6">
+                        <div class="col s12 m12 l4 offset-l4 offset-m3">
+                        <div class="col s12 offset-6">
                             <div class="card white darken-1" >
                                 <div class="card-content ">
                                     <img class="responsive-img" src="images/logo.png">
@@ -56,6 +57,8 @@
                                 </div>
                             </div>
                     </div>
+                            </div>
+                        </div>
                 </div>
                 
             </main>
