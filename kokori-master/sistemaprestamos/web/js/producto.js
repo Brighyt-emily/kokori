@@ -1,118 +1,111 @@
-$(document).ready(function()
+$(document).ready(function ()
 {
     listar();
-    
-    
+
+
 });
 
 function listar()
 {
-    $.get("pro",{"op":1}, function (data) {
+    $.get("pro", {"op": 1}, function (data) {
         var bibi = JSON.parse(data);
         $("#tablin tbody tr").remove();
         for (var i = 0; i < data.length; i++) {
-            var jop =bibi[i].est;
-             if (jop===1)
-             {
-                  $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
-             }
-             if(jop===0)
-             {
-                  $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
-             }
-             if(jop===2)
-             {
-                   $("#tablin").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>" 
-                    + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco("+bibi[i].idP+")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop("+bibi[i].idP+")'><i class='material-icons'>update</i></a></td></tr>");
-             }
+            var jop = bibi[i].est;
+            if (jop === 1)
+            {
+                $("#tablin").append("<tr><td>" + (i + 1) + "</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>"
+                        + "<p><i class='small material-icons' style='color:#2ECC71'>check_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco(" + bibi[i].idP + ")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop(" + bibi[i].idP + ")'><i class='material-icons'>update</i></a></td></tr>");
+            }
+            if (jop === 0)
+            {
+                $("#tablin").append("<tr><td>" + (i + 1) + "</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>"
+                        + "<p><i class='small material-icons' style='color:#EC7063'>cancel</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco(" + bibi[i].idP + ")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop(" + bibi[i].idP + ")'><i class='material-icons'>update</i></a></td></tr>");
+            }
+            if (jop === 2)
+            {
+                $("#tablin").append("<tr><td>" + (i + 1) + "</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>"
+                        + "<p><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></p>" + "</td><td>" + bibi[i].nomTip + "</td><td><a class='waves-effect waves-light btn-floating red' onclick='eco(" + bibi[i].idP + ")'><i class='material-icons'>delete_forever</i></a></td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal2' onclick='nop(" + bibi[i].idP + ")'><i class='material-icons'>update</i></a></td></tr>");
+            }
         }
     });
 }
-function eliminar(x){
-    $.get("pro",{"idP":x,"op":3},function () {
+function eliminar(x) {
+    $.get("pro", {"idP": x, "op": 3}, function () {
         listar();
-        
+
     });
 }
-function ji(){var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="jip()">Aceptar</button></span>';
-     Materialize.toast(toastHTML,1980);
-    
+function ji() {
+    var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="jip()">Aceptar</button></span>';
+    Materialize.toast(toastHTML, 1980);
+
 }
 function nop(x)
 {
-    idpro=x;
-      $('.modal-trigger').leanModal();
-      
-      
+    idpro = x;
+    $('.modal-trigger').leanModal();
+
+
 }
 function jip()
 {
-   var jip= $('#loc').val();
-   var ip=parseInt(idpro);
-   
-    $.get("pro",{"op":4,"idP":ip,"est":jip},function (data) {
+    var jip = $('#loc').val();
+    var ip = parseInt(idpro);
+
+    $.get("pro", {"op": 4, "idP": ip, "est": jip}, function (data) {
         listar();
     });
-    
-    
+
+
 }
 
 
-function modal(){
-   $('.modal-trigger').leanModal();
-    $.post("pro",{ "op":8}, function (data) {
-            var w = JSON.parse(data);
-            for (var i = 0; i < w.length; i++) {  
-                $("#combin").append(
-                       
-		"<option value='"+w[i].iTip+"'>"+w[i].nomTip+"</option>");
-         
-            }
-            $("#combin").material_select();
-        });
-  
-   
-}
-function pris(x)
-{
-   
-     hui=x;
-      $('.modal-trigger').leanModal();
-      
-      
+function modal() {
+    $('.modal-trigger').leanModal();
+    $.post("pro", {"op": 8}, function (data) {
+        var w = JSON.parse(data);
+        for (var i = 0; i < w.length; i++) {
+            $("#combin").append(
+                    "<option value='" + w[i].iTip + "'>" + w[i].nomTip + "</option>");
+
+        }
+        $("#combin").material_select();
+    });
+
+
 }
 
 function salva()
 {
-    var jop=$('#pro').val();
-    var kop= $('#codi').val();
-    var jip= $('#loco').val();
+    var jop = $('#pro').val();
+    var kop = $('#codi').val();
+    var jip = $('#loco').val();
     var x = $("#combin").val();
     var ide = parseInt(x);
-    
-    $.post("pro",{"nom":jop,"cod":kop,"est":jip,"iTip":ide,"op":2},function()
+
+    $.post("pro", {"nom": jop, "cod": kop, "est": jip, "iTip": ide, "op": 2}, function ()
     {
         console.log("controlador op 2");
         listar();
     });
     var unito = '<span>Producto guardado correctamente</span>';
-     Materialize.toast(unito,1980);
-    
-    
+    Materialize.toast(unito, 1980);
+
+
 }
-function unin(x){var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="ok('+x+')">Aceptar</button></span>';
-     Materialize.toast(toastHTML,1980);
-    
+function unin(x) {
+    var toastHTML = '<span>Seguro que desea editar?<button class="btn-flat toast-action" onclick="ok(' + x + ')">Aceptar</button></span>';
+    Materialize.toast(toastHTML, 1980);
+
 }
 
 
-function eco(x){
-    
-     var toastContent = $('<span>Seguro que desea eliminar?<button class="btn-flat toast-action" onclick="eliminar('+x+')">Aceptar</button></span>');
-     Materialize.toast(toastContent,1980);
-  
+function eco(x) {
+
+    var toastContent = $('<span>Seguro que desea eliminar?<button class="btn-flat toast-action" onclick="eliminar(' + x + ')">Aceptar</button></span>');
+    Materialize.toast(toastContent, 1980);
+
 }
 $("#nomp").keyup(function () {
     var tableReg = document.getElementById('tablin');
@@ -133,60 +126,66 @@ $("#nomp").keyup(function () {
         }
     }
 });
-        
-        function esta()
-        {
-            var tiu=$('#tip').val();
-            if(tiu!="")
-            {
-                  $.post("pro",{"nomTip":tiu,"op":6},function()
+
+function esta()
+{
+    var tiu = $('#tip').val();
+    alert(tiu);
+    if (tiu != "")
     {
-        console.log(6);
-        var toastHTML = '<span>Tipo guardado correctamente</span>';
-     Materialize.toast(toastHTML,1980);
-    });
-    
-            }else
-            {
-                var jipoe = '<span>Ingrese un valor</span>';
-     Materialize.toast(jipoe,1980);
-            }
-            
-           
-        }
-        
-        function updateTipo()
+        $.post("pro", {"nomTip": tiu, "op": 6}, function ()
         {
-            var nom=$("#no").val();
-            
-             $.post("pro",{"idTipo":hui,"nomTip":nom,"op":9},function()
+            console.log(6);
+            var toastHTML = '<span>Tipo guardado correctamente</span>';
+            Materialize.toast(toastHTML, 1980);
+        });
+
+    } else
     {
-        
+        var jipoe = '<span>Ingrese un valor</span>';
+        Materialize.toast(jipoe, 1980);
+    }
+
+
+}
+
+$("#btnActu").click(function () {
+    var nom = $("#no").val();
+    var idt = $("#idt").val();
+    $.post("pro", {"idTipo": idt, "nomTip": nom, "op": 9}, function () {
         var holi = '<span>Tipo actualizado correctamente</span>';
-        Materialize.toast(holi,1980);
+        Materialize.toast(holi, 1980);
         moto();
     });
-        }
-        
-        
-        function moto()
-        {
-            $('.modal-trigger').leanModal();
-            $.get("pro",{"op":7}, function (data) {
+
+});
+
+function moto()
+{
+    $('.modal-trigger').leanModal();
+    $.get("pro", {"op": 7}, function (data) {
         var bibi = JSON.parse(data);
         $("#tabp tbody tr").remove();
         for (var i = 0; i < data.length; i++) {
-            if( bibi[i].st = bibi[i].st ? bibi[i].st : 0)
+            if (bibi[i].st = bibi[i].st ? bibi[i].st : 0)
             {
-                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal16' onclick='pris("+bibi[i].loco+")'><i class='material-icons'>update</i></a></td></tr>");
-             
-            }else
+                $("#tabp").append("<tr><td hidden>" + (i + 1) + "</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal16' onclick='pris(" + bibi[i].loco + ")'><i class='material-icons'>update</i></a></td></tr>");
+
+            } else
             {
-                $("#tabp").append("<tr><td>"+(i+1)+"</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal16' onclick='pris("+bibi[i].loco+")'><i class='material-icons'>update</i></a></td></tr>");
+                $("#tabp").append("<tr><td hidden>" + (i + 1) + "</td><td>" + bibi[i].no + "</td><td>" + bibi[i].st + "</td><td><a class='waves-effect waves-light btn-floating modal-trigger' href='#modal16' onclick='pris(" + bibi[i].loco + ")'><i class='material-icons'>update</i></a></td></tr>");
             }
-                  
-             
+
+
         }
     });
-        }
-   
+}
+
+function pris(id) {
+    $('.modal-trigger').leanModal();
+    $.get("pro", {"op": 11, "idt": id}, function (data) {
+        var x = JSON.parse(data);
+        $("#no").val(x[0].nom);
+        $("#idt").val(x[0].idt);
+    });
+}

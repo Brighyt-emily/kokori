@@ -168,12 +168,30 @@ public class ProductoDaoImp implements ProductoDao {
                 map.put("no", rs.getString("nom_tipo"));
                 map.put("st", rs.getString("stock"));
                 map.put("loco", rs.getString("idtipo"));
-                
-
                 lista.add(map);
             }
         } catch (SQLException e) {
             System.out.println("ERROR: " + e);
+        }
+        return lista;
+    }
+
+    @Override
+    public List<Map<String, Object>> buscarTipoById(int idtipo) {
+        List<Map<String, Object>> lista = new ArrayList<>();
+        try {
+            cx = Conexion.getConexion();
+            cst = cx.prepareCall("{call buscarTipoById(?)}");
+            cst.setInt(1, idtipo);
+            rs = cst.executeQuery();
+            while(rs.next()){
+                Map<String, Object> map = new HashMap<>();
+                map.put("idt", rs.getInt("idtipo"));
+                map.put("nom", rs.getString("nom_tipo"));
+                lista.add(map);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
         }
         return lista;
     }

@@ -5,6 +5,8 @@
  */
 package pe.edu.upeu.presup.dao;
 
+import java.util.List;
+import java.util.Map;
 import pe.edu.upeu.presup.entity.Tipo;
 
 /**
@@ -14,4 +16,5 @@ import pe.edu.upeu.presup.entity.Tipo;
 public interface TipoDao {
     int create(Tipo t);
     int update(Tipo y);
+    List<Map<String,Object>> liston();
 }

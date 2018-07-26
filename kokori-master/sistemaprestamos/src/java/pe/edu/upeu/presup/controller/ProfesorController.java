@@ -80,7 +80,9 @@ public class ProfesorController extends HttpServlet {
                 
             case 8:
                 out.println(g.toJson(myProf.prestamosIdProfesor(Integer.parseInt(request.getParameter("idProf")))));
+                break;
                 
+          
         }
     }
 

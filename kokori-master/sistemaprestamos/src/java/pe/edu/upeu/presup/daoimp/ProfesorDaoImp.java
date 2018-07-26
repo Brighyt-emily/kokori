@@ -53,7 +53,7 @@ public class ProfesorDaoImp implements ProfesorDao {
 
    
     
-
+//profePres
     @Override
     public int delete(int key) {
                 int x = 0;
@@ -196,7 +196,8 @@ public class ProfesorDaoImp implements ProfesorDao {
                 map.put("fechaD", rs.getDate("fe_devolucion"));
                 map.put("horaP", rs.getTime("hora_prestamo"));
                 map.put("horaD", rs.getTime("hora_devolucion"));
-                map.put("aula", rs.getString("aula"));                
+                map.put("aula", rs.getString("aula"));  
+                map.put("esta", rs.getString("estado")); 
                 lista.add(map);
                 
             }
@@ -249,6 +250,8 @@ public class ProfesorDaoImp implements ProfesorDao {
 
 
     }
+
+
 
   
 

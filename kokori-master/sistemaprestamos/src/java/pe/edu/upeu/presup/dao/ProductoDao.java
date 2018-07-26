@@ -22,6 +22,7 @@ public interface ProductoDao {
     int crea (Producto p);
     List <Producto> ko();
     List<Map<String, Object>> liko();
+    List<Map<String, Object>> buscarTipoById(int idtipo);
     
     
   }

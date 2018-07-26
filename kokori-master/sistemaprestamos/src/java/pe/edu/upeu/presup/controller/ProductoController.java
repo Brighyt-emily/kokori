@@ -1,4 +1,4 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -26,9 +26,10 @@ import pe.edu.upeu.presup.entity.Tipo;
  */
 @WebServlet(name = "pro", urlPatterns = {"/pro"})
 public class ProductoController extends HttpServlet {
-    private ProductoDao pro=new ProductoDaoImp();
-    private TipoDao jio=new TipoDaoImp();
-    private Gson g=new Gson();
+
+    private ProductoDao pro = new ProductoDaoImp();
+    private TipoDao jio = new TipoDaoImp();
+    private Gson g = new Gson();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,40 +44,49 @@ public class ProductoController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-        int op = Integer.parseInt(request.getParameter("op"));         
-        switch(op)
-          {
-            case 1:
-                 out.println(g.toJson(pro.readAll()));
-                  break;
-            case 2:
-                Producto p=new Producto(request.getParameter("nom"), request.getParameter("cod"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("iTip")));
-                pro.create(p);
-                break;
-            case 3:
-                pro.deleate(Integer.parseInt(request.getParameter("idP")));
-                break;
-            case 4:
-                Producto lo=new Producto(Integer.parseInt(request.getParameter("idP")), Integer.parseInt(request.getParameter("est")));
-                pro.update(lo);
-                out.print(lo);
-                break;
-            case 5:
-                out.println(g.toJson(pro.read(Integer.parseInt(request.getParameter("idP")))));
-                break;
-            case 6:
-                Producto o=new Producto(request.getParameter("nomTip"));
-                pro.crea(o);
-                break;
-            case 7:out.println(g.toJson(pro.liko()));
-                  break;
-            case 8: out.print(g.toJson(pro.ko()));
-            break;
-            case 9:Tipo ti = new Tipo(Integer.parseInt(request.getParameter("idTipo")),request.getParameter("nomTip"));
-                System.out.println(request.getParameter("nomTip"));    
-            jio.update(ti);
-                break;
-        }
+            int op = Integer.parseInt(request.getParameter("op"));
+            switch (op) {
+                case 1:
+                    out.println(g.toJson(pro.readAll()));
+                    break;
+                case 2:
+                    Producto p = new Producto(request.getParameter("nom"), request.getParameter("cod"), Integer.parseInt(request.getParameter("est")), Integer.parseInt(request.getParameter("iTip")));
+                    pro.create(p);
+                    break;
+                case 3:
+                    pro.deleate(Integer.parseInt(request.getParameter("idP")));
+                    break;
+                case 4:
+                    Producto lo = new Producto(Integer.parseInt(request.getParameter("idP")), Integer.parseInt(request.getParameter("est")));
+                    pro.update(lo);
+                    out.print(lo);
+                    break;
+                case 5:
+                    out.println(g.toJson(pro.read(Integer.parseInt(request.getParameter("idP")))));
+                    break;
+                case 6:
+                    Producto o = new Producto(request.getParameter("nomTip"));
+                    pro.crea(o);
+                    break;
+                case 7:
+                    out.println(g.toJson(pro.liko()));
+                    break;
+                case 8:
+                    out.print(g.toJson(pro.ko()));
+                    break;
+                case 9:
+                    Tipo ti = new Tipo(Integer.parseInt(request.getParameter("idTipo")), request.getParameter("nomTip"));
+                    System.out.println(request.getParameter("nomTip"));
+                    jio.update(ti);
+                    break;
+                case 10:
+                    out.println(g.toJson(jio.liston()));
+                    break;
+                case 11:
+                    int x = Integer.parseInt(request.getParameter("idt"));
+                    out.println(g.toJson(pro.buscarTipoById(x)));
+                    break;
+            }
         }
     }
 

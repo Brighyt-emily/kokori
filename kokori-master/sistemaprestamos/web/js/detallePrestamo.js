@@ -33,11 +33,33 @@ function detalleSeleccionado(x) {
         var x = JSON.parse(data);
         $("#tbldetpres tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
-            $("#tbldetpres").append("\
+            var jop =x[i].estado;
+            if (jop===1)
+            {
+                $("#tbldetpres").append("\
 <tr><td>" + (i + 1) + "</td>\n\
 <td>" + x[i].nom_prod + "</td>\n\
 <td>" + x[i].codigo + "</td>\n\
-<td>" + x[i].estado + "</td></tr>");
+<td><i class='small material-icons' style='color:#2ECC71'>check_circle</i></td></tr>");
+            }
+            if(jop===0)
+            {
+                
+                $("#tbldetpres").append("\
+<tr><td>" + (i + 1) + "</td>\n\
+<td>" + x[i].nom_prod + "</td>\n\
+<td>" + x[i].codigo + "</td>\n\
+<td><i class='small material-icons' style='color:#EC7063'>cancel</i></td></tr>");
+            }
+            if(jop===2)
+            {
+                $("#tbldetpres").append("\
+<tr><td>" + (i + 1) + "</td>\n\
+<td>" + x[i].nom_prod + "</td>\n\
+<td>" + x[i].codigo + "</td>\n\
+<td><i class='small material-icons' style='color:#F1C40F'>remove_circle</i></td></tr>");
+            }
+            
         }
     });
 } 
