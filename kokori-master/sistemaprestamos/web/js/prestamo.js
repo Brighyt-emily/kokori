@@ -66,7 +66,6 @@ $("#registrarPrestamo").click(function () {
         }
         else{
             $.post("Pc", {"fec_pre": fe_pre, "alu": alum, "fe_devo": fe_dev, "horaPre": h_pre, "horadev": h_dev, "aula": aul, "prof": prof, "docu": docu, "user": user, "opc": 1}, function (data) {
-              alert(data);
               var x = JSON.parse(data);
                 if(x===0){
                     Materialize.toast("Error, prestamo no realizado!", 1980); 
@@ -77,9 +76,6 @@ $("#registrarPrestamo").click(function () {
                     var nom = $(this).find("td").eq(0).text();
                     produ.push(nom);
                     });
-                    alert(produ);
-//                        $.post("DPC", {"idp":x,"prod": produ, "opc": 1}, function () {
-//                        });
                         $.ajax({
                            url: "DPC",
                            type:'POST',
@@ -90,9 +86,7 @@ $("#registrarPrestamo").click(function () {
                                prod:produ
                            },
                            success:function(data){
-                               console.log("muy bien");
                                if (data>0){
-                                   console.log("mucho mejor");
                                }
                            },
                            error:function(){
@@ -102,7 +96,7 @@ $("#registrarPrestamo").click(function () {
                     produ=[];
                     
                    Materialize.toast("Prestamo exitoso", 1980); 
-                 //  setTimeout("location.href='Prestamo.jsp'", 2000);
+                   setTimeout("location.href='Prestamo.jsp'", 2100);
                    var idrr = $("#ress").val();
                     if(idrr!=="null"){
                         $.post("Pc",{"idres":idrr,"opc":8},function(){ 
@@ -169,6 +163,16 @@ function VerificacionReserva(){
         var x = $("#ress").val();
         if(x!=="null"){
             $.get("Pc", {"idd":x,"opc": 11}, function (data) {
+                $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
+                var y = JSON.parse(dat);             
+                $("#fecha_pre").val(y.fe_prestamo);
+                $("#fechadev").val(y.fe_devolucion);
+                $("#hora_pre").val(y.hora_pre);
+                $("#hora_dev").val(y.hora_devo);
+                $("#aula").val(y.aula);
+                $("#prof").val(y.id_profe);
+                $("#profe").val(y.nom_profe);
+            });
             var y = JSON.parse(data);
             var e;
             for (var i = 0; i < y.length; i++) {
@@ -186,16 +190,6 @@ function VerificacionReserva(){
             }
                 $("#tablaDetalle").append("<tr><td hidden>"+ y[i].idP +"</td><td>" + y[i].nom + "</td><td>" + e + "</td><td>" + y[i].nomTip + "</td>\n\
                 <td><button class='material-icons prefix' style='background:none;border:none; color:#D84A52' onclick='eliminarEquipo(this.parentNode.parentNode.rowIndex,"+y[i].idP+")'>highlight_off</button></td></tr>"); 
-                $.get("Pc", {"idr":x,"opc": 10}, function (dat) {
-                var y = JSON.parse(dat);             
-                $("#fecha_pre").val(y.fe_prestamo);
-                $("#fechadev").val(y.fe_devolucion);
-                $("#hora_pre").val(y.hora_pre);
-                $("#hora_dev").val(y.hora_devo);
-                $("#aula").val(y.aula);
-                $("#prof").val(y.id_profe);
-                $("#profe").val(y.nom_profe);
-            });
             }
             });
         }
