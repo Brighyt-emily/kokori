@@ -42,8 +42,7 @@ function listado()
         var bibi = JSON.parse(data);
         if(bibi[0].idug=unin)
         {
-           $("#nop").text(bibi[0].nom);
-          $("#oi").text(bibi[0].ape);
+           $("#nop").text(bibi[0].nom+""+bibi[0].ape);
           $("#dn").text(bibi[0].dn);
           $("#celuar").text(bibi[0].nucel);
           $("#dire").text(bibi[0].dire);

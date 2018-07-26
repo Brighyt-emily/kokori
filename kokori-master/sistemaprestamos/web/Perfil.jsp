@@ -93,27 +93,48 @@
                       
              </div>
                   </div>
-                                
-                                <div class="col s12">
-                      <div class="card" >
+                                <div class="row">
+                                      <div class="col s6">
+                      <div class="card">
                           <div class="card-content">
-                              <div class="row">
                                   
                                      <div class="container">
-                                <div class="row ">
-                                    Nombre: <label id="nop"></label><br>
-                                    Apellido: <label id="oi"></label><br>
-                                    DNI: <label id="dn"></label><br>
-                                    Celular: <label id="celuar"></label><br>
-                                    Direccion <label id="dire"></label><br>
-                                    Correo: <label id="corre"></label><br>
-                                    Rol: <label id="ro" ></label><br>
-                                </div>
+                               
+                                      
+                        <ul class="collection with-header">
+        <li class="collection-item"><div><i class="material-icons">person</i><a href="#!" class="secondary-content"><label id="nop"></label></a></div></li>
+        <li class="collection-item"><div><i class="material-icons">phone</i><a href="#!" class="secondary-content"><label id="celuar"></label></a></div></li>
+        <li class="collection-item"><div><i class="material-icons"> markunread</i><a href="#!" class="secondary-content"><label id="corre"></label></a></div></li>
+       
+                        </ul>
+            
+                                      
                              </div>                      
 
-                      </div>
                  </div>             
              </div>
+                                </div>
+                                     <div class="col s6">
+                                    <div class="card" >
+                          <div class="card-content">
+                                  
+                                     <div class="container">
+                               
+                                      
+                        <ul class="collection with-header">
+       <li class="collection-item"><div><i class="material-icons">account_box </i><a href="#!" class="secondary-content"><label id="dn"></label></a></div></li>
+        <li class="collection-item"><div><i class="material-icons">    location_on </i><a href="#!" class="secondary-content"><label id="dire"></label></a></div></li>
+        <li class="collection-item"><div><i class="material-icons">    face </i><a href="#!" class="secondary-content"><label id="ro" ></label></a></div></li>
+
+                        </ul>  
+                             </div>    
+                 </div>             
+             </div>            
+                                </div> 
+                                </div>
+                              
+                                             
+                                        
                       
              </div>
                       
