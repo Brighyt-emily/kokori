@@ -26,7 +26,7 @@
                             }
 
                             if (rol.equals("1")) {
-        %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%
+        %><% response.sendRedirect("login.jsp");
                                      }
                                  }
 
