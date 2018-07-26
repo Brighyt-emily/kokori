@@ -71,7 +71,9 @@
                         <li class="no-padding"><a class="waves-effect waves-grey" href="devolucion.jsp">
                         <i class="material-icons red-text" style="height:10px;">devices_other</i>Devolución</a></li>
                         
-                      
+                       
+                        <li class="no-padding"><a class="waves-effect waves-grey" href="registrosReserva.jsp">
+                        <i class="material-icons orange-text" style="height:10px;">content_paste</i>Registros Reservas</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp">
                         <i class="material-icons" style="height:10px;">contacts</i>Gestion Profesores</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">

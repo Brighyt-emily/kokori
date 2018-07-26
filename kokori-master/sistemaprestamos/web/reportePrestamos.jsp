@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Reportes</title>
         <%@include file="WEB-INF/template/header.jspf" %>
         <!-- Compiled and minified CSS -->
         <!-- Compiled and minified CSS -->
@@ -25,17 +25,17 @@
                     String rol = sesion.getAttribute("idr").toString();
                     if (rol.equals("2")) {
         %><%@include file="WEB-INF/template/Principal.jspf"%><%
-                             }
+            }
 
-                             if (rol.equals("1")) {
-        %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%
-                                      }
-                                  }
+            if (rol.equals("1")) {
+        %><% response.sendRedirect("login.jsp");
+                    }
+                }
 
-                              } catch (Exception e) {
-                                  System.out.println("Error: " + e);
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
 
-                              }
+            }
         %>
         <!--INICIO Contenido -->
         <main class="mn-inner">

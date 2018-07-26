@@ -56,7 +56,7 @@
                     
                     <div class="sidebar-account-settings">
                         <ul>
-                            <li><a class="waves-effect" href="#" > <i class="material-icons" style="height:10px;">account_box</i>Mi Perfil</a></li>
+                            <li><a class="waves-effect" href="Perfil.jsp" > <i class="material-icons" style="height:10px;">account_box</i>Mi Perfil</a></li>
                             
                         </ul>
                     </div>
