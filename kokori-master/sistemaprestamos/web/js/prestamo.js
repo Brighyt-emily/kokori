@@ -56,7 +56,7 @@ $("#registrarPrestamo").click(function () {
     var prof = $("#prof").val();
     var docu = $("#docu").val();
     var user = $("#idu").val();   
-    if(alum==="" || fe_pre==="dd/mm/aaaa" || fe_dev==="dd/mm/aaaa" || aul==="" || prof==="" || user===""){
+    if(fe_pre==="dd/mm/aaaa" || fe_dev==="dd/mm/aaaa" || aul==="" || prof==="" || user===""){
         Materialize.toast("Completar todos los campos de datos", 1980);
     }
     else  {
