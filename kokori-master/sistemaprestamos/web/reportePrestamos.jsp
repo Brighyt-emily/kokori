@@ -53,7 +53,7 @@
             </div>
             <div class="row">
                 <div class=" center-align">
-                    <div class="page-title"> <i class="material-icons smoll" >content_paste</i><span>Reporte de usuarios</span></div>
+                    <div class="page-title"> <i class="material-icons smoll" >content_paste</i><span>Reporte de prestamos</span></div>
                 </div>
                 <div class="col s12 ">
                     <div class="card">
