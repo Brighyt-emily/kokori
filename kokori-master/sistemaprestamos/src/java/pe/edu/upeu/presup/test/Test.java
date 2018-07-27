@@ -130,7 +130,7 @@ public class Test {
 
     static void nop() {
         List<Map<String, Object>> lista = new ArrayList<>();
-        lista = i.liston();
+        //lista = i.liston();
         System.out.println(lista);
         System.out.println(lista.size());
     }

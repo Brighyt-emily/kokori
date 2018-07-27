@@ -130,7 +130,7 @@ $("#nomp").keyup(function () {
 function esta()
 {
     var tiu = $('#tip').val();
-    
+     $('input[type="text"]').val('');
     if (tiu != "")
     {
         $.post("pro", {"nomTip": tiu, "op": 6}, function ()
