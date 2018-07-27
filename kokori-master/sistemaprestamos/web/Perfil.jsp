@@ -75,7 +75,7 @@
                                         <input disabled value="${sessionScope.pass}" id="contra" type="text" class="validate">
 
                                     </div>
-                                    <a  id="unin">${sessionScope.iduser}</a>
+                                    <a  id="unin">${sessionScope.idt}</a>
                                 </div>
 
                             </div>  

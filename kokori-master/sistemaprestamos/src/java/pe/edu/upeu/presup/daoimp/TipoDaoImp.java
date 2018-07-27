@@ -60,13 +60,14 @@ private java.sql.CallableStatement cst;
         return x;    }
 
     @Override
-    public List<Map<String, Object>> liston() {
+    public List<Map<String, Object>> liston(int id) {
 List<Map<String, Object>> lista = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call(listarUmu()}");
+            cst = cx.prepareCall("{call(listarUmu(?)}");
+            cst.setInt(1, id);
             rs = cst.executeQuery();
-           
+            
             while(rs.next()){
                 Map<String, Object> map = new HashMap<>();
                 map.put("nom", rs.getString("nombres"));
@@ -82,7 +83,7 @@ List<Map<String, Object>> lista = new ArrayList<>();
         } catch (SQLException e) {
             System.out.println("ERROR: "+e);
         }
-        return lista;
-    }
-    
+        return lista;    }
+
+  
 }
