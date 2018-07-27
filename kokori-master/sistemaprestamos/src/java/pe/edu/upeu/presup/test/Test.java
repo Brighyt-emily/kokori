@@ -43,24 +43,25 @@ public class Test {
     static TipoDao i = new TipoDaoImp();
     static DevoDao po = new DevoDaoImp();
     static UsuarioDao us = new UsuarioDaoImp();
-    static ProfesorDao pr=new ProfesorDaoImp();
-    static PrestamoDao psr=new PrestamoDaoImp();
-    static PrestamoDetalleDao dp=new DetallePrestamoDaoImp();
+    static ProfesorDao pr = new ProfesorDaoImp();
+    static PrestamoDao psr = new PrestamoDaoImp();
+    static PrestamoDetalleDao dp = new DetallePrestamoDaoImp();
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         //hio();
-       //conexion();
+        //conexion();
         //conexion();
         //create();
-      //listar();
+        //listar();
         //delete();
         //update();
         //update();
-       // validar();
-       //create();
+        // validar();
+        //create();
         //listar();
         //delete();
         //update();
@@ -69,13 +70,15 @@ public class Test {
         //read();
         //jip();
         //nop();
-       // jio();
-       //create();
-       //pro();
-       //lost();
-       nop();
+        // jio();
+        //create();
+        //pro();
+        //lost();
+        //nop();
+        lista(5);
     }
-    static void listar(){
+
+    static void listar() {
         System.out.println(g.toJson(po.listt()));
     }
 
@@ -88,30 +91,29 @@ public class Test {
     }
 
     static void create() {
-        Devon p = new Devon("vcv",2);
+        Devon p = new Devon("vcv", 2);
         if (po.create(p) > 0) {
             System.out.println("c:");
         } else {
             System.out.println(":c");
         }
     }
-    static void hio()
-    {
-        Prestamo lop=new Prestamo(3,2);
+
+    static void hio() {
+        Prestamo lop = new Prestamo(3, 2);
         System.out.println(psr.update(lop));
-        
+
     }
 
-   
     static void delete() {
         g.toJson(ko.deleate(7));
 
     }
 
     static void ate() {
-        Prestamo huma=new Prestamo(2,0,2);
+        Prestamo huma = new Prestamo(2, 0, 2);
         System.out.println(g.toJson(kop.update(huma)));
-        
+
     }
 
     static void validar() {
@@ -121,33 +123,34 @@ public class Test {
         System.out.println(data.size());
 
     }
-    
-    static void read()
-    {
+
+    static void read() {
         System.out.println(g.toJson(ko.read(1)));
     }
-    static void nop()
-    {
-    List<Map<String, Object>> lista = new ArrayList<>();
-    lista = i.liston();
+
+    static void nop() {
+        List<Map<String, Object>> lista = new ArrayList<>();
+        lista = i.liston();
         System.out.println(lista);
         System.out.println(lista.size());
     }
-    static void jip()
-    {
+
+    static void jip() {
         System.out.println(g.toJson(ko.ko()));
     }
-    
-    
-    static void pro(){
-        
+
+    static void pro() {
+
         System.out.println(pr.prestamosIdProfesor(1));
-        
+
     }
-    static void lost()
-    {
-        Tipo ijoijo=new Tipo(9,"lost");
+
+    static void lost() {
+        Tipo ijoijo = new Tipo(9, "lost");
         System.out.println(i.update(ijoijo));
+    }
+    static void lista(int id){
+        System.out.println(g.toJson(pr.prestamosIdProfesor(id)));
     }
 
 }

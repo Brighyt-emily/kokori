@@ -25,19 +25,19 @@
                     String rol = sesion.getAttribute("idr").toString();
                     if (rol.equals("2")) {
         %><%@include file="WEB-INF/template/Principal.jspf"%><%
-                            }
+            }
 
-                            if (rol.equals("1")) {
+            if (rol.equals("1")) {
         %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%
-                                     }
-                                 }
+                    }
+                }
 
-                             } catch (Exception e) {
-                                 System.out.println("Error: " + e);
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
 
-                             }
+            }
         %>
-        
+
         <!--INICIO Contenido -->
         <main class="mn-inner" >
             <nav class="teal lighten-2" style="margin-top: -20px;">
@@ -46,12 +46,12 @@
                         <a href="tablaProfesores.jsp" class="breadcrumb">Gestion Profesor</a>
                         <a href="RegistrarProfesores.jsp" class="breadcrumb">Añadir Profesor
                         </a>
-                       
+
                     </div>
                 </div>
             </nav>
             <div class="col s12">
-                
+
                 <div class="action-btn-wrapper">
                     <div class="fixed-action-btn my-custom-btn vertical">
                         <a class="btn-floating btn-large red">
@@ -66,12 +66,12 @@
                         </ul>
                     </div>
                 </div>
-                
+
             </div>
-            
-            
+
+
             <div class="row">
-                
+
                 <div class="col s12 m12 l12">
                     <div class="card" style="padding:20px;">
 
@@ -176,8 +176,8 @@
 
                                 </div>
                             </div>
-                            
-                            
+
+
                             <div class="row">
                                 <div class="col s8">
 

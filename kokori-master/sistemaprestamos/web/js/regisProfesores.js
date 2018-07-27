@@ -7,7 +7,6 @@ $(document).ready(function () {
 $("#btnMostrar").click(function () {
     var x = $("#secFacultad").val();
     var idf = parseInt(x);
-    alert(idf);
     if (idf !== 0) {
         $.get("pc", {"op": 3, "idf": idf}, function (data) {
             var w = JSON.parse(data);
@@ -40,6 +39,7 @@ $("#btnRegistrar").click(function () {
     
 
 $.get("pc", {"op":4, "nombres": nombres,"apellidos":apellidos,"celular":celular,"email":email,"direccion":direccion,"grado":grado,"dni":dni,"codigo":codigo,"escuela":ide,"estado":1}, function (data) {
-    Materialize.toast('Profesor Registrado', 3000, 'rounded');             
+    Materialize.toast('Profesor Registrado', 3000, 'rounded');  
+    setTimeout("location.href='registrarProfesores.jsp'", 2100);
 });     
 });

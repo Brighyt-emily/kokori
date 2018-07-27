@@ -201,6 +201,8 @@ $("#btnGuardarCambios").click(function () { // funcion para guardar cambios
                     productosReserva.length = 0;
                     arregloReservaProd.length = 0;
                     cantidadProd = 0;
+                    
+                    setTimeout("location.href='editarReserva.jsp'", 1800);
                 } else {
                     var toastContent = $('<h5 class="yellow-text">Oops! Algo salio mal</h5>');
                     Materialize.toast(toastContent, 1900);

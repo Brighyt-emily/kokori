@@ -90,7 +90,7 @@ $("#registrarPrestamo").click(function () {
                                }
                            },
                            error:function(){
-                               console.log("errorrrr");
+                               
                            }
                         });
                     produ=[];
