@@ -41,7 +41,7 @@ function listado()
     
     $.get("pro",{"id":unin,"op":10}, function (data) {
         var bibi = JSON.parse(data);
-        alert(bibi);
+        
            $("#nop").text(bibi[0].nom+" "+bibi[0].ape);
           $("#dn").text(bibi[0].dn);
           $("#celuar").text(bibi[0].nucel);

@@ -77,7 +77,6 @@ List<Map<String, Object>> lista = new ArrayList<>();
                 map.put("dire",  rs.getString("direccion"));
                 map.put("corr",  rs.getString("email"));
                 map.put("nor",  rs.getString("nom_rol"));
-                map.put("idug",  rs.getString("idusuario"));
                 lista.add(map);
             }
         } catch (SQLException e) {

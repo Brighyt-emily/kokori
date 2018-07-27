@@ -81,6 +81,7 @@ public class ProductoController extends HttpServlet {
                     break;
                 case 10:
                     out.println(g.toJson(jio.liston(Integer.parseInt(request.getParameter("id")))));
+                    System.out.println(Integer.parseInt(request.getParameter("id")));
                     break;
                 case 11:
                     int x = Integer.parseInt(request.getParameter("idt"));

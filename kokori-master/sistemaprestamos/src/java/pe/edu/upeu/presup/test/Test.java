@@ -74,8 +74,8 @@ public class Test {
         //create();
         //pro();
         //lost();
-        //nop();
-        lista(5);
+        nop(4);
+        //lista(5);
     }
 
     static void listar() {
@@ -128,11 +128,11 @@ public class Test {
         System.out.println(g.toJson(ko.read(1)));
     }
 
-    static void nop() {
-        List<Map<String, Object>> lista = new ArrayList<>();
+    static void nop(int id) {
+        List<Map<String, Object>> lista = new ArrayList<>(id);
         //lista = i.liston();
-        System.out.println(lista);
-        System.out.println(lista.size());
+        System.out.println(g.toJson(i.liston(id)));
+        //System.out.println(lista.size());
     }
 
     static void jip() {

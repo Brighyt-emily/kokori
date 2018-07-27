@@ -52,7 +52,7 @@ function jip()
 {
     var jip = $('#loc').val();
     var ip = parseInt(idpro);
-
+    $('input[type="text"]').val('');
     $.get("pro", {"op": 4, "idP": ip, "est": jip}, function (data) {
         listar();
     });
