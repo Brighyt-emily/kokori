@@ -83,7 +83,7 @@ function salva()
     var jip = $('#loco').val();
     var x = $("#combin").val();
     var ide = parseInt(x);
-
+ $('input[type="text"]').val('');
     $.post("pro", {"nom": jop, "cod": kop, "est": jip, "iTip": ide, "op": 2}, function ()
     {
         console.log("controlador op 2");
@@ -130,7 +130,7 @@ $("#nomp").keyup(function () {
 function esta()
 {
     var tiu = $('#tip').val();
-    alert(tiu);
+    
     if (tiu != "")
     {
         $.post("pro", {"nomTip": tiu, "op": 6}, function ()
