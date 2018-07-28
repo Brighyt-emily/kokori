@@ -40,7 +40,6 @@ function listado()
     var unin= $("#unin").val();
     
     $.get("pro",{"id":unin,"op":10}, function (data) {
-        alert(data);
         var bibi = JSON.parse(data);
           $("#nop").text(bibi[0].nom + " " +bibi[0].ape);
           $("#dn").text(bibi[0].dn);
