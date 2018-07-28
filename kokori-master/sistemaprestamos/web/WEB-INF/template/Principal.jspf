@@ -77,7 +77,7 @@
                         <li class="no-padding"><a class="waves-effect waves-grey" href="tablaProfesores.jsp">
                         <i class="material-icons" style="height:10px;">contacts</i>Gestion Profesores</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="Productos.jsp">
-                        <i class="material-icons" style="height:10px;">local_mall</i>Gestion Productos</a></li>
+                        <i class="material-icons" style="height:10px;">local_mall</i>Gestion Equipos</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="RegistrarUsuario.jsp">
                         <i class="material-icons" style="height:10px;">mood</i>Gestion Usuarios</a></li>
                         <li class="no-padding"><a class="waves-effect waves-grey" href="reportePrestamos.jsp">

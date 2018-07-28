@@ -34,7 +34,6 @@ function cardVer() {
 $("#btnMostrar").click(function () {
     var x = $("#secFacultad").val();
     var idf = parseInt(x);
-
     if (idf !== 0) {
         $.get("pc", {"op": 3, "idf": idf}, function (data) {
             var w = JSON.parse(data);
@@ -56,12 +55,8 @@ function actualizapro() {
     var id = $("#idP").val();
     var idpars = parseInt(id);
     $.get("pc", {"idProf": idpars, "op": 8}, function (datas) {
-        alert(datas);
         var w = JSON.parse(datas);
-
-
         for (var i = 0; i < w.length; i++) {
-            alert(w[i].esta);
             if (w[i].esta === "1")
             {
 
@@ -122,7 +117,6 @@ function verproductos(x) {
     $('.modal-trigger').leanModal();
     $.get("pc", {"idPres": idf, "op": 9}, function (datas) {
         var w = JSON.parse(datas);
-        alert(w);
         for (var i = 0; i < w.length; i++) {
             $("#tablita").append("<tr><td>" + w[i].nombre + "</td></tr>");
 

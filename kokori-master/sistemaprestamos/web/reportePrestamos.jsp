@@ -39,18 +39,6 @@
         %>
         <!--INICIO Contenido -->
         <main class="mn-inner">
-            <div class="col s12">
-                <div class="action-btn-wrapper">
-                    <div class="fixed-action-btn my-custom-btn vertical">
-                        <a class="btn-floating btn-large red">
-                            <i class="large material-icons">build</i>
-                        </a>
-                        <ul>
-                            <li><a class="btn-floating #f06292 pink lighten-2 modal-trigger" href='#modal1'><i class="material-icons">add</i></a></li>                                                  
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class=" center-align">
                     <div class="page-title"> <i class="material-icons smoll" >content_paste</i><span>Reporte de prestamos</span></div>
@@ -84,11 +72,10 @@
                                 <tbody>
                                 </tbody>
                             </table>                                                                                               
-                            <!--Modal para ver detalladamente el resgitro de los profesores-->
                             <!-- Modal Structure -->
                             <div id="modal1" class="modal modal-fixed-footer" style="max-width: 890px;">
                                 <div class="modal-content">
-                                    <h4>Productos Emprestados</h4>
+                                    <h4>Equipos Emprestados</h4>
                                     <table class="highlight" id="tbldetpres">
                                         <thead>
                                             <tr>

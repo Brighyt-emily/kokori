@@ -9,9 +9,10 @@ function listar()
 {
     $.get("pro", {"op": 1}, function (data) {
         var bibi = JSON.parse(data);
+        var jop;
         $("#tablin tbody tr").remove();
         for (var i = 0; i < data.length; i++) {
-            var jop = bibi[i].est;
+            jop = bibi[i].est;
             if (jop === 1)
             {
                 $("#tablin").append("<tr><td>" + (i + 1) + "</td><td>" + bibi[i].nom + "</td><td>" + bibi[i].cod + "</td><td>"

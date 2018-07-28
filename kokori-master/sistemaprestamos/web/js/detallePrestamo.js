@@ -10,8 +10,14 @@ $(document).ready(function () {
 function listardtp() {
     $.get("Pc", {"opc": 2}, function (data) {
         var x = JSON.parse(data);
+        var e;
         $("#tbldetpressm tbody tr").remove();
         for (var i = 0; i < x.length; i++) {
+            if(x[i].nom_alumno===""){
+                e="NINGUNO"
+            } else{
+                e=x[i].nom_alumno;
+            }
             $("#tbldetpressm").append("\
 <tr><td>" + (i + 1) + "</td>\n\
 <td>" + x[i].nom_user + "</td>\n\
@@ -21,7 +27,7 @@ function listardtp() {
 <td>" + x[i].hora_devo + "</td>\n\
 <td>" + x[i].aula + "</td>\n\
 <td>" + x[i].nom_profe + "</td>\n\
-<td>" + x[i].nom_alumno + "</td>\n\
+<td>" + e + "</td>\n\
 <td><a href='#modal1' onclick='detalleSeleccionado(" + x[i].idprestamo + ")' class='waves-effect waves-light modal-trigger' ><i class='material-icons'>remove_red_eye</i></a></td></td></tr>");
         }
     });

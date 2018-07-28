@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Equipos</title>
         <%@include file="WEB-INF/template/header.jspf" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
@@ -47,7 +47,7 @@
                              <i class="material-icons" style="height:10px;">local_mall</i>
                          </div>
                          <div class="col s11" style="position:absolute;left:30px;top:3px;">
-                             <a href="reservas.jsp" class="breadcrumb">Gestion Productos</a>                        
+                             <a href="reservas.jsp" class="breadcrumb">Gestion Equipos</a>                        
                          </div>
 
                      </div>
@@ -116,8 +116,8 @@
                                     <div class="col s6">
                                         <div class="input-field">
                                             <i class="material-icons prefix">local_mall</i>
-                                            <input type="text" name="producto"  id="pro" placeholder="producto">
-                                            <label for="producto">Producto</label>
+                                            <input type="text" name="producto"  id="pro" placeholder="equipo">
+                                            <label for="producto">Equipo</label>
                                            
                                         </div>
                                     </div>
