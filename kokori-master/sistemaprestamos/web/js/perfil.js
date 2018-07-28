@@ -37,12 +37,12 @@ function acept()
 
 function listado()
 {
-    var unin= $("#unin").html();
+    var unin= $("#unin").val();
     
     $.get("pro",{"id":unin,"op":10}, function (data) {
+        alert(data);
         var bibi = JSON.parse(data);
-        
-           $("#nop").text(bibi[0].nom+" "+bibi[0].ape);
+          $("#nop").text(bibi[0].nom + " " +bibi[0].ape);
           $("#dn").text(bibi[0].dn);
           $("#celuar").text(bibi[0].nucel);
           $("#dire").text(bibi[0].dire);
