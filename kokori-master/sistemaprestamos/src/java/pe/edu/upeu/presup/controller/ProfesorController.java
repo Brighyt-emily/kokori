@@ -59,7 +59,7 @@ public class ProfesorController extends HttpServlet {
                         request.getParameter("nombres"),request.getParameter("apellidos"),
                         request.getParameter("direccion"), request.getParameter("celular"),
                         request.getParameter("dni"), request.getParameter("email"));
-                out.println(g.toJson(myProf.create(profe)));
+                        myProf.create(profe);
                 break;
             case 5:                                                                    
                 myProf.update(Integer.parseInt(request.getParameter("id")),                                               

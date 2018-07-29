@@ -4,10 +4,28 @@ $(document).ready(function () {
    
 });
 
+
+
+
+$("#secFacultad").on('change', function() {
+  var value = $(this).val();
+     var idf = parseInt(value); 
+
+  $.get("pc", {"op": 3, "idf": idf}, function (data) {
+            var w = JSON.parse(data);
+            for (var i = 0; i < w.length; i++) {  
+                $("#comboEscuela").append(
+		"<option value='"+w[i].idEscuela+"'>"+w[i].nomEscuela+"</option>");
+            }            
+            $("#comboEscuela").material_select();
+        });
+    $("#comboEscuela option").remove();    
+  
+});
+/*
 $("#btnMostrar").click(function () {
     var x = $("#secFacultad").val();
-    var idf = parseInt(x);
-    if (idf !== 0) {
+    var idf = parseInt(x);   
         $.get("pc", {"op": 3, "idf": idf}, function (data) {
             var w = JSON.parse(data);
             for (var i = 0; i < w.length; i++) {  
@@ -16,16 +34,12 @@ $("#btnMostrar").click(function () {
             }            
             $("#comboEscuela").material_select();
         });
-    $("#comboEscuela option").remove();
-    } else {
-        alert("seleccione un valor para la caja de texto");
-    }
-    
+    $("#comboEscuela option").remove();      
 });
+*/
 
 $("#btnRegistrar").click(function () {
-    
-    var es=0;
+       
     var nombres = $("#nombres").val();
     var apellidos = $("#apellidos").val();
     var celular = $("#celular").val();
@@ -37,9 +51,28 @@ $("#btnRegistrar").click(function () {
     var x = $("#comboEscuela").val();
     var ide = parseInt(x);
     
-
-$.get("pc", {"op":4, "nombres": nombres,"apellidos":apellidos,"celular":celular,"email":email,"direccion":direccion,"grado":grado,"dni":dni,"codigo":codigo,"escuela":ide,"estado":1}, function (data) {
-    Materialize.toast('Profesor Registrado', 3000, 'rounded');  
-    setTimeout("location.href='registrarProfesores.jsp'", 2100);
-});     
+    if (nombres==="" || apellidos==="" || celular==="" || email==="" || direccion==="" || grado==="" || dni==="" || codigo==="") {
+          var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Complete los datos por favor<p>');
+                Materialize.toast(toastContent, 1500);
+        
+    }else{       
+        $.get("pc", {"op": 4, "nombres": nombres, "apellidos": apellidos, "celular": celular, "email": email, "direccion": direccion, "grado": grado, "dni": dni, "codigo": codigo, "escuela": ide, "estado": 1}, function () {
+            var toastContent = ('<span><i class="material-icons medium green-text">assignment_turned_in</i></span><p>Profesor registrado<p>');
+            Materialize.toast(toastContent, 1500);
+            limpiar();
+        }); 
+    }
+    
 });
+
+
+function limpiar(){
+    $("#nombres").val("");
+    $("#apellidos").val("");
+    $("#celular").val("");
+    $("#email").val("");
+    $("#direccion").val("");
+    $("#grado").val("");
+    $("#dni").val("");
+    $("#codigo").val("");
+}

@@ -83,21 +83,19 @@
                                         <div class="input-field">
                                             <i class="material-icons prefix">face</i>
                                             <label for="nombres">Nombres</label>
-                                            <input id="nombres" type="text" class="validate">
+                                            <input id="nombres" type="text" class="validate" placeholder="">
                                         </div>
 
                                     </div>
                                     <div class="col s4">
                                         <div class="input-field">
-                                            <i class="material-icons prefix">person_pin</i>
                                             <label for="apellidos">Apellidos</label>
-                                            <input id="apellidos" type="text" class="validate">
+                                            <input id="apellidos" type="text" class="validate" placeholder="">
 
                                         </div>
                                     </div>
                                     <div class="col s4">
                                         <div class="input-field">
-                                            <i class="material-icons prefix">dialer_sip</i>
                                             <label for="celular">Numero de Celular</label>
                                             <input class="validate" type="text" name="celular" placeholder="#"  required maxlength="9" id="celular">
 
@@ -109,14 +107,13 @@
                                     <div class="col s6">
                                         <div class="input-field">
                                             <i class="material-icons prefix">mail</i>
-                                            <input type="email" name="email"  id="email" class="validate">
+                                            <input type="email" name="email"  id="email" class="validate" placeholder="">
                                             <label for="email">Email</label>
 
                                         </div>
                                     </div>
                                     <div class="col s6">
                                         <div class="input-field">
-                                            <i class="material-icons prefix">location_city</i>                                           
                                             <input class="validate" type="text" name="direccion" required id="direccion" placeholder="">
                                             <label for="direccion">Dirección</label>
                                         </div>
@@ -133,7 +130,6 @@
                                     </div>
                                     <div class="col s4">
                                         <div class="input-field">
-                                            <i class="material-icons prefix">assignment</i>
 
                                             <input type="text" name="dni" class="validate" required maxlength="8" id="dni" placeholder="#">
                                             <label for="dni">Ingrese Dni</label>
@@ -142,8 +138,6 @@
                                     </div>
                                     <div class="col s4">
                                         <div class="input-field">
-                                            <i class="material-icons prefix">assignment</i>
-
                                             <input type="text" name="codigo" class="validate" required maxlength="9" id="codigo" placeholder="#">
                                             <label for="codigo">Ingrese Codigo</label>
 
@@ -152,7 +146,7 @@
                                 </div>   
 
                                 <div class="row">
-                                    <div class="input-field col s5">
+                                    <div class="input-field col s4">
                                         <i class="material-icons prefix">class</i>
                                         <select id="secFacultad">
                                             <option value="0" disabled selected>Facultades de la UPeU</option>
@@ -163,36 +157,23 @@
                                         </select>
                                         <label>Facultades</label>
                                     </div>
-                                    <div class="col s2 center-align">
-                                        <a class="btn-floating btn-large waves-effect waves-light blue-grey" id="btnMostrar"><i class="material-icons">keyboard_arrow_right</i></a>
-                                    </div>
+                                   
 
-                                    <div class="input-field col s5">
+                                    <div class="input-field col s4">
                                         <select id="comboEscuela" name="selectBox">
                                             <option value="0" disabled selected>Escuelas de la UPeU</option>             
                                         </select>
                                         <label>Escuelas</label>
                                     </div>
-
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col s8">
-
-                                </div>
-                                <div class="col s2">
-                                    <button class="btn-large teal lighten-2" type="submit" name="action" id="btnRegistrar">Registrar
+                                     <div class="col s4 center-align">
+                                           <button class="btn-large teal lighten-2" type="submit" name="action" id="btnRegistrar">Registrar
                                         <i class="material-icons right">save</i>
                                     </button>
-                                </div>
-                                <div class="col s2">
-                                    <button class="btn-large grey darken-3" type="submit" name="action" id="btnCancelar">Cancelar
-                                        <i class="material-icons right ">delete_forever</i>
-                                    </button>
+                                    </div>
+
                                 </div>
                             </div>
+                         
                         </div>
                     </div>
                 </div>
