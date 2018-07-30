@@ -16,30 +16,28 @@
     </head>
     <body>
         <%
-            try{
-             HttpSession sesion = request.getSession();
-                 if(sesion.getAttribute("idr")==null){
-                     response.sendRedirect("login.jsp");
-                    	
-                 }
-                 else{
-                     String rol = sesion.getAttribute("idr").toString();
-                     if(rol.equals("2")){
-                        %><%@include file="WEB-INF/template/Principal.jspf"%><%	
-                    }
-                                         
-                     if(rol.equals("1")){
-                         %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%	
-                    } 
-                 }                                                                   
-                 
-            }
-         catch(Exception e){
-             System.out.println("Error: "+e);
-                 
-         }
-            %>
-        
+            try {
+                HttpSession sesion = request.getSession();
+                if (sesion.getAttribute("idr") == null) {
+                    response.sendRedirect("login.jsp");
+
+                } else {
+                    String rol = sesion.getAttribute("idr").toString();
+                    if (rol.equals("2")) {
+        %><%@include file="WEB-INF/template/Principal.jspf"%><%
+                            }
+
+                            if (rol.equals("1")) {
+        %><%@include file="WEB-INF/template/PrincipalTrabajador.jspf"%><%
+                                     }
+                                 }
+
+                             } catch (Exception e) {
+                                 System.out.println("Error: " + e);
+
+                             }
+        %>
+
         <main class="mn-inner"> 
             <nav class="teal lighten-2" style="margin-top: -20px;">
                 <div class="nav-wrapper">
@@ -54,13 +52,13 @@
                     </div>
                 </div>   
             </nav>
-          
+
             <div class="row">
                 <div class="col s8">
                     <div class="card" style="margin-top: 40px;">
                         <div class="card-content">
                             <div class="row">
-                                
+
                                 <div class="col s4">
                                     <div class="input-field">
                                         <i class="material-icons prefix">perm_contact_calendar</i>
@@ -82,7 +80,7 @@
                                         </div>                                    </div>
                                 </div>                                
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col s4">
                                     <div class="input-field">
@@ -90,30 +88,30 @@
                                         <label for="aula">Aula</label>
                                         <input type="text" name="aula" required id="aula" maxlength="6">
                                     </div>
-                                    
+
                                 </div>
-                                
+
                                 <div class="col s4">
                                     <div class="input-field">
                                         <i class="material-icons prefix">event</i>                                       
                                         <input type="text" name="fecha" required id="fecha" disabled>
-                                         <label for="fecha">Fecha Actual</label>
+                                        <label for="fecha">Fecha Actual</label>
                                     </div>
-                                    
+
                                 </div>
-                                
+
                                 <div class="col s4">
-                                   
+
                                     <div class="input-field">
                                         <i class="material-icons prefix">event</i>
                                         <!--<input type="date" id="fe_prestamo">-->
                                         <input type="text" id="fe_prestamo" class="datepicker" placeholder="Año-Mes-Dia">
-                                         <label>Fecha de Prestamo</label>
+                                        <label>Fecha de Prestamo</label>
                                     </div>
-                                    
+
                                 </div>                                                                                                                                                                                                
                             </div>  
-                            
+
                             <div class="row">
                                 <div class="col s4">
                                     <label>Hora de Prestamo</label>
@@ -122,7 +120,7 @@
                                         <input type="time" required name="h_prestamo" id="h_prestamo" maxlength="5">
                                     </div>
                                 </div>
-                                
+
                                 <div class="col s4">
                                     <label>Fecha de Devolución</label>
                                     <div class="input-field">
@@ -130,7 +128,7 @@
                                         <input type="text" id="fe_devolucion" class="datepicker"  placeholder="Año-Mes-Dia">
                                     </div>
                                 </div>
-                                
+
                                 <div class="col s4">
                                     <label>Hora de Devolucion</label>
                                     <div class="input-field">
@@ -141,16 +139,16 @@
                             </div>                                                                                    
                         </div>
                     </div>
-                    
+
                 </div>
-                
-                
+
+
                 <div class="col s4">
                     <div class="card" style="margin-top: 40px;">
                         <div class="card-content">
                             <div class="row">
                                 <div class="col s12 center-align">
-                                    <a class="waves-effect waves-light btn modal-trigger btn-large grey darken-3" href="#modal1">Seleccionar Productos
+                                    <a class="waves-effect waves-light btn modal-trigger btn-large grey darken-3" href="#modal1">Seleccionar Equipos
                                         <i class="material-icons right">add_circle_outline</i></a>
                                 </div>                                                                
                             </div>                            
@@ -169,19 +167,19 @@
                                         </table>
                                     </div>
                                 </div>
-                               
-                                    <div class="action-btn-wrapper">
-                                        
-                                           
-                                        <div class="fixed-action-btn my-custom-btn vertical">
-                                            
-                                           <a class="btn-floating  btn-large blue tooltipped" onclick="irRegistroReservas();" data-position="left" data-delay="50" data-tooltip="Ir a Registros Reservas"><i class="material-icons">assignment</i></a>
-                                            
-                                        </div>
-                                 
+
+                                <div class="action-btn-wrapper">
+
+
+                                    <div class="fixed-action-btn my-custom-btn vertical">
+
+                                        <a class="btn-floating  btn-large blue tooltipped" onclick="irRegistroReservas();" data-position="left" data-delay="50" data-tooltip="Ir a Registros Reservas"><i class="material-icons">assignment</i></a>
+
+                                    </div>
+
                                 </div>   
-                                              
-                        </div>  
+
+                            </div>  
                             <div class="row centered">  
 
                                 <div class="col s6 centered">
@@ -196,61 +194,61 @@
                                 </div>
                             </div>  
                         </div>                                                                                             
-                </div>
-            
-            
-                    <!-- nuevo diseño-->
-                    
-                                                                                              
-                        <!--Modal-->
-                        <div id="modal1" class="modal modal-fixed-footer">
-                            <div class="modal-content">
-                                <h4>Busqueda de Productos</h4>
-                                <div class="row">
-                                    <div class="col s1"></div>
-                                    <div class="col s10">
-                                        <div class="input-field">
-                                            <i class="material-icons prefix" style="color: green">shopping_cart</i>
-                                            <label for="nomProducto">Nombre o Codigo</label>
-                                            <input type="text" name="nomProducto" required id="nomProducto">
-                                        </div>
-                                    </div>
-                                    <div class="col s1"></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s12">
-                                        <div class="tabla-contenedor">
-                                            <table class="highlight responsive-table centered" id="tblProductos">
-                                                <thead >
-                                                    <tr>
-                                                        <th>Nombres</th>
-                                                        <th>Codigo</th>
-                                                        <th>Tipo</th>
-                                                        <th>Stock</th>
-                                                        <th>Añadir</th>
-                                                    </tr>
-                                                </thead>
+                    </div>
 
-                                                <tbody>
-                                                    <!-- data de los productos -->
-                                                </tbody>
-                                            </table>
-                                        </div>
+
+                    <!-- nuevo diseño-->
+
+
+                    <!--Modal-->
+                    <div id="modal1" class="modal modal-fixed-footer">
+                        <div class="modal-content">
+                            <h4>Busqueda de Productos</h4>
+                            <div class="row">
+                                <div class="col s1"></div>
+                                <div class="col s10">
+                                    <div class="input-field">
+                                        <i class="material-icons prefix" style="color: green">find_in_page</i>
+                                        <label for="nomProducto">Nombre o Codigo</label>
+                                        <input type="text" name="nomProducto" required id="nomProducto">
                                     </div>
                                 </div>
+                                <div class="col s1"></div>
                             </div>
-                            <div class="modal-footer">
-                                <a href="#!" class="modal-action modal-close btn grey darken-3">Cerrar</a>
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="tabla-contenedor">
+                                        <table class="highlight responsive-table centered" id="tblProductos">
+                                            <thead >
+                                                <tr>
+                                                    <th>Nombres</th>
+                                                    <th>Codigo</th>
+                                                    <th>Tipo</th>
+                                                    <th>Stock</th>
+                                                    <th>Añadir</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <!-- data de los productos -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!--Fin del Modal-->
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close btn grey darken-3">Cerrar</a>
+                        </div>
                     </div>
-                   
-                    
-             
-            <div class="left-sidebar-hover"></div>
+                    <!--Fin del Modal-->
+                </div>
+
+
+
+                <div class="left-sidebar-hover"></div>
         </main>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
         <%@include file="WEB-INF/template/footerMain.jspf" %>
         <script src="js/reservas.js" type="text/javascript"></script>

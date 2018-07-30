@@ -64,22 +64,22 @@
                     <div class="col s3">
                         <a href="registrosReserva.jsp" class="btn-floating btn-large waves-effect waves-light blue-grey center" style="margin-bottom:30px;width: 150px;height: 150px;" >
                             <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">assignment</i></a>
-                        <p class="title bold">Lista Reservas</p>
+                        <p class="title bold">Registros de Reservas</p>
                     </div>
                     <div class="col s3">
                         <a href="reservas.jsp" class="btn-floating btn-large waves-effect waves-light green center" style="margin-bottom:30px;width: 150px;height: 150px;" >
                             <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">date_range</i></a>
-                        <p class="title bold">Realizar Reserva</p>
+                        <p class="title bold">Gestionar Reserva</p>
                     </div>    
                     <div class="col s3">
                         <a href="Prestamo.jsp" class="btn-floating btn-large waves-effect waves-light blue center" style="margin-bottom:30px;width: 150px;height: 150px;" >
                             <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">developer_board</i></a>
-                        <p class="title bold">Realizar Prestamo</p>
+                        <p class="title bold">Gestionar Prestamo</p>
                     </div> 
                     <div class="col s3">
                         <a href="devolucion.jsp" class="btn-floating btn-large waves-effect waves-light red center" style="margin-bottom:30px;width: 150px;height: 150px;" >
                             <i class="material-icons" style="font-size:100px;position: absolute;top: 50px;left:0px;">devices_other</i></a>
-                        <p class="title bold">Realizar Devolución</p>
+                        <p class="title bold">Gestionar Devolución</p>
                     </div> 
 
                 </div>

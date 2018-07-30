@@ -59,7 +59,7 @@ function listarRegistroReserva() {
                     + listData[i].dni 
                     + "</td><td><form action='editarReserva.jsp' method='POST'><input type='text' value='" + listData[i].idr + "' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:blue'>remove_red_eye</button></form></td>\n\
                     <td><a href = '#' onclick='eliminarReserva(" + listData[i].idr + ")'><i class='material-icons red-text'>delete_sweep</i></a></td>\n\
-                    <td><form action='Prestamo.jsp' method='POST'><input type='text' value='"+ listData[i].idr +"' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:green'>kitchen</button></form></td></tr>");
+                    <td><form action='Prestamo.jsp' method='POST'><input type='text' value='"+ listData[i].idr +"' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:green'>featured_play_list</button></form></td></tr>");
         }
     });
 }

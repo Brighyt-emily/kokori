@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input class="btn  waves-light col s12 " id="btnIngresar" type="submit" value="Enviar">
+                                                    <input class="btn  waves-light col s12 " id="btnIngresar" type="submit" value="Iniciar Sesión">
                                                 </div>
                                             </div>
                                         </form>
