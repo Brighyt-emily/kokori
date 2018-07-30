@@ -2,7 +2,6 @@
 <script src="assetsd/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 <script src="assets/plugins/materialize/js/materialize.min.js"></script>
 <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
- <script src="assets/js/alpha.min.js"></script>
 <script>
     function retro() {
         window.location.hash = "no-back-button";

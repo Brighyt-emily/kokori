@@ -70,7 +70,7 @@
 
             </main>
         </div>                
-        <%@include file="WEB-INF/template/footerMain.jspf" %>
+        <%@include file="WEB-INF/template/footerMain2.jspf" %>
         
     </body>
 </html>
