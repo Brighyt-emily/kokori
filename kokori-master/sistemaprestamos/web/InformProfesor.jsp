@@ -145,6 +145,7 @@
                                                       <option value="2">FACTEO</option>
                                                       <option value="3">FCE</option>
                                                       <option value="4">FACIHED</option>
+                                                      <option value="5">Ciencias de la Salud</option>
                                                   </select>
                                                   <label>Facultades</label>
                                               </div>
