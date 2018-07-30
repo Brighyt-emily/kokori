@@ -68,10 +68,11 @@ function modal() {
         var w = JSON.parse(data);
         for (var i = 0; i < w.length; i++) {
             $("#combin").append(
-                    "<option value='" + w[i].iTip + "'>" + w[i].nomTip + "</option>");
-
+               "<option value='" + w[i].iTip + "'>" + w[i].nomTip + "</option>");
+                    
         }
         $("#combin").material_select();
+        
     });
 
 
@@ -84,9 +85,11 @@ function salva()
     var jip = $('#loco').val();
     var x = $("#combin").val();
     var ide = parseInt(x);
+    $("#combin").remove();
  $('input[type="text"]').val('');
     $.post("pro", {"nom": jop, "cod": kop, "est": jip, "iTip": ide, "op": 2}, function ()
     {
+        
         console.log("controlador op 2");
         listar();
     });

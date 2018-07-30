@@ -145,9 +145,9 @@ public class ProductoDaoImp implements ProductoDao {
             rs = cst.executeQuery();
             while (rs.next()) {
                 Producto p = new Producto();
-                p.setiTip(rs.getInt("idtipo"));
+                
                 p.setNomTip(rs.getString("nom_tipo"));
-
+                p.setiTip(rs.getInt("idtipo"));
                 fui.add(p);
             }
         } catch (SQLException e) {
