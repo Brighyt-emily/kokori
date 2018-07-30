@@ -48,7 +48,7 @@ public class DevoDaoImp implements DevoDao{
        List<Map<String, Object>> lista = new ArrayList<>();
         try {
             cx = Conexion.getConexion();
-            cst = cx.prepareCall("{call list()}");
+            cst = cx.prepareCall("{call listarDetalleDevolucion()}");
             rs = cst.executeQuery();
             while(rs.next()){
                 Map<String, Object> map = new HashMap<>();
