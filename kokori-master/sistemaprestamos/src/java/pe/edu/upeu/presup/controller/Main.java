@@ -60,8 +60,7 @@ public class Main extends HttpServlet {
                         sesion.setAttribute("rol", datos.get("rol"));
                         sesion.setAttribute("idr", datos.get("irol"));
                         sesion.setAttribute("idt", datos.get("itra"));
-                        rd = request.getRequestDispatcher("/menu");
-                        rd.forward(request, response);
+                        response.sendRedirect("menu.jsp");
                     } else {
                         rd = request.getRequestDispatcher("/login");
                         rd.forward(request, response);

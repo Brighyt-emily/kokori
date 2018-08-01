@@ -94,6 +94,13 @@ public class UsuCon extends HttpServlet {
             case 8:
                 out.println(g.toJson(myTraba.listarPersona(Integer.parseInt(request.getParameter("idtra")))));
                 break;
+            case 9:
+                Usuario usua = new Usuario(
+                        Integer.parseInt(request.getParameter("idu")),
+                        request.getParameter("user"),
+                        request.getParameter("contra"));
+                        myUsu.updateUsuario(usua);
+                break;
         }
     }
 
