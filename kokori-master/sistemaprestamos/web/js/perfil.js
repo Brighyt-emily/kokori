@@ -16,23 +16,19 @@ function editar()
   $('#contra').attr("disabled", false);
 
  $('#btnActualizar').css('visibility', 'hidden'); 
- $('#btnAcept').css('visibility', 'visible'); 
-  $('input[type="text"]').val('');
- 
+ $('#btnAcept').css('visibility', 'visible');  
 }
 function acept()
 {
-    var uno=$("#usu").val();
-    var dos=$("#contra").val();
-    var tres=$("#unin").html();
-    
-    $.post("UsuCon",{"idu":tres,"usu":uno,"cont":dos,"op":3}, function () {
+    var usu=$("#usu").val();
+    var pass=$("#contra").val();
+    var idu=$("#unin").val();
+    $.post("UsuCon",{"idu":idu,"user":usu,"contra":pass,"op":9}, function () {
       var toastHTML = "<span>Usuario actualizado</span>";
     Materialize.toast( toastHTML,2085);  
-    
      window.location.href = "lgt";
                    
-                });
+    });
 }
 
 function listado()

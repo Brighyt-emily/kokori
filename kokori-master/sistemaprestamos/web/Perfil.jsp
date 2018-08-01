@@ -52,10 +52,6 @@
 
             }
         %>
-
-        <!--INICIO Devolucion.jsp -->
-
-
         <main class="mn-inner">
             <div class="row" style="margin-top: 30px;">
                 <div class="col s12">
@@ -75,7 +71,7 @@
                                         <input disabled value="${sessionScope.pass}" id="contra" type="text" class="validate">
 
                                     </div>
-                                    <input  id="unin" value="${sessionScope.idt}">
+                                    <input  id="unin" value="${sessionScope.iduser}">
                                 </div>
 
                             </div>  

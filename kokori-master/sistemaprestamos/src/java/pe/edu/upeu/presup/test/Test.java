@@ -74,7 +74,7 @@ public class Test {
         //create();
         //pro();
         //lost();
-        nop(4);
+       // nop(4);
         //lista(5);
     }
 

@@ -13,4 +13,6 @@ public interface UsuarioDao {
     List<Usuario>listarNomUsuario();
     
     int CambiarEstadoUsuario(Usuario u);
+    
+    int updateUsuario(Usuario u);
 }
