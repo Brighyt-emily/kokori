@@ -222,6 +222,6 @@
          
          
         <%@include file="WEB-INF/template/footerMain.jspf" %>
-        <script src="js/verprofesor.js" type="text/javascript"></script>
+        <script src="js/DatosProfesor.js" type="text/javascript"></script>
     </body>
 </html>

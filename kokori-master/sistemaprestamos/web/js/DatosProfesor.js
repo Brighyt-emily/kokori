@@ -1,6 +1,6 @@
 $(document).ready(function () {
     cardVer();
-alert("asda");
+
 });
 
 function cardVer() {
@@ -9,7 +9,7 @@ function cardVer() {
     $.get("pc", {"op": 2, "idp": idpars}, function (data) {
         var w = JSON.parse(data);
           
-        $("#nombres").text(w[0].nombre + " " + w[0].apellidos);
+        $("#nombres").text(w[0].nombres + " " + w[0].apellidos);
         $("#dni").text(w[0].numDni);
         $("#codigo").text(w[0].codigo);
         $("#celular").text(w[0].numCelular);
@@ -107,7 +107,7 @@ $("#editar").click(function () {
         "op": 5}, function () {
         Materialize.toast('Profesor Actualizado', 3000, 'rounded');
         cardVer();
-       
+        
     });
 });
 

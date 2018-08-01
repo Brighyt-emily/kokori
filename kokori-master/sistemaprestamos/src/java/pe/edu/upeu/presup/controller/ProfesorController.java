@@ -68,6 +68,7 @@ public class ProfesorController extends HttpServlet {
                         request.getParameter("celular"), request.getParameter("direccion"),
                         request.getParameter("email"),
                         Integer.parseInt(request.getParameter("ides")));
+                
                 break;
             case 6:
                 myProf.delete(Integer.parseInt(request.getParameter("idProfe")));
