@@ -65,7 +65,7 @@
 
                                 <!--Steep #1-->
                                 <div class="step-content" id="about">
-                                    <center><div><h5 class="info-text"> Porfavor ingresar datos requeridos.</h5></div></center>
+                                    <center><div><h5 class="info-text"> Porfavor ingresar datos requeridos</h5></div></center>
                                     <div class="row">
                                         <div class="container" name="1">
                                             <center> 
@@ -73,16 +73,16 @@
                                                     <div class="row center col s6" name="rigth">
                                                         <div class="row center col s10">                                                       
                                                             <div class="input-field">
-                                                                <i class="material-icons prefix">assignment</i>
+                                                                <i class="material-icons prefix">picture_in_picture_alt</i>
                                                                 <label for="dnipro">Ingrese DNI profesor</label>
                                                                 <input id="idu" type="text" value="${sessionScope.iduser}" hidden>
                                                                 <input  id="dnipro" class="autocomplete" type="text" maxlength="8" name="dnipro" important>
                                                             </div>                                                       
                                                         </div>
                                                         <div class="input-field col s12">
-                                                            <select id="docu">
-                                                            </select>
-                                                            <label >Documento</label>
+                                                            <i class="material-icons prefix">school</i>
+                                                            <label for="responsable">Alumno</label>
+                                                            <input type="text" name="responsable" id="responsable" required>
                                                         </div>
                                                         <div class="col s12 input-field">
                                                             <form name="horas" id="horas">
@@ -102,15 +102,15 @@
                                                     </div>
                                                     <div class="row center col s6 " name="left">
                                                         <div class="input-field">
-                                                            <i class="material-icons prefix">person_pin</i>
+                                                            <i class="material-icons prefix">person</i>
                                                             <input  id="profe" type="text" class="validate" disabled>
                                                             <input  id="prof" class="autocomplete" type="hidden" name="dnipro" required>
                                                         </div>
                                                     </div>
                                                     <div class="col s6 input-field">
-                                                        <i class="material-icons prefix">chrome_reader_mode</i>
-                                                        <label for="responsable">Alumno</label>
-                                                        <input type="text" name="responsable" id="responsable" required>
+                                                        <select id="docu" disabled>
+                                                        </select>
+                                                        <label>Documento Alumno</label>
                                                     </div>
                                                     <div class="col s6 input-field">                                                        
                                                         <form name="fechas" id="fechas">

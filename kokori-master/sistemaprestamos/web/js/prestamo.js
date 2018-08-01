@@ -54,7 +54,13 @@ $("#registrarPrestamo").click(function () {
     var h_dev = $("#hora_dev").val();
     var aul = $("#aula").val();
     var prof = $("#prof").val();
-    var docu = $("#docu").val();
+    var docu;
+    if(alum===""){
+        docu= 5;
+    }
+    else{
+        docu= $("#docu").val();
+    }
     var user = $("#idu").val();   
     if(fe_pre==="dd/mm/aaaa" || fe_dev==="dd/mm/aaaa" || aul==="" || prof==="" || user===""){
         Materialize.toast("Completar todos los campos de datos", 1980);
@@ -103,9 +109,9 @@ $("#registrarPrestamo").click(function () {
                     }
                 }
             });
-        }
+        } 
      
-    }
+   } 
 });
 
 function productoSeleccionado(x){
@@ -147,6 +153,18 @@ $("#dnipro").keyup(function () {
             Materialize.toast("Error! ingresar DNI de un profesor",1980);
         }
         });
+    }
+});
+$("#responsable").keyup(function () {
+
+    if ($("#responsable").val() !== "" )
+    {
+        $('#docu').prop("disabled", false);
+        $('#docu').material_select();
+    }
+    else{
+        $('#docu').prop("disabled", true);
+        $('#docu').material_select();
     }
 });
 function ListarDoc() {
