@@ -127,7 +127,7 @@
     <!--MODAL N°8-->
     <div id="modal8" class="modal s12 m12 l12 modal-fixed-footer" style="max-width: 530px;">        
         <div class="modal-content">
-            <h5 for="tipos">PRODUCTOS CON OBSERVACIONES</h5>
+            <h5 for="tipos">EQUIPOS CON OBSERVACIONES</h5>
                 <div class="col-sm-8 contact-form" style="margin-top: 20px" > 
                     <form id="contact" method="post" class="form" role="form" >
                     <div class="row">
@@ -138,7 +138,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Producto</th>
+                                            <th>Equipo</th>
                                             <th>Detalle</th>                    
                                         </tr>
                                     </thead>

@@ -10,19 +10,15 @@ function ListarProd() {
         for (var i = 0; i < x.length; i++) {
             if (x[i].estado === 0) {
                 var e = "Mal estado";
-
             }
             if (x[i].estado === 1) {
                 var e = "Buen estado";
-
             }
             if (x[i].estado === 2) {
                 var e = "Estado intermedio"; 
-
             }
             $("#tablaPrestamo").append("<tr><td>" + (i + 1) + "</td><td>" + x[i].nomProd + "</td><td>" + x[i].codigo + "</td><td>" + e + "</td><td>" + x[i].nomTipo + "</td><td style='text-align:center'>" + x[i].stock + "</td>\n\
-            <td><button id='bt"+x[i].idProducto+"' class='material-icons prefix' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idProducto+")'>check_circle</button></td></tr>");
-            
+            <td><a href='#' id='bt"+x[i].idProducto+"' class='material-icons' style='background:none;border:none; color:lightblue' onclick='productoSeleccionado("+x[i].idProducto+")'>check_circle</a></td></tr>");       
         }
     });
 }
