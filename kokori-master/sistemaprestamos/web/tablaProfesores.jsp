@@ -80,7 +80,18 @@
                 <div class="col s12 m12 l12">
                     <div class="card">
                         <div class="card-content">
-
+                            
+                            <div class="row">
+                                <div class="col s4">
+                                <div class="input-field">
+                                            <i class="material-icons prefix">search</i>
+                                            <label for="nomp">Buscar</label>
+                                            <input type="text" name="nomp" required id="nomp" >
+                                        </div>
+                                
+                                
+                                </div>
+                                </div>
                             <table class="highlight centered" id="tblProfesores">
                                 <thead>
                                     <tr>
@@ -113,7 +124,10 @@
 
 
     <%@include file="WEB-INF/template/footerMain.jspf" %>
-    <script src="js/gestionProfesores.js" type="text/javascript"></script>
+    
+    <script src="js/Profesores.js" type="text/javascript"></script>
+   
+    <!--<script src="js/gestionProfesores.js" type="text/javascript"></script>-->
    
 </body>
 </html>

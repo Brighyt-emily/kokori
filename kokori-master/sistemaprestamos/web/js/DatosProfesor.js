@@ -104,10 +104,8 @@ $("#editar").click(function () {
         "direccion": direccion,
         "email": email,
         "ides": idparss,
-        "op": 5}, function () {
-        Materialize.toast('Profesor Actualizado', 3000, 'rounded');
-        cardVer();
-        
+        "op": 5}, function () {             
+        location.href = "tablaProfesores.jsp";        
     });
 });
 

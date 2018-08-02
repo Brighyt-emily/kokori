@@ -2,7 +2,7 @@ $(document).ready(function () {
     listarRegisProfesores();
     /**console.log("funciona: JQUERY");
     $('select').formSelect();*/    
-    alert("sfds");
+   
 });
 /**
  * funciones para abrir otros .jsp's
@@ -43,7 +43,7 @@ function eliminarr(s){
 }
 
 $("#nomp").keyup(function () {
-    var tableReg = document.getElementById('tb_prestamos');
+    var tableReg = document.getElementById('tblProfesores');
     var searchText = document.getElementById('nomp').value.toLowerCase();
     for (var i = 1; i < tableReg.rows.length; i++) {
         var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
@@ -61,6 +61,8 @@ $("#nomp").keyup(function () {
         }
     }
 });
+
+
 
 
 
