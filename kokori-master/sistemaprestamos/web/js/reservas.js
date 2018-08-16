@@ -12,21 +12,19 @@ $("#btnBuscar").click(function () {
     $("#nombres").val("");
     $("#idprofesor").val("");
     if (codigo !== "") {
-        $.get("rc", {"op": 1, "codigo": codigo}, function (data) {
+        $.get("Pc", {"opc": 5, "dni": codigo}, function (data) {
             var x = JSON.parse(data);
-            if (x.length > 0) {
-                $("#nombres").val(x[0].nombres + " " + x[0].apellidos);
-                $("#idprofesor").val(x[0].idProfesor);
-                var toastContent = ('<span><i class="material-icons medium green-text">check</i></span><p>Codigo Correcto<p>');
-                Materialize.toast(toastContent, 1500);
-            } else {
+            $("#nombres").val(x.nomApe);
+            $("#idprofesor").val(x.idProfesor);
+            if ($("#nombres").val() === "") {
                 var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Codigo Incorrecto<p>');
                 Materialize.toast(toastContent, 1500);
             }
+
         });
     } else {
-         var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Ingrese codigo<p>');
-                Materialize.toast(toastContent, 1500);
+        var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Ingrese codigo<p>');
+        Materialize.toast(toastContent, 1500);
     }
 });
 
@@ -37,7 +35,7 @@ function listarProducto() {
         for (var i = 0; i < w.length; i++) {
             $("#tblProductos").append("<tr><td hidden>" + w[i].idProducto + "</td><td>"
                     + w[i].nomProd + "</td><td>" + w[i].codigo + "</td><td>"
-                    + w[i].nomTipo + "</td><td>" + w[i].stock + "</td><td>"
+                    + w[i].nomTipo + "</td><td hidden>" + w[i].stock + "</td><td>"
                     + "<a href='#' onclick='productoSeleccionado(" + w[i].idProducto + ")'>"
                     + "<i class = 'material-icons prefix'>check_circle</i></a></td</tr>");
         }
@@ -136,7 +134,7 @@ $("#btnRervar").click(function () {//funcion para guardar la reserva
             } else {
                 var toastContent = ('<span><i class="material-icons medium red-text">report</i></span><p>Complete los datos por favor<p>');
                 Materialize.toast(toastContent, 1500);
-                
+
             }
         });
     } else {

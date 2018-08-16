@@ -62,7 +62,7 @@
                                 <div class="col s4">
                                     <div class="input-field">
                                         <i class="material-icons prefix">perm_contact_calendar</i>
-                                        <label for="codigo">Codigo</label>
+                                        <label for="codigo">Ingrese DNI</label>
                                         <input type="text" name="codigo" required id="codigo" maxlength="20">
                                     </div>
                                 </div>
@@ -224,7 +224,6 @@
                                                     <th>Nombres</th>
                                                     <th>Codigo</th>
                                                     <th>Tipo</th>
-                                                    <th>Stock</th>
                                                     <th>Añadir</th>
                                                 </tr>
                                             </thead>
