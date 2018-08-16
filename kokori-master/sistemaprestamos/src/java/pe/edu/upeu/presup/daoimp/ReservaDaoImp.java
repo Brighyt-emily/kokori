@@ -42,7 +42,6 @@ public class ReservaDaoImp implements ReservaDao {
                 map.put("nombres", rs.getString("nombres"));
                 map.put("apellidos", rs.getString("apellidos"));
                 map.put("idProfesor", rs.getInt("idprofesor"));
-                map.put("codigo", rs.getString("codigo"));
                 lista.add(map);
             }
 
@@ -150,7 +149,6 @@ public class ReservaDaoImp implements ReservaDao {
                 map.put("idprofesor", rs.getInt("idprofesor"));
                 map.put("nomProfesor", rs.getString("nombres"));
                 map.put("aplProfesor", rs.getString("apellidos"));
-                map.put("codigo", rs.getString("codigo"));
                 map.put("dni", rs.getString("dni"));
                 map.put("iddr", rs.getInt("iddetalle_reserva"));
                 data.add(map);
@@ -240,7 +238,6 @@ public class ReservaDaoImp implements ReservaDao {
                 map.put("h_devolucion", rs.getTime("h_devolucion"));
                 map.put("h_prestamo", rs.getTime("h_prestamo"));
                 map.put("idprofesor", rs.getInt("idprofesor"));
-                map.put("codigo", rs.getString("codigo"));
                 map.put("nombres", rs.getString("nombres"));
                 map.put("apellidos", rs.getString("apellidos"));
                 data.add(map);

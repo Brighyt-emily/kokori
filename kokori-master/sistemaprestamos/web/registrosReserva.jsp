@@ -69,7 +69,6 @@
                                         <tr>
                                             <th>Fecha Reserva</th>
                                             <th>Nombres Profesor</th>
-                                            <th>Codigo</th>
                                             <th>#Dni</th>
                                             <th>Ver</th>
                                             <th>Eliminar</th>

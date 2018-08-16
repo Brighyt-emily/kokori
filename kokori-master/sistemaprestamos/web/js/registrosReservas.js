@@ -17,7 +17,6 @@ function listarRegistroReserva() {
             objeto.feRe = x[i].feReserva;
             objeto.idpro = x[i].idprofesor;
             objeto.nombres = x[i].nomProfesor + " " + x[i].aplProfesor;
-            objeto.codigo = x[i].codigo;
             objeto.dni = x[i].dni;
             objeto.iddr = x[i].iddr;
 
@@ -54,9 +53,9 @@ function listarRegistroReserva() {
         for (var i = 0; i < listData.length; i++) {
             $("#tblRegistro").append("<tr><td>"
                     + listData[i].feRe + "</td><td>"
-                    + listData[i].nombres + "</td><td>"
+                    + listData[i].nombres + "</td><td hidden>"
                     + listData[i].codigo + "</td><td>"
-                    + listData[i].dni 
+                    + listData[i].dni
                     + "</td><td><form action='editarReserva.jsp' method='POST'><input type='text' value='" + listData[i].idr + "' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:blue'>remove_red_eye</button></form></td>\n\
                     <td><a href = '#' onclick='eliminarReserva(" + listData[i].idr + ")'><i class='material-icons red-text'>delete_sweep</i></a></td>\n\
                     <td><form action='Prestamo.jsp' method='POST'><input type='text' value='"+ listData[i].idr +"' name='idr' hidden><button type='submit' class='material-icons' style='background:none;border:none; color:green'>featured_play_list</button></form></td></tr>");

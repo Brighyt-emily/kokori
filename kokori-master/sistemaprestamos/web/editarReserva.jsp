@@ -58,10 +58,8 @@
                         <div class="card-content "> 
                             <div class="row">                                
                                 <div class="col s3">
-                                    <label for="codigo_r">Codigo</label>                                    
-                                    <div class="input-field">
-                                        <input id="codigo_r" type="text" class="validate" readonly="readonly">
-                                    </div>
+                                    <label for="codigo_r"><i class="large material-icons black-text">assignment_ind
+</i></label>
                                 </div>
                                 <div class="col s6">             
                                     <label for="nombres_r">Nombres Completos</label>
